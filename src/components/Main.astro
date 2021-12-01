@@ -1,0 +1,77 @@
+---
+import profilePic from '../../public/profile-pic.jpg';
+---
+
+<main>
+  <div class="main-summary">
+    <h2>Software Developer</h2>
+    <p>I am a software developer whose goal is to build simple and beautiful user experiences.</p>
+    <p>I am also deeply interested on CLI tools, music and cryptocurrencies.</p>
+    <h3>Some of my favorite projects</h3>
+    <ul>
+      <li>
+        <a href="https://github.com/piero-vic/todo">todo</a> | A minimal todo list for your terminal.
+      </li>
+      <li>
+        <a href="https://github.com/piero-vic/ani-py">ani-py</a> | A cli tool to download and stream anime from jkanime.
+      </li>
+    </ul>
+    <sub>
+      <a href="#portfolio">Click here to see more</a>
+    </sub>
+
+  </div>
+  <div class="profile-pic-container">
+    <img src={profilePic} />
+  </div>
+</main>
+
+<style>
+  main {
+    min-height: 80vh;
+    padding: 3vh;
+    display: grid;
+    gap: 6vh;
+    grid-template-columns: 1fr;
+  }
+
+  .main-summary {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vh;
+  }
+
+  .main-summary sub {
+    align-self: flex-end;
+  }
+
+  .profile-pic-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    border-radius: 5px;
+    width: 200px;
+    filter: grayscale(70%);
+  }
+
+  @media screen and (min-width: 600px) {
+    main {
+      grid-template-columns: 1fr 1fr;
+      padding: 3vh 6vw;
+    }
+
+    .profile-pic-container {
+      display: grid;
+    }
+
+    img {
+      border-radius: 5px;
+      width: 400px;
+      filter: grayscale(70%);
+    }
+  }
+</style>
