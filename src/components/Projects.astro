@@ -1,0 +1,90 @@
+---
+const projects = [
+  {
+    name: 'Portfolio Website',
+    description: 'Portfolio website to showcase my work. Code is on GitHub. Feel free to check it out.',
+    technologies: ['HTML', 'CSS'],
+    image: 'desktop-screenshot.png',
+    repoLink: 'https://github.com/piero-vic/Portfolio',
+    demoLink: 'https://piero-vic.github.io/Portfolio',
+    cardId: 0,
+  },
+  {
+    name: 'crypto-prices',
+    description: 'A script that requests crypto prices from CoinGecko and writes them to a file in the format required by the Ledger CLI price history.',
+    technologies: ['Python', 'Ledger CLI', 'CoinGecko API'],
+    image: 'assets/crypto.jpeg',
+    repoLink: 'https://github.com/piero-vic/crypto-prices',
+    demoLink: null,
+    cardId: 1,
+  },
+  {
+    name: 'bootstrap-website',
+    description: 'Basic presentation website. Made with Bootstrap.',
+    technologies: ['HTML', 'Bootstrap'],
+    image: 'assets/bootstrap-webpage.png',
+    repoLink: 'https://github.com/piero-vic/bootstrap-website',
+    demoLink: 'https://piero-vic.github.io/bootstrap-website',
+    cardId: 2,
+  },
+  {
+    name: 'Patches: A Collection of VCV Rack Patches',
+    description: 'VCV Rack is a virtual modular synthesizer. All preset are text files in JSON format so they work great with version control.',
+    technologies: ['JSON', 'VCV Rack'],
+    image: 'assets/synth-unsplash.jpeg',
+    repoLink: 'https://github.com/piero-vic/patches',
+    demoLink: null,
+    cardId: 3,
+  },
+  {
+    name: 'Minimal Todo List',
+    description: 'A minimal and simple To-do list application. Build for the Microverse program.',
+    technologies: ['JavaScript', 'Webpack'],
+    image: 'assets/to-do-list-screenshot.png',
+    repoLink: 'https://github.com/piero-vic/to-do-list',
+    demoLink: 'https://piero-vic.github.io/to-do-list/dist/',
+    cardId: 4,
+  },
+];
+---
+<main>
+  {projects.map((project) => (
+    <div class="project-card">
+      <h3>{project.name}</h3>
+      <p>{project.description}</p>
+      <a href={project.repoLink} target="_blank">
+        <span>Source Code</span>
+      </a>
+    </div>
+  ))}
+</main>
+
+<style>
+  main {
+    min-height: 80vh;
+    padding: 3vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .project-card {
+    flex: 1 1 30%;
+    padding: 1vh;
+    border: 2px solid grey;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    gap: 1vh;
+  }
+
+  .project-card > a {
+    align-self: flex-end;
+    flex: 1;
+    display: flex;
+  }
+
+  .project-card > a > span {
+    align-self: flex-end;
+  }
+</style>
