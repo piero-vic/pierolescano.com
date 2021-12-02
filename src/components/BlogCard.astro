@@ -1,0 +1,50 @@
+---
+const { className, description } = Astro.props;
+---
+<div class={`blog-card ${className}`}>
+  <img class="blog-card-img" src="https://fakeimg.pl/350x200/">  
+  <hr>
+  <p>Tag</p>
+  <h3>Post Title</h3>
+  <p>Dec 2021</p>
+  <p>{description}</p>
+  <a href="">Read more</a>
+  </div>
+
+<style>
+  .blog-card {
+    padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+    gap: 1vh;
+    transition: border 0.2s
+  }
+
+  .blog-card:hover {
+    border: 8px solid grey;
+  }
+
+
+  @media screen and (min-width: 600px) {
+    .grid-col-span-2 {
+      grid-column: span 2;
+    }
+
+    .last-article {
+      grid-column-start: 4;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+  }
+
+  .img-container {
+    display: flex;
+  }
+
+  .blog-card-img {
+    align-self: center;
+    max-width: 100%;
+    width: fit-content;
+  }
+</style>
