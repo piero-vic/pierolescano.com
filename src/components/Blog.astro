@@ -1,0 +1,40 @@
+---
+import BlogCard from './BlogCard.astro';
+
+---
+<main>
+  <BlogCard
+    className='grid-col-span-2'
+    description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, aliquam?'
+  />
+  <BlogCard
+    description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, aliquam?'
+  />
+  <BlogCard
+    description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, aliquam?'
+  />
+  <BlogCard
+    className='grid-col-span-2'
+    description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, aliquam?'
+
+  />
+  <BlogCard
+    className='last-article'
+    description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sit, magnam deserunt, reprehenderit numquam et commodi nobis repudiandae, rerum laudantium veniam itaque maxime eaque beatae aliquid. Distinctio neque dolorum temporibus nostrum excepturi facilis qui quaerat placeat assumenda, facere laborum totam!'
+  />
+</main>
+
+<style>
+  main {
+    min-height: 80vh;
+    padding: 3vh;
+    display: grid;
+    gap: 20px;
+  }
+
+  @media screen and (min-width: 600px) {
+    main {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>
