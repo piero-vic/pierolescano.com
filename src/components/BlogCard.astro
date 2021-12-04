@@ -1,15 +1,17 @@
 ---
-const { className, description } = Astro.props;
+const { className, blogPost } = Astro.props;
 ---
 <div class={`blog-card ${className}`}>
   <img class="blog-card-img" src="https://fakeimg.pl/350x200/">  
   <hr>
-  <p>Tag</p>
-  <h3>Post Title</h3>
-  <p>Dec 2021</p>
-  <p>{description}</p>
-  <a href="">Read more</a>
+  <div class="text-container">
+    <p>{blogPost.technologies.join(', ')}</p>
+    <h3>{blogPost.name}</h3>
+    <p>Dec 2021</p>
+    <p>{blogPost.description}</p>
+    <a href="">Read more</a>
   </div>
+</div>
 
 <style>
   .blog-card {
@@ -25,10 +27,16 @@ const { className, description } = Astro.props;
     border: 8px solid grey;
   }
 
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+  }
 
   @media screen and (min-width: 600px) {
     .grid-col-span-2 {
       grid-column: span 2;
+      flex-direction: row;
     }
 
     .last-article {
