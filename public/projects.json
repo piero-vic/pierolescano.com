@@ -1,5 +1,16 @@
 [
   {
+    "name": "Personal Website",
+    "description": "Personal website build with my new favorite framework.",
+    "technologies": [
+      "Astro"
+    ],
+    "image": null,
+    "repoLink": "https://github.com/piero-vic/astro-website",
+    "demoLink": null,
+    "favorite": false
+  },
+  {
     "name": "Coding Bootcamp Webpage",
     "description": "Coding Bootcamp webpage mockup. Capstone project for Module 1 of Microverse.",
     "technologies": [
@@ -7,9 +18,10 @@
       "CSS",
       "JavaScript"
     ],
-    "image": "bootcamp-screenshot.png",
+    "image": null,
     "repoLink": "https://github.com/piero-vic/conference-website",
-    "demoLink": "https://piero-vic.github.io/conference-website/"
+    "demoLink": "https://piero-vic.github.io/conference-website/",
+    "favorite": false
   },
   {
     "name": "Leaderboard",
@@ -20,9 +32,10 @@
       "JavaScript",
       "Webpack"
     ],
-    "image": "public/leaderboard-screenshot.png",
+    "image": null,
     "repoLink": "https://github.com/piero-vic/Leaderboard",
-    "demoLink": null
+    "demoLink": null,
+    "favorite": false
   },
   {
     "name": "ToDo List",
@@ -33,9 +46,10 @@
       "JavaScript",
       "Webpack"
     ],
-    "image": "public/to-do-list-screenshot.png",
+    "image": null,
     "repoLink": "https://github.com/piero-vic/to-do-list",
-    "demoLink": "https://piero-vic.github.io/to-do-list/dist/"
+    "demoLink": "https://piero-vic.github.io/to-do-list/dist/",
+    "favorite": false
   },
   {
     "name": "Math Magicians",
@@ -45,7 +59,8 @@
     ],
     "image": null,
     "repoLink": "https://github.com/piero-vic/math-magicians",
-    "demoLink": null
+    "demoLink": null,
+    "favorite": false
   },
   {
     "name": "Patches: A Collection of VCV Rack Patches",
@@ -54,9 +69,10 @@
       "JSON",
       "VCV Rack"
     ],
-    "image": "public/synth-unsplash.jpeg",
+    "image": null,
     "repoLink": "https://github.com/piero-vic/patches",
-    "demoLink": null
+    "demoLink": null,
+    "favorite": false
   },
   {
     "name": "crypto-prices",
@@ -66,9 +82,10 @@
       "Ledger CLI",
       "CoinGecko API"
     ],
-    "image": "public/crypto.jpeg",
+    "image": null,
     "repoLink": "https://github.com/piero-vic/crypto-prices",
-    "demoLink": null
+    "demoLink": null,
+    "favorite": false
   },
   {
     "name": "todo",
@@ -77,7 +94,10 @@
       "Python",
       "Typer"
     ],
-    "repoLink": "https://github.com/piero-vic/todo"
+    "image": null,
+    "repoLink": "https://github.com/piero-vic/todo",
+    "demoLink": null,
+    "favorite": false
   },
   {
     "name": "ani-py",
@@ -86,6 +106,9 @@
       "Python",
       "Typer"
     ],
-    "repoLink": "https://github.com/piero-vic/ani-py"
+    "image": null,
+    "repoLink": "https://github.com/piero-vic/ani-py",
+    "demoLink": null,
+    "favorite": false
   }
 ]

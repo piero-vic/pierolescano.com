@@ -1,5 +1,4 @@
 ---
-// Example: <SomeComponent greeting="(Optional) Hello" name="Required Name" />
 const { project } = Astro.props;
 ---
 
@@ -18,15 +17,15 @@ const { project } = Astro.props;
 
 <style>
   .project-card {
-    flex: 1 1 30%;
     padding: 1vh;
     border: 2px solid grey;
     display:flex;
     flex-direction: column;
     position: relative;
     gap: 1vh;
-    transition: border 0.2s
-}
+    transition: border 0.2s;
+    min-height: 27vh;
+  }
 
   .project-card:hover {
     border: 8px solid grey;
