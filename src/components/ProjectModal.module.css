@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,8 +13,19 @@
 .modal {
   background-color: white;
   padding: 3vh;
-  width: 70%;
+  max-width: 80%;
   border: 2px solid grey;
+  display: flex;
+  gap: 2vh;
+}
+
+.modalImg {
+  max-height: 40vh;
+  align-self: center;
+  border: 1px solid grey;
+}
+
+.modalText {
   display: flex;
   flex-direction: column;
   gap: 1vh;
