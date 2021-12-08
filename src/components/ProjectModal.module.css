@@ -1,0 +1,21 @@
+.modalBg {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: white;
+  padding: 3vh;
+  width: 70%;
+  border: 2px solid grey;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
