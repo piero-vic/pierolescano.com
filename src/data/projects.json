@@ -22,7 +22,7 @@
       "CSS",
       "JavaScript"
     ],
-    "image": "/public/images/coding-bootcamp.png",
+    "image": "/images/coding-bootcamp.png",
     "repoLink": "https://github.com/piero-vic/conference-website",
     "demoLink": "https://piero-vic.github.io/conference-website/",
     "favorite": false
@@ -38,7 +38,7 @@
       "JavaScript",
       "Webpack"
     ],
-    "image": "/public/images/leaderboard.png",
+    "image": "/images/leaderboard.png",
     "repoLink": "https://github.com/piero-vic/Leaderboard",
     "demoLink": null,
     "favorite": false
@@ -54,7 +54,7 @@
       "JavaScript",
       "Webpack"
     ],
-    "image": "/public/images/todo-list.png",
+    "image": "/images/todo-list.png",
     "repoLink": "https://github.com/piero-vic/to-do-list",
     "demoLink": "https://piero-vic.github.io/to-do-list/dist/",
     "favorite": false
@@ -67,7 +67,7 @@
     "technologies": [
       "React"
     ],
-    "image": "/public/images/math-magicians.png",
+    "image": "/images/math-magicians.png",
     "repoLink": "https://github.com/piero-vic/math-magicians",
     "demoLink": null,
     "favorite": false
