@@ -47,7 +47,7 @@
     "id": 3,
     "name": "ToDo List",
     "description": "A minimal and simple To-do list application. Build for Microverse.",
-    "descriptionLong": "This project helped me to learn how to make a website more interactive using JavaScript. It's a very simple application. I think I will expand it sometime in the future.",
+    "descriptionLong": "This project helped me to learn how to make a website more interactive using JavaScript. It's a very simple application. I think I will implement new features sometime in the future.",
     "technologies": [
       "HTML",
       "CSS",
@@ -63,7 +63,7 @@
     "id": 4,
     "name": "Math Magicians",
     "description": "Math magicians is a website for all fans of mathematics. Build for Microverse.",
-    "descriptionLong": "This is the first React App I build. It introduced me to the most popular JavaScript library.",
+    "descriptionLong": "This is the first React App I build. It introduced me to one of my favorite tools so far.",
     "technologies": [
       "React"
     ],
@@ -76,7 +76,7 @@
     "id": 5,
     "name": "todo",
     "description": "A minimal todo list for your terminal.",
-    "descriptionLong": "I'm in love with CLI tools. They are lightweight, simple and yet powerful. Sometimes you don't need GUI. I started this project to get familiar with building this kind of tools. I also wanted to practice my Python skills.",
+    "descriptionLong": "I really like working withing the command line. CLI tools are some of my favorite apps for this reason. They are also lightweight and simple. I started this project to get familiar with building this kind of tools. I also wanted to practice my Python skills.",
     "technologies": [
       "Python",
       "Typer"
