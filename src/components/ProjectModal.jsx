@@ -6,7 +6,7 @@ function ProjectModal(props) {
 
   return (
     <div className={`${styles.modalBg} ${styles.modalOff}`}>
-      <div className={styles.modal}>
+      <div className={styles.modal} onClick="">
         {
           project.image &&
           <>
@@ -16,9 +16,9 @@ function ProjectModal(props) {
         }
         <div className={styles.modalText}>
           <h2>{project.name}</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore voluptates tempore veniam earum atque odit quod laborum expedita aut itaque. Quasi tenetur error necessitatibus commodi tempore. Sit quaerat omnis eaque delectus consequuntur, totam in quod blanditiis voluptas alias illum, maxime sed culpa minima eum error, id unde ad assumenda veritatis?</p>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore voluptates tempore veniam earum atque odit quod laborum expedita aut itaque. Quasi tenetur error necessitatibus commodi tempore. Sit quaerat omnis eaque delectus consequuntur, totam in quod blanditiis voluptas alias illum, maxime sed culpa minima eum error, id unde ad assumenda veritatis?</p>
-          <button onClick={toggleModal}>Close</button>
+          <sub className={styles.modalSub}>{project.description}</sub>
+          <p>{project.descriptionLong}</p>
+          <button className={styles.modalBtn} onClick={toggleModal}>Close</button>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   height: 100vh;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -12,15 +13,35 @@
 
 .modal {
   background-color: white;
+  font-size: 13px;
   padding: 3vh;
+  max-height: 90vh;
   max-width: 80%;
   border: 2px solid grey;
   display: flex;
+  flex-direction: column;
   gap: 2vh;
+}
+
+@media screen and (min-width: 600px) {
+  .modal {
+    font-size: inherit;
+    flex-direction: row;
+    max-width: 65%;
+  }
+
+  .modalBtn {
+    margin-top: auto;
+  }
+}
+
+.modalSub {
+  color: grey;
 }
 
 .modalImg {
   max-height: 40vh;
+  max-width: 100%;
   align-self: center;
   border: 1px solid grey;
 }

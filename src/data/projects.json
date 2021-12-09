@@ -2,7 +2,8 @@
   {
     "id": 0,
     "name": "Personal Website",
-    "description": "Personal website build with my new favorite framework.",
+    "description": "Personal website build Astro, a modern static site builder.",
+    "descriptionLong": "This is a very simple website. Mainly because I'm a big fan of minmalism but also because I want to have room to explore new ideas.\nI'm using Astro. Astro let's me use other libraries and frameworks like React and Vue on top of it. In my opinion it's the best tool to explore multiple frameworks in one project.\nThis is my personal playground. Things might change a lot through time so feel free to check the code on GitHub if somethig chatch your eye. I'm also planing to include a blog section.",
     "technologies": [
       "Astro"
     ],
@@ -15,12 +16,13 @@
     "id": 1,
     "name": "Coding Bootcamp Webpage",
     "description": "Coding Bootcamp webpage mockup. Capstone project for Module 1 of Microverse.",
+    "descriptionLong": "This was the first capstone project I built during Microverse. It helped me to learn a lot of HTML, CSS, and a little bit of JavaScript.",
     "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    "image": "https://raw.githubusercontent.com/piero-vic/conference-website/main/desktop-screenshot.png",
+    "image": "/public/images/coding-bootcamp.png",
     "repoLink": "https://github.com/piero-vic/conference-website",
     "demoLink": "https://piero-vic.github.io/conference-website/",
     "favorite": false
@@ -29,13 +31,14 @@
     "id": 2,
     "name": "Leaderboard",
     "description": "Leaderboard project for Microverse.",
+    "descriptionLong": "This project helped me to expand my knowledge of JavaScript. The main goal was to get familiar with how to get and post data from an API",
     "technologies": [
       "HTML",
       "CSS",
       "JavaScript",
       "Webpack"
     ],
-    "image": "https://raw.githubusercontent.com/piero-vic/Leaderboard/dev/screenshots/dark-screenshot.png",
+    "image": "/public/images/leaderboard.png",
     "repoLink": "https://github.com/piero-vic/Leaderboard",
     "demoLink": null,
     "favorite": false
@@ -44,13 +47,14 @@
     "id": 3,
     "name": "ToDo List",
     "description": "A minimal and simple To-do list application. Build for Microverse.",
+    "descriptionLong": "This project helped me to learn how to make a website more interactive using JavaScript. It's a very simple application. I think I will expand it sometime in the future.",
     "technologies": [
       "HTML",
       "CSS",
       "JavaScript",
       "Webpack"
     ],
-    "image": null,
+    "image": "/public/images/todo-list.png",
     "repoLink": "https://github.com/piero-vic/to-do-list",
     "demoLink": "https://piero-vic.github.io/to-do-list/dist/",
     "favorite": false
@@ -59,24 +63,26 @@
     "id": 4,
     "name": "Math Magicians",
     "description": "Math magicians is a website for all fans of mathematics. Build for Microverse.",
+    "descriptionLong": "This is the first React App I build. It introduced me to the most popular JavaScript library.",
     "technologies": [
       "React"
     ],
-    "image": null,
+    "image": "/public/images/math-magicians.png",
     "repoLink": "https://github.com/piero-vic/math-magicians",
     "demoLink": null,
     "favorite": false
   },
   {
     "id": 5,
-    "name": "Patches: A Collection of VCV Rack Patches",
-    "description": "VCV Rack is a virtual modular synthesizer. All preset are text files in JSON format so they work great with version control.",
+    "name": "todo",
+    "description": "A minimal todo list for your terminal.",
+    "descriptionLong": "I'm in love with CLI tools. They are lightweight, simple and yet powerful. Sometimes you don't need GUI. I started this project to get familiar with building this kind of tools. I also wanted to practice my Python skills.",
     "technologies": [
-      "JSON",
-      "VCV Rack"
+      "Python",
+      "Typer"
     ],
     "image": null,
-    "repoLink": "https://github.com/piero-vic/patches",
+    "repoLink": "https://github.com/piero-vic/todo",
     "demoLink": null,
     "favorite": false
   },
@@ -96,14 +102,14 @@
   },
   {
     "id": 7,
-    "name": "todo",
-    "description": "A minimal todo list for your terminal.",
+    "name": "patches",
+    "description": "A Collection of VCV Rack Patches. VCV Rack is a virtual modular synthesizer. All preset are text files in JSON format so they work great with version control.",
     "technologies": [
-      "Python",
-      "Typer"
+      "JSON",
+      "VCV Rack"
     ],
     "image": null,
-    "repoLink": "https://github.com/piero-vic/todo",
+    "repoLink": "https://github.com/piero-vic/patches",
     "demoLink": null,
     "favorite": false
   },
