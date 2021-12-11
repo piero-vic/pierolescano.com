@@ -1,6 +1,23 @@
+---
+  import moment from 'moment';
+  const url = 'https://api.rss2json.com/v1/api.json?rss_url=https%3a%2f%2fmedium.com%2ffeed%2f%40piero-vic';
+  const response = await fetch(url);
+  const json = await response.json();
+  const blogPosts = json.items;
+---
+
 <main>
   <div class="main-container">
-    <h2>Coming soon</h2>
+    <h2>2021</h2>
+    <ul>
+      {blogPosts.map((post) => (
+        <li>
+          <a href={post.guid} target="_blank">{post.title}</a>
+          |
+          <span>{moment(post.pubDate).format("MMM D")}</span>
+        </li>
+      ))}
+    </ul>
   </div>
 </main>
 
@@ -8,13 +25,16 @@
   .main-container {
     min-height: 80vh;
     padding: 3vh;
-    display: grid;
-    gap: 10px;
+  }
+
+  span {
+    color: grey;
+    font-weight: bold;
   }
 
   @media screen and (min-width: 600px) {
     .main-container {
-      grid-template-columns: repeat(4, 1fr);
+      padding: 10vh 6vw;
     }
   }
 </style>
