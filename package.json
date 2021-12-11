@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "astro": "^0.21.5"
+  },
+  "dependencies": {
+    "moment": "^2.29.1"
   }
 }
