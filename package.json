@@ -12,7 +12,6 @@
     "astro": "^0.21.5"
   },
   "dependencies": {
-    "@duckdoc/termynal": "^1.0.0",
     "moment": "^2.29.1"
   }
 }
