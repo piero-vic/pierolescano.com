@@ -1,7 +1,7 @@
 .projectCard {
   padding: 1vh;
   border: 2px solid grey;
-  display:flex;
+  display: flex;
   flex-direction: column;
   position: relative;
   gap: 1vh;

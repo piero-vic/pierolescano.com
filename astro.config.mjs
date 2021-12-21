@@ -10,9 +10,9 @@
 export default /** @type {import('astro').AstroUserConfig} */ ({
   // Comment out "renderers: []" to enable Astro's default component support.
   buildOptions: {
-    site: 'http://piero-vic.github.io/',
+    site: "http://piero-vic.github.io/",
     sitemap: true,
-    pageUrlFormat: 'directory'
+    pageUrlFormat: "directory",
   },
-  renderers: ['@astrojs/renderer-react'],
+  renderers: ["@astrojs/renderer-react"],
 });
