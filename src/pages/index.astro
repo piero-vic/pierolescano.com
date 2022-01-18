@@ -1,8 +1,99 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import Main from '../components/Main.astro';
+import '../styles/index.css'
+import { Icon } from 'astro-icon'
+import moment from 'moment'
+const url = 'https://api.rss2json.com/v1/api.json?rss_url=https%3a%2f%2fmedium.com%2ffeed%2f%40piero-vic';
+const response = await fetch(url);
+const json = await response.json();
+const articles = json.items;
 ---
 
-<MainLayout title="Home">
-	<Main />
-</MainLayout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/index.css')} />
+		<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+		<title>Piero Lescano</title>
+	</head>
+
+	<body class="font-mono">
+		<div class="text-foreground bg-background">
+			<div class="mx-auto flex flex-col max-w-screen-xl min-h-screen p-6">
+				<header class="flex justify-between items-center text-blue">
+					<div class="w-16 h-16">
+						<Icon name="ph:cube-fill"/>
+					</div>
+					<button class="w-8 h-8 sm:hidden">
+						<Icon name="prime:bars" />
+					</button>
+					<nav class="hidden sm:flex gap-4 font-bold text-lg">
+						<a href="" class="hover:underline">Projects</a>
+						<a href="https://medium.com/@piero-vic" class="hover:underline">Blog</a>
+						<a href="" class="hover:underline">Contact</a>
+					</nav>
+				</header>
+
+				<main class="grow flex flex-col justify-center">
+					<!-- About -->
+					<section class="flex flex-col justify-end sm:justify-center">
+						<h1 class="text-5xl text-blue font-black">Piero Lescano</h1>
+						<div class="flex flex-col gap-3">
+							<h2 class="text-2xl">Software Developer</h2>	
+							<p>
+								<span class="text-red">HTML</span>
+								<span class="text-cyan">CSS</span> 
+								<span class="text-yellow">JavaScript</span> 
+								<span class="text-blue">React</span>
+								<span class="text-green">Python</span>
+							</p>
+							<p class="max-w-prose">
+								I'm a software developer from Peru whose goal is to build beautiful user experiences and find solutions to unique problems through coding. I'm in love with CLI tools and excited about front-end development and the future of blockchain technology.
+							</p>
+						</div>
+					</section>
+
+					<!-- Blog -->
+					<section class="mt-6">
+						<h2 class="mb-0 text-2xl font-bold text-green">Latest Articles</h2>
+						<ul class="flex flex-col gap-3 max-w-screen-md">
+							{articles.map((article) => (
+								<li>
+									<a href={article.guid} class="text-sm sm:text-md flex flex-wrap justify-between">
+										<span class="font-semibold">{article.title}</span>
+										<span class="text-blue">{moment(article.pubDate).format('D MMM \'YY')}</span>
+									</a>
+								</li>
+							))}
+						</ul>
+					</section>
+				</main>
+
+				<footer class="mt-6 flex flex-wrap gap-2 justify-between items-center">
+					<div class="flex gap-2">
+						<div class="w-6 h-6 hover:text-blue">
+							<a href="https://github.com/piero-vic">
+								<Icon name="prime:github" />
+							</a>
+						</div>
+						<div class="w-6 h-6 hover:text-blue">
+							<a href="https://www.linkedin.com/in/piero-lescano">
+								<Icon name="prime:linkedin" />
+							</a>
+						</div>
+						<div class="w-6 h-6 hover:text-blue">
+							<a href="https://www.twitter.com/v1ccenzo">
+								<Icon name="prime:twitter" />
+							</a>
+						</div>
+					</div>
+					<p class="text-sm">
+						<span class="font-semibold">© 2021-2022 Piero Lescano.</span> Build with
+						<a class="font-semibold text-red hover:underline" href="https://astro.build/">Astro</a> and
+						<a class="font-semibold text-blue hover:underline" href="https://tailwindcss.com/">TailwindCSS</a>.
+					</p>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>
