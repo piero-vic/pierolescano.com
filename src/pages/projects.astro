@@ -1,7 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import projects from '../data/projects.json'
 ---
 
 <BaseLayout title="Projects">
-  <p class="text-6xl max-w-screen-md">The projects page is under contruction.</p>
+  <section class="mt-6">
+    <ul class="grid gap-5 md:grid-cols-3 place-items-center">
+      {projects.map((project) => (
+        <li class="min-w-full min-h-[10vh] bg-black p-4 rounded-xl md:min-h-full first:md:col-span-2 last:md:col-span-full flex flex-col">
+          <h3 class="text-xl font-semibold">{project.name}</h3>
+          <p>{project.description}</p>
+          <div class="flex flex-wrap gap-4 mt-4 md:mt-auto">
+            {project.technologies.map((tech) => (
+              <span>{tech}</span>
+            ))}  
+          </div>
+        </li> 
+      ))}
+    </ul>
+  </section>
 </BaseLayout>
