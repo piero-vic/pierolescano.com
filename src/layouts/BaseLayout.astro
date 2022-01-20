@@ -17,7 +17,7 @@ const { title } = Astro.props
 		<div class="text-foreground bg-background">
 			<div class="mx-auto flex flex-col max-w-screen-xl min-h-screen p-6">
 				<header class="flex justify-between items-center text-blue">
-					<div class="w-16 h-16">
+					<div class="w-16 h-16 transition hover:scale-110">
             <a href="/">
 						  <Icon name="ph:cube-fill"/>
             </a>
@@ -38,17 +38,17 @@ const { title } = Astro.props
 
 				<footer class="mt-6 flex flex-wrap gap-2 justify-between items-center">
 					<div class="flex gap-2">
-						<div class="w-6 h-6 hover:text-blue">
+						<div class="w-6 h-6 transition hover:scale-110 hover:text-blue">
 							<a href="https://github.com/piero-vic">
 								<Icon name="prime:github" />
 							</a>
 						</div>
-						<div class="w-6 h-6 hover:text-blue">
+						<div class="w-6 h-6 transition hover:scale-110 hover:text-blue">
 							<a href="https://www.linkedin.com/in/piero-lescano">
 								<Icon name="prime:linkedin" />
 							</a>
 						</div>
-						<div class="w-6 h-6 hover:text-blue">
+						<div class="w-6 h-6 transition hover:scale-110 hover:text-blue">
 							<a href="https://www.twitter.com/v1ccenzo">
 								<Icon name="prime:twitter" />
 							</a>

@@ -31,11 +31,9 @@ const articles = json.items;
     <h2 class="mb-0 text-2xl font-bold text-green">Latest Articles</h2>
     <ul class="flex flex-col gap-3 max-w-screen-md">
       {articles.map((article) => (
-        <li>
-          <a href={article.guid} class="text-sm sm:text-md flex flex-wrap justify-between">
-            <span class="font-semibold">{article.title}</span>
-            <span class="text-blue">{moment(article.pubDate).format('D MMM \'YY')}</span>
-          </a>
+        <li class="text-sm sm:text-md flex flex-wrap justify-between">
+          <a href={article.guid} class="font-semibold">{article.title}</a> 
+          <span class="text-blue">{moment(article.pubDate).format('D MMM \'YY')}</span>
         </li>
       ))}
     </ul>
