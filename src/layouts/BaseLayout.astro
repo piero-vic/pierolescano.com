@@ -1,0 +1,66 @@
+---
+import '../styles/index.css'
+import { Icon } from 'astro-icon'
+const { title } = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/index.css')} />
+		<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+		<title>Piero Lescano - {title}</title>
+	</head>
+
+	<body class="font-mono">
+		<div class="text-foreground bg-background">
+			<div class="mx-auto flex flex-col max-w-screen-xl min-h-screen p-6">
+				<header class="flex justify-between items-center text-blue">
+					<div class="w-16 h-16">
+            <a href="/">
+						  <Icon name="ph:cube-fill"/>
+            </a>
+					</div>
+					<button class="w-8 h-8 sm:hidden">
+						<Icon name="prime:bars" />
+					</button>
+					<nav class="hidden sm:flex gap-4 font-bold text-lg">
+						<a href="/projects" class="hover:underline">Projects</a>
+						<a href="https://medium.com/@piero-vic" class="hover:underline">Blog</a>
+						<a href="/contact" class="hover:underline">Contact</a>
+					</nav>
+				</header>
+
+				<main class="grow flex flex-col justify-center">
+          <slot></slot>
+        </main>
+
+				<footer class="mt-6 flex flex-wrap gap-2 justify-between items-center">
+					<div class="flex gap-2">
+						<div class="w-6 h-6 hover:text-blue">
+							<a href="https://github.com/piero-vic">
+								<Icon name="prime:github" />
+							</a>
+						</div>
+						<div class="w-6 h-6 hover:text-blue">
+							<a href="https://www.linkedin.com/in/piero-lescano">
+								<Icon name="prime:linkedin" />
+							</a>
+						</div>
+						<div class="w-6 h-6 hover:text-blue">
+							<a href="https://www.twitter.com/v1ccenzo">
+								<Icon name="prime:twitter" />
+							</a>
+						</div>
+					</div>
+					<p class="text-sm">
+						<span class="font-semibold">© 2021-2022 Piero Lescano.</span> Build with
+						<a class="font-semibold text-red hover:underline" href="https://astro.build/">Astro</a> and
+						<a class="font-semibold text-blue hover:underline" href="https://tailwindcss.com/">TailwindCSS</a>.
+					</p>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>
