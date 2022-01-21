@@ -1,20 +1,8 @@
 [
   {
     "id": 0,
-    "name": "Personal Website",
-    "description": "Personal website build Astro, a modern static site builder.",
-    "descriptionLong": "This is a very simple website. Mainly because I'm a big fan of minmalism but also because I want to have room to explore new ideas.\nI'm using Astro. Astro let's me use other libraries and frameworks like React and Vue on top of it. In my opinion it's the best tool to explore multiple frameworks in one project.\nThis is my personal playground. Things might change a lot through time so feel free to check the code on GitHub if somethig chatch your eye. I'm also planing to include a blog section.",
-    "technologies": ["Astro"],
-    "image": null,
-    "repoLink": "https://github.com/piero-vic/astro-website",
-    "demoLink": null,
-    "favorite": false
-  },
-  {
-    "id": 1,
     "name": "Coding Bootcamp Webpage",
-    "description": "Coding Bootcamp webpage mockup. Capstone project for Module 1 of Microverse.",
-    "descriptionLong": "This was the first capstone project I built during Microverse. It helped me to learn a lot of HTML, CSS, and a little bit of JavaScript.",
+    "description": "This was the first capstone project I built during Microverse.<br>It helped me to learn a lot of HTML, CSS, and a little bit of JavaScript.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "image": "/images/coding-bootcamp.png",
     "repoLink": "https://github.com/piero-vic/conference-website",
@@ -22,11 +10,20 @@
     "favorite": false
   },
   {
+    "id": 1,
+    "name": "Personal Website",
+    "description": "Personal website build with the modern static site builder Astro.<br>Astro allows me use other libraries or frameworks like React or Vue on top of it but it generates the website with zero client-side JavaScript, by default.<br>However, Astro can hydrate individual components and leave the rest of your site as static HTML.",
+    "technologies": ["Astro", "TailwindCSS"],
+    "image": null,
+    "repoLink": "https://github.com/piero-vic/astro-website",
+    "demoLink": null,
+    "favorite": false
+  },
+  {
     "id": 2,
     "name": "Leaderboard",
-    "description": "Leaderboard project for Microverse.",
-    "descriptionLong": "This project helped me to expand my knowledge of JavaScript. The main goal was to get familiar with how to get and post data from an API",
-    "technologies": ["HTML", "CSS", "JavaScript", "Webpack"],
+    "description": "Another Microverse project. This project helped me expand my knowledge of JavaScript. The main goal was to get familiar with how to get and post data from an API",
+    "technologies": ["HTML", "CSS", "JavaScript"],
     "image": "/images/leaderboard.png",
     "repoLink": "https://github.com/piero-vic/Leaderboard",
     "demoLink": null,
@@ -35,9 +32,8 @@
   {
     "id": 3,
     "name": "ToDo List",
-    "description": "A minimal and simple To-do list application. Build for Microverse.",
-    "descriptionLong": "This project helped me to learn how to make a website more interactive using JavaScript. It's a very simple application. I think I will implement new features sometime in the future.",
-    "technologies": ["HTML", "CSS", "JavaScript", "Webpack"],
+    "description": "A minimal to-do web application. Build for Microverse.<br>This project helped me learn how to make a website more interactive using JavaScript.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
     "image": "/images/todo-list.png",
     "repoLink": "https://github.com/piero-vic/to-do-list",
     "demoLink": "https://piero-vic.github.io/to-do-list/dist/",
@@ -46,8 +42,7 @@
   {
     "id": 4,
     "name": "Math Magicians",
-    "description": "Math magicians is a website for all fans of mathematics. Build for Microverse.",
-    "descriptionLong": "This is the first React App I build. It introduced me to one of my favorite tools so far.",
+    "description": "A website for all fans of mathematics. Build for Microverse.<br>This is the first React App I build. It introduced me to one of my favorite tools so far.",
     "technologies": ["React"],
     "image": "/images/math-magicians.png",
     "repoLink": "https://github.com/piero-vic/math-magicians",
@@ -57,8 +52,7 @@
   {
     "id": 5,
     "name": "todo",
-    "description": "A minimal todo list for your terminal.",
-    "descriptionLong": "I really like working withing the command line. CLI tools are some of my favorite apps for this reason. They are also lightweight and simple. I started this project to get familiar with building this kind of tools. I also wanted to practice my Python skills.",
+    "description": "A minimal todo list for your terminal.<br>CLI tools are some of my favorite. I started this project to get familiar with building this kind of tools, and to practice a little bit of Python.",
     "technologies": ["Python", "Typer"],
     "image": "/images/todo-terminal.png",
     "repoLink": "https://github.com/piero-vic/todo",
@@ -68,7 +62,7 @@
   {
     "id": 6,
     "name": "crypto-prices",
-    "description": "A script that requests crypto prices from CoinGecko and writes them to a file in the format required by the Ledger CLI price history.",
+    "description": "A script that requests crypto prices from CoinGecko and writes them to a file in the format compatible with Ledger CLI.",
     "technologies": ["Python", "Ledger CLI", "CoinGecko API"],
     "image": null,
     "repoLink": "https://github.com/piero-vic/crypto-prices",
@@ -79,7 +73,7 @@
     "id": 7,
     "name": "patches",
     "description": "A Collection of VCV Rack Patches. VCV Rack is a virtual modular synthesizer. All preset are text files in JSON format so they work great with version control.",
-    "technologies": ["JSON", "VCV Rack"],
+    "technologies": ["VCV Rack"],
     "image": null,
     "repoLink": "https://github.com/piero-vic/patches",
     "demoLink": null,
