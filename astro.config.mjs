@@ -14,5 +14,10 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
     sitemap: true,
     pageUrlFormat: "directory",
   },
-  renderers: ["@astrojs/renderer-react"],
+  // renderers: [],
+  vite: {
+    ssr: {
+      external: ["svgo"],
+    },
+  },
 });
