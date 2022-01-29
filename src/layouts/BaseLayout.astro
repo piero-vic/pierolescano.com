@@ -1,5 +1,6 @@
 ---
-import DropdownMenu from '../components/DropdownMenu.jsx'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 import '../styles/index.css'
 import { Icon } from 'astro-icon'
 const { title } = Astro.props
@@ -17,54 +18,13 @@ const { title } = Astro.props
 	<body class="font-mono">
 		<div class="text-foreground bg-background">
 			<div class="flex flex-col min-h-screen p-6 mx-auto max-w-screen-xl">
-				<header class="flex items-center justify-between text-blue">
-          <a href="/" class="w-16 h-16 transition hover:scale-110">
-            <Icon name="ph:cube-fill"/>
-          </a>
-          <DropdownMenu client:visible />
-					<nav class="hidden text-lg font-bold sm:block">
-            <ul class="flex gap-4">
-              <li>
-								<a href="/projects" class="hover:underline">Projects</a>
-							</li>
-              <li>
-								<a href="https://medium.com/@piero-vic" class="hover:underline">Blog</a>
-							</li>
-              <li>
-								<a href="/contact" class="hover:underline">Contact</a>
-							</li>
-            </ul>
-					</nav>
-				</header>
-
-				<main class="flex flex-col justify-center grow">
+        <Header />
+	
+        <main class="flex flex-col justify-center grow">
           <slot/>
         </main>
 
-				<footer class="flex flex-wrap items-center justify-between mt-6 gap-2">
-					<ul class="flex gap-2">
-						<li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
-							<a href="https://github.com/piero-vic">
-								<Icon name="prime:github" />
-							</a>
-						</li>
-						<li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
-							<a href="https://www.linkedin.com/in/piero-lescano">
-								<Icon name="prime:linkedin" />
-							</a>
-						</li>
-						<li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
-							<a href="https://www.twitter.com/v1ccenzo">
-								<Icon name="prime:twitter" />
-							</a>
-						</li>
-					</ul>
-					<p class="text-sm">
-						<span class="font-semibold">© 2021-2022 Piero Lescano.</span>
-            Build with <a class="font-semibold text-red hover:underline" href="https://astro.build/">Astro</a>
-            and <a class="font-semibold text-blue hover:underline" href="https://tailwindcss.com/">TailwindCSS</a>.
-					</p>
-				</footer>
+        <Footer />
 			</div>
 		</div>
 	</body>
