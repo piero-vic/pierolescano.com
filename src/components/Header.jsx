@@ -18,11 +18,11 @@ const Header = () => {
       </button>
 
       <nav
-        className={`mt-4 text-lg font-bold sm:mt-0 sm:block ${
+        className={`mt-6 text-lg font-bold sm:mt-0 text-xl sm:block ${
           open ? "block" : "hidden"
-        } transition-all duration-200`}
+        }`}
       >
-        <ul className="flex flex-col sm:flex-row gap-4">
+        <ul className="flex sm:flex-row gap-6 justify-center">
           <li>
             <a href="/projects" className="hover:underline">
               Projects
