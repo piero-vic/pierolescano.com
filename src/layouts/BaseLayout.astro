@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.astro'
+import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.astro'
 import '../styles/index.css'
 import { Icon } from 'astro-icon'
@@ -18,7 +18,7 @@ const { title } = Astro.props
 	<body class="font-mono">
 		<div class="text-foreground bg-background">
 			<div class="flex flex-col min-h-screen p-6 mx-auto max-w-screen-xl">
-        <Header />
+        <Header client:load />
 	
         <main class="flex flex-col justify-center grow">
           <slot/>
