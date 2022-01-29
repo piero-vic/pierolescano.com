@@ -18,45 +18,51 @@ const { title } = Astro.props
 		<div class="text-foreground bg-background">
 			<div class="flex flex-col min-h-screen p-6 mx-auto max-w-screen-xl">
 				<header class="flex items-center justify-between text-blue">
-					<div class="w-16 h-16 transition hover:scale-110">
-            <a href="/">
-						  <Icon name="ph:cube-fill"/>
-            </a>
-					</div>
+          <a href="/" class="w-16 h-16 transition hover:scale-110">
+            <Icon name="ph:cube-fill"/>
+          </a>
           <DropdownMenu client:visible />
-					<nav class="hidden text-lg font-bold sm:flex gap-4">
-						<a href="/projects" class="hover:underline">Projects</a>
-						<a href="https://medium.com/@piero-vic" class="hover:underline">Blog</a>
-						<a href="/contact" class="hover:underline">Contact</a>
+					<nav class="hidden text-lg font-bold sm:block">
+            <ul class="flex gap-4">
+              <li>
+								<a href="/projects" class="hover:underline">Projects</a>
+							</li>
+              <li>
+								<a href="https://medium.com/@piero-vic" class="hover:underline">Blog</a>
+							</li>
+              <li>
+								<a href="/contact" class="hover:underline">Contact</a>
+							</li>
+            </ul>
 					</nav>
 				</header>
 
 				<main class="flex flex-col justify-center grow">
-          <slot></slot>
+          <slot/>
         </main>
 
 				<footer class="flex flex-wrap items-center justify-between mt-6 gap-2">
-					<div class="flex gap-2">
-						<div class="w-6 h-6 transition hover:scale-110 hover:text-blue">
+					<ul class="flex gap-2">
+						<li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
 							<a href="https://github.com/piero-vic">
 								<Icon name="prime:github" />
 							</a>
-						</div>
-						<div class="w-6 h-6 transition hover:scale-110 hover:text-blue">
+						</li>
+						<li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
 							<a href="https://www.linkedin.com/in/piero-lescano">
 								<Icon name="prime:linkedin" />
 							</a>
-						</div>
-						<div class="w-6 h-6 transition hover:scale-110 hover:text-blue">
+						</li>
+						<li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
 							<a href="https://www.twitter.com/v1ccenzo">
 								<Icon name="prime:twitter" />
 							</a>
-						</div>
-					</div>
+						</li>
+					</ul>
 					<p class="text-sm">
-						<span class="font-semibold">© 2021-2022 Piero Lescano.</span> Build with
-						<a class="font-semibold text-red hover:underline" href="https://astro.build/">Astro</a> and
-						<a class="font-semibold text-blue hover:underline" href="https://tailwindcss.com/">TailwindCSS</a>.
+						<span class="font-semibold">© 2021-2022 Piero Lescano.</span>
+            Build with <a class="font-semibold text-red hover:underline" href="https://astro.build/">Astro</a>
+            and <a class="font-semibold text-blue hover:underline" href="https://tailwindcss.com/">TailwindCSS</a>.
 					</p>
 				</footer>
 			</div>
