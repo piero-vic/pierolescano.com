@@ -9,8 +9,8 @@ const articles = json.items;
 
 <BaseLayout title="Home">
   <!-- About -->
-  <section class="flex flex-col justify-end sm:justify-center mt-6 gap-3">
-    <h1 class="text-5xl text-blue font-black">Piero Lescano</h1>
+  <section class="flex flex-col mt-6 gap-3">
+    <h1 class="text-5xl font-black text-blue">Piero Lescano</h1>
     <h2 class="text-2xl">Software Developer</h2>	
     <p>
       <span class="text-red">HTML</span>
@@ -26,10 +26,10 @@ const articles = json.items;
 
   <!-- Blog -->
   <section class="mt-6">
-    <h2 class="mb-0 text-2xl font-bold text-green">Latest Articles</h2>
+    <h2 class="text-2xl font-bold text-green">Latest Articles</h2>
     <ul class="flex flex-col gap-3 max-w-screen-md">
       {articles.map((article) => (
-        <li class="text-sm sm:text-md flex flex-wrap justify-between">
+        <li class="flex flex-wrap justify-between text-sm sm:text-md">
           <a href={article.guid} class="font-semibold">{article.title}</a> 
           <span class="text-blue">{moment(article.pubDate).format('D MMM \'YY')}</span>
         </li>
