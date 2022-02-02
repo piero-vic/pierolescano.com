@@ -1,10 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import moment from 'moment'
-const url = 'https://api.rss2json.com/v1/api.json?rss_url=https%3a%2f%2fmedium.com%2ffeed%2f%40piero-vic';
-const response = await fetch(url);
-const json = await response.json();
-const articles = json.items;
+const articles = await Astro.fetchContent('./blog/*.md');
+articles.reverse()
 ---
 
 <BaseLayout title="Home">
@@ -25,13 +22,17 @@ const articles = json.items;
   </section>
 
   <!-- Blog -->
-  <section class="mt-6">
+  <section class="mt-3">
     <h2 class="text-2xl font-bold text-green">Latest Articles</h2>
     <ul class="flex flex-col gap-3 max-w-screen-md">
       {articles.map((article) => (
-        <li class="flex flex-wrap justify-between text-sm sm:text-md">
-          <a href={article.guid} class="font-semibold">{article.title}</a> 
-          <span class="text-blue">{moment(article.pubDate).format('D MMM \'YY')}</span>
+        <li class="px-3 py-2 -mx-3 text-sm sm:text-md hover:bg-black rounded-xl">
+          <a href={article.url} class="flex flex-wrap justify-between">
+            <span class="font-semibold">{article.title}</span>
+            <span class="text-green">
+              {new Date(article.pubDate).toLocaleString("en-US", {year: "numeric", month: "short", day: "numeric"})}
+            </span>
+          </a>
         </li>
       ))}
     </ul>

@@ -29,7 +29,7 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="https://medium.com/@piero-vic" className="hover:underline">
+            <a href="/blog" className="hover:underline">
               Blog
             </a>
           </li>
