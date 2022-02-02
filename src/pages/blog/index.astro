@@ -1,12 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import moment from 'moment'
-
 const blogPosts = await Astro.fetchContent('./*.md');
 const blogPosts21 = blogPosts.filter((p) => p.pubDate.includes("2021"))
 ---
 
-<BaseLayout title="Blog">
+<BaseLayout title="Blog | Piero Lescano">
   <section class="flex flex-col gap-3">
     <h1 class="text-5xl font-black text-green">Blog</h1>
     <h2 class="max-w-xl text-lg">
