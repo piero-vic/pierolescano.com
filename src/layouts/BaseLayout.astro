@@ -2,12 +2,12 @@
 import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.astro'
-const { title } = Astro.props
+const { title, description } = Astro.props
 ---
 
 <html lang="en">
 	<head>
-    <BaseHead title={title} />
+    <BaseHead title={title} description={description}/>
 	</head>
 	<body class="font-mono">
 		<div class="text-foreground bg-background">

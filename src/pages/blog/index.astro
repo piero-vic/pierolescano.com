@@ -4,14 +4,13 @@ const blogPosts = await Astro.fetchContent('./*.md');
 const blogPosts21 = blogPosts.filter((p) => p.pubDate.includes("2021"))
 ---
 
-<BaseLayout title="Blog | Piero Lescano">
+<BaseLayout title="Blog | Piero Lescano" description="Technical articles, code snippets, and writings on the things I'm learning.">
   <section class="flex flex-col gap-3">
     <h1 class="text-5xl font-black text-green">Blog</h1>
     <h2 class="max-w-xl text-lg">
       Technical articles, code snippets, and writings on the things I'm learning.
     </h2>	
   </section>
-
   <section class="max-w-screen-md">
     <h2 class="my-3 text-2xl font-bold border-b-2 text-green border-b-black">2021</h2>
     <ul class="flex flex-col">
