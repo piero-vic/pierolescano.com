@@ -7,14 +7,20 @@ const Header = () => {
   return (
     <header className="relative items-center justify-between sm:flex text-blue">
       <a href="/" className="block w-16 h-16 transition hover:scale-110">
-        <PhCubeFill />
+        <PhCubeFill aria-hidden="true" focusable="false" />
+        <span class="sr-only">Home</span>
       </a>
 
       <button
         onClick={() => setOpen(!open)}
         className="absolute top-0 right-0 w-8 h-8 my-4 sm:hidden"
       >
-        {open ? <MdiClose /> : <IconoirMenu />}
+        {open ? (
+          <MdiClose aria-hidden="true" focusable="false" />
+        ) : (
+          <IconoirMenu aria-hidden="true" focusable="false" />
+        )}
+        <span class="sr-only">Navbar Button</span>
       </button>
 
       <nav
