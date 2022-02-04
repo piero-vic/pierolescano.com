@@ -1,4 +1,5 @@
 ---
+import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.astro'
 import 'prismjs/themes/prism-tomorrow.min.css'
@@ -7,24 +8,17 @@ const { content } = Astro.props
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/index.css')} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <title>{content.title} | Piero Lescano</title>
+    <BaseHead title={content.title} description={content.description} image={content.image} />
 	</head>
-
 	<body class="font-mono">
 		<div class="text-foreground bg-background">
 			<div class="flex flex-col min-h-screen p-6 mx-auto max-w-screen-xl">
         <Header client:load />
-	
         <main>
           <article class="my-6 sm:my-12 prose prose-sm sm:mx-auto lg:max-w-screen-md dark:prose-invert prose-h1:text-green">
-            <slot/>
+            <slot />
           </article>
         </main>
-
         <Footer />
 			</div>
 		</div>
