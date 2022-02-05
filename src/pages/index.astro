@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PostList from "../components/PostList.astro";
 const articles = await Astro.fetchContent("./blog/*.md");
 articles.reverse();
 ---
@@ -27,28 +28,5 @@ articles.reverse();
     </p>
   </section>
   <!-- Blog -->
-  <section class="max-w-screen-md">
-    <h2 class="my-3 text-2xl font-bold border-b-2 text-green border-b-black">
-      Latest Articles
-    </h2>
-    <ul class="flex flex-col max-w-screen-md">
-      {articles.map(article => (
-        <li>
-          <a
-            href={article.url}
-            class="sm:text-md -mx-3 flex flex-wrap justify-between rounded-xl px-3 py-2 text-sm hover:bg-black"
-          >
-            <span class="font-semibold">{article.title}</span>
-            <span class="text-green">
-              {new Date(article.pubDate).toLocaleString("en-US", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-              })}
-            </span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </section>
+  <PostList heading="Latest Articles" {articles} />
 </BaseLayout>
