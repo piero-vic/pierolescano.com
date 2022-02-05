@@ -1,35 +1,45 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-const articles = await Astro.fetchContent('./blog/*.md');
-articles.reverse()
+import BaseLayout from "../layouts/BaseLayout.astro";
+const articles = await Astro.fetchContent("./blog/*.md");
+articles.reverse();
 ---
 
-<BaseLayout title="Piero Lescano" description="Software developer focused on building CLI tools and web applications.">
+<BaseLayout
+  title="Piero Lescano"
+  description="Software developer focused on building CLI tools and web applications."
+>
   <!-- About -->
   <section class="flex flex-col mt-6 gap-3">
     <h1 class="text-5xl font-black text-blue">Piero Lescano</h1>
-    <h2 class="text-2xl">Software Developer</h2>	
+    <h2 class="text-2xl">Software Developer</h2>
     <p>
       <span class="text-red">HTML</span>
-      <span class="text-cyan">CSS</span> 
-      <span class="text-yellow">JavaScript</span> 
+      <span class="text-cyan">CSS</span>
+      <span class="text-yellow">JavaScript</span>
       <span class="text-blue">React</span>
       <span class="text-green">Python</span>
     </p>
     <p class="max-w-prose">
-      I'm a software developer from Peru whose goal is to build beautiful user experiences and find solutions to unique problems through code. I'm in love with CLI tools and excited about front-end development and the future of blockchain technology.
+      I'm a software developer from Peru whose goal is to build beautiful user
+      experiences and find solutions to unique problems through code. I'm in
+      love with CLI tools and excited about front-end development and the future
+      of blockchain technology.
     </p>
   </section>
   <!-- Blog -->
   <section class="mt-3">
     <h2 class="text-2xl font-bold text-green">Latest Articles</h2>
     <ul class="flex flex-col gap-3 max-w-screen-md">
-      {articles.map((article) => (
-        <li class="px-3 py-2 -mx-3 text-sm sm:text-md hover:bg-black rounded-xl">
+      {articles.map(article => (
+        <li class="sm:text-md -mx-3 rounded-xl px-3 py-2 text-sm hover:bg-black">
           <a href={article.url} class="flex flex-wrap justify-between">
             <span class="font-semibold">{article.title}</span>
             <span class="text-green">
-              {new Date(article.pubDate).toLocaleString("en-US", {year: "numeric", month: "short", day: "numeric"})}
+              {new Date(article.pubDate).toLocaleString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
             </span>
           </a>
         </li>
