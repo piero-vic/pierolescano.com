@@ -1,13 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostList from "../../components/PostList.astro";
 const blogPosts = await Astro.fetchContent("./*.md");
 const blogPosts21 = blogPosts.filter(p => p.pubDate.includes("2021"));
+const blogPosts22 = blogPosts.filter(p => p.pubDate.includes("2022"));
 ---
 
 <BaseLayout
   title="Blog | Piero Lescano"
   description="Technical articles, code snippets, and writings on the things I'm learning."
 >
+  <!-- About -->
   <section class="flex flex-col gap-3">
     <h1 class="text-5xl font-black text-green">Blog</h1>
     <h2 class="max-w-xl text-lg">
@@ -15,24 +18,7 @@ const blogPosts21 = blogPosts.filter(p => p.pubDate.includes("2021"));
       learning.
     </h2>
   </section>
-  <section class="max-w-screen-md">
-    <h2 class="my-3 text-2xl font-bold border-b-2 text-green border-b-black">
-      2021
-    </h2>
-    <ul class="flex flex-col">
-      {blogPosts21.map(article => (
-        <li class="sm:text-md -mx-3 rounded-xl px-3 py-2 text-sm hover:bg-black">
-          <a href={article.url} class="flex flex-wrap justify-between">
-            <span class="font-semibold">{article.title}</span>
-            <span class="text-green">
-              {new Date(article.pubDate).toLocaleString("en-US", {
-                month: "short",
-                day: "numeric",
-              })}
-            </span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </section>
+  <!-- Blog -->
+  {blogPosts22.length > 0 && <PostList heading="2022" articles={blogPosts22} />}
+  {blogPosts21.length > 0 && <PostList heading="2021" articles={blogPosts21} />}
 </BaseLayout>
