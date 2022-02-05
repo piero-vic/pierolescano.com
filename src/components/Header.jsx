@@ -5,15 +5,15 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="relative items-center justify-between sm:flex text-blue">
-      <a href="/" className="block w-16 h-16 transition hover:scale-110">
+    <header className="relative items-center justify-between text-blue sm:flex">
+      <a href="/" className="block h-16 w-16 transition hover:scale-110">
         <PhCubeFill aria-hidden="true" focusable="false" />
         <span class="sr-only">Home</span>
       </a>
 
       <button
         onClick={() => setOpen(!open)}
-        className="absolute top-0 right-0 w-8 h-8 my-4 sm:hidden"
+        className="absolute top-0 right-0 my-4 h-8 w-8 sm:hidden"
       >
         {open ? (
           <MdiClose aria-hidden="true" focusable="false" />
@@ -24,11 +24,11 @@ const Header = () => {
       </button>
 
       <nav
-        className={`mt-6 text-lg font-bold sm:mt-0 text-xl sm:block ${
+        className={`mt-6 text-lg text-xl font-bold sm:mt-0 sm:block ${
           open ? "block" : "hidden"
         }`}
       >
-        <ul className="flex sm:flex-row gap-6 justify-center">
+        <ul className="flex justify-center gap-6 sm:flex-row">
           <li>
             <a href="/projects" className="hover:underline">
               Projects
