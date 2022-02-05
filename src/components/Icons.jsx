@@ -1,6 +1,6 @@
 import React from "react";
 
-export const PhCubeFill = (props) => {
+export const PhCubeFill = props => {
   return (
     <svg viewBox="0 0 256 256" {...props}>
       <path
@@ -11,7 +11,7 @@ export const PhCubeFill = (props) => {
   );
 };
 
-export const IconoirMenu = (props) => {
+export const IconoirMenu = props => {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <g strokeWidth="1.5" fill="none">
@@ -38,7 +38,7 @@ export const IconoirMenu = (props) => {
   );
 };
 
-export const MdiClose = (props) => {
+export const MdiClose = props => {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path

@@ -1,26 +1,32 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.jsx'
-import Footer from '../components/Footer.astro'
-import 'prismjs/themes/prism-tomorrow.min.css'
-const { content } = Astro.props
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.jsx";
+import Footer from "../components/Footer.astro";
+import "prismjs/themes/prism-tomorrow.min.css";
+const { content } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-    <BaseHead title={content.title} description={content.description} image={content.image} />
-	</head>
-	<body class="font-mono">
-		<div class="text-foreground bg-background">
-			<div class="flex flex-col min-h-screen p-6 mx-auto max-w-screen-xl">
+  <head>
+    <BaseHead
+      title={content.title}
+      description={content.description}
+      image={content.image}
+    />
+  </head>
+  <body class="font-mono">
+    <div class="text-foreground bg-background">
+      <div class="flex flex-col min-h-screen p-6 mx-auto max-w-screen-xl">
         <Header client:load />
         <main>
-          <article class="my-6 sm:my-12 prose prose-sm sm:mx-auto lg:max-w-screen-md dark:prose-invert prose-h1:text-green">
+          <article
+            class="my-6 sm:my-12 prose prose-sm sm:mx-auto lg:max-w-screen-md dark:prose-invert prose-h1:text-green"
+          >
             <slot />
           </article>
         </main>
         <Footer />
-			</div>
-		</div>
-	</body>
+      </div>
+    </div>
+  </body>
 </html>
