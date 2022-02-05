@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostList from "../../components/PostList.astro";
 const blogPosts = await Astro.fetchContent("./*.md");
 const blogPosts21 = blogPosts.filter(p => p.pubDate.includes("2021"));
+const blogPosts22 = blogPosts.filter(p => p.pubDate.includes("2022"));
 ---
 
 <BaseLayout
@@ -18,5 +19,6 @@ const blogPosts21 = blogPosts.filter(p => p.pubDate.includes("2021"));
     </h2>
   </section>
   <!-- Blog -->
-  <PostList heading="2021" articles={blogPosts21} />
+  {blogPosts22.length > 0 && <PostList heading="2022" articles={blogPosts22} />}
+  {blogPosts21.length > 0 && <PostList heading="2021" articles={blogPosts21} />}
 </BaseLayout>
