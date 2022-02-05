@@ -1,0 +1,31 @@
+---
+const { heading, articles } = Astro.props;
+
+dateOptions = {
+  month: "short",
+  day: "numeric",
+};
+
+if (!heading.includes("202")) dateOptions.year = "numeric";
+
+const formatDate = date => new Date(date).toLocaleString("en-US", dateOptions);
+---
+
+<section class="max-w-screen-md">
+  <h2 class="my-3 text-2xl font-bold border-b-2 text-green border-b-black">
+    {heading}
+  </h2>
+  <ul class="flex flex-col max-w-screen-md">
+    {articles.map(article => (
+      <li>
+        <a
+          href={article.url}
+          class="sm:text-md -mx-3 flex flex-wrap justify-between rounded-xl px-3 py-2 text-sm hover:bg-black"
+        >
+          <span class="font-semibold">{article.title}</span>
+          <span class="text-green">{formatDate(article.pubDate)}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
