@@ -17,35 +17,38 @@ const spanColors = {
 ---
 
 <li
-  class="min-w-full min-h-[10vh] bg-black p-4 gap-4 rounded-xl md:min-h-full flex flex-col text-center"
+  class="min-w-full min-h-[10vh] bg-black rounded-xl md:min-h-full text-center overflow-hidden"
 >
-  <h3 class="text-xl font-bold text-blue">{project.name}</h3>
-  <ul class="flex justify-center gap-4">
-    {project.repoLink && (
-      <li>
-        <a
-          class="rounded-xl border border-foreground bg-background p-2 font-semibold hover:border-blue hover:text-blue"
-          href={project.repoLink}
-        >
-          Source
-        </a>
-      </li>
-    )}
-    {project.demoLink && (
-      <li>
-        <a
-          class="rounded-xl border border-foreground bg-background p-2 font-semibold hover:border-blue hover:text-blue"
-          href={project.demoLink}
-        >
-          Demo
-        </a>
-      </li>
-    )}
-  </ul>
-  <p class="text-xl">{project.description}</p>
-  <div class="flex flex-wrap mt-4 md:mt-auto mx-auto">
-    {project.technologies.map((tech) => (
+  {project.image && <img src={project.image} alt={project.name}>}
+  <div class="p-4 flex flex-col gap-4">
+    <h3 class="text-xl font-bold text-blue">{project.name}</h3>
+    <ul class="flex justify-center gap-4">
+      {project.repoLink && (
+        <li>
+          <a
+            class="rounded-xl border border-foreground bg-background p-2 font-semibold hover:border-blue hover:text-blue"
+            href={project.repoLink}
+          >
+            Source
+          </a>
+        </li>
+      )}
+      {project.demoLink && (
+        <li>
+          <a
+            class="rounded-xl border border-foreground bg-background p-2 font-semibold hover:border-blue hover:text-blue"
+            href={project.demoLink}
+          >
+            Demo
+          </a>
+        </li>
+      )}
+    </ul>
+    <p class="text-xl">{project.description}</p>
+    <div class="flex flex-wrap mt-4 md:mt-auto mx-auto">
+      {project.technologies.map((tech) => (
       <span class=`font-semibold ${spanColors[tech]} mr-4`>{tech}</span>
     ))}
+    </div>
   </div>
 </li>

@@ -34,7 +34,7 @@
     "name": "ptd",
     "description": "A minimal todo list for your terminal.",
     "technologies": ["Python", "Typer"],
-    "image": "/images/todo-terminal.png",
+    "image": null,
     "repoLink": "https://github.com/piero-vic/ptd",
     "demoLink": null,
     "favorite": false
