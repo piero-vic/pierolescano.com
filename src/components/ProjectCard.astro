@@ -45,10 +45,10 @@ const spanColors = {
       )}
     </ul>
     <p class="text-xl">{project.description}</p>
-    <div class="flex flex-wrap mt-4 md:mt-auto mx-auto">
+    <div class="flex flex-wrap justify-center">
       {project.technologies.map((tech) => (
-      <span class=`font-semibold ${spanColors[tech]} mr-4`>{tech}</span>
-    ))}
+        <span class=`font-semibold ${spanColors[tech]} mx-2`>{tech}</span>
+      ))}
     </div>
   </div>
 </li>
