@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name": "Coding Bootcamp Webpage",
-    "description": "This was the first capstone project I built during Microverse.<br>It helped me to learn a lot of HTML, CSS, and a little bit of JavaScript.",
+    "description": "Website project for Module 1 of Microverse.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "image": "/images/coding-bootcamp.png",
     "repoLink": "https://github.com/piero-vic/conference-website",
@@ -11,18 +11,8 @@
   },
   {
     "id": 1,
-    "name": "Personal Website",
-    "description": "Personal website build with the modern static site builder Astro.<br>Astro allows me use other libraries or frameworks like React or Vue on top of it but it generates the website with zero client-side JavaScript, by default.<br>However, Astro can hydrate individual components and leave the rest of your site as static HTML.",
-    "technologies": ["Astro", "TailwindCSS"],
-    "image": null,
-    "repoLink": "https://github.com/piero-vic/astro-website",
-    "demoLink": null,
-    "favorite": false
-  },
-  {
-    "id": 2,
     "name": "Leaderboard",
-    "description": "Another Microverse project. This project helped me expand my knowledge of JavaScript. The main goal was to get familiar with how to get and post data from an API",
+    "description": "Leaderboard project for Microverse.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "image": "/images/leaderboard.png",
     "repoLink": "https://github.com/piero-vic/Leaderboard",
@@ -30,9 +20,9 @@
     "favorite": false
   },
   {
-    "id": 3,
+    "id": 2,
     "name": "ToDo List",
-    "description": "A minimal to-do web application. Build for Microverse.<br>This project helped me learn how to make a website more interactive using JavaScript.",
+    "description": "A minimal to-do web application.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "image": "/images/todo-list.png",
     "repoLink": "https://github.com/piero-vic/to-do-list",
@@ -40,29 +30,19 @@
     "favorite": false
   },
   {
-    "id": 4,
-    "name": "Math Magicians",
-    "description": "A website for all fans of mathematics. Build for Microverse.<br>This is the first React App I build. It introduced me to one of my favorite tools so far.",
-    "technologies": ["React"],
-    "image": "/images/math-magicians.png",
-    "repoLink": "https://github.com/piero-vic/math-magicians",
-    "demoLink": null,
-    "favorite": false
-  },
-  {
-    "id": 5,
-    "name": "todo",
-    "description": "A minimal todo list for your terminal.<br>CLI tools are some of my favorite. I started this project to get familiar with building this kind of tools, and to practice a little bit of Python.",
+    "id": 3,
+    "name": "ptd",
+    "description": "A minimal todo list for your terminal.",
     "technologies": ["Python", "Typer"],
-    "image": "/images/todo-terminal.png",
-    "repoLink": "https://github.com/piero-vic/todo",
+    "image": null,
+    "repoLink": "https://github.com/piero-vic/ptd",
     "demoLink": null,
     "favorite": false
   },
   {
-    "id": 6,
+    "id": 4,
     "name": "crypto-prices",
-    "description": "A script that requests crypto prices from CoinGecko and writes them to a file in the format compatible with Ledger CLI.",
+    "description": "Crypto prices for the Ledger CLI.",
     "technologies": ["Python", "Ledger CLI", "CoinGecko API"],
     "image": null,
     "repoLink": "https://github.com/piero-vic/crypto-prices",
@@ -70,17 +50,7 @@
     "favorite": false
   },
   {
-    "id": 7,
-    "name": "patches",
-    "description": "A Collection of VCV Rack Patches. VCV Rack is a virtual modular synthesizer. All preset are text files in JSON format so they work great with version control.",
-    "technologies": ["VCV Rack"],
-    "image": null,
-    "repoLink": "https://github.com/piero-vic/patches",
-    "demoLink": null,
-    "favorite": false
-  },
-  {
-    "id": 8,
+    "id": 5,
     "name": "ani-py",
     "description": "A cli tool to download and stream anime from jkanime.",
     "technologies": ["Python", "Typer"],
