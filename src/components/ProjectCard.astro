@@ -4,14 +4,14 @@ import ProjectLink from "./ProjectLink.astro";
 const { project } = Astro.props;
 ---
 
-<li
+<div
   class="flex flex-col min-w-full min-h-[10vh] bg-black rounded-xl md:min-h-full overflow-hidden"
 >
   {project.image && <img src={project.image} alt={project.name}>}
   <div class="p-4 flex flex-col gap-4 grow">
     <h3 class="text-xl font-bold text-blue">{project.name}</h3>
     <p>{project.description}</p>
-    <div class="flex justify-end gap-2 mt-auto">
+    <div class="flex justify-end gap-3 mt-auto">
       {project.demoLink && (
         <ProjectLink text="Demo" icon="prime:globe" link={project.demoLink} />
       )}
@@ -24,4 +24,4 @@ const { project } = Astro.props;
       )}
     </div>
   </div>
-</li>
+</div>

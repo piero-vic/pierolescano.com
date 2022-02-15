@@ -8,9 +8,7 @@ import ProjectCard from "../components/ProjectCard.astro";
   title="Projects | Piero Lescano"
   description="Software developer focused on building CLI tools and web applications."
 >
-  <section class="mt-6">
-    <ul class="grid gap-5 md:grid-cols-3 place-items-center">
-      {projects.map(project => <ProjectCard project={project} />)}
-    </ul>
+  <section class="mt-6 grid gap-5 md:grid-cols-3 place-items-center">
+    {projects.map(project => <ProjectCard project={project} />)}
   </section>
 </BaseLayout>
