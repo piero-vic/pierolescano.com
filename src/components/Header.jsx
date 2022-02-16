@@ -8,7 +8,7 @@ const Header = () => {
     <header className="relative items-center justify-between text-blue sm:flex">
       <a href="/" className="block h-16 w-16 transition hover:scale-110">
         <PhCubeFill aria-hidden="true" focusable="false" />
-        <span class="sr-only">Home</span>
+        <span className="sr-only">Home</span>
       </a>
 
       <button
@@ -20,11 +20,11 @@ const Header = () => {
         ) : (
           <IconoirMenu aria-hidden="true" focusable="false" />
         )}
-        <span class="sr-only">Navbar Button</span>
+        <span className="sr-only">Navbar Button</span>
       </button>
 
       <nav
-        className={`mt-6 text-lg text-xl font-bold sm:mt-0 sm:block ${
+        className={`mt-6 text-lg font-bold sm:mt-0 sm:block ${
           open ? "block" : "hidden"
         }`}
       >
