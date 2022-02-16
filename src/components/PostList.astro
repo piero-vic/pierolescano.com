@@ -1,12 +1,9 @@
 ---
 const { heading, articles } = Astro.props;
 
-dateOptions = {
-  month: "short",
-  day: "numeric",
-};
+dateOptions = { month: "short", day: "numeric" };
 
-if (!heading.includes("202")) dateOptions.year = "numeric";
+if (!parseInt(heading)) dateOptions.year = "numeric";
 
 const formatDate = date => new Date(date).toLocaleString("en-US", dateOptions);
 ---
