@@ -30,17 +30,26 @@ const Header = () => {
       >
         <ul className="flex justify-center gap-6 sm:flex-row">
           <li>
-            <a href="/projects" className="hover:underline">
+            <a
+              href="/projects"
+              className="decoration-2 underline-offset-4 hover:underline"
+            >
               Projects
             </a>
           </li>
           <li>
-            <a href="/blog" className="hover:underline">
+            <a
+              href="/blog"
+              className="decoration-2 underline-offset-4 hover:underline"
+            >
               Blog
             </a>
           </li>
           <li>
-            <a href="/contact" className="hover:underline">
+            <a
+              href="/contact"
+              className="decoration-2 underline-offset-4 hover:underline"
+            >
               Contact
             </a>
           </li>
