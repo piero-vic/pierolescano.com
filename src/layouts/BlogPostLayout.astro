@@ -10,21 +10,19 @@ const { title, description, image } = Astro.props.content;
   <head>
     <BaseHead {title} {description} {image} />
   </head>
-  <body class="font-mono">
-    <div class="text-foreground bg-background">
-      <div
-        class="flex flex-col min-h-screen p-6 mx-auto xl:max-w-screen-lg 2xl:max-w-screen-xl"
-      >
-        <Header client:load />
-        <main>
-          <article
-            class="my-6 sm:my-12 prose prose-sm sm:mx-auto lg:max-w-screen-md dark:prose-invert prose-h1:text-green"
-          >
-            <slot />
-          </article>
-        </main>
-        <Footer />
-      </div>
+  <body class="font-mono text-foreground bg-background">
+    <div
+      class="flex flex-col min-h-screen p-6 mx-auto xl:max-w-screen-lg 2xl:max-w-screen-xl"
+    >
+      <Header client:load />
+      <main>
+        <article
+          class="my-6 sm:my-12 prose prose-sm sm:mx-auto lg:max-w-screen-md prose-invert prose-h1:text-green"
+        >
+          <slot />
+        </article>
+      </main>
+      <Footer />
     </div>
   </body>
 </html>
