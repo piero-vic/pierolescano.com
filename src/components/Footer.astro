@@ -1,37 +1,38 @@
 ---
-import { Icon } from "astro-icon";
+import SocialMediaLink from "./SocialMediaLink.astro";
 ---
 
 <footer class="flex flex-wrap items-center justify-between mt-6 gap-2">
   <ul class="flex gap-2">
-    <li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
-      <a href="https://github.com/piero-vic">
-        <Icon name="prime:github" aria-hidden="true" focusable="false" />
-        <span class="sr-only">GitHub</span>
-      </a>
-    </li>
-    <li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
-      <a href="https://www.linkedin.com/in/piero-lescano">
-        <Icon name="prime:linkedin" aria-hidden="true" focusable="false" />
-        <span class="sr-only">LinkedIn</span>
-      </a>
-    </li>
-    <li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
-      <a href="https://www.twitter.com/v1ccenzo">
-        <Icon name="prime:twitter" aria-hidden="true" focusable="false" />
-        <span class="sr-only">Twitter</span>
-      </a>
-    </li>
+    <SocialMediaLink
+      text="GitHub"
+      icon="prime:github"
+      url="https://github.com/piero-vic"
+    />
+    <SocialMediaLink
+      text="LinkedIn"
+      icon="prime:linkedin"
+      url="https://www.linkedin.com/in/piero-lescano"
+    />
+    <SocialMediaLink
+      text="Twitter"
+      icon="prime:twitter"
+      url="https://www.twitter.com/v1ccenzo"
+    />
   </ul>
   <p class="text-sm">
     <span class="font-semibold">© 2021-2022 Piero Lescano.</span>
     Build with <a
-      class="font-semibold text-red hover:underline"
-      href="https://astro.build/">Astro</a
+      class="font-semibold text-red decoration-2 underline-offset-4 hover:underline"
+      href="https://astro.build/"
+      target="_blank"
+      rel="noopener noreferrer">Astro</a
     >
     and <a
-      class="font-semibold text-blue hover:underline"
-      href="https://tailwindcss.com/">TailwindCSS</a
+      class="font-semibold text-blue decoration-2 underline-offset-4 hover:underline"
+      href="https://tailwindcss.com/"
+      target="_blank"
+      rel="noopener noreferrer">TailwindCSS</a
     >.
   </p>
 </footer>
