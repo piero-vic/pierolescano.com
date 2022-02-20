@@ -1,11 +1,18 @@
 ---
 const { heading, articles } = Astro.props;
 
-dateOptions = { month: "short", day: "numeric" };
+articles.forEach(article => {
+  article.pubDate = new Date(article.pubDate);
+});
 
+articles.sort((a, b) => b.pubDate - a.pubDate);
+
+dateOptions = { month: "short", day: "numeric" };
 if (!parseInt(heading)) dateOptions.year = "numeric";
 
-const formatDate = date => new Date(date).toLocaleString("en-US", dateOptions);
+articles.forEach(article => {
+  article.pubDate = article.pubDate.toLocaleString("en-US", dateOptions);
+});
 ---
 
 <section class="max-w-screen-md">
@@ -20,7 +27,7 @@ const formatDate = date => new Date(date).toLocaleString("en-US", dateOptions);
           class="sm:text-md -mx-3 flex flex-wrap justify-between rounded-xl px-3 py-2 text-sm hover:bg-black"
         >
           <span class="font-semibold">{article.title}</span>
-          <span class="text-green">{formatDate(article.pubDate)}</span>
+          <span class="text-green">{article.pubDate}</span>
         </a>
       </li>
     ))}
