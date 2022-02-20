@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostList from "../components/PostList.astro";
 const articles = await Astro.fetchContent("./blog/*.md");
-articles.reverse();
 ---
 
 <BaseLayout
