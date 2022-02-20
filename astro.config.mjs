@@ -20,4 +20,17 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
       external: ["svgo"],
     },
   },
+  markdownOptions: {
+    render: [
+      "@astrojs/markdown-remark",
+      {
+        syntaxHighlight: "shiki",
+        shikiConfig: {
+          theme: "material-palenight",
+          langs: [],
+          wrap: false,
+        },
+      },
+    ],
+  },
 });
