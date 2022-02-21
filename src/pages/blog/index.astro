@@ -1,15 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostList from "../../components/PostList.astro";
-const blogPosts = await Astro.fetchContent("./*.md");
+
+const title = "Blog | Piero Lescano";
+const description = "Technical articles, code snippets, and writings on the things I'm learning.";
+
+const blogPosts = Astro.fetchContent("./*.md");
 const blogPosts21 = blogPosts.filter(p => p.pubDate.includes("2021"));
 const blogPosts22 = blogPosts.filter(p => p.pubDate.includes("2022"));
 ---
 
-<BaseLayout
-  title="Blog | Piero Lescano"
-  description="Technical articles, code snippets, and writings on the things I'm learning."
->
+<BaseLayout {title} {description}>
   <!-- About -->
   <section class="flex flex-col gap-3">
     <h1 class="text-5xl font-black text-green">Blog</h1>
