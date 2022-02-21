@@ -5,7 +5,7 @@ import PostList from "../components/PostList.astro";
 const title = "Piero Lescano";
 const description = "Software developer focused on building CLI tools and web applications.";
 
-const articles = Astro.fetchContent("./blog/*.md");
+const posts = Astro.fetchContent("./blog/*.md");
 ---
 
 <BaseLayout {title} {description}>
@@ -28,5 +28,5 @@ const articles = Astro.fetchContent("./blog/*.md");
     </p>
   </section>
   <!-- Blog -->
-  <PostList heading="Latest Articles" {articles} />
+  <PostList heading="Latest Articles" {posts} />
 </BaseLayout>

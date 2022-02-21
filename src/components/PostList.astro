@@ -1,17 +1,17 @@
 ---
-const { heading, articles } = Astro.props;
+const { heading, posts } = Astro.props;
 
-articles.forEach(article => {
-  article.pubDate = new Date(article.pubDate);
+posts.forEach(post => {
+  post.pubDate = new Date(post.pubDate);
 });
 
-articles.sort((a, b) => b.pubDate - a.pubDate);
+posts.sort((a, b) => b.pubDate - a.pubDate);
 
-dateOptions = { month: "short", day: "numeric" };
+const dateOptions = { month: "short", day: "numeric" };
 if (!parseInt(heading)) dateOptions.year = "numeric";
 
-articles.forEach(article => {
-  article.pubDate = article.pubDate.toLocaleString("en-US", dateOptions);
+posts.forEach(post => {
+  post.pubDate = post.pubDate.toLocaleString("en-US", dateOptions);
 });
 ---
 
@@ -20,14 +20,14 @@ articles.forEach(article => {
     {heading}
   </h2>
   <ul class="flex flex-col max-w-screen-md">
-    {articles.map(article => (
+    {posts.map(post => (
       <li>
         <a
-          href={article.url}
+          href={post.url}
           class="sm:text-md -mx-3 flex flex-wrap justify-between rounded-xl px-3 py-2 text-sm hover:bg-black"
         >
-          <span class="font-semibold">{article.title}</span>
-          <span class="text-green">{article.pubDate}</span>
+          <span class="font-semibold">{post.title}</span>
+          <span class="text-green">{post.pubDate}</span>
         </a>
       </li>
     ))}

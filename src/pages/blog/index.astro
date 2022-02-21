@@ -5,9 +5,9 @@ import PostList from "../../components/PostList.astro";
 const title = "Blog | Piero Lescano";
 const description = "Technical articles, code snippets, and writings on the things I'm learning.";
 
-const blogPosts = Astro.fetchContent("./*.md");
-const blogPosts21 = blogPosts.filter(p => p.pubDate.includes("2021"));
-const blogPosts22 = blogPosts.filter(p => p.pubDate.includes("2022"));
+const posts = Astro.fetchContent("./*.md");
+const posts21 = posts.filter(post => post.pubDate.includes("2021"));
+const posts22 = posts.filter(post => post.pubDate.includes("2022"));
 ---
 
 <BaseLayout {title} {description}>
@@ -20,6 +20,6 @@ const blogPosts22 = blogPosts.filter(p => p.pubDate.includes("2022"));
     </h2>
   </section>
   <!-- Blog -->
-  {blogPosts22.length > 0 && <PostList heading="2022" articles={blogPosts22} />}
-  {blogPosts21.length > 0 && <PostList heading="2021" articles={blogPosts21} />}
+  <PostList heading="2022" posts={posts22} />
+  <PostList heading="2021" posts={posts21} />
 </BaseLayout>
