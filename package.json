@@ -12,7 +12,7 @@
   "devDependencies": {
     "@astrojs/renderer-react": "^0.5.0",
     "@tailwindcss/typography": "^0.5.1",
-    "astro": "^0.21.5",
+    "astro": "^0.23.0",
     "astro-icon": "^0.5.3",
     "autoprefixer": "^10.4.0",
     "prettier": "^2.5.1",
