@@ -9,7 +9,7 @@
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
   buildOptions: {
-    site: "http://www.pierolescano.com/",
+    site: "https://www.pierolescano.com/",
     sitemap: true,
     pageUrlFormat: "directory",
   },

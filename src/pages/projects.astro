@@ -1,13 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import projects from "../data/projects.json";
 import ProjectCard from "../components/ProjectCard.astro";
+
+import { projects } from "../data";
+
+const title="Projects | Piero Lescano";
+const description="Software developer focused on building CLI tools and web applications.";
 ---
 
-<BaseLayout
-  title="Projects | Piero Lescano"
-  description="Software developer focused on building CLI tools and web applications."
->
+<BaseLayout {title} {description}>
   <section class="mt-6 grid gap-5 md:grid-cols-3 place-items-center">
     {projects.map(project => <ProjectCard project={project} />)}
   </section>
