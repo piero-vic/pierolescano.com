@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BaseLayout.astro
 title: Boost your command line productivity
 author: Piero Lescano
 pubDate: 2021-12-10

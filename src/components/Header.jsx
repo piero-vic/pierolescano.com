@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { PhCubeFill, IconoirMenu, MdiClose } from "./Icons.jsx";
+import { PhCubeFill } from "./Icons.jsx";
+import NavbarButton from "./NavbarButton.jsx";
+import NavbarLink from "./NavbarLink.jsx";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -11,48 +13,13 @@ const Header = () => {
         <span className="sr-only">Home</span>
       </a>
 
-      <button
-        onClick={() => setOpen(!open)}
-        className="absolute top-0 right-0 my-4 h-8 w-8 sm:hidden"
-      >
-        {open ? (
-          <MdiClose aria-hidden="true" focusable="false" />
-        ) : (
-          <IconoirMenu aria-hidden="true" focusable="false" />
-        )}
-        <span className="sr-only">Navbar Button</span>
-      </button>
+      <NavbarButton open={open} setOpen={setOpen} />
 
-      <nav
-        className={`mt-6 text-lg font-bold sm:mt-0 sm:block ${
-          open ? "block" : "hidden"
-        }`}
-      >
+      <nav className={`mt-6 text-lg font-bold sm:mt-0 sm:block ${open ? "block" : "hidden"}`}>
         <ul className="flex justify-center gap-6 sm:flex-row">
-          <li>
-            <a
-              href="/projects"
-              className="decoration-2 underline-offset-4 hover:underline"
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="/blog"
-              className="decoration-2 underline-offset-4 hover:underline"
-            >
-              Blog
-            </a>
-          </li>
-          <li>
-            <a
-              href="/contact"
-              className="decoration-2 underline-offset-4 hover:underline"
-            >
-              Contact
-            </a>
-          </li>
+          <NavbarLink text="Projects" path="/projects" />
+          <NavbarLink text="Blog" path="/blog" />
+          <NavbarLink text="Contact" path="/contact" />
         </ul>
       </nav>
     </header>
