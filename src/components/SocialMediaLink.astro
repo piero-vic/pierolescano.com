@@ -1,11 +1,11 @@
 ---
 import { Icon } from "astro-icon";
-const { text, icon, url } = Astro.props;
+const { name, url } = Astro.props;
 ---
 
 <li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
   <a href={url} target="_blank" rel="noopener noreferrer">
-    <Icon name={icon} aria-hidden="true" focusable="false" />
-    <span class="sr-only">{text}</span>
+    <Icon pack="prime" name={name.toLowerCase()} aria-hidden="true" focusable="false" />
+    <span class="sr-only">{name}</span>
   </a>
 </li>

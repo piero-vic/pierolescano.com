@@ -42,3 +42,9 @@ export const projects = [
     demoLink: null,
   },
 ];
+
+export const socialMedia = {
+  Github: "https://github.com/piero-vic",
+  LinkedIn: "https://www.linkedin.com/in/piero-lescano",
+  Twitter: "https://www.twitter.com/v1ccenzo"
+};
