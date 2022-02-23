@@ -1,37 +1,35 @@
 ---
-const { title, description, image } = Astro.props;
-const mainTitle = title.includes("Piero Lescano")
-  ? title
-  : `${title} | Piero Lescano`;
+import { twitter } from '../data.js';
+const { card, site, creator } = twitter;
+
+const canonicalURL = Astro.request.canonicalURL
+const { title, description, type, image, imageAlt } = Astro.props.content;
+const pageTitle = title.includes("Piero Lescano") ? title : `${title} | Piero Lescano`;
 ---
 
 <meta charset="utf-8" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, viewport-fit=cover"
-/>
-<title>{mainTitle}</title>
-<link
-  rel="stylesheet"
-  type="text/css"
-  href={Astro.resolve("../styles/index.css")}
-/>
+<meta name="viewport" content="width=device-width" />
+
+{title ? <title>{pageTitle}</title> : null}
+{description ? <meta name="description" content={description} /> : null}
+{image ? <meta name="image" content={image} /> : null}
+
+<link rel="canonical" href={canonicalURL} />
+<link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/index.css")} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="description" content={description} />
-<!-- Open Graph Meta Tags -->
-<meta property="og:url" content="https://piero-vic.github.io" />
-<meta property="og:type" content="website" />
-<meta name="og:title" content={title} />
-<meta name="og:description" content={description} />
-<meta name="og:image" content={image || "https://piero-vic.github.io/logo.png"}
-/>
-<!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@v1ccenzo" />
-<meta name="twitter:creator" content="@v1ccenzo" />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
-<meta
-  name="twitter:image"
-  content={image || "https://piero-vic.github.io/logo.png"}
-/>
+
+<!-- Open Graph Tags -->
+<meta property="og:type" content={type} />
+<link rel="og:url" href={canonicalURL} />
+{title ? <meta name="og:title" content={title} /> : null}
+{description ? <meta name="og:description" content={description} /> : null}
+{image ? <meta name="og:image" content={image} /> : null}
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content={card} />
+<meta name="twitter:site" content={site} />
+<meta name="twitter:creator" content={creator} />
+{title ? <meta name="twitter:title" content={title} /> : null}
+{description ? <meta name="twitter:description" content={description} /> : null}
+{image ? <meta name="twitter:image" content={image} /> : null}
+{imageAlt ? <meta name="twitter:image:alt" content={imageAlt} /> : null}

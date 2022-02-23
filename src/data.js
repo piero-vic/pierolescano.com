@@ -48,3 +48,15 @@ export const socialMedia = {
   LinkedIn: "https://www.linkedin.com/in/piero-lescano",
   Twitter: "https://www.twitter.com/v1ccenzo"
 };
+
+export const twitter = {
+  card: "summary",
+  site: "@v1ccenzo",
+  creator: "@v1ccenzo",
+}
+
+export const website = {
+  type: "website",
+  image: "https://pierolescano.com/logo.png",
+  imageAlt: "piero lescano logo",
+}

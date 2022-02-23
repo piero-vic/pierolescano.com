@@ -3,16 +3,19 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
 
+import { website } from "../data.js";
+
 const { content = {}, title, description } = Astro.props;
-const isArticle = Object.keys(content).length != 0;
+
+const isArticle = Object.keys(content).length > 0;
 ---
 
 <html lang="en">
   <head>
     <BaseHead
-      title={isArticle ? content.title : title}
-      description={isArticle ? content.description : description}
-      image={isArticle && content.image}
+      content={isArticle
+        ? { ...content, type: "article" }
+        : { ...website, title: title, description: description }}
     />
   </head>
   <body class="font-mono text-foreground bg-background">
