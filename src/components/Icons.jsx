@@ -1,5 +1,3 @@
-import React from "react";
-
 export const PhCubeFill = props => {
   return (
     <svg viewBox="0 0 256 256" {...props}>

@@ -1,10 +1,12 @@
 ---
-import { twitter } from '../data.js';
+import { twitter } from "../data.js";
 const { card, site, creator } = twitter;
 
-const canonicalURL = Astro.request.canonicalURL
+const canonicalURL = Astro.request.canonicalURL;
 const { title, description, type, image, imageAlt } = Astro.props.content;
-const pageTitle = title.includes("Piero Lescano") ? title : `${title} | Piero Lescano`;
+const pageTitle = title.includes("Piero Lescano")
+  ? title
+  : `${title} | Piero Lescano`;
 ---
 
 <meta charset="utf-8" />
