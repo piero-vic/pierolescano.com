@@ -1,15 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import ProjectList from "../components/ProjectList.astro";
 
 import { projects } from "../data";
+const webProjects = projects.filter(p => p.category === "web");
+const cliProjects = projects.filter(p => p.category === "cli");
 
-const title="Projects | Piero Lescano";
-const description="Software developer focused on building CLI tools and web applications.";
+const title = "Projects | Piero Lescano";
+const description =
+  "Software developer focused on building CLI tools and web applications.";
 ---
 
 <BaseLayout {title} {description}>
-  <section class="mt-6 grid gap-5 md:grid-cols-3 place-items-center">
-    {projects.map(project => <ProjectCard project={project} />)}
-  </section>
+  <ProjectList projects={webProjects} heading="Web" />
+  <ProjectList projects={cliProjects} heading="CLI" />
 </BaseLayout>

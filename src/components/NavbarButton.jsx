@@ -1,4 +1,3 @@
-import React from "react";
 import { IconoirMenu, MdiClose } from "./Icons.jsx";
 
 const NavbarButton = props => {

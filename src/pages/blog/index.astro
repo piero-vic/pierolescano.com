@@ -3,7 +3,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostList from "../../components/PostList.astro";
 
 const title = "Blog | Piero Lescano";
-const description = "Technical articles, code snippets, and writings on the things I'm learning.";
+const description =
+  "Technical articles, code snippets, and writings on the things I'm learning.";
 
 const posts = Astro.fetchContent("./*.md");
 const posts21 = posts.filter(post => post.pubDate.includes("2021"));

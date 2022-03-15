@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { PhCubeFill } from "./Icons.jsx";
 import NavbarButton from "./NavbarButton.jsx";
 import NavbarLink from "./NavbarLink.jsx";
@@ -15,7 +15,11 @@ const Header = () => {
 
       <NavbarButton open={open} setOpen={setOpen} />
 
-      <nav className={`mt-6 text-lg font-bold sm:mt-0 sm:block ${open ? "block" : "hidden"}`}>
+      <nav
+        className={`mt-6 text-lg font-bold sm:mt-0 sm:block ${
+          open ? "block" : "hidden"
+        }`}
+      >
         <ul className="flex justify-center gap-6 sm:flex-row">
           <NavbarLink text="Projects" path="/projects" />
           <NavbarLink text="Blog" path="/blog" />
