@@ -29,5 +29,5 @@ const posts = Astro.fetchContent("./blog/*.md");
     </p>
   </section>
   <!-- Blog -->
-  <PostList heading="Latest Articles" {posts} />
+  <PostList heading="Latest Articles" {posts} dateFormat="MMM D, YYYY" />
 </BaseLayout>
