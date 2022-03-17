@@ -29,22 +29,27 @@ const isArticle = Object.keys(content).length > 0;
           <article class="prose prose-invert mx-auto max-w-screen-md prose-headings:text-green prose-a:text-green">
             <slot />
           </article>
-          <section class="giscus mx-auto mt-10 max-w-screen-md">
-            <script
-              src="https://giscus.app/client.js"
-              data-repo="piero-vic/pierolescano.com"
-              data-repo-id="R_kgDOGd9pjg"
-              data-category="Comments"
-              data-category-id="DIC_kwDOGd9pjs4CBO-U"
-              data-mapping="pathname"
-              data-reactions-enabled="1"
-              data-emit-metadata="0"
-              data-input-position="bottom"
-              data-theme="transparent_dark"
-              data-lang="en"
-              crossorigin="anonymous"
-              async
-            ></script>
+          <section class="mx-auto max-w-screen-md">
+            <h2 class="mt-[2em] mb-[1em] border-b-2 border-b-black text-2xl font-bold text-green">
+              Comments
+            </h2>
+            <div class="giscus">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="piero-vic/pierolescano.com"
+                data-repo-id="R_kgDOGd9pjg"
+                data-category="Comments"
+                data-category-id="DIC_kwDOGd9pjs4CBO-U"
+                data-mapping="pathname"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="transparent_dark"
+                data-lang="en"
+                crossorigin="anonymous"
+                async
+              ></script>
+            </div>
           </section>
         </main>
       ) : (
