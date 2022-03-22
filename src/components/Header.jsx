@@ -7,7 +7,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="relative items-center justify-between text-blue sm:flex">
+    <header className="relative mb-6 items-center justify-between text-blue sm:flex">
       <a href="/" className="block h-16 w-16 transition hover:scale-110">
         <PhCubeFill aria-hidden="true" focusable="false" />
         <span className="sr-only">Home</span>
