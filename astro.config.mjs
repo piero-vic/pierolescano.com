@@ -1,19 +1,15 @@
-// Full Astro Configuration API Documentation:
-// https://docs.astro.build/reference/configuration-reference
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
+import tailwind from "@astrojs/tailwind";
 
-// @type-check enabled!
-// VSCode and other TypeScript-enabled text editors will provide auto-completion,
-// helpful tooltips, and warnings if your exported object is invalid.
-// You can disable this by removing "@ts-check" and `@type` comments below.
-
-// @ts-check
-export default /** @type {import('astro').AstroUserConfig} */ ({
+// https://astro.build/config
+export default defineConfig({
   buildOptions: {
     site: "https://www.pierolescano.com/",
     sitemap: true,
     pageUrlFormat: "directory",
   },
-  renderers: ["@astrojs/renderer-react"],
+  integrations: [react(), tailwind()],
   vite: {
     ssr: {
       external: ["svgo"],
