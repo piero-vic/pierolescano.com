@@ -15,12 +15,14 @@ const posts22 = posts.filter(post => post.pubDate.includes("2022"));
   <!-- About -->
   <section class="flex flex-col gap-3">
     <h1 class="text-5xl font-black text-green">Blog</h1>
-    <h2 class="max-w-xl text-lg">
+    <p class="max-w-prose">
       Technical articles, code snippets, and writings on the things I'm
       learning.
-    </h2>
+    </p>
   </section>
   <!-- Blog -->
-  <PostList heading="2022" posts={posts22} />
-  <PostList heading="2021" posts={posts21} />
+  <div>
+    <PostList heading="2022" posts={posts22} dateFormat="MMM D" />
+    <PostList heading="2021" posts={posts21} dateFormat="MMM D" />
+  </div>
 </BaseLayout>

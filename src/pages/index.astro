@@ -11,9 +11,8 @@ const posts = Astro.fetchContent("./blog/*.md");
 
 <BaseLayout {title} {description}>
   <!-- About -->
-  <section class="flex flex-col mt-6 gap-3">
-    <h1 class="text-5xl font-black text-blue">Piero Lescano</h1>
-    <h2 class="text-2xl">Software Developer</h2>
+  <section class="flex flex-col gap-3">
+    <h1 class="text-5xl font-black text-blue">Hi, I'm Piero.</h1>
     <p>
       <span class="text-red">HTML</span>
       <span class="text-cyan">CSS</span>
@@ -24,10 +23,12 @@ const posts = Astro.fetchContent("./blog/*.md");
     <p class="max-w-prose">
       I'm a software developer from Peru whose goal is to build beautiful user
       experiences and find solutions to unique problems through code. I'm in
-      love with CLI tools and excited about front-end development and the future
-      of blockchain technology.
+      love with <abbr title="command-line interface" class="no-underline"
+        >CLI</abbr
+      > tools and excited about front-end development and the future of blockchain
+      technology.
     </p>
   </section>
   <!-- Blog -->
-  <PostList heading="Latest Articles" {posts} />
+  <PostList heading="Latest Articles" {posts} dateFormat="MMM D, YYYY" />
 </BaseLayout>
