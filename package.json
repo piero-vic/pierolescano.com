@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
     "format": "prettier -w ."
@@ -16,6 +16,7 @@
     "astro": "^0.25.3",
     "astro-icon": "^0.6.1",
     "autoprefixer": "^10.4.4",
+    "dayjs": "^1.11.0",
     "prettier": "^2.6.1",
     "prettier-plugin-astro": "^0.0.12",
     "prettier-plugin-tailwindcss": "^0.1.8",

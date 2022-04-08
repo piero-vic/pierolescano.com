@@ -1,18 +1,12 @@
 ---
-const { heading, posts } = Astro.props;
+import dayjs from "dayjs";
+const { heading, posts, dateFormat } = Astro.props;
 
 posts.forEach(post => {
-  post.pubDate = new Date(post.pubDate);
+  post.pubDate = dayjs(post.pubDate);
 });
 
 posts.sort((a, b) => b.pubDate - a.pubDate);
-
-const dateOptions = { month: "short", day: "numeric" };
-if (!parseInt(heading)) dateOptions.year = "numeric";
-
-posts.forEach(post => {
-  post.pubDate = post.pubDate.toLocaleString("en-US", dateOptions);
-});
 ---
 
 <section class="max-w-screen-md">
@@ -27,7 +21,9 @@ posts.forEach(post => {
           class="sm:text-md -mx-3 flex flex-wrap justify-between rounded-xl px-3 py-2 text-sm hover:bg-black"
         >
           <span class="font-semibold">{post.title}</span>
-          <span class="text-green">{post.pubDate}</span>
+          <time class="text-green" datetime={post.pubDate.format("YYYY-MM-DD")}>
+            {post.pubDate.format(dateFormat)}
+          </time>
         </a>
       </li>
     ))}
