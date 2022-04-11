@@ -11,9 +11,9 @@
   },
   "devDependencies": {
     "@astrojs/react": "^0.1.0",
-    "@astrojs/tailwind": "^0.0.2",
+    "@astrojs/tailwind": "^0.1.0",
     "@tailwindcss/typography": "^0.5.2",
-    "astro": "^0.25.3",
+    "astro": "^1.0.0-beta.5",
     "astro-icon": "^0.6.1",
     "autoprefixer": "^10.4.4",
     "dayjs": "^1.11.0",

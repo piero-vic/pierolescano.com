@@ -6,7 +6,7 @@ const title = "Piero Lescano";
 const description =
   "Software developer focused on building CLI tools and web applications.";
 
-const posts = Astro.fetchContent("./blog/*.md");
+const posts = await Astro.glob("./blog/*.md");
 ---
 
 <BaseLayout {title} {description}>
