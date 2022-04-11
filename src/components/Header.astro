@@ -1,0 +1,34 @@
+---
+import { PhCubeFill, IconoirMenu, MdiClose } from "./Icons.jsx";
+import NavbarLink from "./NavbarLink.jsx";
+---
+
+<header
+  class="relative mb-6 items-center justify-between text-blue sm:flex"
+  x-data="{ open: false }"
+>
+  <a href="/" class="block h-16 w-16 transition hover:scale-110">
+    <PhCubeFill aria-hidden="true" focusable="false" />
+    <span class="sr-only">Home</span>
+  </a>
+
+  <button
+    class="absolute top-0 right-0 my-4 h-8 w-8 sm:hidden"
+    @click="open = !open"
+  >
+    <MdiClose x-show="open" aria-hidden="true" focusable="false" />
+    <IconoirMenu x-show="!open" aria-hidden="true" focusable="false" />
+    <span class="sr-only">Navbar Button</span>
+  </button>
+
+  <nav
+    class="mt-6 text-lg font-bold sm:mt-0 sm:block"
+    :class="open ? 'block' : 'hidden'"
+  >
+    <ul class="flex justify-center gap-6 sm:flex-row">
+      <NavbarLink text="Projects" path="/projects" />
+      <NavbarLink text="Blog" path="/blog" />
+      <NavbarLink text="Contact" path="/contact" />
+    </ul>
+  </nav>
+</header>
