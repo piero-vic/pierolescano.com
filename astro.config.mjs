@@ -4,28 +4,18 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  buildOptions: {
-    site: "https://www.pierolescano.com/",
-    sitemap: true,
-    pageUrlFormat: "directory",
-  },
+  site: "https://www.pierolescano.com/",
   integrations: [react(), tailwind()],
   vite: {
     ssr: {
       external: ["svgo"],
     },
   },
-  markdownOptions: {
-    render: [
-      "@astrojs/markdown-remark",
-      {
-        syntaxHighlight: "shiki",
-        shikiConfig: {
-          theme: "material-palenight",
-          langs: [],
-          wrap: false,
-        },
-      },
-    ],
+  markdown: {
+    shikiConfig: {
+      theme: "material-palenight",
+      langs: [],
+      wrap: false,
+    },
   },
 });

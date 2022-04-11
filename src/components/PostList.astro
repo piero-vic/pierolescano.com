@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 const { heading, posts, dateFormat } = Astro.props;
 
 posts.forEach(post => {
-  post.pubDate = dayjs(post.pubDate);
+  post.frontmatter.pubDate = dayjs(post.frontmatter.pubDate);
 });
 
 posts.sort((a, b) => b.pubDate - a.pubDate);
@@ -20,9 +20,9 @@ posts.sort((a, b) => b.pubDate - a.pubDate);
           href={post.url}
           class="sm:text-md -mx-3 flex flex-wrap justify-between rounded-xl px-3 py-2 text-sm hover:bg-black"
         >
-          <span class="font-semibold">{post.title}</span>
-          <time class="text-green" datetime={post.pubDate.format("YYYY-MM-DD")}>
-            {post.pubDate.format(dateFormat)}
+          <span class="font-semibold">{post.frontmatter.title}</span>
+          <time class="text-green" datetime={post.frontmatter.pubDate.format("YYYY-MM-DD")}>
+            {post.frontmatter.pubDate.format(dateFormat)}
           </time>
         </a>
       </li>
