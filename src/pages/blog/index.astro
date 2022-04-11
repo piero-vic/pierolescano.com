@@ -1,4 +1,6 @@
 ---
+import dayjs from "dayjs";
+
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostList from "../../components/PostList.astro";
 
@@ -6,9 +8,13 @@ const title = "Blog | Piero Lescano";
 const description =
   "Technical articles, code snippets, and writings on the things I'm learning.";
 
-const posts = Astro.fetchContent("./*.md");
-const posts21 = posts.filter(post => post.pubDate.includes("2021"));
-const posts22 = posts.filter(post => post.pubDate.includes("2022"));
+const posts = await Astro.glob("./*.md");
+const posts21 = posts.filter(
+  post => dayjs(post.frontmatter.pubDate).format("YYYY") == "2021"
+);
+const posts22 = posts.filter(
+  post => dayjs(post.frontmatter.pubDate).format("YYYY") == "2022"
+);
 ---
 
 <BaseLayout {title} {description}>

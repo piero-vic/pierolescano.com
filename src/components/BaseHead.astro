@@ -2,7 +2,7 @@
 import { twitter } from "../data.js";
 const { card, site, creator } = twitter;
 
-const canonicalURL = Astro.request.canonicalURL;
+const canonicalURL = Astro.canonicalURL;
 const { title, description, type, image, imageAlt } = Astro.props.content;
 const pageTitle = title.includes("Piero Lescano")
   ? title
