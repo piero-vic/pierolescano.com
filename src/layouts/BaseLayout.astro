@@ -17,7 +17,13 @@ const isArticle = Object.keys(content).length > 0;
         ? { ...content, type: "article" }
         : { ...website, title: title, description: description }}
     />
-    <script src="//unpkg.com/alpinejs" defer is:inline></script>
+    <script>
+      import Alpine from "alpinejs";
+      window.Alpine = Alpine;
+      queueMicrotask(() => {
+          Alpine.start();
+      });
+    </script>
   </head>
   <body class="font-mono text-foreground bg-background">
     <div
