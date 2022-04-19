@@ -5,12 +5,7 @@ const { name, url } = Astro.props;
 
 <li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
   <a href={url} target="_blank" rel="noopener noreferrer">
-    <Icon
-      pack="prime"
-      name={name.toLowerCase()}
-      aria-hidden="true"
-      focusable="false"
-    />
+    <Icon pack="prime" name={name.toLowerCase()} aria-hidden="true" focusable="false" />
     <span class="sr-only">{name}</span>
   </a>
 </li>

@@ -13,6 +13,12 @@ module.exports = {
       background: "#1a1b26",
       foreground: "#a9b1d6",
     },
+    extend: {
+      spacing: {
+        "5vw": "5vw",
+        "10vw": "10vw",
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

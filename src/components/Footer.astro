@@ -3,25 +3,27 @@ import SocialMediaLink from "./SocialMediaLink.astro";
 import { socialMedia } from "../data.js";
 ---
 
-<footer class="flex flex-wrap items-center justify-between mt-6 gap-2">
-  <ul class="flex gap-2">
-    {Object.keys(socialMedia).map(key => (
-      <SocialMediaLink name={key} url={socialMedia[key]} />
-    ))}
-  </ul>
-  <p class="text-sm">
-    <span class="font-semibold">© 2021-2022 Piero Lescano.</span>
-    Build with <a
-      class="font-semibold text-red decoration-2 underline-offset-4 hover:underline"
-      href="https://astro.build/"
-      target="_blank"
-      rel="noopener noreferrer">Astro</a
-    >
-    and <a
-      class="font-semibold text-blue decoration-2 underline-offset-4 hover:underline"
-      href="https://tailwindcss.com/"
-      target="_blank"
-      rel="noopener noreferrer">TailwindCSS</a
-    >.
-  </p>
+<footer class="px-5vw py-6 mt-6 sm:mt-0">
+  <div class="flex flex-wrap items-center justify-between gap-2 max-w-7xl mx-auto">
+    <ul class="flex gap-2">
+      {Object.keys(socialMedia).map(key => (
+        <SocialMediaLink name={key} url={socialMedia[key]} />
+      ))}
+    </ul>
+    <p class="text-sm">
+      <span class="font-semibold">© 2021-2022 Piero Lescano.</span>
+      Build with <a
+        class="font-semibold text-red decoration-2 underline-offset-4 hover:underline"
+        href="https://astro.build/"
+        target="_blank"
+        rel="noopener noreferrer">Astro</a
+      >
+      and <a
+        class="font-semibold text-blue decoration-2 underline-offset-4 hover:underline"
+        href="https://tailwindcss.com/"
+        target="_blank"
+        rel="noopener noreferrer">TailwindCSS</a
+      >.
+    </p>
+  </div>
 </footer>

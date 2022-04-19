@@ -5,30 +5,28 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostList from "../../components/PostList.astro";
 
 const title = "Blog | Piero Lescano";
-const description =
-  "Technical articles, code snippets, and writings on the things I'm learning.";
+const description = "Technical articles, code snippets, and writings on the things I'm learning.";
 
 const posts = await Astro.glob("./*.md");
-const posts21 = posts.filter(
-  post => dayjs(post.frontmatter.pubDate).format("YYYY") == "2021"
-);
-const posts22 = posts.filter(
-  post => dayjs(post.frontmatter.pubDate).format("YYYY") == "2022"
-);
+const posts21 = posts.filter(post => dayjs(post.frontmatter.pubDate).format("YYYY") == "2021");
+const posts22 = posts.filter(post => dayjs(post.frontmatter.pubDate).format("YYYY") == "2022");
 ---
 
 <BaseLayout {title} {description}>
   <!-- About -->
-  <section class="flex flex-col gap-3">
-    <h1 class="text-5xl font-black text-green">Blog</h1>
-    <p class="max-w-prose">
-      Technical articles, code snippets, and writings on the things I'm
-      learning.
-    </p>
-  </section>
+  <div class="mx-10vw">
+    <div class="mx-auto max-w-6xl">
+      <section class="flex flex-col gap-3">
+        <h1 class="text-5xl font-black text-green">Blog</h1>
+        <p class="max-w-prose">Technical articles, code snippets, and writings on the things I'm learning.</p>
+      </section>
+    </div>
+  </div>
   <!-- Blog -->
-  <div>
-    <PostList heading="2022" posts={posts22} dateFormat="MMM D" />
-    <PostList heading="2021" posts={posts21} dateFormat="MMM D" />
+  <div class="mx-10vw">
+    <div class="mx-auto max-w-6xl">
+      <PostList heading="2022" posts={posts22} dateFormat="MMM D" />
+      <PostList heading="2021" posts={posts21} dateFormat="MMM D" />
+    </div>
   </div>
 </BaseLayout>
