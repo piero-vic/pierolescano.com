@@ -10,7 +10,7 @@
     "format": "prettier -w ."
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^0.1.0",
+    "@astrojs/tailwind": "^0.2.0",
     "@tailwindcss/typography": "^0.5.2",
     "alpinejs": "^3.9.6",
     "astro": "^1.0.0-beta.5",
