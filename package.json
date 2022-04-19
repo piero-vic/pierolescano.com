@@ -16,7 +16,7 @@
     "astro": "^1.0.0-beta.5",
     "astro-icon": "^0.7.1",
     "autoprefixer": "^10.4.4",
-    "dayjs": "^1.11.0",
+    "dayjs": "^1.11.1",
     "prettier": "^2.6.1",
     "prettier-plugin-astro": "^0.0.12",
     "prettier-plugin-tailwindcss": "^0.1.8",
