@@ -10,9 +10,9 @@
     "format": "prettier -w ."
   },
   "devDependencies": {
-    "@astrojs/react": "^0.1.0",
     "@astrojs/tailwind": "^0.1.0",
     "@tailwindcss/typography": "^0.5.2",
+    "alpinejs": "^3.9.6",
     "astro": "^1.0.0-beta.5",
     "astro-icon": "^0.7.1",
     "autoprefixer": "^10.4.4",
