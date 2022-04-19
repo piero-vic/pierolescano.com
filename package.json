@@ -13,7 +13,7 @@
     "@astrojs/tailwind": "^0.2.0",
     "@tailwindcss/typography": "^0.5.2",
     "alpinejs": "^3.10.1",
-    "astro": "^1.0.0-beta.5",
+    "astro": "^1.0.0-beta.12",
     "astro-icon": "^0.7.1",
     "autoprefixer": "^10.4.4",
     "dayjs": "^1.11.1",
