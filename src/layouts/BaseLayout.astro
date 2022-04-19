@@ -1,6 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.jsx";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 import { website } from "../data.js";
@@ -17,12 +17,19 @@ const isArticle = Object.keys(content).length > 0;
         ? { ...content, type: "article" }
         : { ...website, title: title, description: description }}
     />
+    <script>
+      import Alpine from "alpinejs";
+      window.Alpine = Alpine;
+      queueMicrotask(() => {
+          Alpine.start();
+      });
+    </script>
   </head>
   <body class="font-mono text-foreground bg-background">
     <div
       class="flex flex-col min-h-screen p-6 mx-auto xl:max-w-screen-lg 2xl:max-w-screen-xl"
     >
-      <Header client:load />
+      <Header />
       {isArticle ? (
         <main class="my-6 sm:my-12">
           <article class="prose prose-invert mx-auto max-w-screen-md prose-headings:text-green prose-a:text-green">
