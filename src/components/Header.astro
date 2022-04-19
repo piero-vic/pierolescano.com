@@ -1,5 +1,5 @@
 ---
-import { PhCubeFill, IconoirMenu, MdiClose } from "./Icons.jsx";
+import { Icon } from "astro-icon";
 import NavbarLink from "./NavbarLink.jsx";
 ---
 
@@ -8,7 +8,7 @@ import NavbarLink from "./NavbarLink.jsx";
   x-data="{ open: false }"
 >
   <a href="/" class="block h-16 w-16 transition hover:scale-110">
-    <PhCubeFill aria-hidden="true" focusable="false" />
+    <Icon name="ph:cube-fill" aria-hidden="true" focusable="false" />
     <span class="sr-only">Home</span>
   </a>
 
@@ -16,8 +16,8 @@ import NavbarLink from "./NavbarLink.jsx";
     class="absolute top-0 right-0 my-4 h-8 w-8 sm:hidden"
     @click="open = !open"
   >
-    <MdiClose x-show="open" aria-hidden="true" focusable="false" />
-    <IconoirMenu x-show="!open" aria-hidden="true" focusable="false" />
+    <Icon name="mdi:close" x-show="open" aria-hidden="true" focusable="false" />
+    <Icon name="iconoir:menu" x-show="!open" aria-hidden="true" focusable="false" />
     <span class="sr-only">Navbar Button</span>
   </button>
 
