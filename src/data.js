@@ -8,6 +8,18 @@ export const projects = [
     demoLink: "https://piero-vic-coin-watcher.netlify.app/",
   },
   {
+    name: "Space Traveler's Hub",
+    description: "Single-page application that displays SpaceX rockets and missions.",
+    category: "web",
+    image: "/images/space-hub.png",
+    repoLink: "https://github.com/Amrhub/space-travelers-hub",
+    demoLink: "https://space-travelers-hub-pa.netlify.app/",
+    collaborator: {
+      name: "Amr Ahmed",
+      github: "https://github.com/Amrhub",
+    },
+  },
+  {
     name: "Coding Bootcamp Webpage",
     description: "Capstone project for Module 1 of Microverse.",
     category: "web",
