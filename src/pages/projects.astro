@@ -7,11 +7,14 @@ const webProjects = projects.filter(p => p.category === "web");
 const cliProjects = projects.filter(p => p.category === "cli");
 
 const title = "Projects | Piero Lescano";
-const description =
-  "Software developer focused on building CLI tools and web applications.";
+const description = "Software developer focused on building CLI tools and web applications.";
 ---
 
 <BaseLayout {title} {description}>
-  <ProjectList projects={webProjects} heading="Web" />
-  <ProjectList projects={cliProjects} heading="CLI" />
+  <div class="mx-10vw">
+    <div class="mx-auto max-w-6xl">
+      <ProjectList projects={webProjects} heading="Web" />
+      <ProjectList projects={cliProjects} heading="CLI" />
+    </div>
+  </div>
 </BaseLayout>
