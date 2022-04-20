@@ -2,68 +2,23 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Alpine from "../components/Alpine.astro";
 
 import { website } from "../data.js";
 
-const { content = {}, title, description } = Astro.props;
-
-const isArticle = Object.keys(content).length > 0;
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead
-      content={isArticle
-        ? { ...content, type: "article" }
-        : { ...website, title: title, description: description }}
-    />
-    <script>
-      import Alpine from "alpinejs";
-      window.Alpine = Alpine;
-      queueMicrotask(() => {
-          Alpine.start();
-      });
-    </script>
+    <BaseHead data={{ ...website, title: title, description: description }} />
+    <Alpine />
   </head>
-  <body class="font-mono text-foreground bg-background">
-    <div
-      class="flex flex-col min-h-screen p-6 mx-auto xl:max-w-screen-lg 2xl:max-w-screen-xl"
-    >
-      <Header />
-      {isArticle ? (
-        <main class="my-6 sm:my-12">
-          <article class="prose prose-invert mx-auto max-w-screen-md prose-headings:text-green prose-a:text-green">
-            <slot />
-          </article>
-          <section class="mx-auto max-w-screen-md">
-            <h2 class="mt-[2em] mb-[1em] border-b-2 border-b-black text-2xl font-bold text-green">
-              Comments
-            </h2>
-            <div class="giscus">
-              <script
-                src="https://giscus.app/client.js"
-                data-repo="piero-vic/pierolescano.com"
-                data-repo-id="R_kgDOGd9pjg"
-                data-category="Comments"
-                data-category-id="DIC_kwDOGd9pjs4CBO-U"
-                data-mapping="pathname"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme="transparent_dark"
-                data-lang="en"
-                crossorigin="anonymous"
-                async
-              ></script>
-            </div>
-          </section>
-        </main>
-      ) : (
-        <main class="flex grow flex-col justify-center gap-3">
-          <slot />
-        </main>
-      )}
-      <Footer />
-    </div>
+  <body class="font-mono text-foreground bg-background flex flex-col justify-between h-screen">
+    <Header />
+    <main class="flex flex-col justify-center gap-3">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
