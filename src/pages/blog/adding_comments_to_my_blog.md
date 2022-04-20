@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BaseLayout.astro
+layout: ../../layouts/BlogPostLayout.astro
 title: Adding Comments to My Blog with Giscus
 description: Use GitHub Discussions to add comments to your blog.
 author: Piero Lescano
