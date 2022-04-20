@@ -3,24 +3,23 @@ import ProjectLink from "./ProjectLink.astro";
 const { project } = Astro.props;
 ---
 
-<div
-  class="flex flex-col min-w-full min-h-[10vh] bg-black rounded-xl md:min-h-full overflow-hidden"
->
+<div class="flex flex-col min-w-full min-h-[10vh] bg-black rounded-xl md:min-h-full overflow-hidden">
   {project.image && <img src={project.image} alt={project.name}>}
   <div class="p-4 flex flex-col gap-4 grow">
     <h3 class="text-xl font-bold text-blue">{project.name}</h3>
-    <p>{project.description}</p>
+    <p>
+      {project.description}
+      <br>
+      {project.collaborator &&
+        <span class="text-sm italic">Made in collaboration with <a 
+          class="font-semibold text-green decoration-2 underline-offset-4 hover:underline" 
+          href={project.collaborator.github}>{project.collaborator.name}</a>.
+        </span>
+      }
+    </p>
     <div class="flex justify-end gap-3 mt-auto">
-      {project.demoLink && (
-        <ProjectLink text="Demo" icon="prime:globe" link={project.demoLink} />
-      )}
-      {project.repoLink && (
-        <ProjectLink
-          text="Source"
-          icon="prime:github"
-          link={project.repoLink}
-        />
-      )}
+      {project.demoLink && <ProjectLink text="Demo" icon="prime:globe" link={project.demoLink} />}
+      {project.repoLink && <ProjectLink text="Source" icon="prime:github" link={project.repoLink} />}
     </div>
   </div>
 </div>
