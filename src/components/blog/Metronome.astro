@@ -1,0 +1,28 @@
+<div x-data="metronome" x-effect="metronomeEffect">
+  <div>
+    <div><span x-text="bpm"></span> BPM</div>
+    <input type="range" min="60" max="240" x-model="bpm" />
+  </div>
+  <button x-on:click="isPlaying = !isPlaying" x-text="isPlaying ? 'Stop' : 'Start'"></button>
+</div>
+
+<script is:inline>
+  document.addEventListener("alpine:init", () => {
+    Alpine.data("metronome", () => {
+      let timer = null;
+      const click = new Audio("/audio/click.wav");
+
+      return {
+        bpm: 120,
+        isPlaying: false,
+
+        metronomeEffect() {
+          if (timer) clearInterval(timer);
+          if (this.isPlaying) {
+            timer = setInterval(() => click.play(), (60 / this.bpm) * 1000);
+          }
+        },
+      };
+    });
+  });
+</script>
