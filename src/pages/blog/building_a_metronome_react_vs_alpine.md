@@ -21,8 +21,9 @@ HTML, but it also allows you to decouple the logic from the UI. This is speciall
 components.
 
 In this article I'm going to compare React and Alpine by building a simple
-[metronome](https://en.wikipedia.org/wiki/Metronome). And since this website is built with
-[Astro](https://astro.build/), I can use the partial hydration feature to show both components in action.
+[metronome](https://en.wikipedia.org/wiki/Metronome). Keep in mind that this is not going to be the best implementation.
+A better approach would be to use the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API),
+but we're going to keep it simple for now. Our main goal is to use the two frameworks.
 
 ## React
 
