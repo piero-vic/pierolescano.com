@@ -1,12 +1,9 @@
 ---
-import { twitter } from "../data.js";
-const { card, site, creator } = twitter;
+import { twitter, website } from "../data.js";
 
 const canonicalURL = Astro.canonicalURL;
 const { title, description, type, image, imageAlt } = Astro.props.data;
-const pageTitle = title.includes("Piero Lescano")
-  ? title
-  : `${title} | Piero Lescano`;
+const pageTitle = title.includes("Piero Lescano") ? title : `${title} | Piero Lescano`;
 ---
 
 <meta charset="utf-8" />
@@ -14,7 +11,7 @@ const pageTitle = title.includes("Piero Lescano")
 
 {title ? <title>{pageTitle}</title> : null}
 {description ? <meta name="description" content={description} /> : null}
-{image ? <meta name="image" content={image} /> : null}
+{image ? <meta name="image" content={website.url + image} /> : null}
 
 <link rel="canonical" href={canonicalURL} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -24,13 +21,13 @@ const pageTitle = title.includes("Piero Lescano")
 <link rel="og:url" href={canonicalURL} />
 {title ? <meta name="og:title" content={title} /> : null}
 {description ? <meta name="og:description" content={description} /> : null}
-{image ? <meta name="og:image" content={image} /> : null}
+{image ? <meta name="og:image" content={website.url + image} /> : null}
 
 <!-- Twitter Tags -->
-<meta name="twitter:card" content={card} />
-<meta name="twitter:site" content={site} />
-<meta name="twitter:creator" content={creator} />
+<meta name="twitter:card" content={type == 'article' && image ? 'summary_large_image' : twitter.card} />
+<meta name="twitter:site" content={twitter.site} />
+<meta name="twitter:creator" content={twitter.creator} />
 {title ? <meta name="twitter:title" content={title} /> : null}
 {description ? <meta name="twitter:description" content={description} /> : null}
-{image ? <meta name="twitter:image" content={image} /> : null}
+{image ? <meta name="twitter:image" content={website.url + image} /> : null}
 {imageAlt ? <meta name="twitter:image:alt" content={imageAlt} /> : null}
