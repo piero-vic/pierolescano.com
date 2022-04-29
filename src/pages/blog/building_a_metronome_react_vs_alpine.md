@@ -6,6 +6,7 @@ setup: |
 title: "Building a metronome: React vs Alpine"
 description: Building the same component with two different frameworks.
 image: images/react-vs-alpine.png
+imageAlt: React vs Alpine
 author: Piero Lescano
 pubDate: 2022-04-29
 ---
