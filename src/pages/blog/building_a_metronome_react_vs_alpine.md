@@ -1,0 +1,179 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+setup: |
+  import AlpineMetronome from '../../components/blog/Metronome.astro'
+  import ReactMetronome from '../../components/blog/Metronome.jsx'
+title: "Building a metronome: React vs Alpine"
+description: Building the same component with two different frameworks.
+image: images/react-vs-alpine.png
+imageAlt: React vs Alpine
+author: Piero Lescano
+pubDate: 2022-04-29
+---
+
+# Building a metronome: React vs Alpine
+
+<img src="/images/react-vs-alpine.png" alt="React vs Alpine" class="rounded-xl">
+
+Lately, I've been learning to use [Alpine.js](https://alpinejs.dev/), a minimal javascript framework ideal for adding
+interactivity to static websites. The framework is awesome. It let's you add reactive behaviour without leaving the
+HTML, but it also allows you to decouple the logic from the UI. This is specially useful when building complex
+components.
+
+In this article I'm going to compare React and Alpine by building a simple
+[metronome](https://en.wikipedia.org/wiki/Metronome). Keep in mind that this is not going to be the best implementation.
+A better approach would be to use the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API),
+but we're going to keep it simple for now. Our main goal is to use the two frameworks.
+
+## React
+
+Let's try the metronome. Click start and you should listen to a click that repeats over time. You can change the speed
+by manipulating the range input.
+
+<ReactMetronome client:visible />
+
+Now let's take a look a the code.
+
+```javascript
+const Metronome = () => {
+  const { bpm, setBpm, isPlaying, setIsPlaying } = useMetronome();
+
+  return (
+    <div>
+      <div>
+        <div>{bpm} BPM</div>
+        <input
+          type="range"
+          min="60"
+          max="240"
+          value={bpm}
+          onChange={event => setBpm(event.target.value)}
+        />
+      </div>
+      <button onClick={() => setIsPlaying(!isPlaying)}>
+        {isPlaying ? "Stop" : "Start"}
+      </button>
+    </div>
+  );
+};
+```
+
+We're using a custom hook called `useMetronome` that is returning the following variables:
+
+- `bpm`: Beats per minute. It sets the speed of the repeating click sound.
+- `isPlaying`: It sets whether or not the audio is playing.
+- `setBpm` and `setIsPlaying`: Functions to update the previous values.
+
+We're updating `bpm` with the range input and `isPlaying` with the button.
+
+Let's now take a look at the `useMetronome` hook.
+
+```javascript
+const useMetronome = () => {
+  const [bpm, setBpm] = useState(120);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    let timer;
+    const click = new Audio("/audio/click.wav");
+    if (isPlaying) {
+      timer = setInterval(() => click.play(), (60 / bpm) * 1000);
+    }
+    return () => clearInterval(timer);
+  }, [bpm, isPlaying]);
+
+  return { bpm, setBpm, isPlaying, setIsPlaying };
+};
+```
+
+Almost all the action happens inside `useEffect`. We want to repeat a sound over time so we'll need to set an interval.
+We're declaring the `timer` variable to store the interval ID and we're also creating an 
+[HTMLAudioElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement) object to play the sound.
+
+If `isPlaying` is true we'll use `setInterval` to repeately play the sound according to the `bpm`.
+
+Then we're returning a cleanup function that will clear the interval if the component is unmounted or if a re-render is
+triggered.
+
+We also want to update this behaviour if either `bpm` or `isPlaying` change so we're going to add them to the dependency
+array.
+
+## Alpine
+
+Let's do it now with Alpine. The functionality should be the same.
+
+<AlpineMetronome />
+
+If you've never used Alpine it would be great it you can get a little bit familiar before diving into this example. The
+Start Here section on the [Alpine Docs](https://alpinejs.dev/start-here) should be more than enough.
+
+With Alpine, you usually write everything in the HTML. However, our component is more complex than usual so we’re going
+to use the `Alpine.data` method to decouple the logic from the UI.
+
+Let's start with the HTML.
+
+```html
+<div x-data="metronome" x-effect="metronomeEffect">
+  <div>
+    <div><span x-text="bpm"></span> BPM</div>
+    <input type="range" min="60" max="240" x-model="bpm" />
+  </div>
+  <button 
+    x-on:click="isPlaying = !isPlaying"
+    x-text="isPlaying ? 'Stop' : 'Start'"
+  ></button>
+</div>
+```
+
+In Alpine we use special HTML attributes called Alpine directives.
+
+- `x-data` stores all of our reactive data.
+- `x-effect` is similar to `useEffect`. It will re-run `metronomeEffect` when a dependency changes.
+- `x-text` will set the text content of an element.
+- `x-model` connects the value of the input element to the Alpine data.
+- `x-on` allows us to run code when a DOM event is dispatched.
+
+Now let's take a look at the JavaScript code.
+
+```javascript
+document.addEventListener("alpine:init", () => {
+  Alpine.data("metronome", () => {
+    let timer = null;
+    const click = new Audio("/audio/click.wav");
+
+    return {
+      bpm: 120,
+      isPlaying: false,
+
+      metronomeEffect() {
+        if (timer) clearInterval(timer);
+        if (this.isPlaying) {
+          timer = setInterval(() => click.play(), (60 / this.bpm) * 1000);
+        }
+      },
+    };
+  });
+});
+```
+
+`Alpine.data` allows us to register our component. The first argument is the name we're going to use with the `x-data`
+directive. The second argument is a function that returns the reactive data we're going to use. 
+
+Similar to what we did with React, we're declaring a `timer` variable, creating and HTMLAudioElement object, and setting
+`bpm` and `isPlaying` as the state of our component. `timer` and `click` are not inside the return statement so they are
+not considered reactive data.
+
+`metronomeEffect` stores the metronome functionality. This is the function we're going to re-run if either `bpm` or
+`isPlaying` are updated.
+
+## Final thoughts
+
+React does a great job. What I like the most is that we can use custom hooks to abstract the functionality of our
+components. I think it's also going to be the better option if you want to build a Single Page Application.
+
+Alpine doesn't stay behind. We can build simple components without leaving the HTML file, and if we need it, we can also
+decouple the logic from the UI.
+
+I prefer React because I'm very used to it. However, Alpine offers a simple way to add reactive behavior to our pages.
+I've used it on the navbar of this website, a couple of Ruby on Rails projects, and I plan to continue using it on most
+of my static websites.

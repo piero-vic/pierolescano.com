@@ -6,7 +6,7 @@ posts.forEach(post => {
   post.frontmatter.pubDate = dayjs(post.frontmatter.pubDate);
 });
 
-posts.sort((a, b) => b.pubDate - a.pubDate);
+posts.sort((a, b) => b.frontmatter.pubDate - a.frontmatter.pubDate);
 ---
 
 <section class="max-w-screen-md">

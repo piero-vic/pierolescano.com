@@ -83,6 +83,7 @@ export const twitter = {
 
 export const website = {
   type: "website",
-  image: "https://pierolescano.com/logo.png",
-  imageAlt: "piero lescano logo",
+  url: "https://pierolescano.com/",
+  image: "logo.png",
+  imageAlt: "Piero Lescano Logo",
 };
