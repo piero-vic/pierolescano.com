@@ -24,8 +24,8 @@ export const projects = [
     description: "Capstone project for Module 1 of Microverse.",
     category: "web",
     image: "/images/coding-bootcamp.png",
-    repoLink: "https://github.com/piero-vic/conference-website",
-    demoLink: "https://piero-vic.github.io/conference-website/",
+    repoLink: "https://github.com/piero-vic/coding-bootcamp-website",
+    demoLink: "https://piero-vic.github.io/coding-bootcamp-website/",
   },
   {
     name: "Leaderboard",
