@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}"],
   theme: {
@@ -14,6 +16,9 @@ module.exports = {
       foreground: "#a9b1d6",
     },
     extend: {
+      fontFamily: {
+        mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
+      },
       spacing: {
         "5vw": "5vw",
         "10vw": "10vw",
