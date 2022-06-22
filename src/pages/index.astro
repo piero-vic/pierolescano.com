@@ -9,32 +9,21 @@ const posts = await Astro.glob("./blog/*.md");
 ---
 
 <BaseLayout {title} {description}>
-  <!-- About -->
-  <div class="mx-10vw">
-    <div class="mx-auto max-w-6xl">
-      <section class="flex flex-col gap-3">
-        <h1 class="text-5xl font-black text-blue">Hi, I'm Piero.</h1>
-        <p>
-          <span class="text-red">HTML</span>
-          <span class="text-cyan">CSS</span>
-          <span class="text-yellow">JavaScript</span>
-          <span class="text-blue">React</span>
-          <span class="text-green">Python</span>
-        </p>
-        <p class="max-w-prose">
-          I'm a software developer from Peru whose goal is to build beautiful user experiences and find solutions to
-          unique problems through code. I'm in love with <abbr title="command-line interface" class="no-underline"
-            >CLI</abbr
-          > tools and excited about front-end development and the future of blockchain technology.
-        </p>
-      </section>
-    </div>
-  </div>
+  <section class="flex flex-col gap-3">
+    <h1 class="text-5xl font-black text-blue">Hi, I'm Piero.</h1>
+    <p>
+      <span class="text-red">HTML</span>
+      <span class="text-cyan">CSS</span>
+      <span class="text-yellow">JavaScript</span>
+      <span class="text-blue">React</span>
+      <span class="text-green">Python</span>
+    </p>
+    <p class="max-w-prose">
+      I'm a software developer from Peru whose goal is to build beautiful user experiences and find solutions to unique
+      problems through code. I'm in love with <abbr title="command-line interface" class="no-underline">CLI</abbr> tools
+      and excited about front-end development and the future of blockchain technology.
+    </p>
+  </section>
 
-  <!-- Blog -->
-  <div class="mx-10vw">
-    <div class="mx-auto max-w-6xl">
-      <PostList heading="Latest Articles" {posts} dateFormat="MMM D, YYYY" />
-    </div>
-  </div>
+  <PostList heading="Latest Articles" {posts} dateFormat="MMM D, YYYY" />
 </BaseLayout>

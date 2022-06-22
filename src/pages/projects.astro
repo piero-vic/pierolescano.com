@@ -11,10 +11,6 @@ const description = "Software developer focused on building CLI tools and web ap
 ---
 
 <BaseLayout {title} {description}>
-  <div class="mx-10vw">
-    <div class="mx-auto max-w-6xl">
-      <ProjectList projects={webProjects} heading="Web" />
-      <ProjectList projects={cliProjects} heading="CLI" />
-    </div>
-  </div>
+  <ProjectList projects={webProjects} heading="Web" />
+  <ProjectList projects={cliProjects} heading="CLI" />
 </BaseLayout>
