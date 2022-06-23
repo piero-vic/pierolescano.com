@@ -2,6 +2,7 @@ export const projects = [
   {
     name: "Coin Watcher",
     description: "Web application for consulting crypto prices and news.",
+    technologies: ["React", "TailwindCSS"],
     category: "web",
     image: "/images/coin-watcher.png",
     repoLink: "https://github.com/piero-vic/coin-watcher",
@@ -10,6 +11,7 @@ export const projects = [
   {
     name: "Space Traveler's Hub",
     description: "Single-page application that displays SpaceX rockets and missions.",
+    technologies: ["React", "Redux"],
     category: "web",
     image: "/images/space-hub.png",
     repoLink: "https://github.com/Amrhub/space-travelers-hub",
@@ -22,6 +24,7 @@ export const projects = [
   {
     name: "Coding Bootcamp Webpage",
     description: "Capstone project for Module 1 of Microverse.",
+    technologies: ["HTML", "CSS", "JavaScript"],
     category: "web",
     image: "/images/coding-bootcamp.png",
     repoLink: "https://github.com/piero-vic/coding-bootcamp-website",
@@ -30,6 +33,7 @@ export const projects = [
   {
     name: "Leaderboard",
     description: "Leaderboard project for Microverse.",
+    technologies: ["HTML", "CSS", "JavaScript"],
     category: "web",
     image: "/images/leaderboard.png",
     repoLink: "https://github.com/piero-vic/Leaderboard",
@@ -38,6 +42,7 @@ export const projects = [
   {
     name: "ToDo List",
     description: "A minimal to-do list web application.",
+    technologies: ["HTML", "CSS", "JavaScript"],
     category: "web",
     image: "/images/todo-list.png",
     repoLink: "https://github.com/piero-vic/to-do-list",
@@ -46,6 +51,7 @@ export const projects = [
   {
     name: "ptd",
     description: "A minimal to-do list application for the command line.",
+    technologies: ["Python", "Typer"],
     category: "cli",
     image: null,
     repoLink: "https://github.com/piero-vic/ptd",
@@ -54,6 +60,7 @@ export const projects = [
   {
     name: "crypto-prices",
     description: "Crypto prices for the Ledger CLI.",
+    technologies: ["Python"],
     category: "cli",
     image: null,
     repoLink: "https://github.com/piero-vic/crypto-prices",
@@ -62,12 +69,24 @@ export const projects = [
   {
     name: "ani-py",
     description: "A cli tool to download and stream anime from jkanime.",
+    technologies: ["Python", "Typer"],
     category: "cli",
     image: null,
     repoLink: "https://github.com/piero-vic/ani-py",
     demoLink: null,
   },
 ];
+
+export const colors = {
+  CSS: "text-cyan",
+  HTML: "text-red",
+  JavaScript: "text-yellow",
+  Python: "text-green",
+  React: "text-blue",
+  Redux: "text-magenta",
+  TailwindCSS: "text-blue",
+  Typer: "text-white",
+};
 
 export const socialMedia = {
   Github: "https://github.com/piero-vic",
