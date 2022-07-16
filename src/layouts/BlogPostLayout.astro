@@ -30,15 +30,14 @@ const { sha, html_url, commit: { author: { date } } } = await fetchCommits(filep
       <article class="prose prose-invert mx-auto max-w-screen-md prose-headings:text-green prose-a:text-green">
         <slot></slot>
       </article>
-      <div class="mx-auto max-w-screen-md my-[1em] py-[1em] border-t-2 border-t-black text-sm">
+      <hr class="mx-auto max-w-screen-md my-[2em] h-[2px] bg-black border-none" />
+      <div class="mx-auto max-w-screen-md my-[2em] text-sm">
         <Icon name="ph:git-commit-bold" class="w-4 h-4 inline" />
         <a href={html_url} target="_blank" rel="noopener noreferrer" class="text-green underline">{sha.slice(0, 7)}</a> @
         {date.slice(0, 10)}
       </div>
       <section class="mx-auto max-w-screen-md">
-        <h2 class="mt-[2em] mb-[1em] border-b-2 border-b-black text-2xl font-bold text-green">
-          Comments
-        </h2>
+        <h2 class="my-[1em] text-3xl text-center font-bold text-green">Comments</h2>
         <div class="giscus">
           <script
             src="https://giscus.app/client.js"
