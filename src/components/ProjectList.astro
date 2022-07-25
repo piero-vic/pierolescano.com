@@ -9,7 +9,7 @@ const { projects, heading } = Astro.props;
   <h2 class="text-3xl font-bold border-b-2 text-green border-b-black">
     {heading}
   </h2>
-  <div class="mt-6 grid gap-5 md:grid-cols-3">
+  <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
     {projects.map(project => <ProjectCard project={project} />)}
   </div>
 </section>
