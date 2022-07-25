@@ -31,22 +31,13 @@ export const projects = [
     demoLink: "https://piero-vic.github.io/coding-bootcamp-website/",
   },
   {
-    name: "Leaderboard",
-    description: "Leaderboard project for Microverse.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    category: "web",
-    image: "/images/leaderboard.png",
-    repoLink: "https://github.com/piero-vic/Leaderboard",
+    name: "cmp-ledger",
+    description: "A nvim-cmp source for ledger accounts.",
+    technologies: ["Lua"],
+    category: "cli",
+    image: null,
+    repoLink: "https://github.com/piero-vic/cmp-ledger",
     demoLink: null,
-  },
-  {
-    name: "ToDo List",
-    description: "A minimal to-do list web application.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    category: "web",
-    image: "/images/todo-list.png",
-    repoLink: "https://github.com/piero-vic/to-do-list",
-    demoLink: "https://piero-vic.github.io/to-do-list/dist/",
   },
   {
     name: "ptd",
@@ -55,15 +46,6 @@ export const projects = [
     category: "cli",
     image: null,
     repoLink: "https://github.com/piero-vic/ptd",
-    demoLink: null,
-  },
-  {
-    name: "crypto-prices",
-    description: "Crypto prices for the Ledger CLI.",
-    technologies: ["Python"],
-    category: "cli",
-    image: null,
-    repoLink: "https://github.com/piero-vic/crypto-prices",
     demoLink: null,
   },
   {
@@ -81,6 +63,7 @@ export const colors = {
   CSS: "text-cyan",
   HTML: "text-red",
   JavaScript: "text-yellow",
+  Lua: "text-magenta",
   Python: "text-green",
   React: "text-blue",
   Redux: "text-magenta",
@@ -91,7 +74,7 @@ export const colors = {
 export const socialMedia = {
   Github: "https://github.com/piero-vic",
   LinkedIn: "https://www.linkedin.com/in/piero-lescano",
-  Twitter: "https://www.twitter.com/v1ccenzo",
+  Twitter: "https://www.twitter.com/piero_codes",
 };
 
 export const twitter = {
