@@ -7,8 +7,7 @@ import Alpine from "../components/Alpine.astro";
 import { Icon } from "astro-icon";
 
 const { content } = Astro.props;
-
-const filepath = `src/pages/${Astro.canonicalURL.pathname.slice(0, -1)}.md`;
+const filepath = `src/pages${Astro.url.pathname}.md`;
 
 const fetchCommits = async filepath => {
   const res = await fetch(`https://api.github.com/repos/piero-vic/pierolescano.com/commits?path=${filepath}`);

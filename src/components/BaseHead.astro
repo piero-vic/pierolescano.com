@@ -1,7 +1,7 @@
 ---
 import { twitter, website } from "../data.js";
 
-const canonicalURL = Astro.canonicalURL;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, type, image, imageAlt } = Astro.props.data;
 const pageTitle = title.includes("Piero Lescano") ? title : `${title} | Piero Lescano`;
 ---

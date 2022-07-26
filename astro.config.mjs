@@ -18,4 +18,7 @@ export default defineConfig({
       wrap: false,
     },
   },
+  legacy: {
+    astroFlavoredMarkdown: true,
+  },
 });
