@@ -2,27 +2,19 @@
 import dayjs from "dayjs";
 const { heading, posts, dateFormat } = Astro.props;
 
-posts.forEach(post => {
-  post.frontmatter.pubDate = dayjs(post.frontmatter.pubDate);
-});
-
+posts.forEach(post => (post.frontmatter.pubDate = dayjs(post.frontmatter.pubDate)));
 posts.sort((a, b) => b.frontmatter.pubDate - a.frontmatter.pubDate);
 ---
 
 <section class="max-w-screen-md">
-  <h2 class="my-3 text-2xl font-bold border-b-2 text-green border-b-black">
-    {heading}
-  </h2>
+  <h2 class="my-3 text-2xl font-bold border-b-2 text-green border-b-black">{heading}</h2>
   <ul class="flex flex-col max-w-screen-md">
-    {posts.map(post => (
+    {posts.map(({ url, frontmatter }) => (
       <li>
-        <a
-          href={post.url}
-          class="sm:text-md -mx-3 flex flex-wrap justify-between rounded-xl px-3 py-2 text-sm hover:bg-black"
-        >
-          <span class="font-semibold">{post.frontmatter.title}</span>
-          <time class="text-green" datetime={post.frontmatter.pubDate.format("YYYY-MM-DD")}>
-            {post.frontmatter.pubDate.format(dateFormat)}
+        <a href={url} class="sm:text-md -mx-3 flex justify-between gap-6 rounded-xl px-3 py-2 text-sm hover:bg-black">
+          <span class="font-semibold">{frontmatter.title}</span>
+          <time class="text-green" datetime={frontmatter.pubDate.format("YYYY-MM-DD")}>
+            {frontmatter.pubDate.format(dateFormat)}
           </time>
         </a>
       </li>
