@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { socialMedia } from '../../data.js'
 
 const title = "Contact | Piero Lescano";
 const description = "Software developer focused on building CLI tools and web applications.";
+const twitterUrl = socialMedia.Twitter
 ---
 
 <BaseLayout {title} {description}>
@@ -15,7 +17,7 @@ const description = "Software developer focused on building CLI tools and web ap
       > on
       <a
         class="font-semibold text-blue decoration-2 underline-offset-4 hover:underline"
-        href="https://www.twitter.com/v1ccenzo"
+        href={twitterUrl}
         target="_blank"
         rel="noopener noreferrer">Twitter</a
       > or fill out this form.

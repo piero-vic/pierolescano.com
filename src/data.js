@@ -79,8 +79,8 @@ export const socialMedia = {
 
 export const twitter = {
   card: "summary",
-  site: "@v1ccenzo",
-  creator: "@v1ccenzo",
+  site: "@piero_codes",
+  creator: "@piero_codes",
 };
 
 export const website = {
