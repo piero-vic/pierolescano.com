@@ -4,18 +4,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Alpine from "../components/Alpine.astro";
-import { Icon } from "astro-icon";
 
 const { content } = Astro.props;
-const filepath = `src/pages${Astro.url.pathname}.md`;
-
-const fetchCommits = async filepath => {
-  const res = await fetch(`https://api.github.com/repos/piero-vic/pierolescano.com/commits?path=${filepath}`);
-  const [data] = await res.json();
-  return data;
-};
-
-const { sha, html_url, commit: { author: { date } } } = await fetchCommits(filepath);
 ---
 
 <html lang="en">
@@ -30,11 +20,6 @@ const { sha, html_url, commit: { author: { date } } } = await fetchCommits(filep
         <slot></slot>
       </article>
       <hr class="mx-auto max-w-screen-md my-[2em] h-[2px] bg-black border-none" />
-      <div class="mx-auto max-w-screen-md my-[2em] text-sm">
-        <Icon name="ph:git-commit-bold" class="w-4 h-4 inline" />
-        <a href={html_url} target="_blank" rel="noopener noreferrer" class="text-green underline">{sha.slice(0, 7)}</a> @
-        {date.slice(0, 10)}
-      </div>
       <section class="mx-auto max-w-screen-md">
         <h2 class="my-[1em] text-3xl text-center font-bold text-green">Comments</h2>
         <div class="giscus">
