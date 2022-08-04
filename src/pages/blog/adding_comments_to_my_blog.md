@@ -2,11 +2,15 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: Adding Comments to My Blog with Giscus
 description: Use GitHub Discussions to add comments to your blog.
+image: images/giscus.png
+imageAlt: Giscus Logo
 author: Piero Lescano
 pubDate: 2022-02-20
 ---
 
 # Adding Comments to My Blog with Giscus
+
+<img src="/images/giscus.png" alt="Giscus Logo" class="rounded-xl">
 
 I started writing for this blog a few weeks ago, and at the time, I didn't even
 think about the inclusion of a comment section. I began to think about including
