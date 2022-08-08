@@ -1,6 +1,11 @@
 ---
 import { Icon } from "astro-icon";
-const { name, href } = Astro.props;
+
+export interface Props {
+  name: string;
+  href: string;
+}
+const { name, href } = Astro.props as Props;
 ---
 
 <li class="w-6 h-6 transition hover:scale-110 hover:text-blue">

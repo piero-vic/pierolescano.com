@@ -1,6 +1,14 @@
 ---
 import dayjs from "dayjs";
-const { heading, posts, dateFormat } = Astro.props;
+import { MarkdownInstance } from "astro";
+
+export interface Props {
+  heading: string;
+  posts: MarkdownInstance<Record<string, any>>[];
+  dateFormat: string;
+}
+
+const { heading, posts, dateFormat } = Astro.props as Props;
 
 posts.forEach(post => (post.frontmatter.pubDate = dayjs(post.frontmatter.pubDate)));
 posts.sort((a, b) => b.frontmatter.pubDate - a.frontmatter.pubDate);

@@ -1,6 +1,13 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
-const { projects, heading } = Astro.props;
+import { Project } from "../data";
+
+export interface Props {
+  projects: Project[];
+  heading: string;
+}
+
+const { projects, heading } = Astro.props as Props;
 ---
 
 <section class="my-6">

@@ -1,7 +1,13 @@
 ---
-import { colors } from "../data.js";
 import ProjectLink from "./ProjectLink.astro";
-const { name, description, technologies, image, repoLink, demoLink, collaborator } = Astro.props.project;
+import { colors, Project } from "../data";
+
+export interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props as Props;
+const { name, description, technologies, image, repoLink, demoLink, collaborator } = project;
 ---
 
 <div class="flex flex-col min-w-full min-h-[10vh] bg-black rounded-xl md:min-h-full overflow-hidden">
@@ -9,20 +15,19 @@ const { name, description, technologies, image, repoLink, demoLink, collaborator
 
   <div class="p-4 flex flex-col gap-2 grow">
     <h3 class="text-xl font-bold text-blue">{name}</h3>
-    
+
     <p class={collaborator ? "text-sm" : null}>
       {description}
       {collaborator && (
-        <span>Made in collaboration with
-          <a
-            class="font-semibold text-green decoration-2 underline-offset-4 hover:underline"
-            href={collaborator.github}>
-            {collaborator.name}
-          </a>.
+        <span>
+          Made in collaboration with <a
+          class="font-semibold text-green decoration-2 underline-offset-4 hover:underline"
+          href={collaborator.github}>
+          {collaborator.name}</a>.
         </span>
       )}
     </p>
-    
+
     <p class="flex justify-end mt-auto flex-wrap">
       {technologies.map(tech => <span class={`font-semibold ${colors[tech]} ml-3`}>{tech}</span>)}
     </p>

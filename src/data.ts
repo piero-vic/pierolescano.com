@@ -1,4 +1,20 @@
-export const projects = [
+export interface Collaborator {
+  name: string;
+  github: string;
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  technologies: string[],
+  category: string,
+  image: string,
+  repoLink: string | null,
+  demoLink: string | null,
+  collaborator: Collaborator | null,
+}
+
+export const projects: Project[] = [
   {
     name: "Coin Watcher",
     description: "Web application for consulting crypto prices and news.",
@@ -7,6 +23,7 @@ export const projects = [
     image: "/images/coin-watcher.png",
     repoLink: "https://github.com/piero-vic/coin-watcher",
     demoLink: "https://piero-vic-coin-watcher.netlify.app/",
+    collaborator: null,
   },
   {
     name: "Space Traveler's Hub",
@@ -29,6 +46,7 @@ export const projects = [
     image: "/images/coding-bootcamp.png",
     repoLink: "https://github.com/piero-vic/coding-bootcamp-website",
     demoLink: "https://piero-vic.github.io/coding-bootcamp-website/",
+    collaborator: null,
   },
   {
     name: "cmp-ledger",
@@ -38,6 +56,7 @@ export const projects = [
     image: null,
     repoLink: "https://github.com/piero-vic/cmp-ledger",
     demoLink: null,
+    collaborator: null,
   },
   {
     name: "ptd",
@@ -47,6 +66,7 @@ export const projects = [
     image: null,
     repoLink: "https://github.com/piero-vic/ptd",
     demoLink: null,
+    collaborator: null,
   },
   {
     name: "ani-py",
@@ -56,6 +76,7 @@ export const projects = [
     image: null,
     repoLink: "https://github.com/piero-vic/ani-py",
     demoLink: null,
+    collaborator: null,
   },
 ];
 
