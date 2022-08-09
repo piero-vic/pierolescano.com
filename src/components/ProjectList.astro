@@ -1,14 +1,17 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
-import ProjectList from "./ProjectLink.astro";
+import { Project } from "../data";
 
-const { projects, heading } = Astro.props;
+export interface Props {
+  projects: Project[];
+  heading: string;
+}
+
+const { projects, heading } = Astro.props as Props;
 ---
 
 <section class="my-6">
-  <h2 class="text-3xl font-bold border-b-2 text-green border-b-black">
-    {heading}
-  </h2>
+  <h2 class="text-3xl font-bold border-b-2 text-green border-b-black">{heading}</h2>
   <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
     {projects.map(project => <ProjectCard project={project} />)}
   </div>

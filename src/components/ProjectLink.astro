@@ -1,9 +1,15 @@
 ---
 import { Icon } from "astro-icon";
-const { text, icon, link } = Astro.props;
+
+export interface Props {
+  icon: string;
+  href: string;
+}
+
+const { icon, href } = Astro.props as Props;
 ---
 
-<a class="flex h-6 items-center gap-1 transition hover:text-blue" href={link} target="_blank" rel="noopener noreferrer">
+<a class="flex h-6 items-center gap-1 transition hover:text-blue" href={href} target="_blank" rel="noopener noreferrer">
   <Icon name={icon} aria-hidden="true" focusable="false" width="100%" height="100%" />
-  {text}
+  <slot />
 </a>

@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostList from "../../components/PostList.astro";
 
-const title = "Blog | Piero Lescano";
+const title = "Blog";
 const description = "Technical articles, code snippets, and writings on the things I'm learning.";
 
 const posts = await Astro.glob("./*.md");
@@ -14,8 +14,8 @@ const posts22 = posts.filter(post => dayjs(post.frontmatter.pubDate).format("YYY
 
 <BaseLayout {title} {description}>
   <section class="flex flex-col gap-3">
-    <h1 class="text-5xl font-black text-green">Blog</h1>
-    <p class="max-w-prose">Technical articles, code snippets, and writings on the things I'm learning.</p>
+    <h1 class="text-5xl font-black text-green">{title}</h1>
+    <p class="max-w-prose">{description}</p>
   </section>
 
   <PostList heading="2022" posts={posts22} dateFormat="MMM D" />

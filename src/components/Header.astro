@@ -1,6 +1,5 @@
 ---
 import { Icon } from "astro-icon";
-import NavbarLink from "./NavbarLink.astro";
 ---
 
 <header class="px-5vw py-6 mb-6 sm:mb-0" x-data="{ open: false }">
@@ -10,16 +9,19 @@ import NavbarLink from "./NavbarLink.astro";
       <span class="sr-only">Home</span>
     </a>
 
-    <button class="absolute top-0 right-0 my-4 h-8 w-8 sm:hidden" @click="open = !open">
+    <button class="absolute top-0 right-0 my-4 h-8 w-8 sm:hidden" x-on:click="open = !open">
       <Icon name="mdi:close" x-show="open" aria-hidden="true" focusable="false" />
       <Icon name="iconoir:menu" x-show="!open" aria-hidden="true" focusable="false" />
       <span class="sr-only">Navbar Button</span>
     </button>
 
-    <ul class="flex justify-center gap-6 mt-6 text-lg font-bold sm:mt-0" :class="open ? 'block' : 'hidden sm:flex'">
-      <NavbarLink text="Projects" path="/projects" />
-      <NavbarLink text="Blog" path="/blog" />
-      <NavbarLink text="Contact" path="/contact" />
+    <ul
+      class="flex justify-center gap-6 mt-6 text-lg font-bold sm:mt-0"
+      x-bind:class="open ? 'block' : 'hidden sm:flex'"
+    >
+      <li><a href="/projects" class="decoration-2 underline-offset-4 hover:underline">Projects</a></li>
+      <li><a href="/blog" class="decoration-2 underline-offset-4 hover:underline">Blog</a></li>
+      <li><a href="/contact" class="decoration-2 underline-offset-4 hover:underline">Contact</a></li>
     </ul>
   </nav>
 </header>

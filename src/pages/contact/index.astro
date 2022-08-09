@@ -1,13 +1,15 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { socialMedia } from '../../data'
 
-const title = "Contact | Piero Lescano";
+const title = "Contact";
 const description = "Software developer focused on building CLI tools and web applications.";
+const twitterUrl = socialMedia.Twitter
 ---
 
 <BaseLayout {title} {description}>
   <section class="flex flex-col gap-3">
-    <h1 class="text-5xl font-black text-blue">Contact</h1>
+    <h1 class="text-5xl font-black text-blue">{title}</h1>
     <p class="max-w-prose text-lg">
       Let's chat! I'm always open to working on new projects. Feel free to send me a <abbr
         title="direct message"
@@ -15,7 +17,7 @@ const description = "Software developer focused on building CLI tools and web ap
       > on
       <a
         class="font-semibold text-blue decoration-2 underline-offset-4 hover:underline"
-        href="https://www.twitter.com/v1ccenzo"
+        href={twitterUrl}
         target="_blank"
         rel="noopener noreferrer">Twitter</a
       > or fill out this form.

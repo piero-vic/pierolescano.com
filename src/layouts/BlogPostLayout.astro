@@ -5,7 +5,18 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Alpine from "../components/Alpine.astro";
 
-const { content } = Astro.props;
+export interface Props {
+  content: {
+    title: string;
+    description: string;
+    image?: string;
+    imageAlt?: string;
+    author: string;
+    pubDate: string;
+  }
+}
+
+const { content } = Astro.props as Props;
 ---
 
 <html lang="en">
