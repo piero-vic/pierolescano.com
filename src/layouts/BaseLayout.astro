@@ -5,9 +5,14 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Alpine from "../components/Alpine.astro";
 
-import { website } from "../data.js";
+import { website } from "../data";
 
-const { title, description } = Astro.props;
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props as Props;
 ---
 
 <html lang="en">

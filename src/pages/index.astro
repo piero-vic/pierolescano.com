@@ -25,5 +25,5 @@ const posts = await Astro.glob("./blog/*.md");
     </p>
   </section>
 
-  <PostList heading="Latest Articles" {posts} dateFormat="MMM D, YYYY" />
+  <PostList heading="Latest Articles" posts={posts} dateFormat="MMM D, YYYY" />
 </BaseLayout>
