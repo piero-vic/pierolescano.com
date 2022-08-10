@@ -1,8 +1,5 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-setup: |
-  import AlpineMetronome from '../../components/blog/Metronome.astro'
-  import ReactMetronome from '../../components/blog/Metronome.jsx'
 title: "Building a metronome: React vs Alpine"
 description: Building the same component with two different frameworks.
 image: images/react-vs-alpine.png
@@ -11,9 +8,12 @@ author: Piero Lescano
 pubDate: 2022-04-29
 ---
 
+import AlpineMetronome from '../../components/blog/Metronome.astro'
+import ReactMetronome from '../../components/blog/Metronome.jsx'
+
 # Building a metronome: React vs Alpine
 
-<img src="/images/react-vs-alpine.png" alt="React vs Alpine" class="rounded-xl">
+<img src="/images/react-vs-alpine.png" alt="React vs Alpine" class="rounded-xl" />
 
 Lately, I've been learning to use [Alpine.js](https://alpinejs.dev/), a minimal javascript framework ideal for adding
 interactivity to static websites. The framework is awesome. It let's you add reactive behaviour without leaving the

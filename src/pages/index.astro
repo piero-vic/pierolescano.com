@@ -5,7 +5,7 @@ import PostList from "../components/PostList.astro";
 const title = "Piero Lescano";
 const description = "Software developer focused on building CLI tools and web applications.";
 
-const posts = await Astro.glob("./blog/*.md");
+const posts = await Astro.glob("./blog/*.mdx");
 ---
 
 <BaseLayout {title} {description}>
