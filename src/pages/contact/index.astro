@@ -1,35 +1,38 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { socialMedia } from '../../data'
+import { socialMedia } from "../../data";
 
 const title = "Contact";
 const description = "Software developer focused on building CLI tools and web applications.";
-const twitterUrl = socialMedia.Twitter
+const { Twitter: twitterUrl, LinkedIn: linkedinUrl } = socialMedia;
 ---
 
 <BaseLayout {title} {description}>
-  <section class="flex flex-col gap-3">
-    <h1 class="text-5xl font-black text-blue">{title}</h1>
-    <p class="max-w-prose text-lg">
-      Let's chat! I'm always open to working on new projects. Feel free to send me a <abbr
-        title="direct message"
-        class="no-underline">DM</abbr
-      > on
-      <a
-        class="font-semibold text-blue decoration-2 underline-offset-4 hover:underline"
-        href={twitterUrl}
-        target="_blank"
-        rel="noopener noreferrer">Twitter</a
-      > or fill out this form.
-    </p>
+  <section class="flex flex-col md:flex-row gap-6 justify-between">
+    <div class="flex flex-col gap-3 max-w-prose">
+      <h1 class="text-5xl font-black text-blue">{title}</h1>
+      <p>Want to work on cool stuff? Reach out!</p>
+      <p>
+        I'm always open to meeting new people and working on new projects. Don't hesitate to contact me if you want to
+        have a chat.
+      </p>
+      <p>
+        You can also reach out via <a
+          class="font-semibold text-blue decoration-2 underline-offset-4 hover:underline"
+          href={twitterUrl}
+          target="_blank"
+          rel="noopener noreferrer">Twitter</a
+        >
+        or <a
+          class="font-semibold text-blue decoration-2 underline-offset-4 hover:underline"
+          href={linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer">LinkedIn</a
+        >.
+      </p>
+    </div>
 
-    <form
-      name="contact"
-      action="/contact/success"
-      method="POST"
-      data-netlify="true"
-      class="flex flex-col gap-3 max-w-screen-md"
-    >
+    <form name="contact" action="/contact/success" method="POST" data-netlify="true" class="flex flex-col gap-3 w-full">
       <label class="flex flex-col">
         <span class="font-extrabold">Name</span>
         <input type="text" name="name" class="bg-black focus:border-blue" required />
