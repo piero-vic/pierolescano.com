@@ -1,8 +1,5 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-setup: |
-  import AlpineMetronome from '../../components/blog/Metronome.astro'
-  import ReactMetronome from '../../components/blog/Metronome.jsx'
 title: "Building a metronome: React vs Alpine"
 description: Building the same component with two different frameworks.
 image: images/react-vs-alpine.png
@@ -11,9 +8,12 @@ author: Piero Lescano
 pubDate: 2022-04-29
 ---
 
+import AlpineMetronome from "../../components/blog/Metronome.astro";
+import ReactMetronome from "../../components/blog/Metronome.jsx";
+
 # Building a metronome: React vs Alpine
 
-<img src="/images/react-vs-alpine.png" alt="React vs Alpine" class="rounded-xl">
+<img src="/images/react-vs-alpine.png" alt="React vs Alpine" class="rounded-xl" />
 
 Lately, I've been learning to use [Alpine.js](https://alpinejs.dev/), a minimal javascript framework ideal for adding
 interactivity to static websites. The framework is awesome. It let's you add reactive behaviour without leaving the
@@ -87,7 +87,7 @@ const useMetronome = () => {
 ```
 
 Almost all the action happens inside `useEffect`. We want to repeat a sound over time so we'll need to set an interval.
-We're declaring the `timer` variable to store the interval ID and we're also creating an 
+We're declaring the `timer` variable to store the interval ID and we're also creating an
 [HTMLAudioElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement) object to play the sound.
 
 If `isPlaying` is true we'll use `setInterval` to repeately play the sound according to the `bpm`.
@@ -118,7 +118,7 @@ Let's start with the HTML.
     <div><span x-text="bpm"></span> BPM</div>
     <input type="range" min="60" max="240" x-model="bpm" />
   </div>
-  <button 
+  <button
     x-on:click="isPlaying = !isPlaying"
     x-text="isPlaying ? 'Stop' : 'Start'"
   ></button>
@@ -157,7 +157,7 @@ document.addEventListener("alpine:init", () => {
 ```
 
 `Alpine.data` allows us to register our component. The first argument is the name we're going to use with the `x-data`
-directive. The second argument is a function that returns the reactive data we're going to use. 
+directive. The second argument is a function that returns the reactive data we're going to use.
 
 Similar to what we did with React, we're declaring a `timer` variable, creating and HTMLAudioElement object, and setting
 `bpm` and `isPlaying` as the state of our component. `timer` and `click` are not inside the return statement so they are

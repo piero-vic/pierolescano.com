@@ -1,0 +1,72 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: Boost your command line productivity
+author: Piero Lescano
+pubDate: 2021-12-10
+---
+
+# Boost your command line productivity
+
+_This article was originally published in
+[Medium](https://medium.com/@piero-vic/boost-your-command-line-productivity-20eaf2ac2ff9)._
+
+So you’ve been using the command line for a while. You know how to navigate your system using `cd`. You are familiar
+with common commands like `git`. You might have got proficient with these commands, but what if I tell you that you can
+boost your efficiency even more. In this article, we will discuss two ways to streamline our workflow in the command
+line.
+
+## Aliases
+
+Let’s start with aliases. Aliases are shortcuts used to reference a command. They help us minimize the amount of typing
+we have to do to run commands.
+
+For example, if you are a developer then you are probably running a lot of git commands when working on different
+projects. Instead of running something like this: `git commit -m "Initial commit"`, we can alias `git commit -m` to
+something shorter like `gcm` and do the same with fewer keystrokes.
+
+To configure an alias we will need to edit our shell configuration file. You will be able to find this file in your home
+directory under the name `.bashrc` or `.zshrc` (depending on your shell). Open the file. Here we will declare the
+aliases with the following syntax.
+
+```bash
+# Format
+alias ALIAS="COMMAND"
+# Example
+alias gcm="git commit -m"
+```
+
+The next time you want to make a git commit you will only need to type `gcm "Initial commit"`.
+
+It might not seem like much now, but consider the number of times a developer creates a commit. Aliases are also handy
+when dealing with long commands. I have a lot of aliases like the following on
+[my configuration files](https://github.com/piero-vic/dotfiles).
+
+```bash
+alias bup="brew update && brew outdated && brew upgrade && brew cleanup"
+```
+
+If you find yourself running lengthy commands, consider creating an alias for it.
+
+## goto
+
+Navigating your file system with the command line could be tedious if you’re not used to it. There is a tool called goto
+that makes this task easier. With this simple script, you will be able to create aliases to bookmark a directory. Once
+installed you can just run `goto ALIAS` and jump into the selected directory.
+
+Go to the [GitHub repo](https://github.com/iridakos/goto) and follow the instructions to install the goto script. Then
+run the following command to create a new alias.
+
+```shell
+# Format
+goto -r ALIAS PATH
+# Example
+goto -r op /home/code/open-source/
+```
+
+By using the example above, I would only need to run `goto op` to access the bookmarked directory.
+
+## Conclusion
+
+There are many other ways we can simplify our experience in the command line. This was just a sneak peek. Feel free to
+explore. What about creating a shell alias for `goto`? Don’t forget that setting up a development workflow depends on
+your personal needs. Please give these methods a try and get creative with your setup.
