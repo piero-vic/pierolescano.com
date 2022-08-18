@@ -6,12 +6,12 @@ const title = "Piero Lescano";
 const description = "Software developer focused on building CLI tools and web applications.";
 
 const posts = await Astro.glob("./blog/*.mdx");
-const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
+const nonDraftPosts = posts.filter(post => !post.frontmatter.draft);
 ---
 
 <BaseLayout {title} {description}>
   <section class="flex flex-col gap-3">
-    <h1 class="text-5xl font-black text-blue">Hi, I'm Piero.</h1>
+    <h1 class="text-5xl font-black text-blue">{title}</h1>
     <p>
       <span class="text-red">HTML</span>
       <span class="text-cyan">CSS</span>
@@ -20,9 +20,16 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
       <span class="text-green">Python</span>
     </p>
     <p class="max-w-prose">
-      I'm a software developer from Peru whose goal is to build beautiful user experiences and find solutions to unique
-      problems through code. I'm in love with <abbr title="command-line interface" class="no-underline">CLI</abbr> tools
-      and excited about front-end development and the future of blockchain technology.
+      I'm a Software Developer from Peru. I <a
+        href="/projects"
+        class="font-semibold text-green decoration-2 underline-offset-4 hover:underline"
+        >build</a
+      > for the web and <a
+        href="/blog"
+        class="font-semibold text-green decoration-2 underline-offset-4 hover:underline"
+        >write</a
+      > about it sometimes. My interests go from jazz, generative music, and books to Linux, open source, and anything
+      web related.
     </p>
   </section>
 
