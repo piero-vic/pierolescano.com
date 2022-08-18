@@ -21,7 +21,7 @@ posts.sort((a, b) => b.frontmatter.pubDate - a.frontmatter.pubDate);
       <li>
         <a href={url} class="sm:text-md -mx-3 flex justify-between gap-6 rounded-xl px-3 py-2 text-sm hover:bg-black">
           <span class="font-semibold">{frontmatter.title}</span>
-          <time class="text-green" datetime={frontmatter.pubDate.format("YYYY-MM-DD")}>
+          <time class="text-green text-right" datetime={frontmatter.pubDate.format("YYYY-MM-DD")}>
             {frontmatter.pubDate.format(dateFormat)}
           </time>
         </a>

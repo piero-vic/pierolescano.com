@@ -33,8 +33,16 @@ const { name, description, technologies, image, repoLink, demoLink, collaborator
     </p>
 
     <div class="flex justify-end gap-3">
-      {demoLink && <ProjectLink icon="prime:globe" href={demoLink}>Demo</ProjectLink>}
-      {repoLink && <ProjectLink icon="prime:github" href={repoLink}>Source</ProjectLink>}
+      {demoLink && (
+        <ProjectLink icon="prime:globe" href={demoLink}>
+          Demo
+        </ProjectLink>
+      )}
+      {repoLink && (
+        <ProjectLink icon="prime:github" href={repoLink}>
+          Source
+        </ProjectLink>
+      )}
     </div>
   </div>
 </div>
