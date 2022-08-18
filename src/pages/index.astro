@@ -10,7 +10,7 @@ const nonDraftPosts = posts.filter(post => !post.frontmatter.draft);
 ---
 
 <BaseLayout {title} {description}>
-  <section class="flex flex-col gap-3">
+  <section class="max-w-screen-md flex flex-col gap-3">
     <h1 class="text-5xl font-black text-blue">{title}</h1>
     <p>
       <span class="text-red">HTML</span>

@@ -16,7 +16,7 @@ const posts22 = actualPosts.filter(post => dayjs(post.frontmatter.pubDate).forma
 ---
 
 <BaseLayout {title} {description}>
-  <section class="flex flex-col gap-3">
+  <section class="max-w-screen-md flex flex-col gap-3">
     <h1 class="text-5xl font-black text-green">{title}</h1>
     <p class="max-w-prose">{description}</p>
   </section>

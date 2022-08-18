@@ -8,8 +8,8 @@ const { Twitter: twitterUrl, LinkedIn: linkedinUrl } = socialMedia;
 ---
 
 <BaseLayout {title} {description}>
-  <section class="flex flex-col md:flex-row gap-6 justify-between">
-    <div class="flex flex-col gap-3 max-w-prose">
+  <div class="flex flex-col md:flex-row gap-6 justify-between">
+    <section class="flex flex-col gap-3 max-w-prose">
       <h1 class="text-5xl font-black text-blue">{title}</h1>
       <p>Want to work on cool stuff? Reach out!</p>
       <p>
@@ -30,7 +30,7 @@ const { Twitter: twitterUrl, LinkedIn: linkedinUrl } = socialMedia;
           rel="noopener noreferrer">LinkedIn</a
         >.
       </p>
-    </div>
+    </section>
 
     <form name="contact" action="/contact/success" method="POST" data-netlify="true" class="flex flex-col gap-3 w-full">
       <label class="flex flex-col">
@@ -49,5 +49,5 @@ const { Twitter: twitterUrl, LinkedIn: linkedinUrl } = socialMedia;
         Submit
       </button>
     </form>
-  </section>
+  </div>
 </BaseLayout>
