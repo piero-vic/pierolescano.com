@@ -13,22 +13,24 @@ export interface Props {
     imageAlt?: string;
     author: string;
     pubDate: string;
-  }
+  };
 }
 
-const { content } = Astro.props as Props;
+const {
+  content: { title, description, image, imageAlt },
+} = Astro.props as Props;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead data={{ ...content, type: "article" }} />
+    <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} type="article" />
     <Alpine />
   </head>
   <body class="font-mono text-foreground bg-background flex flex-col justify-between h-screen">
     <Header />
     <main class="mx-5vw sm:my-12">
       <article class="prose prose-invert mx-auto max-w-screen-md prose-headings:text-green prose-a:text-green">
-        <slot></slot>
+        <slot />
       </article>
       <hr class="mx-auto max-w-screen-md my-[2em] h-[2px] bg-black border-none" />
       <section class="mx-auto max-w-screen-md">
@@ -48,7 +50,9 @@ const { content } = Astro.props as Props;
             data-lang="en"
             crossorigin="anonymous"
             async
-          ></script>
+          >
+
+          </script>
         </div>
       </section>
     </main>

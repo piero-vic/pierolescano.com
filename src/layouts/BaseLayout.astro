@@ -5,8 +5,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Alpine from "../components/Alpine.astro";
 
-import { website } from "../data";
-
 export interface Props {
   title: string;
   description: string;
@@ -17,7 +15,7 @@ const { title, description } = Astro.props as Props;
 
 <html lang="en">
   <head>
-    <BaseHead data={{ ...website, title: title, description: description }} />
+    <BaseHead title={title} description={description} image="logo.png" imageAlt="Piero Lescano Logo" type="website" />
     <Alpine />
   </head>
   <body class="font-mono text-foreground bg-background flex flex-col justify-between h-screen">
