@@ -4,7 +4,7 @@ import { socialMedia } from "../data";
 const socialMediaKeys = Object.keys(socialMedia);
 ---
 
-<footer class="px-5vw py-6 mt-6 sm:mt-0">
+<footer class="px-5vw py-6">
   <div class="flex flex-wrap items-center justify-between gap-2 max-w-7xl mx-auto">
     <ul class="flex gap-2">{socialMediaKeys.map(key => <SocialMediaLink name={key} href={socialMedia[key]} />)}</ul>
     <p class="text-sm">

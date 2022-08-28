@@ -97,16 +97,3 @@ export const socialMedia = {
   LinkedIn: "https://www.linkedin.com/in/piero-lescano",
   Twitter: "https://www.twitter.com/piero_codes",
 };
-
-export const twitter = {
-  card: "summary",
-  site: "@piero_codes",
-  creator: "@piero_codes",
-};
-
-export const website = {
-  type: "website",
-  url: "https://pierolescano.com/",
-  image: "logo.png",
-  imageAlt: "Piero Lescano Logo",
-};
