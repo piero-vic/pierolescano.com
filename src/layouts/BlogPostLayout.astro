@@ -4,6 +4,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Alpine from "../components/Alpine.astro";
+import Comments from "../components/Comments.astro";
 
 export interface Props {
   content: {
@@ -13,11 +14,12 @@ export interface Props {
     imageAlt?: string;
     author: string;
     pubDate: string;
+    comments: boolean;
   };
 }
 
 const {
-  content: { title, description, image, imageAlt },
+  content: { title, description, image, imageAlt, comments },
 } = Astro.props as Props;
 ---
 
@@ -32,29 +34,12 @@ const {
       <article class="prose prose-invert mx-auto max-w-screen-md prose-headings:text-green prose-a:text-green">
         <slot />
       </article>
-      <hr class="mx-auto max-w-screen-md my-[2em] h-[2px] bg-black border-none" />
-      <section class="mx-auto max-w-screen-md">
-        <h2 class="my-[1em] text-3xl text-center font-bold text-green">Comments</h2>
-        <div class="giscus">
-          <script
-            src="https://giscus.app/client.js"
-            data-repo="piero-vic/pierolescano.com"
-            data-repo-id="R_kgDOGd9pjg"
-            data-category="Comments"
-            data-category-id="DIC_kwDOGd9pjs4CBO-U"
-            data-mapping="pathname"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="bottom"
-            data-theme="transparent_dark"
-            data-lang="en"
-            crossorigin="anonymous"
-            async
-          >
-
-          </script>
-        </div>
-      </section>
+      {comments && (
+        <>
+          <hr class="mx-auto my-[2em] h-[2px] max-w-screen-md border-none bg-black" />
+          <Comments />
+        </>
+      )}
     </main>
     <Footer />
   </body>
