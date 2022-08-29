@@ -1,21 +1,21 @@
 <section class="mx-auto max-w-screen-md">
   <h2 class="my-[1em] text-3xl text-center font-bold text-green">Comments</h2>
-  <div class="giscus" />
+  <giscus-widget
+    id="comments"
+    repo="piero-vic/pierolescano.com"
+    repoid="R_kgDOGd9pjg"
+    category="Comments"
+    categoryid="DIC_kwDOGd9pjs4CBO-U"
+    mapping="pathname"
+    reactionsenabled="1"
+    emitmetadata="0"
+    inputposition="bottom"
+    theme="transparent_dark"
+    lang="en"
+    loading="eager"
+  ></giscus-widget>
 </section>
 
-<script
-  src="https://giscus.app/client.js"
-  data-repo="piero-vic/pierolescano.com"
-  data-repo-id="R_kgDOGd9pjg"
-  data-category="Comments"
-  data-category-id="DIC_kwDOGd9pjs4CBO-U"
-  data-mapping="pathname"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="bottom"
-  data-theme="transparent_dark"
-  data-lang="en"
-  crossorigin="anonymous"
-  async
->
+<script>
+  import 'giscus'
 </script>
