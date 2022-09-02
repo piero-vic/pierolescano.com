@@ -31,7 +31,9 @@ const {
   <body class="font-mono text-foreground bg-background flex flex-col justify-between h-screen">
     <Header />
     <main class="px-5vw py-6">
-      <article class="prose prose-invert mx-auto max-w-screen-md prose-headings:text-green prose-a:text-green prose-img:rounded-xl">
+      <article
+        class="prose prose-invert mx-auto max-w-screen-md prose-headings:text-green prose-a:text-green prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl"
+      >
         <slot />
       </article>
       {comments && (
