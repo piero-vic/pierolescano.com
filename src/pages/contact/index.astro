@@ -1,10 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { socialMedia } from "../../data";
 
 const title = "Contact";
 const description = "Software developer focused on building CLI tools and web applications.";
-const { Twitter: twitterUrl, LinkedIn: linkedinUrl } = socialMedia;
 ---
 
 <BaseLayout {title} {description}>
@@ -19,13 +17,7 @@ const { Twitter: twitterUrl, LinkedIn: linkedinUrl } = socialMedia;
       <p>
         You can also reach out via <a
           class="font-semibold text-blue decoration-2 underline-offset-4 hover:underline"
-          href={twitterUrl}
-          target="_blank"
-          rel="noopener noreferrer">Twitter</a
-        >
-        or <a
-          class="font-semibold text-blue decoration-2 underline-offset-4 hover:underline"
-          href={linkedinUrl}
+          href="https://www.linkedin.com/in/piero-lescano"
           target="_blank"
           rel="noopener noreferrer">LinkedIn</a
         >.
