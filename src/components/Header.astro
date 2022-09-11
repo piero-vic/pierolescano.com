@@ -3,7 +3,7 @@ import { Icon } from "astro-icon";
 ---
 
 <header class="px-5vw py-6" x-data="{ open: false }">
-  <nav class="relative items-center justify-between text-blue max-w-7xl mx-auto sm:flex">
+  <nav class="relative items-center justify-between font-bold text-lg text-blue max-w-7xl mx-auto sm:flex">
     <a href="/" class="block h-16 w-16 transition hover:scale-110">
       <Icon name="ph:cube-fill" aria-hidden="true" focusable="false" />
       <span class="sr-only">Home</span>
@@ -16,7 +16,7 @@ import { Icon } from "astro-icon";
     </button>
 
     <ul
-      class="flex justify-center gap-6 mt-6 text-lg font-bold sm:mt-0"
+      class="flex flex-col items-end sm:flex-row justify-center gap-6 mt-2 sm:mt-0"
       x-bind:class="open ? 'block' : 'hidden sm:flex'"
     >
       <li><a href="/projects" class="decoration-2 underline-offset-4 hover:underline">Projects</a></li>
