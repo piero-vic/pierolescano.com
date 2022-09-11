@@ -91,9 +91,3 @@ export const colors = {
   TailwindCSS: "text-blue",
   Typer: "text-white",
 };
-
-export const socialMedia = {
-  Github: "https://github.com/piero-vic",
-  LinkedIn: "https://www.linkedin.com/in/piero-lescano",
-  Twitter: "https://www.twitter.com/piero_codes",
-};

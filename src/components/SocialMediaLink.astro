@@ -9,8 +9,8 @@ const { name, href } = Astro.props as Props;
 ---
 
 <li class="w-6 h-6 transition hover:scale-110 hover:text-blue">
-  <a href={href} target="_blank" rel="noopener noreferrer">
-    <Icon pack="prime" name={name.toLowerCase()} aria-hidden="true" focusable="false" />
-    <span class="sr-only">{name}</span>
+  <a href={href}>
+    <Icon name={name} aria-hidden="true" focusable="false" />
+    <span class="sr-only"><slot /></span>
   </a>
 </li>

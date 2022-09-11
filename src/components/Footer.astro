@@ -1,26 +1,34 @@
 ---
 import SocialMediaLink from "./SocialMediaLink.astro";
-import { socialMedia } from "../data";
-const socialMediaKeys = Object.keys(socialMedia);
 ---
 
 <footer class="px-5vw py-6">
-  <div class="flex flex-wrap items-center justify-between gap-2 max-w-7xl mx-auto">
-    <ul class="flex gap-2">{socialMediaKeys.map(key => <SocialMediaLink name={key} href={socialMedia[key]} />)}</ul>
-    <p class="text-sm">
-      <span class="font-bold">© 2021-2022 Piero Lescano.</span>
-      Build with <a
-        class="font-bold text-red decoration-2 underline-offset-4 hover:underline"
-        href="https://astro.build/"
-        target="_blank"
-        rel="noopener noreferrer">Astro</a
-      >
-      and <a
-        class="font-bold text-blue decoration-2 underline-offset-4 hover:underline"
-        href="https://tailwindcss.com/"
-        target="_blank"
-        rel="noopener noreferrer">TailwindCSS</a
-      >.
-    </p>
+  <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-2 max-w-7xl mx-auto text-sm">
+    <div class="flex flex-col lg:flex-row gap-2 lg:items-center">
+      <span>© 2021-2022 <span class="font-bold">Piero Lescano</span></span>
+      <span class="hidden lg:inline">·</span>
+      <span>Content licensed under <a class="font-bold text-green decoration-2 underline-offset-4 hover:underline" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a></span>
+      <span class="hidden lg:inline">·</span>
+      <span>
+        Build with <a
+          class="font-bold text-red decoration-2 underline-offset-4 hover:underline"
+          href="https://astro.build/"
+          target="_blank"
+          rel="noopener noreferrer">Astro</a
+        >
+        and <a
+          class="font-bold text-blue decoration-2 underline-offset-4 hover:underline"
+          href="https://tailwindcss.com/"
+          target="_blank"
+          rel="noopener noreferrer">TailwindCSS</a
+        >
+      </span> 
+    </div> 
+
+    <ul class="flex gap-2">
+      <SocialMediaLink name="prime:github" href="https://github.com/piero-vic">Github</SocialMediaLink>
+      <SocialMediaLink name="prime:linkedin" href="https://www.linkedin.com/in/piero-lescano">LinkedIn</SocialMediaLink>
+      <SocialMediaLink name="ph:envelope-simple-fill" href="mailto:pierolescano@protonmail.com">Email</SocialMediaLink>
+    </ul>
   </div>
 </footer>
