@@ -1,5 +1,8 @@
 ---
-import "../styles/index.css";
+import '@fontsource/jetbrains-mono/400.css'
+import '@fontsource/jetbrains-mono/400-italic.css'
+import '@fontsource/jetbrains-mono/700.css'
+import '@fontsource/jetbrains-mono/700-italic.css'
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -21,7 +24,7 @@ const { title, description } = Astro.props as Props;
   <body class="font-mono text-foreground bg-background flex flex-col justify-between h-screen">
     <Header />
     <main class="px-5vw py-6">
-      <div class="flex flex-col justify-center gap-3 max-w-7xl mx-auto">
+      <div class="flex flex-col justify-center gap-3 max-w-5xl mx-auto">
         <slot />
       </div>
     </main>
