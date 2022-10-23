@@ -9,7 +9,7 @@ const webProjects = projects.filter(p => p.category === "web");
 const cliProjects = projects.filter(p => p.category === "cli");
 ---
 
-<BaseLayout {title} {description}>
+<BaseLayout title={title} description={description}>
   <ProjectList projects={webProjects} heading="Web" />
   <ProjectList projects={cliProjects} heading="Terminal" />
 </BaseLayout>

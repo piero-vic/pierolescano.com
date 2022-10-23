@@ -15,7 +15,7 @@ const posts21 = actualPosts.filter(post => dayjs(post.frontmatter.pubDate).forma
 const posts22 = actualPosts.filter(post => dayjs(post.frontmatter.pubDate).format("YYYY") == "2022");
 ---
 
-<BaseLayout {title} {description}>
+<BaseLayout title={title} description={description}>
   <section class="max-w-screen-md flex flex-col gap-3">
     <h1 class="text-5xl font-black text-green">{title}</h1>
     <p class="max-w-prose">{description}</p>
