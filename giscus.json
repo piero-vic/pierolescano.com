@@ -1,0 +1,5 @@
+{
+  "origins": ["https://pierolescano.com", "https://pierolescano.netlify.app"],
+  "originsRegex": ["http://localhost:[0-9]+"],
+  "defaultCommentOrder": "oldest"
+}
