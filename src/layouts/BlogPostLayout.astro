@@ -6,7 +6,6 @@ import '@fontsource/jetbrains-mono/700-italic.css'
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Alpine from "../components/Alpine.astro";
 import Comments from "../components/Comments.astro";
 
 export interface Props {
@@ -29,7 +28,6 @@ const {
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} type="article" />
-    <Alpine />
   </head>
   <body class="font-mono text-foreground bg-background flex flex-col justify-between h-screen">
     <Header />
