@@ -9,19 +9,23 @@ import { Icon } from "astro-icon";
       <span class="sr-only">Home</span>
     </a>
 
-    <button class="absolute top-0 right-0 my-4 h-8 w-8 sm:hidden" x-on:click="open = !open">
-      <Icon name="mdi:close" x-show="open" aria-hidden="true" focusable="false" />
-      <Icon name="iconoir:menu" x-show="!open" aria-hidden="true" focusable="false" />
-      <span class="sr-only">Navbar Button</span>
-    </button>
+    <template x-if="true">
+      <div>
+        <button class="absolute top-0 right-0 my-4 h-8 w-8 sm:hidden" x-on:click="open = !open">
+          <Icon name="mdi:close" x-show="open" aria-hidden="true" focusable="false" />
+          <Icon name="iconoir:menu" x-show="!open" aria-hidden="true" focusable="false" />
+          <span class="sr-only">Navbar Button</span>
+        </button>
 
-    <ul
-      class="flex flex-col items-end sm:flex-row justify-center gap-6 mt-2 sm:mt-0"
-      x-bind:class="open ? 'block' : 'hidden sm:flex'"
-    >
-      <li><a href="/projects" class="decoration-2 underline-offset-4 hover:underline">Projects</a></li>
-      <li><a href="/blog" class="decoration-2 underline-offset-4 hover:underline">Blog</a></li>
-      <li><a href="/contact" class="decoration-2 underline-offset-4 hover:underline">Contact</a></li>
-    </ul>
+        <ul
+          class="flex flex-col items-end sm:flex-row justify-center gap-6 mt-2 sm:mt-0"
+          x-bind:class="open ? 'block' : 'hidden sm:flex'"
+        >
+          <li><a href="/projects" class="decoration-2 underline-offset-4 hover:underline">Projects</a></li>
+          <li><a href="/blog" class="decoration-2 underline-offset-4 hover:underline">Blog</a></li>
+          <li><a href="/contact" class="decoration-2 underline-offset-4 hover:underline">Contact</a></li>
+        </ul>
+      </div>
+    </template>
   </nav>
 </header>
