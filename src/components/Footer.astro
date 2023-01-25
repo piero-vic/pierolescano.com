@@ -1,28 +1,72 @@
 ---
+import { Icon } from "astro-icon";
 import SocialMediaLink from "./SocialMediaLink.astro";
 ---
 
 <footer class="px-5vw py-6 text-xs">
-  <div class="flex flex-col justify-between lg:flex-row items-center gap-2 max-w-7xl mx-auto">
+  <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 xl:flex-row">
     <ul class="flex gap-2">
       <SocialMediaLink name="prime:github" href="https://github.com/piero-vic">Github</SocialMediaLink>
       <SocialMediaLink name="prime:linkedin" href="https://www.linkedin.com/in/piero-lescano">LinkedIn</SocialMediaLink>
       <SocialMediaLink name="ph:envelope-simple-fill" href="mailto:pierolescano@protonmail.com">Email</SocialMediaLink>
     </ul>
-    <div class="flex flex-col gap-2 flex-wrap sm:flex-row items-center justify-center text-center">
-      <span class="font-bold">© 2021-2022 Piero Lescano</span>
+    <div class="flex flex-col flex-wrap items-center justify-center gap-2 text-center sm:flex-row">
+      <div class="flex items-center gap-2 font-bold">
+        <span class="h-3 w-3">
+          <Icon name="ph:copyright-bold" />
+        </span>
+        2021-2023 Piero Lescano
+      </div>
+
       <span class="hidden sm:inline">·</span>
+
       <span>
         Build with <a class="font-bold text-red decoration-2 underline-offset-4 hover:underline" href="https://astro.build/">Astro</a>
         and <a class="font-bold text-blue decoration-2 underline-offset-4 hover:underline" href="https://tailwindcss.com/">TailwindCSS</a>
       </span>
+
       <span class="hidden sm:inline">·</span>
-      <span>
-        Content licensed under
-        <a class="font-bold text-green decoration-2 underline-offset-4 hover:underline" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-          BY-NC-SA 4.0
-        </a>
-      </span>
+
+      <div class="flex gap-2 items-center">
+        <span class="w-3 h-3">
+          <Icon name="bi:spotify" class="text-green" />
+        </span>
+        <p id="current-track">
+          <span class="font-bold">Not Playing</span> - <span>Spotify</span>
+        </p>
+      </div>
     </div>
   </div>
 </footer>
+
+<script>
+  window.addEventListener("DOMContentLoaded", async () => {
+    const CACHE_TIMEOUT = 50000;
+    const API_CALL_INTERVAL = 10000;
+
+    const get = async (url: string) => {
+      const now = new Date().getTime();
+      const prevResp = JSON.parse(window.localStorage.getItem(url));
+      if (prevResp && Math.abs(now - prevResp.time) < CACHE_TIMEOUT) {
+        return prevResp.data;
+      }
+      const resp = await fetch(url);
+      const json = await resp.json();
+      window.localStorage.setItem(url, JSON.stringify({ time: now, data: json }));
+      return json;
+    };
+
+    const setCurrentTrack = async () => {
+      const currentTrack = await get("/api/current-track");
+      const currentTrackContainer = document.getElementById("current-track");
+
+      currentTrackContainer.innerHTML = currentTrack.isPlaying
+        ? `<a class="font-bold text-green decoration-2 underline-offset-4 hover:underline" href="${currentTrack.songUrl}">${currentTrack.name}</a> - <span>${currentTrack.artist}</span>`
+        : `<span class="font-bold">Not Playing</span> - <span>Spotify</span>`;
+    };
+
+    await setCurrentTrack();
+
+    window.setInterval(setCurrentTrack, API_CALL_INTERVAL);
+  });
+</script>
