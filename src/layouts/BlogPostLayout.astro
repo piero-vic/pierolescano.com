@@ -7,22 +7,15 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Comments from "../components/Comments.astro";
+import { CollectionEntry } from "astro:content";
 
 export interface Props {
-  content: {
-    title: string;
-    description: string;
-    image?: string;
-    imageAlt?: string;
-    author: string;
-    pubDate: string;
-    comments: boolean;
-  };
+  entry: CollectionEntry<"blog">;
 }
 
-const {
-  content: { title, description, image, imageAlt, comments },
-} = Astro.props as Props;
+const { entry } = Astro.props;
+const { title, description, image, imageAlt, comments } = entry.data;
+const { Content } = await entry.render();
 ---
 
 <html lang="en">
@@ -35,7 +28,7 @@ const {
       <article
         class="prose prose-invert mx-auto max-w-screen-md prose-headings:text-green prose-a:text-green prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl"
       >
-        <slot />
+        <Content />
       </article>
       {comments && (
         <>

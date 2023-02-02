@@ -1,12 +1,12 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostList from "../components/PostList.astro";
 
 const title = "Piero Lescano";
 const description = "Software developer focused on building CLI tools and web applications.";
 
-const posts = await Astro.glob("./blog/*.mdx");
-const nonDraftPosts = posts.filter(post => !post.frontmatter.draft);
+const posts = await getCollection('blog')
 ---
 
 <BaseLayout title={title} description={description}>
@@ -33,5 +33,5 @@ const nonDraftPosts = posts.filter(post => !post.frontmatter.draft);
     </p>
   </section>
 
-  <PostList heading="Latest Articles" posts={import.meta.env.PROD ? nonDraftPosts : posts} dateFormat="MMM D, YYYY" />
+  <PostList heading="Latest Articles" posts={posts} dateFormat="MMM D, YYYY" />
 </BaseLayout>

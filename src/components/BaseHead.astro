@@ -7,7 +7,7 @@ export interface Props {
   imageAlt: string;
 }
 
-const { title, description, type, image, imageAlt } = Astro.props as Props;
+const { title, description, type, image, imageAlt } = Astro.props;
 
 const pageTitle = title === "Piero Lescano" ? title : `${title} | Piero Lescano`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);

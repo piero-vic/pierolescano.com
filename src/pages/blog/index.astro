@@ -1,5 +1,6 @@
 ---
 import dayjs from "dayjs";
+import { getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostList from "../../components/PostList.astro";
@@ -7,12 +8,10 @@ import PostList from "../../components/PostList.astro";
 const title = "Blog";
 const description = "Technical articles, code snippets, and writings on the things I'm learning.";
 
-const posts = await Astro.glob("./*.mdx");
-const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
-const actualPosts =  import.meta.env.PROD ? nonDraftPosts : posts;
+const posts = await getCollection("blog");
 
-const posts21 = actualPosts.filter(post => dayjs(post.frontmatter.pubDate).format("YYYY") == "2021");
-const posts22 = actualPosts.filter(post => dayjs(post.frontmatter.pubDate).format("YYYY") == "2022");
+const posts21 = posts.filter(post => dayjs(post.data.pubDate).format("YYYY") == "2021");
+const posts22 = posts.filter(post => dayjs(post.data.pubDate).format("YYYY") == "2022");
 ---
 
 <BaseLayout title={title} description={description}>
