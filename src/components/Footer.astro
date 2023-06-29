@@ -3,7 +3,7 @@ import { Icon } from "astro-icon";
 import SocialMediaLink from "./SocialMediaLink.astro";
 ---
 
-<footer class="px-5vw py-6 text-xs">
+<footer class="px-5vw py-6 text-xs md:py-12">
   <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 xl:flex-row">
     <ul class="flex gap-2">
       <SocialMediaLink name="prime:github" href="https://github.com/piero-vic">Github</SocialMediaLink>
@@ -21,14 +21,20 @@ import SocialMediaLink from "./SocialMediaLink.astro";
       <span class="hidden sm:inline">·</span>
 
       <span>
-        Build with <a class="font-bold text-red decoration-2 underline-offset-4 hover:underline" href="https://astro.build/">Astro</a>
-        and <a class="font-bold text-blue decoration-2 underline-offset-4 hover:underline" href="https://tailwindcss.com/">TailwindCSS</a>
+        Build with <a
+          class="font-bold text-red decoration-2 underline-offset-4 hover:underline"
+          href="https://astro.build/">Astro</a
+        >
+        and <a
+          class="font-bold text-blue decoration-2 underline-offset-4 hover:underline"
+          href="https://tailwindcss.com/">TailwindCSS</a
+        >
       </span>
 
       <span class="hidden sm:inline">·</span>
 
-      <div class="flex gap-2 items-center">
-        <span class="w-3 h-3">
+      <div class="flex items-center gap-2">
+        <span class="h-3 w-3">
           <Icon name="bi:spotify" class="text-green" />
         </span>
         <p id="current-track">

@@ -1,8 +1,8 @@
 ---
-import '@fontsource/jetbrains-mono/400.css'
-import '@fontsource/jetbrains-mono/400-italic.css'
-import '@fontsource/jetbrains-mono/700.css'
-import '@fontsource/jetbrains-mono/700-italic.css'
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/400-italic.css";
+import "@fontsource/jetbrains-mono/700.css";
+import "@fontsource/jetbrains-mono/700-italic.css";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -22,20 +22,22 @@ const { Content } = await entry.render();
   <head>
     <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} type="article" />
   </head>
-  <body class="font-mono text-foreground bg-background flex flex-col justify-between h-screen">
+  <body class="flex h-screen flex-col bg-background font-mono text-foreground">
     <Header />
-    <main class="px-5vw py-6">
+    <main class="grow px-5vw py-6">
       <article
         class="prose prose-invert mx-auto max-w-screen-md prose-headings:text-green prose-a:text-green prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl"
       >
         <Content />
       </article>
-      {comments && (
-        <>
-          <hr class="mx-auto my-[2em] h-[2px] max-w-screen-md border-none bg-black" />
-          <Comments />
-        </>
-      )}
+      {
+        comments && (
+          <>
+            <hr class="mx-auto my-[2em] h-[2px] max-w-screen-md border-none bg-black" />
+            <Comments />
+          </>
+        )
+      }
     </main>
     <Footer />
   </body>

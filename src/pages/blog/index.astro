@@ -15,9 +15,9 @@ const posts22 = posts.filter(post => dayjs(post.data.pubDate).format("YYYY") == 
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="max-w-screen-md flex flex-col gap-3">
-    <h1 class="text-5xl font-black text-green">{title}</h1>
-    <p class="max-w-prose">{description}</p>
+  <section class="mb-6">
+    <h1 class="mb-6 text-5xl font-black text-green">{title}</h1>
+    <p class="mb-3">{description}</p>
   </section>
 
   <PostList heading="2022" posts={posts22} dateFormat="MMM D" />

@@ -11,25 +11,30 @@ export interface Props {
 const { heading, posts, dateFormat } = Astro.props;
 
 posts.sort((a, b) => {
-  const dateA = dayjs(a.data.pubDate)
-  const dateB = dayjs(b.data.pubDate)
+  const dateA = dayjs(a.data.pubDate);
+  const dateB = dayjs(b.data.pubDate);
 
-  return Number(dateB) - Number(dateA)
+  return Number(dateB) - Number(dateA);
 });
 ---
 
-<section class="max-w-screen-md">
-  <h2 class="my-3 text-2xl font-bold border-b-2 text-green border-b-black">{heading}</h2>
-  <ul class="flex flex-col max-w-screen-md">
-    {posts.map(({ slug, data }) => (
-      <li>
-        <a href={`/blog/${slug}`} class="sm:text-md -mx-3 flex justify-between gap-6 rounded-xl px-3 py-2 text-sm hover:bg-black">
-          <span class="font-semibold">{data.title}</span>
-          <time class="text-green text-right" datetime={dayjs(data.pubDate).format("YYYY-MM-DD")}>
-            {dayjs(data.pubDate).format(dateFormat)}
-          </time>
-        </a>
-      </li>
-    ))}
+<section class="my-6 first:mt-0 last:mb-0">
+  <h2 class="my-3 border-b-2 border-b-black pb-3 text-2xl font-bold text-green">{heading}</h2>
+  <ul class="flex flex-col">
+    {
+      posts.map(({ slug, data }) => (
+        <li>
+          <a
+            href={`/blog/${slug}`}
+            class="-mx-3 flex justify-between gap-6 rounded-xl px-3 py-2 text-sm hover:bg-black"
+          >
+            <span class="font-semibold">{data.title}</span>
+            <time class="text-right text-green" datetime={dayjs(data.pubDate).format("YYYY-MM-DD")}>
+              {dayjs(data.pubDate).format(dateFormat)}
+            </time>
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </section>

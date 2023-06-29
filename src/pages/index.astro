@@ -2,36 +2,28 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostList from "../components/PostList.astro";
+import ProjectList from "../components/ProjectList.astro";
+import { projects } from "../data";
 
 const title = "Piero Lescano";
 const description = "Software developer focused on building CLI tools and web applications.";
 
-const posts = await getCollection('blog')
+const posts = await getCollection("blog");
+const favoriteProjects = projects.filter(p => p.favorite);
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="max-w-screen-md flex flex-col gap-3">
-    <h1 class="text-5xl font-black text-blue">{title}</h1>
-    <p>
-      <span class="text-red">HTML</span>
-      <span class="text-cyan">CSS</span>
-      <span class="text-yellow">JavaScript</span>
-      <span class="text-blue">React</span>
-      <span class="text-green">Python</span>
-    </p>
-    <p class="max-w-prose">
-      I'm a Software Developer from Peru. I <a
-        href="/projects"
-        class="font-semibold text-green decoration-2 underline-offset-4 hover:underline"
-        >build</a
-      > for the web and <a
-        href="/blog"
-        class="font-semibold text-green decoration-2 underline-offset-4 hover:underline"
-        >write</a
-      > about it sometimes. My interests go from jazz, generative music, and books to Linux, open source, and anything
-      web related.
+  <section class="mb-6">
+    <h1 class="mb-6 text-5xl font-black text-blue">{title}</h1>
+    <p class="mb-3">
+      I'm a software developer from Peru. I
+      <a href="/projects" class="font-semibold text-green decoration-2 underline-offset-4 hover:underline">build</a>
+      for the web and
+      <a href="/blog" class="font-semibold text-green decoration-2 underline-offset-4 hover:underline">write</a> about it
+      sometimes. My interests go from jazz, generative music, and books to Linux, open source, and anything web related.
     </p>
   </section>
 
-  <PostList heading="Latest Articles" posts={posts} dateFormat="MMM D, YYYY" />
+  <PostList heading="Latest posts" posts={posts} dateFormat="MMM D, YYYY" />
+  <ProjectList heading="Projects" projects={favoriteProjects} />
 </BaseLayout>

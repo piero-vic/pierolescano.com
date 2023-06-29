@@ -9,9 +9,10 @@ export interface Project {
   technologies: string[],
   category: string,
   image: string,
-  repoLink: string | null,
-  demoLink: string | null,
-  collaborator: Collaborator | null,
+  repoLink?: string,
+  demoLink?: string,
+  collaborator?: Collaborator,
+  favorite: boolean,
 }
 
 export const projects: Project[] = [
@@ -24,6 +25,7 @@ export const projects: Project[] = [
     repoLink: "https://github.com/piero-vic/coin-watcher",
     demoLink: "https://piero-vic-coin-watcher.netlify.app/",
     collaborator: null,
+    favorite: true,
   },
   {
     name: "Space Traveler's Hub",
@@ -37,6 +39,7 @@ export const projects: Project[] = [
       name: "Amr Ahmed",
       github: "https://github.com/Amrhub",
     },
+    favorite: false,
   },
   {
     name: "Coding Bootcamp Webpage",
@@ -47,6 +50,7 @@ export const projects: Project[] = [
     repoLink: "https://github.com/piero-vic/coding-bootcamp-website",
     demoLink: "https://piero-vic.github.io/coding-bootcamp-website/",
     collaborator: null,
+    favorite: false,
   },
   {
     name: "cmp-ledger",
@@ -57,6 +61,7 @@ export const projects: Project[] = [
     repoLink: "https://github.com/piero-vic/cmp-ledger",
     demoLink: null,
     collaborator: null,
+    favorite: true,
   },
   {
     name: "ptd",
@@ -67,6 +72,7 @@ export const projects: Project[] = [
     repoLink: "https://github.com/piero-vic/ptd",
     demoLink: null,
     collaborator: null,
+    favorite: true,
   },
   {
     name: "ani-py",
@@ -77,6 +83,7 @@ export const projects: Project[] = [
     repoLink: "https://github.com/piero-vic/ani-py",
     demoLink: null,
     collaborator: null,
+    favorite: false,
   },
 ];
 

@@ -4,12 +4,18 @@ import ProjectList from "../components/ProjectList.astro";
 import { projects } from "../data";
 
 const title = "Projects";
-const description = "Software developer focused on building CLI tools and web applications.";
+const description = "Collection of small web projects and CLI tools I've built.";
+
 const webProjects = projects.filter(p => p.category === "web");
 const cliProjects = projects.filter(p => p.category === "cli");
 ---
 
 <BaseLayout title={title} description={description}>
+  <section class="mb-6">
+    <h1 class="mb-6 text-5xl font-black text-green">{title}</h1>
+    <p class="mb-3">{description}</p>
+  </section>
+
   <ProjectList projects={webProjects} heading="Web" />
   <ProjectList projects={cliProjects} heading="Terminal" />
 </BaseLayout>

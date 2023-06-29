@@ -1,8 +1,8 @@
 ---
-import '@fontsource/jetbrains-mono/400.css'
-import '@fontsource/jetbrains-mono/400-italic.css'
-import '@fontsource/jetbrains-mono/700.css'
-import '@fontsource/jetbrains-mono/700-italic.css'
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/400-italic.css";
+import "@fontsource/jetbrains-mono/700.css";
+import "@fontsource/jetbrains-mono/700-italic.css";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -19,10 +19,10 @@ const { title, description } = Astro.props;
   <head>
     <BaseHead title={title} description={description} image="logo.png" imageAlt="Piero Lescano Logo" type="website" />
   </head>
-  <body class="font-mono text-foreground bg-background flex flex-col justify-between h-screen">
+  <body class="flex h-screen flex-col bg-background font-mono text-foreground">
     <Header />
-    <main class="px-5vw py-6">
-      <div class="flex flex-col justify-center gap-3 max-w-5xl mx-auto">
+    <main class="grow px-5vw py-6">
+      <div class="mx-auto max-w-5xl">
         <slot />
       </div>
     </main>

@@ -8,11 +8,13 @@ export interface Props {
 }
 
 const { projects, heading } = Astro.props;
+
+const includeImage = projects.every(project => project.image);
 ---
 
-<section class="my-6">
-  <h2 class="text-3xl font-bold border-b-2 text-green border-b-black">{heading}</h2>
+<section class="my-6 first:mt-0 last:mb-0">
+  <h2 class="my-3 border-b-2 border-b-black pb-3 text-2xl font-bold text-green">{heading}</h2>
   <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-    {projects.map(project => <ProjectCard project={project} />)}
+    {projects.map(project => <ProjectCard project={project} includeImage={includeImage} />)}
   </div>
 </section>
