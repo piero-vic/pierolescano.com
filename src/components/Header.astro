@@ -2,30 +2,17 @@
 import { Icon } from "astro-icon";
 ---
 
-<header class="px-5vw py-6 md:py-12" x-data="{ open: false }">
-  <nav class="relative mx-auto max-w-7xl items-center justify-between text-lg font-bold text-blue sm:flex">
+<header class="px-5vw py-6 md:py-12">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between text-lg font-bold text-blue">
     <a href="/" class="block h-16 w-16 transition hover:scale-110">
       <Icon name="ph:cube-fill" aria-hidden="true" focusable="false" />
       <span class="sr-only">Home</span>
     </a>
 
-    <template x-if="true">
-      <div>
-        <button class="absolute right-0 top-0 my-4 h-8 w-8 sm:hidden" x-on:click="open = !open">
-          <Icon name="mdi:close" x-show="open" aria-hidden="true" focusable="false" />
-          <Icon name="iconoir:menu" x-show="!open" aria-hidden="true" focusable="false" />
-          <span class="sr-only">Navbar Button</span>
-        </button>
-
-        <ul
-          class="mt-2 flex flex-col items-end justify-center gap-6 sm:mt-0 sm:flex-row"
-          x-bind:class="open ? 'block' : 'hidden sm:flex'"
-        >
-          <li><a href="/projects" class="decoration-2 underline-offset-4 hover:underline">Projects</a></li>
-          <li><a href="/blog" class="decoration-2 underline-offset-4 hover:underline">Blog</a></li>
-          <li><a href="/contact" class="decoration-2 underline-offset-4 hover:underline">Contact</a></li>
-        </ul>
-      </div>
-    </template>
+    <ul class="mt-2 flex items-end justify-center gap-6 sm:mt-0 sm:flex-row">
+      <li><a href="/projects" class="decoration-2 underline-offset-4 hover:underline">Projects</a></li>
+      <li><a href="/blog" class="decoration-2 underline-offset-4 hover:underline">Blog</a></li>
+      <li><a href="/contact" class="decoration-2 underline-offset-4 hover:underline">Contact</a></li>
+    </ul>
   </nav>
 </header>
