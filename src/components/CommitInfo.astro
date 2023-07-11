@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon";
+
+const OWNER = "piero-vic";
+const REPO = "pierolescano.com";
+const BLOG_PATH = "/src/content/blog";
+
+export interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+const response = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/commits?path=${BLOG_PATH}/${id}`);
+const commits = response.ok ? await response.json() : [];
+---
+
+{
+  commits.length > 0 && (
+    <p>
+      <em>
+        <Icon name="feather:git-commit" aria-hidden="true" class="inline h-4 w-4" />
+        <a href={commits[0].html_url}>{commits[0].sha.substring(0, 7)}</a> @
+        <time datetime={commits[0].commit.author.date}>{commits[0].commit.author.date.substring(0, 10)}</time>
+      </em>
+    </p>
+  )
+}
