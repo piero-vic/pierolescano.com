@@ -8,7 +8,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Comments from "../components/Comments.astro";
 import CommitInfo from "../components/CommitInfo.astro";
-import { CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
 export interface Props {
   entry: CollectionEntry<"blog">;
@@ -21,7 +21,13 @@ const { Content } = await entry.render();
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} type="article" />
+    <BaseHead
+      title={title}
+      description={description}
+      image={image || "logo.png"}
+      imageAlt={imageAlt || "Piero Lescano Logo"}
+      type="article"
+    />
   </head>
   <body class="flex h-screen flex-col bg-background font-mono text-foreground">
     <Header />

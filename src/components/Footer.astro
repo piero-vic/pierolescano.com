@@ -52,10 +52,17 @@ import SocialMediaLink from "./SocialMediaLink.astro";
 
     const get = async (url: string) => {
       const now = new Date().getTime();
-      const prevResp = JSON.parse(window.localStorage.getItem(url));
-      if (prevResp && Math.abs(now - prevResp.time) < CACHE_TIMEOUT) {
-        return prevResp.data;
+
+      const savedJson = window.localStorage.getItem(url);
+
+      if (savedJson !== null) {
+        const prevResp = JSON.parse(savedJson);
+
+        if (prevResp && Math.abs(now - prevResp.time) < CACHE_TIMEOUT) {
+          return prevResp.data;
+        }
       }
+
       const resp = await fetch(url);
       const json = await resp.json();
       window.localStorage.setItem(url, JSON.stringify({ time: now, data: json }));
@@ -66,9 +73,11 @@ import SocialMediaLink from "./SocialMediaLink.astro";
       const currentTrack = await get("/api/current-track");
       const currentTrackContainer = document.getElementById("current-track");
 
-      currentTrackContainer.innerHTML = currentTrack.isPlaying
-        ? `<a class="font-bold text-green decoration-2 underline-offset-4 hover:underline" href="${currentTrack.songUrl}">${currentTrack.name}</a> - <span>${currentTrack.artist}</span>`
-        : `<span class="font-bold">Not Playing</span> - <span>Spotify</span>`;
+      if (currentTrackContainer !== null) {
+        currentTrackContainer.innerHTML = currentTrack.isPlaying
+          ? `<a class="font-bold text-green decoration-2 underline-offset-4 hover:underline" href="${currentTrack.songUrl}">${currentTrack.name}</a> - <span>${currentTrack.artist}</span>`
+          : `<span class="font-bold">Not Playing</span> - <span>Spotify</span>`;
+      }
     };
 
     await setCurrentTrack();

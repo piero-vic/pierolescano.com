@@ -1,19 +1,21 @@
-export interface Collaborator {
-  name: string;
-  github: string;
-}
-
 export interface Project {
   name: string;
   description: string;
-  technologies: string[];
+  technologies: Technology[];
   category: string;
-  image: string;
+  image?: string;
   repoLink?: string;
   demoLink?: string;
   collaborator?: Collaborator;
   favorite: boolean;
 }
+
+interface Collaborator {
+  name: string;
+  github: string;
+}
+
+type Technology = "CSS" | "HTML" | "JavaScript" | "Lua" | "Python" | "React" | "Redux" | "TailwindCSS" | "Typer";
 
 export const projects: Project[] = [
   {
@@ -24,7 +26,6 @@ export const projects: Project[] = [
     image: "/images/coin-watcher.png",
     repoLink: "https://github.com/piero-vic/coin-watcher",
     demoLink: "https://piero-vic-coin-watcher.netlify.app/",
-    collaborator: null,
     favorite: true,
   },
   {
@@ -49,7 +50,6 @@ export const projects: Project[] = [
     image: "/images/coding-bootcamp.png",
     repoLink: "https://github.com/piero-vic/coding-bootcamp-website",
     demoLink: "https://piero-vic.github.io/coding-bootcamp-website/",
-    collaborator: null,
     favorite: false,
   },
   {
@@ -57,10 +57,7 @@ export const projects: Project[] = [
     description: "A nvim-cmp source for ledger accounts.",
     technologies: ["Lua"],
     category: "cli",
-    image: null,
     repoLink: "https://github.com/piero-vic/cmp-ledger",
-    demoLink: null,
-    collaborator: null,
     favorite: true,
   },
   {
@@ -68,10 +65,7 @@ export const projects: Project[] = [
     description: "A minimal to-do list application for the command line.",
     technologies: ["Python", "Typer"],
     category: "cli",
-    image: null,
     repoLink: "https://github.com/piero-vic/ptd",
-    demoLink: null,
-    collaborator: null,
     favorite: true,
   },
   {
@@ -79,15 +73,12 @@ export const projects: Project[] = [
     description: "A cli tool to download and stream anime from jkanime.",
     technologies: ["Python", "Typer"],
     category: "cli",
-    image: null,
     repoLink: "https://github.com/piero-vic/ani-py",
-    demoLink: null,
-    collaborator: null,
     favorite: false,
   },
 ];
 
-export const colors = {
+export const colors: Record<Technology, string> = {
   CSS: "text-cyan",
   HTML: "text-red",
   JavaScript: "text-yellow",
