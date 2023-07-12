@@ -5,9 +5,9 @@ image: /images/react-vs-alpine.png
 imageAlt: React vs Alpine
 pubDate: 2022-04-29
 tags:
-- react
-- alpinejs
-- front-end
+  - react
+  - alpinejs
+  - front-end
 comments: true
 ---
 
@@ -20,9 +20,10 @@ Lately, I've been learning how to use [Alpine.js](https://alpinejs.dev/), a mini
 adding interactivity to static websites. The framework is awesome. It lets you add reactive behavior directly on your
 markup by using HTML attributes.
 
-The goal of this article is to compare React and Alpine by building a simple [metronome](https://en.wikipedia.org/wiki/Metronome).
-We're going to take a very simple approach, so keep in mind that the metronome we're building is not going to be the
-best. If you want to implement time-based or sound-related behavior, a better approach would be to make use of the
+The goal of this article is to compare React and Alpine by building a simple
+[metronome](https://en.wikipedia.org/wiki/Metronome). We're going to take a very simple approach, so keep in mind that
+the metronome we're building is not going to be the best. If you want to implement time-based or sound-related behavior,
+a better approach would be to make use of the
 [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API). For now, we're going to keep it simple,
 as our main goal is just to try and compare the two frameworks.
 
@@ -43,17 +44,9 @@ const Metronome = () => {
     <div>
       <div>
         <div>{bpm} BPM</div>
-        <input
-          type="range"
-          min="60"
-          max="240"
-          value={bpm}
-          onChange={event => setBpm(event.target.value)}
-        />
+        <input type="range" min="60" max="240" value={bpm} onChange={event => setBpm(event.target.value)} />
       </div>
-      <button onClick={() => setIsPlaying(!isPlaying)}>
-        {isPlaying ? "Stop" : "Start"}
-      </button>
+      <button onClick={() => setIsPlaying(!isPlaying)}>{isPlaying ? "Stop" : "Start"}</button>
     </div>
   );
 };
@@ -88,8 +81,8 @@ const useMetronome = () => {
 ```
 
 Almost all the action happens inside `useEffect`. We'll need to set an interval to be able to repeat the sound over
-time, declare a `timer` variable to store the interval ID, and create an [HTMLAudioElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement)
-object to play the sound.
+time, declare a `timer` variable to store the interval ID, and create an
+[HTMLAudioElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement) object to play the sound.
 
 If `isPlaying` is true we'll use `setInterval` to play the sound and repeat it according to the `bpm`.
 
@@ -118,10 +111,7 @@ Let's start with the HTML.
     <div><span x-text="bpm"></span> BPM</div>
     <input type="range" min="60" max="240" x-model="bpm" />
   </div>
-  <button
-    x-on:click="isPlaying = !isPlaying"
-    x-text="isPlaying ? 'Stop' : 'Start'"
-  ></button>
+  <button x-on:click="isPlaying = !isPlaying" x-text="isPlaying ? 'Stop' : 'Start'"></button>
 </div>
 ```
 

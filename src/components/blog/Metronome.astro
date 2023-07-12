@@ -1,14 +1,14 @@
 <div
-  class="border border-green rounded-xl p-4 my-12 max-w-md mx-auto bg-[#292d3e]"
+  class="mx-auto my-12 max-w-md rounded-xl border border-green bg-[#292d3e] p-4"
   x-data="metronome"
   x-effect="metronomeEffect"
 >
   <div>
-    <div class="text-green font-bold"><span x-text="bpm"></span> BPM</div>
+    <div class="font-bold text-green"><span x-text="bpm"></span> BPM</div>
     <input class="w-full" type="range" min="60" max="240" x-model="bpm" />
   </div>
   <button
-    class="border rounded-xl px-2 w-1/4 text-black font-bold"
+    class="w-1/4 rounded-xl border px-2 font-bold text-black"
     x-bind:class="isPlaying ? 'bg-red border-red' : 'bg-green border-green'"
     x-on:click="isPlaying = !isPlaying"
     x-text="isPlaying ? 'Stop' : 'Start'"></button>

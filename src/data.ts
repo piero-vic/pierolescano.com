@@ -6,13 +6,13 @@ export interface Collaborator {
 export interface Project {
   name: string;
   description: string;
-  technologies: string[],
-  category: string,
-  image: string,
-  repoLink?: string,
-  demoLink?: string,
-  collaborator?: Collaborator,
-  favorite: boolean,
+  technologies: string[];
+  category: string;
+  image: string;
+  repoLink?: string;
+  demoLink?: string;
+  collaborator?: Collaborator;
+  favorite: boolean;
 }
 
 export const projects: Project[] = [

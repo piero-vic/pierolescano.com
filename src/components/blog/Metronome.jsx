@@ -20,7 +20,7 @@ const Metronome = () => {
   const { bpm, setBpm, isPlaying, setIsPlaying } = useMetronome();
 
   return (
-    <div className="not-prose my-8 mx-auto max-w-md rounded-xl border border-green bg-[#292d3e] p-4">
+    <div className="not-prose mx-auto my-8 max-w-md rounded-xl border border-green bg-[#292d3e] p-4">
       <div>
         <div className="font-bold text-green">{bpm} BPM</div>
         <input
