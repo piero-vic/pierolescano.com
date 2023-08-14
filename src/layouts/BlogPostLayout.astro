@@ -9,13 +9,15 @@ import Footer from "../components/Footer.astro";
 import Comments from "../components/Comments.astro";
 import CommitInfo from "../components/CommitInfo.astro";
 import type { CollectionEntry } from "astro:content";
+import { Image, getImage } from "astro:assets";
 
 export interface Props {
   entry: CollectionEntry<"blog">;
 }
 
 const { entry } = Astro.props;
-const { title, description, image, imageAlt, comments } = entry.data;
+const { title, description, image, imageAlt } = entry.data;
+const ogImage = image && (await getImage({ src: image, format: "png" }));
 const { Content } = await entry.render();
 ---
 
@@ -24,7 +26,7 @@ const { Content } = await entry.render();
     <BaseHead
       title={title}
       description={description}
-      image={image || "logo.png"}
+      image={ogImage?.src || "logo.png"}
       imageAlt={imageAlt || "Piero Lescano Logo"}
       type="article"
     />
@@ -37,16 +39,11 @@ const { Content } = await entry.render();
       >
         <h1>{title}</h1>
         <CommitInfo id={entry.id} />
+        {image && <Image src={image} alt={imageAlt!} />}
         <Content />
       </article>
-      {
-        comments && (
-          <>
-            <hr class="mx-auto my-[2em] h-[2px] max-w-screen-md border-none bg-black" />
-            <Comments />
-          </>
-        )
-      }
+      <hr class="mx-auto my-[2em] h-[2px] max-w-screen-md border-none bg-black" />
+      <Comments />
     </main>
     <Footer />
   </body>

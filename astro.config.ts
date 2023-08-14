@@ -7,6 +7,9 @@ import alpine from "@astrojs/alpinejs";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.pierolescano.com/",
+  experimental: {
+    assets: true,
+  },
   integrations: [tailwind(), react(), mdx(), alpine()],
   vite: {
     ssr: {
