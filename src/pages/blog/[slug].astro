@@ -1,6 +1,9 @@
 ---
-import { getCollection, CollectionEntry } from "astro:content";
-import BlogPostLayout from "../../layouts/BlogPostLayout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { Image, getImage } from "astro:assets";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CommitInfo from "../../components/CommitInfo.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -15,6 +18,41 @@ export interface Props {
 }
 
 const { entry } = Astro.props;
+const { title, description, image, imageAlt } = entry.data;
+const ogImage = image && (await getImage({ src: image, format: "png" }));
+const { Content } = await entry.render();
 ---
 
-<BlogPostLayout entry={entry} />
+<BaseLayout title={title} description={description} image={ogImage?.src} imageAlt={imageAlt} type="article">
+  <article
+    class="prose prose-invert max-w-none prose-headings:text-green prose-a:text-green prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl"
+  >
+    <h1>{title}</h1>
+    <CommitInfo id={entry.id} />
+    {image && <Image src={image} alt={imageAlt!} />}
+    <Content />
+  </article>
+
+  <hr class="my-12 h-[2px] border-none bg-black" />
+
+  <section>
+    <h2 class="my-[1em] text-center text-3xl font-bold text-green">Comments</h2>
+    <giscus-widget
+      id="comments"
+      repo="piero-vic/pierolescano.com"
+      repoid="R_kgDOGd9pjg"
+      category="Comments"
+      categoryid="DIC_kwDOGd9pjs4CBO-U"
+      mapping="pathname"
+      reactionsenabled="1"
+      emitmetadata="0"
+      inputposition="bottom"
+      theme="transparent_dark"
+      lang="en"
+      loading="eager"></giscus-widget>
+  </section>
+</BaseLayout>
+
+<script>
+  import "giscus";
+</script>

@@ -3,40 +3,27 @@ import { Icon } from "astro-icon";
 import SocialMediaLink from "./SocialMediaLink.astro";
 ---
 
-<footer class="px-5vw py-6 text-xs md:py-12">
+<footer class="px-5vw py-6 text-xs md:py-8">
   <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 xl:flex-row">
     <ul class="flex gap-2">
       <SocialMediaLink name="prime:github" href="https://github.com/piero-vic">Github</SocialMediaLink>
       <SocialMediaLink name="prime:linkedin" href="https://www.linkedin.com/in/piero-lescano">LinkedIn</SocialMediaLink>
       <SocialMediaLink name="ph:envelope-simple-fill" href="mailto:pierolescano@protonmail.com">Email</SocialMediaLink>
     </ul>
-    <div class="flex flex-col flex-wrap items-center justify-center gap-2 text-center sm:flex-row">
+
+    <div class="flex flex-col flex-wrap items-center gap-2 xl:items-end">
       <div class="flex items-center gap-2 font-bold">
-        <span class="h-3 w-3">
-          <Icon name="ph:copyright-bold" />
-        </span>
-        2021-2023 Piero Lescano
+        <Icon name="ph:copyright-bold" class="h-3 w-3" />
+        Copyright 2021-2023 Piero Lescano
       </div>
 
-      <span class="hidden sm:inline">·</span>
-
       <span>
-        Build with <a
-          class="font-bold text-red decoration-2 underline-offset-4 hover:underline"
-          href="https://astro.build/">Astro</a
-        >
-        and <a
-          class="font-bold text-blue decoration-2 underline-offset-4 hover:underline"
-          href="https://tailwindcss.com/">TailwindCSS</a
-        >
+        Build with <a class="font-bold text-red hover:underline" href="https://astro.build/">Astro</a>
+        and <a class="font-bold text-blue hover:underline" href="https://tailwindcss.com/">TailwindCSS</a>
       </span>
 
-      <span class="hidden sm:inline">·</span>
-
       <div class="flex items-center gap-2">
-        <span class="h-3 w-3">
-          <Icon name="bi:spotify" class="text-green" />
-        </span>
+        <Icon name="bi:spotify" class="h-4 w-4 text-green" />
         <p id="current-track">
           <span class="font-bold">Not Playing</span> - <span>Spotify</span>
         </p>
@@ -75,7 +62,7 @@ import SocialMediaLink from "./SocialMediaLink.astro";
 
       if (currentTrackContainer !== null) {
         currentTrackContainer.innerHTML = currentTrack.isPlaying
-          ? `<a class="font-bold text-green decoration-2 underline-offset-4 hover:underline" href="${currentTrack.songUrl}">${currentTrack.name}</a> - <span>${currentTrack.artist}</span>`
+          ? `<a class="font-bold text-green hover:underline" href="${currentTrack.songUrl}">${currentTrack.name}</a> - <span>${currentTrack.artist}</span>`
           : `<span class="font-bold">Not Playing</span> - <span>Spotify</span>`;
       }
     };

@@ -10,18 +10,21 @@ import Footer from "../components/Footer.astro";
 export interface Props {
   title: string;
   description: string;
+  image?: string;
+  imageAlt?: string;
+  type?: "website" | "article";
 }
 
-const { title, description } = Astro.props;
+const { title, description, image = "logo.png", imageAlt = "Piero Lescano Logo", type = "website" } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image="logo.png" imageAlt="Piero Lescano Logo" type="website" />
+    <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} type={type} />
   </head>
   <body class="flex h-screen flex-col bg-background font-mono text-foreground">
     <Header />
-    <main class="grow px-5vw py-6">
+    <main class="grow px-5vw py-8 md:py-24">
       <div class="mx-auto max-w-5xl">
         <slot />
       </div>

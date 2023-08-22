@@ -9,7 +9,7 @@ export interface Props {
 const { name, href } = Astro.props;
 ---
 
-<li class="h-6 w-6 transition hover:scale-110 hover:text-blue">
+<li class="h-6 w-6 transition hover:text-blue xl:h-7 xl:w-7">
   <a href={href}>
     <Icon name={name} aria-hidden="true" focusable="false" />
     <span class="sr-only"><slot /></span>
