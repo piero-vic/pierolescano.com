@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon";
 ---
 
-<header class="px-5vw py-6 md:py-8">
+<header class="border-b-white px-5vw py-6 md:py-8">
   <nav class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 font-bold text-blue md:flex-row">
     <a href="/" class="block h-12 w-12 transition hover:scale-110 md:h-16 md:w-16">
       <Icon name="ph:cube-fill" aria-hidden="true" focusable="false" />
@@ -10,9 +10,9 @@ import { Icon } from "astro-icon";
     </a>
 
     <ul class="flex justify-center gap-6 text-lg">
-      <li><a href="/projects" class="decoration-2 underline-offset-4 hover:underline">Projects</a></li>
-      <li><a href="/blog" class="decoration-2 underline-offset-4 hover:underline">Blog</a></li>
-      <li><a href="/contact" class="decoration-2 underline-offset-4 hover:underline">Contact</a></li>
+      <li><a href="/projects" class="hover:underline">Projects</a></li>
+      <li><a href="/blog" class="hover:underline">Blog</a></li>
+      <li><a href="/contact" class="hover:underline">Contact</a></li>
     </ul>
   </nav>
 </header>

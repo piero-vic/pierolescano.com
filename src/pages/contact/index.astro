@@ -8,7 +8,7 @@ const description = "Software developer focused on building CLI tools and web ap
 <BaseLayout title={title} description={description}>
   <div class="flex flex-col justify-between gap-6 md:flex-row">
     <section>
-      <h1 class="mb-6 text-5xl font-black text-blue">{title}</h1>
+      <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
       <p class="mb-3">Want to work on cool stuff? Reach out!</p>
       <p class="mb-3">
         I'm always open to meeting new people and working on new projects. Don't hesitate to contact me if you want to
@@ -26,18 +26,18 @@ const description = "Software developer focused on building CLI tools and web ap
 
     <form name="contact" action="/contact/success" method="POST" data-netlify="true" class="flex w-full flex-col gap-3">
       <label class="flex flex-col">
-        <span class="font-extrabold">Name</span>
+        <span class="font-bold">Name</span>
         <input type="text" name="name" class="bg-black focus:border-blue" required />
       </label>
       <label class="flex flex-col">
-        <span class="font-extrabold">Email</span>
+        <span class="font-bold">Email</span>
         <input type="email" name="email" class="bg-black focus:border-blue" required />
       </label>
       <label class="flex flex-col">
-        <span class="font-extrabold">Message</span>
+        <span class="font-bold">Message</span>
         <textarea name="message" class="h-32 bg-black focus:border-blue" required></textarea>
       </label>
-      <button type="submit" class="mt-3 w-24 bg-black px-3 py-2 text-center font-extrabold hover:text-blue">
+      <button type="submit" class="mt-3 max-w-fit bg-black px-6 py-2 text-center font-bold hover:text-blue">
         Submit
       </button>
     </form>

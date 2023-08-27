@@ -24,10 +24,7 @@ posts.sort((a, b) => {
     {
       posts.map(({ slug, data }) => (
         <li>
-          <a
-            href={`/blog/${slug}`}
-            class="-mx-3 flex justify-between gap-6 rounded-xl px-3 py-2 text-sm hover:bg-black"
-          >
+          <a href={`/blog/${slug}`} class="-mx-3 flex justify-between gap-6 px-3 py-2 text-sm hover:bg-black">
             <span class="font-bold">{data.title}</span>
             <time class="text-right text-green" datetime={dayjs(data.pubDate).format("YYYY-MM-DD")}>
               {dayjs(data.pubDate).format(dateFormat)}

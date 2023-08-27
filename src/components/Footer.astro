@@ -1,14 +1,26 @@
 ---
 import { Icon } from "astro-icon";
-import SocialMediaLink from "./SocialMediaLink.astro";
+
+const contactLinks = [
+  { name: "Github", icon: "prime:github", link: "https://github.com/piero-vic" },
+  { name: "LinkedIn", icon: "prime:linkedin", link: "https://www.linkedin.com/in/piero-lescano" },
+  { name: "Email", icon: "ph:envelope-simple-fill", link: "mailto:pierolescano@protonmail.com" },
+];
 ---
 
 <footer class="px-5vw py-6 text-xs md:py-8">
   <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 xl:flex-row">
     <ul class="flex gap-2">
-      <SocialMediaLink name="prime:github" href="https://github.com/piero-vic">Github</SocialMediaLink>
-      <SocialMediaLink name="prime:linkedin" href="https://www.linkedin.com/in/piero-lescano">LinkedIn</SocialMediaLink>
-      <SocialMediaLink name="ph:envelope-simple-fill" href="mailto:pierolescano@protonmail.com">Email</SocialMediaLink>
+      {
+        contactLinks.map(item => (
+          <li class="h-6 w-6 transition hover:text-blue xl:h-7 xl:w-7">
+            <a href={item.link}>
+              <Icon name={item.icon} aria-hidden="true" focusable="false" />
+              <span class="sr-only">{item.name}</span>
+            </a>
+          </li>
+        ))
+      }
     </ul>
 
     <div class="flex flex-col flex-wrap items-center gap-2 xl:items-end">
