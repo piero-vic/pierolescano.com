@@ -13,6 +13,7 @@
     "@astrojs/alpinejs": "^0.2.2",
     "@astrojs/mdx": "^0.19.7",
     "@astrojs/react": "^2.3.2",
+    "@astrojs/rss": "^2.4.4",
     "@astrojs/tailwind": "^4.0.0",
     "@fontsource/jetbrains-mono": "^4.5.12",
     "@netlify/functions": "^1.6.0",

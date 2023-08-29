@@ -22,10 +22,12 @@ const twitter = "@piero_codes";
 {title ? <title>{pageTitle}</title> : null}
 {description ? <meta name="description" content={description} /> : null}
 {image ? <meta name="image" content={imageURL} /> : null}
+<meta name="generator" content={Astro.generator} />
 
 <!-- Links -->
 <link rel="canonical" href={canonicalURL} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Piero Lescano" />
 
 <!-- Open Graph Tags -->
 <meta property="og:type" content={type} />

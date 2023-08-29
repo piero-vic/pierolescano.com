@@ -6,7 +6,7 @@ import alpine from "@astrojs/alpinejs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.pierolescano.com/",
+  site: "https://pierolescano.com/",
   experimental: {
     assets: true,
   },
