@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 
 const contactLinks = [
   { name: "Github", icon: "prime:github", link: "https://github.com/piero-vic" },
@@ -13,9 +13,9 @@ const contactLinks = [
     <ul class="flex gap-2">
       {
         contactLinks.map(item => (
-          <li class="h-6 w-6 transition hover:text-blue xl:h-7 xl:w-7">
+          <li class="transition hover:text-blue">
             <a href={item.link}>
-              <Icon name={item.icon} aria-hidden="true" focusable="false" />
+              <Icon name={item.icon} aria-hidden="true" focusable="false" class="h-6 w-6 xl:h-7 xl:w-7" />
               <span class="sr-only">{item.name}</span>
             </a>
           </li>

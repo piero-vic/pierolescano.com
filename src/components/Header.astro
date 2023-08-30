@@ -1,21 +1,21 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 ---
 
 <header class="px-5vw py-6 md:py-8">
   <nav class="mx-auto flex max-w-7xl flex-col justify-between gap-6 font-bold text-blue md:flex-row md:items-center">
-    <a href="/" class="block h-12 w-12 transition hover:scale-110 md:h-16 md:w-16">
-      <Icon name="ph:cube-fill" aria-hidden="true" focusable="false" />
+    <a href="/" class="block transition hover:scale-110">
+      <Icon name="ph:cube-fill" aria-hidden="true" focusable="false" class="h-12 w-12 md:h-16 md:w-16" />
       <span class="sr-only">Home</span>
     </a>
 
-    <ul class="flex flex-wrap gap-x-6 text-lg">
+    <ul class="flex flex-wrap items-center gap-x-6 text-lg">
       <li><a href="/projects" class="hover:underline">Projects</a></li>
       <li><a href="/blog" class="hover:underline">Blog</a></li>
       <li><a href="/contact" class="hover:underline">Contact</a></li>
-      <li class="h-6 w-6 transition hover:scale-110">
+      <li class="transition hover:scale-110">
         <a href="/rss.xml">
-          <Icon name="ph:rss-simple-fill" aria-hidden="true" focusable="false" />
+          <Icon name="ph:rss-simple-bold" aria-hidden="true" focusable="false" class="mb-px h-6 w-6" />
           <span class="sr-only">RSS Feed</span>
         </a>
       </li>

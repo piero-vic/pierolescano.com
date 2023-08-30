@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 
 const OWNER = "piero-vic";
 const REPO = "pierolescano.com";
@@ -19,7 +19,7 @@ const commits = response.ok ? await response.json() : [];
   commits.length > 0 && (
     <p>
       <em>
-        <Icon name="feather:git-commit" aria-hidden="true" class="inline h-4 w-4" />
+        <Icon name="feather:git-commit" aria-hidden="true" class="mr-2 inline h-4 w-4" />
         <a href={commits[0].html_url}>{commits[0].sha.substring(0, 7)}</a> @
         <time datetime={commits[0].commit.author.date}>{commits[0].commit.author.date.substring(0, 10)}</time>
       </em>

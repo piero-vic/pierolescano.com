@@ -3,22 +3,28 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import alpine from "@astrojs/alpinejs";
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://pierolescano.com/",
-  experimental: {
-    assets: true,
-  },
-  integrations: [tailwind(), react(), mdx(), alpine()],
-  vite: {
-    ssr: {
-      external: ["svgo"],
-    },
-  },
+  integrations: [
+    tailwind(),
+    react(),
+    mdx(),
+    alpine(),
+    icon({
+      include: {
+        prime: ["*"],
+        ph: ["*"],
+        bi: ["*"],
+        feather: ["*"],
+      }
+    }),
+  ],
   markdown: {
     shikiConfig: {
-      theme: "material-palenight",
+      theme: "material-theme-palenight",
       langs: [],
       wrap: false,
     },
