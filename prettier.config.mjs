@@ -1,5 +1,5 @@
 /** @type {import('prettier').Options} */
-module.exports = {
+export default {
   printWidth: 120,
   tabWidth: 2,
   semi: true,
@@ -7,7 +7,7 @@ module.exports = {
   trailingComma: "all",
   arrowParens: "avoid",
   proseWrap: "always",
-  plugins: [require.resolve("prettier-plugin-astro"), require("prettier-plugin-tailwindcss")],
+  plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   overrides: [
     {
       files: "*.astro",

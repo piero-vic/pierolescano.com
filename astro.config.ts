@@ -19,7 +19,7 @@ export default defineConfig({
         ph: ["*"],
         bi: ["*"],
         feather: ["*"],
-      }
+      },
     }),
   ],
   markdown: {
