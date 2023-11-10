@@ -20,14 +20,13 @@ const { name, description, technologies, image, repoLink, demoLink, collaborator
     <p>{description}</p>
 
     {
+      // prettier-ignore
       collaborator && (
         <p>
-          Made in collaboration with <a
-            class="text-green hover:underline"
-            href={collaborator.github}
-            target="_blank"
-            rel="noopener noreferrer">{collaborator.name}</a
-          >.
+          Made in collaboration with
+          <a class="text-green hover:underline" href={collaborator.github} target="_blank" rel="noopener noreferrer">
+            {collaborator.name}
+          </a>.
         </p>
       )
     }

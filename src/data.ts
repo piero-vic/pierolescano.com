@@ -15,7 +15,7 @@ interface Collaborator {
   github: string;
 }
 
-type Technology = "CSS" | "HTML" | "JavaScript" | "Lua" | "Python" | "React" | "Redux" | "TailwindCSS" | "Typer";
+type Technology = "CSS" | "HTML" | "JavaScript" | "Lua" | "Python" | "React" | "Redux" | "TailwindCSS" | "Typer" | "Go";
 
 export const projects: Project[] = [
   {
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     technologies: ["Lua"],
     category: "cli",
     repoLink: "https://github.com/piero-vic/cmp-ledger",
-    favorite: true,
+    favorite: false,
   },
   {
     name: "ptd",
@@ -69,12 +69,12 @@ export const projects: Project[] = [
     favorite: true,
   },
   {
-    name: "ani-py",
-    description: "A cli tool to download and stream anime from jkanime.",
-    technologies: ["Python", "Typer"],
+    name: "libretranslate",
+    description: "A Go Wrapper for the LibreTranslate API.",
+    technologies: ["Go"],
     category: "cli",
-    repoLink: "https://github.com/piero-vic/ani-py",
-    favorite: false,
+    repoLink: "https://github.com/piero-vic/libretranslate",
+    favorite: true,
   },
 ];
 
@@ -87,5 +87,6 @@ export const colors: Record<Technology, string> = {
   React: "text-blue",
   Redux: "text-magenta",
   TailwindCSS: "text-blue",
+  Go: "text-blue",
   Typer: "text-white",
 };
