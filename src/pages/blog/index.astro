@@ -12,6 +12,7 @@ const posts = await getCollection("blog");
 
 const posts21 = posts.filter(post => dayjs(post.data.pubDate).format("YYYY") == "2021");
 const posts22 = posts.filter(post => dayjs(post.data.pubDate).format("YYYY") == "2022");
+const posts24 = posts.filter(post => dayjs(post.data.pubDate).format("YYYY") == "2024");
 ---
 
 <BaseLayout title={title} description={description}>
@@ -20,6 +21,7 @@ const posts22 = posts.filter(post => dayjs(post.data.pubDate).format("YYYY") == 
     <p class="mb-3">{description}</p>
   </section>
 
+  <PostList heading="2022" posts={posts24} dateFormat="MMM D" />
   <PostList heading="2022" posts={posts22} dateFormat="MMM D" />
   <PostList heading="2021" posts={posts21} dateFormat="MMM D" />
 </BaseLayout>
