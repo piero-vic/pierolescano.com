@@ -1,5 +1,4 @@
 ---
-import dayjs from "dayjs";
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -9,10 +8,11 @@ const title = "Blog";
 const description = "Technical articles, code snippets, and writings on the things I'm learning.";
 
 const posts = await getCollection("blog");
+posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
-const posts21 = posts.filter(post => dayjs(post.data.pubDate).format("YYYY") == "2021");
-const posts22 = posts.filter(post => dayjs(post.data.pubDate).format("YYYY") == "2022");
-const posts24 = posts.filter(post => dayjs(post.data.pubDate).format("YYYY") == "2024");
+const years = posts.reduce((years, posts) => {
+  return years.add(posts.data.pubDate.getFullYear());
+}, new Set<number>());
 ---
 
 <BaseLayout title={title} description={description}>
@@ -21,7 +21,13 @@ const posts24 = posts.filter(post => dayjs(post.data.pubDate).format("YYYY") == 
     <p class="mb-3">{description}</p>
   </section>
 
-  <PostList heading="2024" posts={posts24} dateFormat="MMM D" />
-  <PostList heading="2022" posts={posts22} dateFormat="MMM D" />
-  <PostList heading="2021" posts={posts21} dateFormat="MMM D" />
+  {
+    Array.from(years).map(year => (
+      <PostList
+        heading={year.toString()}
+        posts={posts.filter(post => post.data.pubDate.getFullYear() == year)}
+        dateFormat="MMM D"
+      />
+    ))
+  }
 </BaseLayout>

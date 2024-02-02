@@ -9,13 +9,6 @@ export interface Props {
 }
 
 const { heading, posts, dateFormat } = Astro.props;
-
-posts.sort((a, b) => {
-  const dateA = dayjs(a.data.pubDate);
-  const dateB = dayjs(b.data.pubDate);
-
-  return Number(dateB) - Number(dateA);
-});
 ---
 
 <section class="my-6 first:mt-0 last:mb-0">

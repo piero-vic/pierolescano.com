@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostList from "../components/PostList.astro";
 import ProjectList from "../components/ProjectList.astro";
@@ -9,6 +10,8 @@ const title = "Piero Lescano";
 const description = "Software developer focused on building CLI tools and web applications.";
 
 const posts = await getCollection("blog");
+posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
 const favoriteProjects = projects.filter(p => p.favorite);
 ---
 
@@ -17,11 +20,11 @@ const favoriteProjects = projects.filter(p => p.favorite);
     <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
     <p class="mb-3">
       I'm a software developer from Peru. I <a href="/projects" class="text-green hover:underline">build</a> for the web
-      and <a href="/blog" class="text-green hover:underline">write</a> about it sometimes. My interests go from jazz, generative
-      music, and books to Linux, open source, and anything web related.
+      and <a href="/blog" class="text-green hover:underline">write</a> about it sometimes. My interests go from jazz,
+      generative music, and books to Linux, open source, and anything web related.
     </p>
   </section>
 
-  <PostList heading="Latest posts" posts={posts} dateFormat="MMM D, YYYY" />
+  <PostList heading="Latest posts" posts={posts.slice(0, 3)} dateFormat="MMM D, YYYY" />
   <ProjectList heading="Projects" projects={favoriteProjects} />
 </BaseLayout>
