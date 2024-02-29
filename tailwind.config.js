@@ -20,10 +20,6 @@ module.exports = {
       fontFamily: {
         mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
       },
-      spacing: {
-        "5vw": "5vw",
-        "10vw": "10vw",
-      },
     },
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
