@@ -33,54 +33,6 @@ const contactLinks = [
         Build with <a class="font-bold text-red hover:underline" href="https://astro.build/">Astro</a>
         and <a class="font-bold text-blue hover:underline" href="https://tailwindcss.com/">TailwindCSS</a>
       </span>
-
-      <div class="flex items-center gap-2">
-        <Icon name="bi:spotify" class="h-4 w-4 text-green" />
-        <p id="current-track">
-          <span class="font-bold">Not Playing</span> - <span>Spotify</span>
-        </p>
-      </div>
     </div>
   </div>
 </footer>
-
-<script>
-  window.addEventListener("DOMContentLoaded", async () => {
-    const CACHE_TIMEOUT = 50000;
-    const API_CALL_INTERVAL = 10000;
-
-    const get = async (url: string) => {
-      const now = new Date().getTime();
-
-      const savedJson = window.localStorage.getItem(url);
-
-      if (savedJson !== null) {
-        const prevResp = JSON.parse(savedJson);
-
-        if (prevResp && Math.abs(now - prevResp.time) < CACHE_TIMEOUT) {
-          return prevResp.data;
-        }
-      }
-
-      const resp = await fetch(url);
-      const json = await resp.json();
-      window.localStorage.setItem(url, JSON.stringify({ time: now, data: json }));
-      return json;
-    };
-
-    const setCurrentTrack = async () => {
-      const currentTrack = await get("/api/current-track");
-      const currentTrackContainer = document.getElementById("current-track");
-
-      if (currentTrackContainer !== null) {
-        currentTrackContainer.innerHTML = currentTrack.isPlaying
-          ? `<a class="font-bold text-green hover:underline" href="${currentTrack.songUrl}">${currentTrack.name}</a> - <span>${currentTrack.artist}</span>`
-          : `<span class="font-bold">Not Playing</span> - <span>Spotify</span>`;
-      }
-    };
-
-    await setCurrentTrack();
-
-    window.setInterval(setCurrentTrack, API_CALL_INTERVAL);
-  });
-</script>
