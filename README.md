@@ -1,7 +1,6 @@
 # pierolescano.com
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ed61f354-870a-44ca-8270-4683bac10126/deploy-status)](https://app.netlify.com/sites/pierolescano/deploys)
 
 My personal corner of the internet, build with [Astro][astro] and
 [Tailwind][tailwind]. It's meant to be a exploration enviroment for front-end
