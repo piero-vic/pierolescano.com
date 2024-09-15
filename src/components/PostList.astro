@@ -12,7 +12,7 @@ const { heading, posts, dateFormat } = Astro.props;
 ---
 
 <section class="my-6 first:mt-0 last:mb-0">
-  <h2 class="my-3 border-b-2 border-b-blue pb-3 text-2xl font-bold text-blue">{heading}</h2>
+  <h2 class="my-3 border-b border-b-blue pb-3 text-2xl font-bold text-blue">{heading}</h2>
   <ul class="flex flex-col">
     {
       posts.map(({ slug, data }) => (

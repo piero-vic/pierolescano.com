@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -31,17 +32,34 @@ module.exports = {
             "--tw-prose-bullets": theme("colors.foreground"),
             "--tw-prose-hr": theme("colors.black"),
             "--tw-prose-quotes": theme("colors.foreground"),
-            "--tw-prose-quote-borders": theme("colors.black"),
+            "--tw-prose-quote-borders": theme("colors.blue"),
             "--tw-prose-captions": theme("colors.foreground"),
             "--tw-prose-code": theme("colors.foreground"),
             "--tw-prose-pre-code": theme("colors.foreground"),
             "--tw-prose-pre-bg": theme("colors.black"),
-            "--tw-prose-th-borders": theme("colors.black"),
-            "--tw-prose-td-borders": theme("colors.black"),
+            "--tw-prose-th-borders": theme("colors.blue"),
+            "--tw-prose-td-borders": theme("colors.blue"),
+            // NOTE: This is for disabling the backticks on inline code blocks
+            "code::before": {
+              content: '""',
+              "padding-left": "0.25rem",
+            },
+            "code::after": {
+              content: '""',
+              "padding-right": "0.25rem",
+            },
           },
         },
       }),
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    // NOTE: This is for targeting inline code blocks with `prose-inline-code`
+    // See: https://aaronfrancis.com/2023/targeting-only-inline-code-elements-with-tailwind-typography-3b5e8d43
+    plugin(function({ addVariant }) {
+      addVariant("prose-inline-code", '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))');
+    }),
+  ],
 };

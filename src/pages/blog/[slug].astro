@@ -24,14 +24,14 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={title} description={description} image={ogImage?.src} imageAlt={imageAlt} type="article">
-  <article class="prose max-w-none">
+  <article class="prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background prose max-w-none">
     <h1>{title}</h1>
     <CommitInfo id={entry.id} />
     {image && <Image src={image} alt={imageAlt!} loading="eager" />}
     <Content />
   </article>
 
-  <hr class="my-12 h-[2px] border-none bg-black" />
+  <hr class="my-12 h-px border-none bg-blue" />
 
   <section>
     <h2 class="my-[1em] text-center text-3xl font-bold text-blue">Comments</h2>
