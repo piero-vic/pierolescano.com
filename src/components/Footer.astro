@@ -6,6 +6,9 @@ const contactLinks = [
   { name: "LinkedIn", icon: "prime:linkedin", link: "https://www.linkedin.com/in/piero-lescano" },
   { name: "Email", icon: "ph:envelope-simple-fill", link: "mailto:pierolescano@protonmail.com" },
 ];
+
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
 ---
 
 <footer class="py-6 text-xs md:py-8">
@@ -26,7 +29,7 @@ const contactLinks = [
     <div class="flex flex-col flex-wrap items-center gap-2 xl:items-end">
       <div class="flex items-center gap-2 font-bold">
         <Icon name="ph:copyright-bold" class="h-3 w-3" />
-        Copyright 2021-2023 Piero Lescano
+        Copyright 2021-{currentYear} Piero Lescano
       </div>
 
       <span>
