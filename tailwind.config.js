@@ -20,6 +20,27 @@ module.exports = {
       fontFamily: {
         mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            "--tw-prose-body": theme("colors.foreground"),
+            "--tw-prose-headings": theme("colors.green"),
+            "--tw-prose-links": theme("colors.green"),
+            "--tw-prose-bold": theme("colors.green"),
+            "--tw-prose-counters": theme("colors.foreground"),
+            "--tw-prose-bullets": theme("colors.foreground"),
+            "--tw-prose-hr": theme("colors.black"),
+            "--tw-prose-quotes": theme("colors.foreground"),
+            "--tw-prose-quote-borders": theme("colors.black"),
+            "--tw-prose-captions": theme("colors.foreground"),
+            "--tw-prose-code": theme("colors.foreground"),
+            "--tw-prose-pre-code": theme("colors.foreground"),
+            "--tw-prose-pre-bg": theme("colors.black"),
+            "--tw-prose-th-borders": theme("colors.black"),
+            "--tw-prose-td-borders": theme("colors.black"),
+          },
+        },
+      }),
     },
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],

@@ -24,9 +24,7 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={title} description={description} image={ogImage?.src} imageAlt={imageAlt} type="article">
-  <article
-    class="prose prose-invert max-w-none prose-headings:text-green prose-a:text-green prose-a:no-underline hover:prose-a:underline prose-pre:rounded-none"
-  >
+  <article class="prose max-w-none">
     <h1>{title}</h1>
     <CommitInfo id={entry.id} />
     {image && <Image src={image} alt={imageAlt!} />}
