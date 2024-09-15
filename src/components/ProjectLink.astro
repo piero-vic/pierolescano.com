@@ -9,7 +9,12 @@ export interface Props {
 const { icon, href } = Astro.props;
 ---
 
-<a class="flex items-center gap-1 transition hover:text-blue" href={href} target="_blank" rel="noopener noreferrer">
+<a
+  class="flex items-center gap-1 underline transition hover:text-blue"
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+>
   <Icon name={icon} aria-hidden="true" focusable="false" class="h-6 w-6" />
   <slot />
 </a>

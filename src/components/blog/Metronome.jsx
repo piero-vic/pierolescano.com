@@ -20,11 +20,11 @@ const Metronome = () => {
   const { bpm, setBpm, isPlaying, setIsPlaying } = useMetronome();
 
   return (
-    <div className="not-prose mx-auto my-8 max-w-md border border-green bg-[#292d3e] p-4">
+    <div className="not-prose mx-auto my-8 max-w-md border border-green bg-background p-4">
       <div>
         <div className="font-bold text-green">{bpm} BPM</div>
         <input
-          className="w-full"
+          className="w-full accent-green"
           type="range"
           min="60"
           max="240"
@@ -33,9 +33,7 @@ const Metronome = () => {
         />
       </div>
       <button
-        className={`w-1/4 border px-2 font-bold text-black ${
-          isPlaying ? "border-red bg-red" : "border-green bg-green"
-        }`}
+        className={`w-1/4 border px-2 font-bold text-black ${isPlaying ? "border-red bg-red" : "border-green bg-green"}`}
         onClick={() => setIsPlaying(!isPlaying)}
       >
         {isPlaying ? "Stop" : "Start"}

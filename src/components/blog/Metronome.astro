@@ -1,7 +1,7 @@
-<div class="mx-auto my-12 max-w-md border border-green bg-[#292d3e] p-4" x-data="metronome" x-effect="metronomeEffect">
+<div class="mx-auto my-12 max-w-md border border-green bg-background p-4" x-data="metronome" x-effect="metronomeEffect">
   <div>
     <div class="font-bold text-green"><span x-text="bpm"></span> BPM</div>
-    <input class="w-full" type="range" min="60" max="240" x-model="bpm" />
+    <input class="w-full accent-green" type="range" min="60" max="240" x-model="bpm" />
   </div>
   <button
     class="w-1/4 border px-2 font-bold text-black"
@@ -11,22 +11,22 @@
 </div>
 
 <script is:inline>
-document.addEventListener("alpine:init", () => {
-  Alpine.data("metronome", () => {
-    let timer = null;
-    const click = new Audio("/audio/click.wav");
+  document.addEventListener("alpine:init", () => {
+    Alpine.data("metronome", () => {
+      let timer = null;
+      const click = new Audio("/audio/click.wav");
 
-    return {
-      bpm: 120,
-      isPlaying: false,
+      return {
+        bpm: 120,
+        isPlaying: false,
 
-      metronomeEffect() {
-        if (timer) clearInterval(timer);
-        if (this.isPlaying) {
-          timer = setInterval(() => click.play(), (60 / this.bpm) * 1000);
-        }
-      },
-    };
+        metronomeEffect() {
+          if (timer) clearInterval(timer);
+          if (this.isPlaying) {
+            timer = setInterval(() => click.play(), (60 / this.bpm) * 1000);
+          }
+        },
+      };
+    });
   });
-});
 </script>

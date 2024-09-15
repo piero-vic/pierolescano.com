@@ -12,17 +12,17 @@ const { heading, posts, dateFormat } = Astro.props;
 ---
 
 <section class="my-6 first:mt-0 last:mb-0">
-  <h2 class="my-3 border-b-2 border-b-black pb-3 text-2xl font-bold text-green">{heading}</h2>
+  <h2 class="my-3 border-b-2 border-b-blue pb-3 text-2xl font-bold text-blue">{heading}</h2>
   <ul class="flex flex-col">
     {
       posts.map(({ slug, data }) => (
-        <li>
-          <a href={`/blog/${slug}`} class="-mx-3 flex justify-between gap-6 px-3 py-2 text-sm hover:bg-black">
-            <span class="font-bold">{data.title}</span>
-            <time class="text-right text-green" datetime={dayjs(data.pubDate).format("YYYY-MM-DD")}>
-              {dayjs(data.pubDate).format(dateFormat)}
-            </time>
+        <li class="relative -mx-3 flex justify-between gap-6 px-3 py-2 text-sm hover:bg-black">
+          <a href={`/blog/${slug}`} class="underline after:absolute after:inset-0 after:content-['']">
+            {data.title}
           </a>
+          <time class="text-right font-thin text-blue" datetime={dayjs(data.pubDate).format("YYYY-MM-DD")}>
+            {dayjs(data.pubDate).format(dateFormat)}
+          </time>
         </li>
       ))
     }

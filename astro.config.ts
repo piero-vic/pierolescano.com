@@ -24,7 +24,7 @@ export default defineConfig({
   ],
   markdown: {
     shikiConfig: {
-      theme: "material-theme-palenight",
+      theme: "tokyo-night",
       langs: [],
       wrap: false,
     },
