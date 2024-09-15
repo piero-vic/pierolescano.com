@@ -27,7 +27,7 @@ const { Content } = await entry.render();
   <article class="prose max-w-none">
     <h1>{title}</h1>
     <CommitInfo id={entry.id} />
-    {image && <Image src={image} alt={imageAlt!} />}
+    {image && <Image src={image} alt={imageAlt!} loading="eager" />}
     <Content />
   </article>
 

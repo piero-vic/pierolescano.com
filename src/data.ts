@@ -1,9 +1,14 @@
+import type { ImageMetadata } from "astro";
+import coinWatcherImage from "./assets/images/coin-watcher.png";
+import spaceHubImage from "./assets/images/space-hub.png";
+import codingBootcampImage from "./assets/images/coding-bootcamp.png";
+
 export interface Project {
   name: string;
   description: string;
   technologies: Technology[];
   category: string;
-  image?: string;
+  image?: ImageMetadata;
   repoLink?: string;
   demoLink?: string;
   collaborator?: Collaborator;
@@ -23,7 +28,7 @@ export const projects: Project[] = [
     description: "Web application for consulting crypto prices and news.",
     technologies: ["React", "TailwindCSS"],
     category: "web",
-    image: "/images/coin-watcher.png",
+    image: coinWatcherImage,
     repoLink: "https://github.com/piero-vic/coin-watcher",
     demoLink: "https://piero-vic-coin-watcher.netlify.app/",
     favorite: true,
@@ -33,7 +38,7 @@ export const projects: Project[] = [
     description: "Single-page application that displays SpaceX rockets and missions.",
     technologies: ["React", "Redux"],
     category: "web",
-    image: "/images/space-hub.png",
+    image: spaceHubImage,
     repoLink: "https://github.com/Amrhub/space-travelers-hub",
     demoLink: "https://space-travelers-hub-pa.netlify.app/",
     collaborator: {
@@ -47,7 +52,7 @@ export const projects: Project[] = [
     description: "Capstone project for Module 1 of Microverse.",
     technologies: ["HTML", "CSS", "JavaScript"],
     category: "web",
-    image: "/images/coding-bootcamp.png",
+    image: codingBootcampImage,
     repoLink: "https://github.com/piero-vic/coding-bootcamp-website",
     demoLink: "https://piero-vic.github.io/coding-bootcamp-website/",
     favorite: false,
