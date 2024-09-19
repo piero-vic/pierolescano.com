@@ -2,23 +2,21 @@
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ProjectList from "../components/ProjectList.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 
 const title = "Projects";
-const description = "Collection of small web projects and CLI tools I've built.";
+const description = "Collection of some of the websites, libraries and tools I've built.";
 
 const projects = await getCollection("projects");
-
-const webProjects = projects.filter(p => p.data.category === "web");
-const cliProjects = projects.filter(p => p.data.category === "cli");
+projects.sort((a, b) => (a.data.name > b.data.name ? 1 : -1));
 ---
 
 <BaseLayout title={title} description={description}>
   <section class="mb-6">
     <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
     <p class="mb-3">{description}</p>
+    <div class="mt-6 gap-5 space-y-5 md:columns-2 xl:columns-3">
+      {projects.map(project => <ProjectCard project={project} includeImage />)}
+    </div>
   </section>
-
-  <ProjectList projects={webProjects} heading="Web" />
-  <ProjectList projects={cliProjects} heading="Terminal" />
 </BaseLayout>

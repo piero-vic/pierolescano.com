@@ -33,7 +33,6 @@ const projectsCollection = defineCollection({
         name: z.string(),
         color: z.string(),
       }),
-      category: z.enum(["web", "cli"]),
       image: image().optional(),
       repoLink: z.string().optional(),
       demoLink: z.string().optional(),
