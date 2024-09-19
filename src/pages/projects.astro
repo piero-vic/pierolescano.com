@@ -1,13 +1,16 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectList from "../components/ProjectList.astro";
-import { projects } from "../data";
 
 const title = "Projects";
 const description = "Collection of small web projects and CLI tools I've built.";
 
-const webProjects = projects.filter(p => p.category === "web");
-const cliProjects = projects.filter(p => p.category === "cli");
+const projects = await getCollection("projects");
+
+const webProjects = projects.filter(p => p.data.category === "web");
+const cliProjects = projects.filter(p => p.data.category === "cli");
 ---
 
 <BaseLayout title={title} description={description}>

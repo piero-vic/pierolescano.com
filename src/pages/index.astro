@@ -4,7 +4,6 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostList from "../components/PostList.astro";
 import ProjectList from "../components/ProjectList.astro";
-import { projects } from "../data";
 
 const title = "Piero Lescano";
 const description = "Software developer focused on building CLI tools and web applications.";
@@ -12,7 +11,8 @@ const description = "Software developer focused on building CLI tools and web ap
 const posts = await getCollection("blog");
 posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
-const favoriteProjects = projects.filter(p => p.favorite);
+const projects = await getCollection("projects");
+const favoriteProjects = projects.filter(p => p.data.favorite);
 ---
 
 <BaseLayout title={title} description={description}>

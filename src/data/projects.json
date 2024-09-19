@@ -1,0 +1,75 @@
+[
+  {
+    "id": "coin-watcher",
+    "name": "Coin Watcher",
+    "description": "Web application for consulting crypto prices and news.",
+    "technologies": ["React", "TailwindCSS"],
+    "category": "web",
+    "image": "../assets/images/coin-watcher.png",
+    "repoLink": "https://github.com/piero-vic/coin-watcher",
+    "demoLink": "https://piero-vic-coin-watcher.netlify.app/",
+    "favorite": true
+  },
+  {
+    "id": "space-travelers-hub",
+    "name": "Space Traveler's Hub",
+    "description": "Single-page application that displays SpaceX rockets and missions.",
+    "technologies": ["React", "Redux"],
+    "category": "web",
+    "image": "../assets/images/space-hub.png",
+    "repoLink": "https://github.com/Amrhub/space-travelers-hub",
+    "demoLink": "https://space-travelers-hub-pa.netlify.app/",
+    "collaborator": {
+      "name": "Amr Ahmed",
+      "github": "https://github.com/Amrhub"
+    },
+    "favorite": false
+  },
+  {
+    "id": "coding-bootcamp-website",
+    "name": "Coding Bootcamp Webpage",
+    "description": "Capstone project for Module 1 of Microverse.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "category": "web",
+    "image": "../assets/images/coding-bootcamp.png",
+    "repoLink": "https://github.com/piero-vic/coding-bootcamp-website",
+    "demoLink": "https://piero-vic.github.io/coding-bootcamp-website/",
+    "favorite": false
+  },
+  {
+    "id": "cmp-ledger",
+    "name": "cmp-ledger",
+    "description": "A nvim-cmp source for ledger accounts.",
+    "technologies": ["Lua"],
+    "category": "cli",
+    "repoLink": "https://github.com/piero-vic/cmp-ledger",
+    "favorite": false
+  },
+  {
+    "id": "ptd",
+    "name": "ptd",
+    "description": "A minimal to-do list application for the command line.",
+    "technologies": ["Python", "Typer"],
+    "category": "cli",
+    "repoLink": "https://github.com/piero-vic/ptd",
+    "favorite": false
+  },
+  {
+    "id": "libretranslate",
+    "name": "libretranslate",
+    "description": "Go client for the LibreTranslate API.",
+    "technologies": ["Go"],
+    "category": "cli",
+    "repoLink": "https://github.com/piero-vic/libretranslate",
+    "favorite": true
+  },
+  {
+    "id": "go-linkding",
+    "name": "go-linkding",
+    "description": " Go client for the Linkding API.",
+    "technologies": ["Go"],
+    "category": "cli",
+    "repoLink": "https://github.com/piero-vic/go-linkding",
+    "favorite": true
+  }
+]

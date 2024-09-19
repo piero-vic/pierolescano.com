@@ -1,15 +1,16 @@
 ---
+import type { CollectionEntry } from "astro:content";
+
 import ProjectCard from "./ProjectCard.astro";
-import type { Project } from "../data";
 
 export interface Props {
-  projects: Project[];
+  projects: CollectionEntry<"projects">[];
   heading: string;
 }
 
 const { projects, heading } = Astro.props;
 
-const includeImage = projects.every(project => project.image);
+const includeImage = projects.every(project => project.data.image);
 ---
 
 <section class="my-6 first:mt-0 last:mb-0">
