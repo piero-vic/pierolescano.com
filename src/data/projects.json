@@ -3,18 +3,24 @@
     "id": "coin-watcher",
     "name": "Coin Watcher",
     "description": "Web application for consulting crypto prices and news.",
-    "technologies": ["React", "TailwindCSS"],
+    "primaryLanguage": {
+      "name": "JavaScript",
+      "color": "#f1e05a"
+    },
     "category": "web",
     "image": "../assets/images/coin-watcher.png",
     "repoLink": "https://github.com/piero-vic/coin-watcher",
     "demoLink": "https://piero-vic-coin-watcher.netlify.app/",
-    "favorite": true
+    "favorite": false
   },
   {
     "id": "space-travelers-hub",
     "name": "Space Traveler's Hub",
     "description": "Single-page application that displays SpaceX rockets and missions.",
-    "technologies": ["React", "Redux"],
+    "primaryLanguage": {
+      "name": "JavaScript",
+      "color": "#f1e05a"
+    },
     "category": "web",
     "image": "../assets/images/space-hub.png",
     "repoLink": "https://github.com/Amrhub/space-travelers-hub",
@@ -29,7 +35,10 @@
     "id": "coding-bootcamp-website",
     "name": "Coding Bootcamp Webpage",
     "description": "Capstone project for Module 1 of Microverse.",
-    "technologies": ["HTML", "CSS", "JavaScript"],
+    "primaryLanguage": {
+      "name": "HTML",
+      "color": "#e34c26"
+    },
     "category": "web",
     "image": "../assets/images/coding-bootcamp.png",
     "repoLink": "https://github.com/piero-vic/coding-bootcamp-website",
@@ -40,7 +49,10 @@
     "id": "cmp-ledger",
     "name": "cmp-ledger",
     "description": "A nvim-cmp source for ledger accounts.",
-    "technologies": ["Lua"],
+    "primaryLanguage": {
+      "name": "Lua",
+      "color": "#000080"
+    },
     "category": "cli",
     "repoLink": "https://github.com/piero-vic/cmp-ledger",
     "favorite": false
@@ -49,7 +61,10 @@
     "id": "ptd",
     "name": "ptd",
     "description": "A minimal to-do list application for the command line.",
-    "technologies": ["Python", "Typer"],
+    "primaryLanguage": {
+      "name": "Python",
+      "color": "#3572A5"
+    },
     "category": "cli",
     "repoLink": "https://github.com/piero-vic/ptd",
     "favorite": false
@@ -58,7 +73,10 @@
     "id": "libretranslate",
     "name": "libretranslate",
     "description": "Go client for the LibreTranslate API.",
-    "technologies": ["Go"],
+    "primaryLanguage": {
+      "name": "Go",
+      "color": "#00ADD8"
+    },
     "category": "cli",
     "repoLink": "https://github.com/piero-vic/libretranslate",
     "favorite": true
@@ -66,10 +84,25 @@
   {
     "id": "go-linkding",
     "name": "go-linkding",
-    "description": " Go client for the Linkding API.",
-    "technologies": ["Go"],
+    "description": "Go client for the Linkding API.",
+    "primaryLanguage": {
+      "name": "Go",
+      "color": "#00ADD8"
+    },
     "category": "cli",
     "repoLink": "https://github.com/piero-vic/go-linkding",
+    "favorite": true
+  },
+  {
+    "id": "metronome",
+    "name": "metronome",
+    "description": "A small metronome for the terminal.",
+    "primaryLanguage": {
+      "name": "Go",
+      "color": "#00ADD8"
+    },
+    "category": "cli",
+    "repoLink": "https://github.com/piero-vic/metronome",
     "favorite": true
   }
 ]

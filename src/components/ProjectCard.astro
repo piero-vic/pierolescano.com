@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const { project, includeImage } = Astro.props;
-const { name, description, technologies, image, repoLink, demoLink, collaborator } = project.data;
+const { name, description, image, repoLink, demoLink, collaborator, primaryLanguage } = project.data;
 ---
 
 <div class="flex flex-col overflow-hidden border border-blue bg-black">
@@ -30,12 +30,11 @@ const { name, description, technologies, image, repoLink, demoLink, collaborator
         </p>
       )
     }
-
-    <p class="mt-auto flex flex-wrap justify-end">
-      {technologies.map(tech => <span class="ml-3">{tech}</span>)}
-    </p>
-
-    <div class="flex justify-end gap-3">
+    <div class="mt-auto flex flex-wrap justify-end gap-x-3">
+      <span class="mr-auto flex items-center gap-1">
+        <span class="language-indicator size-3 rounded-full"></span>
+        <span>{primaryLanguage.name}</span>
+      </span>
       {
         demoLink && (
           <ProjectLink icon="prime:globe" href={demoLink}>
@@ -53,3 +52,9 @@ const { name, description, technologies, image, repoLink, demoLink, collaborator
     </div>
   </div>
 </div>
+
+<style define:vars={{ backgroundColor: primaryLanguage.color }}>
+  .language-indicator {
+    background-color: var(--backgroundColor);
+  }
+</style>

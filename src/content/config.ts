@@ -29,9 +29,10 @@ const projectsCollection = defineCollection({
       id: z.string(),
       name: z.string(),
       description: z.string(),
-      technologies: z.array(
-        z.enum(["CSS", "HTML", "JavaScript", "Lua", "Python", "React", "Redux", "TailwindCSS", "Typer", "Go"]),
-      ),
+      primaryLanguage: z.object({
+        name: z.string(),
+        color: z.string(),
+      }),
       category: z.enum(["web", "cli"]),
       image: image().optional(),
       repoLink: z.string().optional(),
