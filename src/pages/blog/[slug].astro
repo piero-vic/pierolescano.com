@@ -23,7 +23,7 @@ const ogImage = image && (await getImage({ src: image, format: "png" }));
 const { Content } = await entry.render();
 ---
 
-<BaseLayout title={title} description={description} image={ogImage?.src} imageAlt={imageAlt} type="article">
+<BaseLayout title={title} description={description} image={ogImage?.src} type="article">
   <article class="prose max-w-none prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background">
     <h1>{title}</h1>
     <CommitInfo id={entry.id} />

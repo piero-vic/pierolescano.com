@@ -4,43 +4,34 @@ export interface Props {
   description: string;
   type: string;
   image: string;
-  imageAlt: string;
 }
 
-const { title, description, type, image, imageAlt } = Astro.props;
+const { title, description, type, image } = Astro.props;
 
-const pageTitle = title === "Piero Lescano" ? title : `${title} | Piero Lescano`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(image, Astro.site);
-const twitter = "@piero_codes";
 ---
 
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- Basic Tags -->
-{title ? <title>{pageTitle}</title> : null}
-{description ? <meta name="description" content={description} /> : null}
-{image ? <meta name="image" content={imageURL} /> : null}
-<meta name="generator" content={Astro.generator} />
+  <!-- Basic Tags -->
+  <title>{title === "Piero Lescano" ? title : `${title} | Piero Lescano`}</title>
+  <meta name="title" content={title} />
+  {description ? <meta name="description" content={description} /> : null}
+  {image ? <meta name="image" content={imageURL} /> : null}
+  <meta name="generator" content={Astro.generator} />
 
-<!-- Links -->
-<link rel="canonical" href={canonicalURL} />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Piero Lescano" />
+  <!-- Links -->
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Piero Lescano" />
 
-<!-- Open Graph Tags -->
-<meta property="og:type" content={type} />
-<link rel="og:url" href={canonicalURL} />
-{title ? <meta name="og:title" content={title} /> : null}
-{description ? <meta name="og:description" content={description} /> : null}
-{image ? <meta name="og:image" content={imageURL} /> : null}
-
-<!-- Twitter Tags -->
-<meta name="twitter:card" content={type == "article" && image ? "summary_large_image" : "summary"} />
-<meta name="twitter:site" content={twitter} />
-<meta name="twitter:creator" content={twitter} />
-{title ? <meta name="twitter:title" content={title} /> : null}
-{description ? <meta name="twitter:description" content={description} /> : null}
-{image ? <meta name="twitter:image" content={imageURL} /> : null}
-{imageAlt ? <meta name="twitter:image:alt" content={imageAlt} /> : null}
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content={type} />
+  <link rel="og:url" href={canonicalURL} />
+  <meta name="og:title" content={title} />
+  {description ? <meta name="og:description" content={description} /> : null}
+  {image ? <meta name="og:image" content={imageURL} /> : null}
+</head>

@@ -14,17 +14,14 @@ export interface Props {
   title: string;
   description: string;
   image?: string;
-  imageAlt?: string;
   type?: "website" | "article";
 }
 
-const { title, description, image = "logo.png", imageAlt = "Piero Lescano Logo", type = "website" } = Astro.props;
+const { title, description, image = "logo.png", type = "website" } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} type={type} />
-  </head>
+  <BaseHead title={title} description={description} image={image} type={type} />
   <body class="mx-auto flex h-screen max-w-5xl flex-col bg-black px-6 font-mono text-foreground">
     <Header />
     <main class="grow md:py-16">
