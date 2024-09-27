@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import { LONG_MONTH_DATE_FORMATTER } from "../lib/datetimes";
 
 const OWNER = "piero-vic";
 const REPO = "pierolescano.com";
@@ -13,15 +13,18 @@ const { id } = Astro.props;
 
 const response = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/commits?path=${BLOG_PATH}/${id}`);
 const commits = response.ok ? await response.json() : [];
+
+const updatedDate = new Date(commits[0]?.commit.author.date);
 ---
 
 {
   commits.length > 0 && (
-    <p>
+    <p class="text-sm">
+      Updated:
       <em>
-        <Icon name="feather:git-commit" aria-hidden="true" class="mr-2 inline h-4 w-4" />
-        <a href={commits[0].html_url}>{commits[0].sha.substring(0, 7)}</a> @
-        <time datetime={commits[0].commit.author.date}>{commits[0].commit.author.date.substring(0, 10)}</time>
+        <time datetime={updatedDate.toISOString()}>{LONG_MONTH_DATE_FORMATTER.format(updatedDate)}</time>
+        in
+        <a href={commits[0].html_url}>{commits[0].sha.substring(0, 7)}</a>
       </em>
     </p>
   )

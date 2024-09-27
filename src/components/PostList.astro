@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-
-import dayjs from "dayjs";
+import { SHORT_MONTH_DATE_FORMATTER } from "../lib/datetimes";
 
 export interface Props {
   heading: string;
@@ -9,21 +8,21 @@ export interface Props {
   dateFormat: string;
 }
 
-const { heading, posts, dateFormat } = Astro.props;
+const { heading, posts } = Astro.props;
 ---
 
 <section class="my-6 first:mt-0 last:mb-0">
   <h2 class="my-3 border-b border-b-blue pb-3 text-2xl font-bold text-blue">{heading}</h2>
-  <ul class="flex flex-col">
+  <ul class="space-y-4">
     {
       posts.map(({ slug, data }) => (
-        <li class="relative -mx-3 flex justify-between gap-6 px-3 py-2 text-sm hover:bg-black">
-          <a href={`/blog/${slug}`} class="underline after:absolute after:inset-0 after:content-['']">
+        <li class="relative gap-6 text-sm hover:bg-black">
+          <a href={`/blog/${slug}`} class="text-lg font-bold text-blue hover:underline">
             {data.title}
           </a>
-          <time class="text-right font-thin text-blue" datetime={dayjs(data.pubDate).format("YYYY-MM-DD")}>
-            {dayjs(data.pubDate).format(dateFormat)}
-          </time>
+          <div class="font-thin">
+            <time datetime={data.pubDate.toISOString()}>{SHORT_MONTH_DATE_FORMATTER.format(data.pubDate)}</time>
+          </div>
         </li>
       ))
     }
