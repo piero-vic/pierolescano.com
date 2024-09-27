@@ -2,8 +2,8 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import { Image, getImage } from "astro:assets";
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import CommitInfo from "../../components/CommitInfo.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CommitInfo from "@components/CommitInfo.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -24,7 +24,7 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={title} description={description} image={ogImage?.src} imageAlt={imageAlt} type="article">
-  <article class="prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background prose max-w-none">
+  <article class="prose max-w-none prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background">
     <h1>{title}</h1>
     <CommitInfo id={entry.id} />
     {image && <Image src={image} alt={imageAlt!} loading="eager" />}
