@@ -1,6 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
-import { Image, getImage } from "astro:assets";
+import { Image } from "astro:assets";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import CommitInfo from "@components/CommitInfo.astro";
@@ -19,11 +19,10 @@ export interface Props {
 
 const { entry } = Astro.props;
 const { title, description, image, imageAlt } = entry.data;
-const ogImage = image && (await getImage({ src: image, format: "png" }));
 const { Content } = await entry.render();
 ---
 
-<BaseLayout title={title} description={description} image={ogImage?.src} type="article">
+<BaseLayout title={title} description={description} image={`/og/blog/${entry.slug}.png`} type="article">
   <article class="prose max-w-none prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background">
     <h1>{title}</h1>
     <CommitInfo id={entry.id} />
