@@ -73,7 +73,7 @@
       "color": "#00ADD8"
     },
     "repoLink": "https://github.com/piero-vic/libretranslate",
-    "favorite": true
+    "favorite": false
   },
   {
     "id": "go-linkding",
@@ -95,6 +95,17 @@
       "color": "#00ADD8"
     },
     "repoLink": "https://github.com/piero-vic/metronome",
+    "favorite": true
+  },
+  {
+    "id": "volume-notify",
+    "name": "volume-notify",
+    "description": "A lightweight volume notifier daemon for PulseAudio.",
+    "primaryLanguage": {
+      "name": "Go",
+      "color": "#00ADD8"
+    },
+    "repoLink": "https://github.com/piero-vic/volume-notify",
     "favorite": true
   }
 ]
