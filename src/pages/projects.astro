@@ -15,8 +15,8 @@ projects.sort((a, b) => (a.data.name > b.data.name ? 1 : -1));
   <section class="mb-6">
     <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
     <p class="mb-3">{description}</p>
-    <div class="mt-6 gap-5 space-y-5 md:columns-2 xl:columns-3">
-      {projects.map(project => <ProjectCard project={project} includeImage />)}
-    </div>
+    <ul class="mt-6 gap-5 space-y-5 md:columns-2 xl:columns-3">
+      {projects.map(project => <ProjectCard headingTag="h2" project={project} includeImage />)}
+    </ul>
   </section>
 </BaseLayout>

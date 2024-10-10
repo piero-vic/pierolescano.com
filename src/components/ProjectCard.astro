@@ -1,23 +1,30 @@
 ---
+import type { HTMLTag } from "astro/types";
 import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
-
-import ProjectLink from "@components/ProjectLink.astro";
+import { Icon } from "astro-icon/components";
 
 export interface Props {
+  headingTag: Extract<HTMLTag, "h2" | "h3">;
   project: CollectionEntry<"projects">;
   includeImage: boolean;
 }
 
-const { project, includeImage } = Astro.props;
+const { project, includeImage, headingTag: Heading = "h3" } = Astro.props;
 const { name, description, image, repoLink, demoLink, collaborator, primaryLanguage } = project.data;
 ---
 
-<div class="flex flex-col overflow-hidden border border-blue bg-black">
+<li
+  class="relative flex flex-col overflow-hidden border border-blue bg-black transition-shadow ease-in-out focus-within:shadow-[4px_4px] focus-within:shadow-blue hover:shadow-[4px_4px] hover:shadow-blue"
+>
   {includeImage && image && <Image src={image} alt={name} loading="eager" />}
 
   <div class="flex grow flex-col gap-2 p-4 text-sm">
-    <h3 class="text-xl font-bold text-blue">{name}</h3>
+    <Heading class="text-xl font-bold text-blue">
+      <a href={demoLink ? demoLink : repoLink} class="after:absolute after:inset-0">
+        {name}
+      </a>
+    </Heading>
 
     <p>{description}</p>
 
@@ -26,7 +33,7 @@ const { name, description, image, repoLink, demoLink, collaborator, primaryLangu
       collaborator && (
         <p>
           Made in collaboration with
-          <a class="text-blue underline" href={collaborator.github} target="_blank" rel="noopener noreferrer">{collaborator.name}</a>.
+          <a class="text-blue underline relative" href={collaborator.github} target="_blank" rel="noopener noreferrer">{collaborator.name}</a>.
         </p>
       )
     }
@@ -37,21 +44,33 @@ const { name, description, image, repoLink, demoLink, collaborator, primaryLangu
       </span>
       {
         demoLink && (
-          <ProjectLink icon="prime:globe" href={demoLink}>
-            Demo
-          </ProjectLink>
+          <a
+            class="relative flex items-center gap-1 underline transition hover:text-blue"
+            href={demoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="prime:link" aria-hidden="true" focusable="false" class="h-6 w-6" />
+            <span class="sr-only">Demo</span>
+          </a>
         )
       }
       {
         repoLink && (
-          <ProjectLink icon="prime:github" href={repoLink}>
-            Source
-          </ProjectLink>
+          <a
+            class="relative flex items-center gap-1 underline transition hover:text-blue"
+            href={repoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="prime:github" aria-hidden="true" focusable="false" class="h-6 w-6" />
+            <span class="sr-only">Source code</span>
+          </a>
         )
       }
     </div>
   </div>
-</div>
+</li>
 
 <style define:vars={{ backgroundColor: primaryLanguage.color }}>
   .language-indicator {

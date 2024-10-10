@@ -15,7 +15,7 @@ const includeImage = projects.every(project => project.data.image);
 
 <section class="my-6 first:mt-0 last:mb-0">
   <h2 class="my-3 border-b border-b-blue pb-3 text-2xl font-bold text-blue">{heading}</h2>
-  <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-    {projects.map(project => <ProjectCard project={project} includeImage={includeImage} />)}
-  </div>
+  <ul class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+    {projects.map(project => <ProjectCard headingTag="h3" project={project} includeImage={includeImage} />)}
+  </ul>
 </section>
