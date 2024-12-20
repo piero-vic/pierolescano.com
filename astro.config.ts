@@ -29,7 +29,4 @@ export default defineConfig({
       wrap: false,
     },
   },
-  experimental: {
-    contentLayer: true,
-  },
 });
