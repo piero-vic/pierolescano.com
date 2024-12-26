@@ -48,6 +48,18 @@ module.exports = {
               content: '""',
               "padding-right": "0.25rem",
             },
+            // NOTE: This is for configuring inline tags
+            // TODO: Find a bette way to do this.
+            "span.inline-tag": {
+              "margin-left": "0.25rem",
+              "margin-right": "0.25rem",
+              "border-radius": "0.25rem",
+              "border-width": "1px",
+              "background-color": theme("colors.background"),
+              "padding-left": "0.25rem",
+              "padding-right": "0.25rem",
+              "font-size": "0.75rem",
+            },
           },
         },
       }),
