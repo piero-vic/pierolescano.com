@@ -26,3 +26,30 @@ const { Content } = await entry.render();
     <Content />
   </article>
 </BaseLayout>
+
+<script>
+  import mermaid from "mermaid";
+
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: "dark",
+    fontFamily: "inherit",
+  });
+
+  document.querySelectorAll('pre[data-language="mermaid"]').forEach((node, index) => {
+    const mermaidText = node.querySelector("code")?.innerText;
+    if (!mermaidText) {
+      return;
+    }
+
+    mermaid.render(`graph-div-${index}`, mermaidText).then(({ svg }) => {
+      const container = document.createElement("div");
+      container.style.display = "flex";
+      container.style.justifyContent = "center";
+      container.innerHTML = svg;
+
+      node.innerHTML = "";
+      node.appendChild(container);
+    });
+  });
+</script>
