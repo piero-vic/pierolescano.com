@@ -2,6 +2,7 @@
 title: Status update, September 2024
 description: Updates from the previous month.
 pubDate: 2024-10-05
+tags: []
 ---
 
 ## Reading

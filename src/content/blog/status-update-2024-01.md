@@ -2,6 +2,7 @@
 title: Status update, January 2024
 description: Updates from the previous month.
 pubDate: 2024-01-31
+tags: []
 ---
 
 I've been wanting to establish a writing habit for quite some time now. So this year I'm committed to publishing at least

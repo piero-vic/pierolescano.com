@@ -2,6 +2,7 @@
 title: Status update, March 2024
 description: Updates from the previous month.
 pubDate: 2024-04-07
+tags: []
 ---
 
 For this status update, I'd like to focus primarily on my personal projects. Unfortunately, there isn't much new to

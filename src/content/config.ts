@@ -11,6 +11,7 @@ export const collections = {
           image: image().optional(),
           imageAlt: z.string().optional(),
           pubDate: z.date(),
+          tags: z.array(z.string()),
         })
         .refine(schema => {
           if (schema.image !== undefined && schema.imageAlt === undefined) {
