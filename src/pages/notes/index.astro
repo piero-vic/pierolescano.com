@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const title = "Notes";
+const description =
+  "Technical notes, code snippets, and writings mostly for personal reference. The notes in this part of the website change over time.";
+
+const notes = await getCollection("notes");
+notes.sort((a, b) => a.data.title - b.data.title);
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="mb-6">
+    <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
+    <p class="mb-3">{description}</p>
+    <ul class="gap-8 space-y-4 md:columns-2 xl:columns-3">
+      {
+        notes.map(({ slug, data }) => (
+          <li class="relative border-l border-blue py-1 pl-3 transition-shadow focus-within:shadow-[-3px_0] focus-within:shadow-blue hover:shadow-[-3px_0] hover:shadow-blue">
+            <a href={`/notes/${slug}`} class="text-lg font-bold text-blue after:absolute after:inset-0">
+              {data.title}
+            </a>
+            <ul class="mt-1 space-x-2 text-xs font-thin">
+              {data.tags.map(tag => (
+                <li class="inline rounded border bg-background px-1 text-xs">#{tag}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>

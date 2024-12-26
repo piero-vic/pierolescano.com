@@ -17,11 +17,11 @@ const { heading, posts } = Astro.props;
   <ul class="space-y-4">
     {
       posts.map(({ slug, data }) => (
-        <li class="relative gap-6 text-sm hover:bg-black">
-          <a href={`/blog/${slug}`} class="text-lg font-bold text-blue hover:underline">
+        <li class="relative border-l border-blue py-1 pl-3 transition-shadow focus-within:shadow-[-3px_0] focus-within:shadow-blue hover:shadow-[-3px_0] hover:shadow-blue">
+          <a href={`/blog/${slug}`} class="text-lg font-bold text-blue after:absolute after:inset-0">
             {data.title}
           </a>
-          <div class="font-thin">
+          <div class="mt-1 text-sm font-thin">
             <time datetime={data.pubDate.toISOString()}>{SHORT_MONTH_DATE_FORMATTER.format(data.pubDate)}</time>
           </div>
         </li>
