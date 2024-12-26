@@ -14,7 +14,7 @@ To start off, I deployed [Ollama](https://ollama.com/) on [Fly.io](https://fly.i
 [this article](https://fly.io/blog/scaling-llm-ollama/). Previously, I had been running Ollama locally but found that
 even the smaller models were extremely slow due to the limited hardware on my machine. I decided to use Fly because of
 its support for GPUs and the feature that allows machines to be stopped when they’re not being used. With Fly LLMs run
-smoothly and I only get charged for the amount computation I actually use.
+smoothly, and I only get charged for the amount computation I actually use.
 
 On to other things, I'm now hosting most of my services on a Raspberry Pi 3B. Previously, I had been running them on a
 cloud VPS. However, after getting a power supply and case for the Pi, I decided to set it up to work as a mini home
