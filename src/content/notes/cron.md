@@ -25,5 +25,5 @@ Use the `-u` flag to specify the user that's going to run the commands.
 
 ## Resources
 
-- [Crontab.guru](https://crontab.guru/)
-- [Cron Job Run Time Predictor](https://cronjob.xyz/)
+- [Crontab.guru](https://crontab.guru/) #tools
+- [Cron Job Run Time Predictor](https://cronjob.xyz/) #tools

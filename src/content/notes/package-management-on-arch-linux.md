@@ -1,10 +1,11 @@
 ---
 title: Package management on Arch Linux
+description: A collection snippets used to manage packages in Arch Linux.
 tags:
+  - command-line
   - linux
+  - snippets
 ---
-
-These are some of the commands I use to manage the software on my main machine.
 
 ## `pacman`
 

@@ -1,7 +1,7 @@
 ---
 title: Process substitution
 tags:
-  - bash
+  - linux
 ---
 
 Process substitution allows you to use the output of a command as if it were a file. It is useful when a command expects
