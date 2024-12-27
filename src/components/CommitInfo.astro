@@ -1,31 +1,47 @@
 ---
 import { LONG_MONTH_DATE_FORMATTER } from "@lib/datetimes";
+import type { Commit } from "@lib/remark-git-log";
 
 const OWNER = "piero-vic";
 const REPO = "pierolescano.com";
-const BLOG_PATH = "/src/content/blog";
 
 export interface Props {
-  id: string;
+  commits?: Commit[];
 }
 
-const { id } = Astro.props;
+const { commits = [] } = Astro.props;
 
-const response = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/commits?path=${BLOG_PATH}/${id}`);
-const commits = response.ok ? await response.json() : [];
-
-const updatedDate = new Date(commits[0]?.commit.author.date);
+const firstCommit = commits.length > 0 ? commits[commits.length - 1] : null;
+const lastCommit = commits.length > 0 ? commits[0] : null;
+const hasBeenUpdated = firstCommit?.hash !== lastCommit?.hash;
 ---
 
 {
-  commits.length > 0 && (
+  firstCommit != null && (
+    <p class="text-sm">
+      Published:
+      <time class="italic" datetime={firstCommit.date}>
+        {LONG_MONTH_DATE_FORMATTER.format(new Date(firstCommit.date))}
+      </time>
+      in
+      <a class="text-blue underline" href={`https://github.com/${OWNER}/${REPO}/commit/${firstCommit.hash}`}>
+        {firstCommit.hash.substring(0, 7)}
+      </a>
+    </p>
+  )
+}
+
+{
+  lastCommit != null && hasBeenUpdated && (
     <p class="text-sm">
       Updated:
-      <em>
-        <time datetime={updatedDate.toISOString()}>{LONG_MONTH_DATE_FORMATTER.format(updatedDate)}</time>
-        in
-        <a href={commits[0].html_url}>{commits[0].sha.substring(0, 7)}</a>
-      </em>
+      <time class="italic" datetime={lastCommit.date}>
+        {LONG_MONTH_DATE_FORMATTER.format(new Date(lastCommit.date))}
+      </time>
+      in
+      <a class="text-blue underline" href={`https://github.com/${OWNER}/${REPO}/commit/${lastCommit.hash}`}>
+        {lastCommit.hash.substring(0, 7)}
+      </a>
     </p>
   )
 }

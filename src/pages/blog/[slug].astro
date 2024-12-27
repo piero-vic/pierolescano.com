@@ -6,8 +6,8 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import CommitInfo from "@components/CommitInfo.astro";
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection("blog");
-  return blogEntries.map(entry => ({
+  const posts = await getCollection("blog");
+  return posts.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -19,15 +19,20 @@ export interface Props {
 
 const { entry } = Astro.props;
 const { title, description, image, imageAlt } = entry.data;
-const { Content } = await entry.render();
+const { Content, remarkPluginFrontmatter } = await entry.render();
 ---
 
 <BaseLayout title={title} description={description} image={`/og/blog/${entry.slug}.png`} type="article">
-  <article class="prose max-w-none prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background">
-    <h1>{title}</h1>
-    <CommitInfo id={entry.id} />
-    {image && <Image src={image} alt={imageAlt!} loading="eager" />}
-    <Content />
+  <article>
+    <header class="mb-8">
+      <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
+      <CommitInfo commits={remarkPluginFrontmatter.commits} />
+      {image && <Image src={image} alt={imageAlt!} loading="eager" class="my-8" />}
+    </header>
+
+    <main class="prose max-w-none prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background">
+      <Content />
+    </main>
   </article>
 
   <hr class="my-12 h-px border-none bg-blue" />

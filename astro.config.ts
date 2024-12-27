@@ -4,6 +4,7 @@ import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import alpine from "@astrojs/alpinejs";
 import icon from "astro-icon";
+import { remarkGitLog } from "./src/lib/remark-git-log";
 import { remarkInlineTags } from "./src/lib/remark-inline-tags";
 
 // https://astro.build/config
@@ -29,6 +30,6 @@ export default defineConfig({
       langs: [],
       wrap: false,
     },
-    remarkPlugins: [remarkInlineTags],
+    remarkPlugins: [remarkGitLog, remarkInlineTags],
   },
 });
