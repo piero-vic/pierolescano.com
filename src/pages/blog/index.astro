@@ -5,7 +5,8 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import PostList from "@components/PostList.astro";
 
 const title = "Blog";
-const description = "Technical articles, code snippets, and writings on the things I'm learning.";
+const description =
+  "A collection of writings on the things I'm learning and status updates on the proyects I'm working on.";
 
 const posts = await getCollection("blog");
 posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());

@@ -12,12 +12,12 @@ import Footer from "@components/Footer.astro";
 
 export interface Props {
   title: string;
-  description: string;
+  description?: string;
   image?: string;
   type?: "website" | "article";
 }
 
-const { title, description, image = "logo.png", type = "website" } = Astro.props;
+const { title, description = "", image = "logo.png", type = "website" } = Astro.props;
 ---
 
 <html lang="en">

@@ -6,7 +6,7 @@ import PostCard from "@components/PostCard.astro";
 
 const title = "Notes";
 const description =
-  "Technical notes, code snippets, and writings mostly for personal reference. The notes in this part of the website change over time.";
+  "A collecion of notes, code snippets, thoughts and ideas. The entries of this section will probably change a lot over time.";
 
 const notes = await getCollection("notes");
 ---
@@ -15,7 +15,7 @@ const notes = await getCollection("notes");
   <section class="mb-6">
     <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
     <p class="mb-3">{description}</p>
-    <ul class="gap-8 space-y-4 md:columns-2 xl:columns-3">
+    <ul class="mt-6 gap-8 space-y-4 md:columns-2 xl:columns-3">
       {notes.map(note => <PostCard post={note} />)}
     </ul>
   </section>
