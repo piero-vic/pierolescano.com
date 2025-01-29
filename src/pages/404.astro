@@ -1,0 +1,13 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const title = "Not found";
+const description = "There's nothing to see here.";
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="mb-6">
+    <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
+    <p class="mb-3">{description}</p>
+  </section>
+</BaseLayout>
