@@ -24,7 +24,7 @@ const { title, description = "", image = "logo.png", type = "website" } = Astro.
   <BaseHead title={title} description={description} image={image} type={type} />
   <body class="mx-auto flex h-screen max-w-5xl flex-col bg-black px-6 font-mono text-foreground">
     <Header />
-    <main class="grow md:py-16">
+    <main id="main" class="grow md:py-16">
       <slot />
     </main>
     <Footer />

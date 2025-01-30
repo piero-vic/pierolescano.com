@@ -3,12 +3,14 @@ import { Icon } from "astro-icon/components";
 ---
 
 <header class="py-6 md:py-8">
+  <a href="#main" class="absolute left-0 top-0 -translate-x-full font-bold text-blue focus:translate-x-0">
+    Skip to content
+  </a>
   <nav class="mx-auto flex flex-col justify-between gap-6 font-bold text-blue md:flex-row md:items-center">
     <a href="/" class="block transition md:hover:scale-110">
       <Icon name="ph:cube-fill" aria-hidden="true" focusable="false" class="h-12 w-12 md:h-16 md:w-16" />
       <span class="sr-only">Home</span>
     </a>
-
     <ul class="flex flex-wrap items-center gap-x-6 text-lg">
       <li><a href="/projects" class="hover:underline">Projects</a></li>
       <li><a href="/blog" class="hover:underline">Blog</a></li>
