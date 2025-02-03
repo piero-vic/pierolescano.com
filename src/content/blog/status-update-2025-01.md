@@ -28,7 +28,7 @@ While it provided some interesting insights, I don't think I got much out of it.
 been already bombarded with content discussing the topic of AI and LMMs.
 
 I wouldn't recommend it if you are already familiar with LLMs. The group of people that would benefit the most of this
-book are people who are not that
+book are people who are not that familiar with AI or tech in general.
 
 ## Coding
 
