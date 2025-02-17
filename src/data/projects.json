@@ -95,7 +95,7 @@
       "color": "#00ADD8"
     },
     "repoLink": "https://github.com/piero-vic/metronome",
-    "favorite": true
+    "favorite": false
   },
   {
     "id": "volume-notify",
@@ -106,6 +106,17 @@
       "color": "#00ADD8"
     },
     "repoLink": "https://github.com/piero-vic/volume-notify",
+    "favorite": true
+  },
+  {
+    "id": "battery-notify",
+    "name": "battery-notify",
+    "description": "A lightweight battery notifier daemon for Linux.",
+    "primaryLanguage": {
+      "name": "Go",
+      "color": "#00ADD8"
+    },
+    "repoLink": "https://github.com/piero-vic/battery-notify",
     "favorite": true
   }
 ]
