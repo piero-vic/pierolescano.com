@@ -11,5 +11,7 @@ tags: []
 
 ## Resources
 
-- [Functional Core, Imperative Shell - Destroy All Software](https://www.destroyallsoftware.com/screencasts/catalog/functional-core-imperative-shell) #media/video
-- [The Functional Core, Imperative Shell Pattern – Kenneth Lange](https://kennethlange.com/functional-core-imperative-shell/) #media/article
+- [Functional Core, Imperative Shell - Destroy All Software](https://www.destroyallsoftware.com/screencasts/catalog/functional-core-imperative-shell)
+  #media/video
+- [The Functional Core, Imperative Shell Pattern – Kenneth Lange](https://kennethlange.com/functional-core-imperative-shell/)
+  #media/article

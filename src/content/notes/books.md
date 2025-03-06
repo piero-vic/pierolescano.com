@@ -7,7 +7,7 @@ tags: []
 ## Currently Reading
 
 - [The Art of PostgreSQL](https://theartofpostgresql.com/) by Dimitri Fontaine
-- [Leviathan Wakes](https://www.goodreads.com/book/show/8855321-leviathan-wakes) by James S.A. Corey
+- _Cien años de soledad_ by Gabriel García Márquez
 
 ## Reading Next
 
@@ -18,9 +18,20 @@ tags: []
 - Why We Sleep: Unlocking the Power of Sleep and Dreams by Matthew Walker
 - Stolen Focus: Why You Can't Pay Attention--And How to Think Deeply Again by Johann Hari
 - [Computer Networks: A Systems Approach](https://book.systemsapproach.org/) by Larry Peterson and Bruce Davie
+- The UNIX Programming Environment
+- TCP/IP Illustrated
 - Something from [Standard Ebooks](https://standardebooks.org/).
 
 ## Finished Reading
+
+### 2025
+
+| Title                                                                            | Author           | Read       |
+| -------------------------------------------------------------------------------- | ---------------- | ---------- |
+| [Co-Intelligence](https://www.goodreads.com/book/show/198678736-co-intelligence) | Ethan Mollick    | 2025-02-03 |
+| [Leviathan Wakes](https://www.goodreads.com/book/show/8855321-leviathan-wakes)   | James S.A. Corey | 2025-01-18 |
+
+### 2024
 
 | Title                                                                                   | Author            | Read       |
 | --------------------------------------------------------------------------------------- | ----------------- | ---------- |
