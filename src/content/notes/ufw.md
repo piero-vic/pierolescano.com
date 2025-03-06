@@ -39,8 +39,7 @@ sudo ufw enable
 
 ## Limitations
 
-> [!WARNING]
-> Be careful when using `ufw` and Docker. For more information check
+> [!WARNING] Be careful when using `ufw` and Docker. For more information check
 > [`chaifeng/ufw-docker`](https://github.com/chaifeng/ufw-docker).
 
 ## Resources

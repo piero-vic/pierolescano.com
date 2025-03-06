@@ -30,5 +30,7 @@ pinentry-program /usr/bin/pinentry-curses
 
 ## Resources
 
-- [How to encrypt, sign and decrypt messages using GnuPG on macOS](https://sunknudsen.com/privacy-guides/how-to-encrypt-sign-and-decrypt-messages-using-gnupg-on-macos) #media/article
-- [Creating and Managing a GPG Key Pair](https://nickjanetakis.com/blog/creating-and-managing-a-gpg-key-pair) #media/article
+- [How to encrypt, sign and decrypt messages using GnuPG on macOS](https://sunknudsen.com/privacy-guides/how-to-encrypt-sign-and-decrypt-messages-using-gnupg-on-macos)
+  #media/article
+- [Creating and Managing a GPG Key Pair](https://nickjanetakis.com/blog/creating-and-managing-a-gpg-key-pair)
+  #media/article

@@ -32,8 +32,8 @@ The previous request would map to the following SQL query.
 SELECT * from items LIMIT 10 OFFSET 20;
 ```
 
-Offset can cause performance issues when the data grows larger. This is because the database needs to scan all the
-rows until the offset value.[^1]
+Offset can cause performance issues when the data grows larger. This is because the database needs to scan all the rows
+until the offset value.[^1]
 
 [^1]: [OFFSET is bad for skipping previous rows](https://use-the-index-luke.com/sql/partial-results/fetch-next-page)
 
@@ -42,7 +42,7 @@ rows until the offset value.[^1]
 <!-- TODO: Review -->
 
 - **Better for large and fast-changing datasets.**
-- The cursor value can be hash for security.
+- The cursor value can be hashed for security.
 
 ### Keyset based pagination
 

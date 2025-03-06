@@ -53,3 +53,4 @@ sudo ufw enable
 
 - [Initial Server Setup with Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04)
 - [Use UFW to lock down an Ubuntu server](https://tailscale.com/kb/1077/secure-server-ubuntu-18-04/)
+- [New Server Checklist](https://drewdevault.com/new-server.html)
