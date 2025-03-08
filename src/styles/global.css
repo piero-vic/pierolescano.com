@@ -36,12 +36,12 @@
   --tw-prose-td-borders: var(--color-blue);
 
   code::before {
-    content: '';
+    content: "";
     padding-left: 0.25rem;
   }
 
   code::after {
-    content: '';
+    content: "";
     padding-right: 0.25rem;
   }
 
@@ -55,7 +55,6 @@
     padding-right: 0.25rem;
     font-size: 0.75rem;
   }
-
 }
 
 @custom-variant prose-inline-code (&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *)));
