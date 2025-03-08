@@ -14,7 +14,8 @@ my own instead of buying it.
 ## Writing
 
 I definitely need to write a more. Last month I wrote
-[one blog post](/a-picker-for-bullet-journal-style-checkboxes-for-neovim) talking about a picker I wrote for Neovim.
+[one blog post](/blog/a-picker-for-bullet-journal-style-checkboxes-for-neovim) talking about a picker I wrote for
+Neovim.
 
 ## Reading
 
