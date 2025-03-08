@@ -7,7 +7,6 @@ tags: []
 ## Currently Reading
 
 - [The Art of PostgreSQL](https://theartofpostgresql.com/) by Dimitri Fontaine
-- _Cien años de soledad_ by Gabriel García Márquez
 
 ## Reading Next
 
@@ -26,10 +25,11 @@ tags: []
 
 ### 2025
 
-| Title                                                                            | Author           | Read       |
-| -------------------------------------------------------------------------------- | ---------------- | ---------- |
-| [Co-Intelligence](https://www.goodreads.com/book/show/198678736-co-intelligence) | Ethan Mollick    | 2025-02-03 |
-| [Leviathan Wakes](https://www.goodreads.com/book/show/8855321-leviathan-wakes)   | James S.A. Corey | 2025-01-18 |
+| Title                                                                                                  | Author                 | Read       |
+| ------------------------------------------------------------------------------------------------------ | ---------------------- | ---------- |
+| [One Hundred Years of Solitude](https://www.goodreads.com/book/show/320.One_Hundred_Years_of_Solitude) | Gabriel García Márquez | 2025-03-08 |
+| [Co-Intelligence](https://www.goodreads.com/book/show/198678736-co-intelligence)                       | Ethan Mollick          | 2025-02-03 |
+| [Leviathan Wakes](https://www.goodreads.com/book/show/8855321-leviathan-wakes)                         | James S.A. Corey       | 2025-01-18 |
 
 ### 2024
 
