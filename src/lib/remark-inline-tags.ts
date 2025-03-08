@@ -8,7 +8,7 @@ import { findAndReplace } from "mdast-util-find-and-replace";
 const tagRegex = new RegExp(/(?:^| )#((?:[-_\p{L}\p{Emoji}\p{M}\d])+(?:\/[-_\p{L}\p{Emoji}\p{M}\d]+)*)/gu);
 
 export const remarkInlineTags: RemarkPlugin = () => {
-  return function(tree) {
+  return function (tree) {
     findAndReplace(tree, [
       tagRegex,
       (_value: string, tag: string) => {

@@ -16,5 +16,5 @@ export default {
       },
     },
   ],
-  tailwindConfig: "./tailwind.config.js",
+  tailwindStylesheet: "./src/styles/global.css",
 };
