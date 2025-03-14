@@ -10,6 +10,10 @@ import { remarkInlineTags } from "./src/lib/remark-inline-tags";
 // https://astro.build/config
 export default defineConfig({
   site: "https://pierolescano.com/",
+  trailingSlash: "never",
+  build: {
+    format: "file",
+  },
   integrations: [
     react(),
     mdx(),
