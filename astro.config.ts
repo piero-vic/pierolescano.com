@@ -1,9 +1,12 @@
 import { defineConfig } from "astro/config";
+
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import alpine from "@astrojs/alpinejs";
 import icon from "astro-icon";
+
+import remarkMermaid from "remark-mermaidjs";
 import { remarkGitLog } from "./src/lib/remark-git-log";
 import { remarkInlineTags } from "./src/lib/remark-inline-tags";
 
@@ -36,6 +39,6 @@ export default defineConfig({
       langs: [],
       wrap: false,
     },
-    remarkPlugins: [remarkGitLog, remarkInlineTags],
+    remarkPlugins: [remarkGitLog, remarkInlineTags, remarkMermaid],
   },
 });
