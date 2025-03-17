@@ -39,6 +39,18 @@ export default defineConfig({
       langs: [],
       wrap: false,
     },
-    remarkPlugins: [remarkGitLog, remarkInlineTags, remarkMermaid],
+    remarkPlugins: [
+      remarkGitLog,
+      remarkInlineTags,
+      [
+        remarkMermaid,
+        {
+          mermaidConfig: {
+            theme: "dark",
+            fontFamily: '"JetBrains Mono", monospace',
+          },
+        },
+      ],
+    ],
   },
 });
