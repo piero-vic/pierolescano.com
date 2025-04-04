@@ -19,4 +19,9 @@ how fast our code runs.
 
 - [Tree](tree)
 - [Heap](heap)
-- Graph
+- [Graph](graph)
+- [Trie](trie)
+
+## Others
+
+- Bloom Filters

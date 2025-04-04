@@ -21,7 +21,7 @@ export const collections = {
         }),
   }),
   projects: defineCollection({
-    loader: file("src/data/projects.json"),
+    loader: file("src/content/projects.json"),
     schema: ({ image }) =>
       z.object({
         id: z.string(),
