@@ -8,7 +8,7 @@ tags:
 
 ## How an array works?
 
-```pseudocode
+```
 a = int[3]
 a[0]
 ```
@@ -26,7 +26,7 @@ What's happening underneath the hood?
     wouldn't be consistent.
 - **It has a fixed size.**
   - Items are stored consecutively. If we try to add elements to the array the next block might not available.
-  - Inserting an element implies that you're overwritting something.
+  - Inserting an element implies that you're overwriting something.
 - **How we access an element in an array?**
   - We use the index as an offset, multiply it by the length of the type to get the position we want, go to that
     position and read the value.

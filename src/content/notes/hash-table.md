@@ -10,14 +10,16 @@ tags:
 - Also known as map, dictionary, hash map, or associative array.
 - Most languages already have a hast table implementation built-in.
 
-## Parts of a Hash Table
+## Concepts
 
-- **Key**: Against which we store the values. There can only be one instance of the key in the hash table.
+- **Key**: A value that is hashable. It is used to look up the data we store in the hash table. There can only be one
+  instance of the key in the hash table.
 - **Value**: The data that we need to store. Usually stored in an array. There can be multiple instances of a value.
 - **Hashing function**: A function that takes an input and returns a hash code. In this case the hash code would be the
   index of the array of values. This function should always return the same value if its input doesn't change. A good
-  hashing function should be able to handle hash collisions. This happens were two or more inputs return the same hash
-  code.
+  hashing function should be able to handle hash collisions.
+- **Load factor**: Amount of data points vs the amount of storage available.
+- **Collision**: When 2 keys map to the same cell.
 
 ## Constraints
 

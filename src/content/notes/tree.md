@@ -21,10 +21,22 @@ structure, or database indexes.
   - A tree where the maximum number of children a node can have is 2.
 - **Balanced tree**
   - A tree is _perfectly_ balanced when any nodes' left and right children have the same height.
-- **Binary search tree**
+- **Binary search tree (BST)**
   - A type of binary tree with sorted nodes.
   - The value in the left node is smaller than the value in the parent.
   - The value in the right node is greater than the value in the parent.
+- [AVL Tree](avl-tree): A BST that rotates the tree every time there is a violation of the order.
+- **Red-black Tree**
+  - It is a BST.
+  - The root and nil nodes are black.
+  - All nodes are either red or black.
+  - You cannot have a red parent with a red child.
+  - All paths have the same number of black children.
+- [B-Tree](b-tree)
+- Minimum Spanning Tree:
+  - Minimum amount of edges required to have a connection to every single node in a [graph](graph).
+  - Prim's Algorithm
+  - Kruskal's Algorithm
 
 ## Traversals
 
@@ -60,7 +72,7 @@ flowchart TD
 
 ### Breadth-first
 
-We use a [queue](queue). It does NOT preserve the shape of the tree.
+We use a [queue](queue). It does NOT preserve the shape of the tree. Useful for nearness and pathfinding.
 
 ```mermaid
 flowchart TD
@@ -71,3 +83,56 @@ flowchart TD
 ```
 
 Given the previous tree, we would traverse in the following order: 7, 23, 8, 5, 4, 21, 15
+
+## Deletions on a BST
+
+### 1. Node with no children
+
+No special handling required. Simply delete the node.
+
+### 2. Node with one child
+
+The node parent must now point to the child.
+
+**Initial tree**
+
+I want to delete A.
+
+```mermaid
+flowchart TD
+X --- Y
+X --- A --- B
+            B --- Bl
+            B --- Br
+```
+
+**Operations**
+
+```mermaid
+flowchart TD
+X --- Y
+X ---|New| B
+           B --- Bl
+           B --- Br
+X ---|Delete| A ---|Delete| B
+```
+
+**Resulting tree**
+
+```mermaid
+flowchart TD
+X --- Y
+X --- B
+      B --- Bl
+      B --- Br
+```
+
+### 3. Node with two children
+
+- Concepts:
+  - **In-order successor:** Go to the right node and find the smallest child in the subtree.
+  - **In-order predecessor:** Go to the left node and find the greatest child in the subtree.
+- You need to find the **in-order successor** or the **in-order predecessor** and swap it with the node you want to
+  delete.
+- After the swap delete the node. Apply one of the previous methods.
+  - The node might have one child. In this case apply the second method.

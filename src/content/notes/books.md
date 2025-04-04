@@ -7,6 +7,7 @@ tags: []
 ## Currently Reading
 
 - [The Art of PostgreSQL](https://theartofpostgresql.com/) by Dimitri Fontaine
+- [The Hobbit](https://www.goodreads.com/book/show/5907.The_Hobbit_or_There_and_Back_Again) by J. R. R. Tolkien
 
 ## Reading Next
 
@@ -19,6 +20,9 @@ tags: []
 - [Computer Networks: A Systems Approach](https://book.systemsapproach.org/) by Larry Peterson and Bruce Davie
 - The UNIX Programming Environment
 - TCP/IP Illustrated
+- [Nature of Code](https://natureofcode.com/)
+- [Network Programming with Go](https://nostarch.com/networkprogrammingwithgo)
+- [Pro Web Type](https://prowebtype.com/) by Donny Truong
 - Something from [Standard Ebooks](https://standardebooks.org/).
 
 ## Finished Reading
@@ -27,6 +31,7 @@ tags: []
 
 | Title                                                                                                  | Author                 | Read       |
 | ------------------------------------------------------------------------------------------------------ | ---------------------- | ---------- |
+| [Resilient web design](https://resilientwebdesign.com)                                                 | Jeremy Keith           | 2025-03-14 |
 | [One Hundred Years of Solitude](https://www.goodreads.com/book/show/320.One_Hundred_Years_of_Solitude) | Gabriel García Márquez | 2025-03-08 |
 | [Co-Intelligence](https://www.goodreads.com/book/show/198678736-co-intelligence)                       | Ethan Mollick          | 2025-02-03 |
 | [Leviathan Wakes](https://www.goodreads.com/book/show/8855321-leviathan-wakes)                         | James S.A. Corey       | 2025-01-18 |
