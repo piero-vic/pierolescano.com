@@ -18,11 +18,18 @@ const favoriteProjects = projects.filter(p => p.data.favorite);
 <BaseLayout title={title} description={description}>
   <section class="mb-6">
     <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
-    <p class="mb-3">
-      I'm a software developer from Peru. I <a href="/projects" class="text-blue underline">build</a> for the web and
-      <a href="/blog" class="text-blue underline">write</a> about it sometimes. My interests go from jazz, generative music,
-      and books to Linux, open source, and anything web related.
-    </p>
+    <div class="prose max-w-none">
+      <p>
+        I'm a full-stack developer base in Lima, Peru. I’m passionate about web development, Linux, Neovim, command-line
+        tools, and self-hosting apps.
+      </p>
+      <p>
+        Most of my work revolves around building web applications using <strong>React</strong>, <strong
+          >TypeScript</strong
+        >, and <strong>Node.js</strong>. I also enjoy working with <strong>Go</strong> and <strong>PostgreSQL</strong>.
+      </p>
+      <p>Outside of tech, I’m into coffee, music, lifting, and wrestling.</p>
+    </div>
   </section>
 
   <PostList heading="Latest posts" posts={posts.slice(0, 3)} dateFormat="MMM D, YYYY" />
