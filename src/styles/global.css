@@ -34,6 +34,7 @@
   --tw-prose-pre-bg: var(--color-black);
   --tw-prose-th-borders: var(--color-blue);
   --tw-prose-td-borders: var(--color-blue);
+  --tw-prose-kbd: var(--color-foreground);
 
   code::before {
     content: "";

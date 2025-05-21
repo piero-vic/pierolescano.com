@@ -30,7 +30,9 @@ const { Content, remarkPluginFrontmatter } = await entry.render();
       {image && <Image src={image} alt={imageAlt!} loading="eager" class="my-8" />}
     </header>
 
-    <main class="prose max-w-none prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background">
+    <main
+      class="prose max-w-none prose-kbd:border prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background"
+    >
       <Content />
     </main>
   </article>
