@@ -8,7 +8,7 @@ const title = "Blog";
 const description =
   "A collection of writings on the things I'm learning and status updates on the proyects I'm working on.";
 
-const posts = await getCollection("blog");
+const posts = await getCollection("blog", ({ data }) => !data.archived);
 posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
 const years = posts.reduce((years, posts) => {

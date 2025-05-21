@@ -8,11 +8,10 @@ import ProjectList from "@components/ProjectList.astro";
 const title = "Piero Lescano";
 const description = "Software developer focused on building CLI tools and web applications.";
 
-const posts = await getCollection("blog");
+const posts = await getCollection("blog", ({ data }) => !data.archived);
 posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
-const projects = await getCollection("projects");
-const favoriteProjects = projects.filter(p => p.data.favorite);
+const projects = await getCollection("projects", ({ data }) => data.favorite);
 ---
 
 <BaseLayout title={title} description={description}>
@@ -33,5 +32,5 @@ const favoriteProjects = projects.filter(p => p.data.favorite);
   </section>
 
   <PostList heading="Latest posts" posts={posts.slice(0, 3)} dateFormat="MMM D, YYYY" />
-  <ProjectList heading="Projects" projects={favoriteProjects} />
+  <ProjectList heading="Projects" projects={projects} />
 </BaseLayout>
