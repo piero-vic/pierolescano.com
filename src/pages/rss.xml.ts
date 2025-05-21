@@ -6,7 +6,7 @@ import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
 export async function GET(context: APIContext) {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("blog", ({ data }) => !data.archived);
 
   return rss({
     title: "Piero Lescano",
