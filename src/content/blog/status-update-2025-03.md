@@ -21,8 +21,8 @@ reason I wanted to see it.
 
 ## Self-hosting
 
-I don't think much with my self-hosted setup. It works fine without me having to constantly monitor it. However, once a
-month or so I check if there are any new applications worth deploying. This month I decide to try to add a single
+I don't thinker much with my self-hosted setup. It works fine without me having to constantly monitor it. However, once
+a month or so I check if there are any new applications worth deploying. This month I decide to try to add a single
 sign-on service to centralize the authentication for the apps I'm running on my Raspberry Pi.
 
 [Authelia](https://www.authelia.com/) seemed to be the easiest to set up. It is also written in Go, which is a plus for

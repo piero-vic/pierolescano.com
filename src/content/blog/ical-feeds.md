@@ -25,5 +25,5 @@ favorite list.
 Outside the personal use cases, it seems like iCal feeds are also used so synchronize the availability of rentals and
 reservations between booking applications like [Airbnb](https://www.airbnb.com/help/article/99) and
 [Booking.com](https://partner.booking.com/en-gb/help/rates-availability/extranet-calendar/syncing-your-bookingcom-calendar-third-party-calendars).
-I haven't done much research regarding this use case yet, but I ever get a gig working on a booking management system I
-know where to look.
+I haven't done much research regarding this use case yet, but if I ever get a gig working on a booking management system
+I know where to look.
