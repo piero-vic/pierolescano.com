@@ -37,9 +37,9 @@ const { Content, remarkPluginFrontmatter } = await entry.render();
     </main>
   </article>
 
-  <hr class="my-12 border-blue" />
+  <hr class="my-12 border-blue noscript:hidden" />
 
-  <section>
+  <section class="noscript:hidden">
     <h2 class="my-[1em] text-center text-3xl font-bold text-blue">Comments</h2>
     <giscus-widget
       id="comments"
