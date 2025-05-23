@@ -22,7 +22,12 @@ const { Content } = await entry.render();
 
 <BaseLayout title={title} description={description} type="article">
   <article
-    class="prose max-w-none prose-kbd:border prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background"
+    class:list={[
+      "prose max-w-none",
+      "prose-kbd:border",
+      "prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background prose-inline-code:px-1",
+      "prose-inline-code:before:content-none prose-inline-code:after:content-none",
+    ]}
   >
     <h1>{title}</h1>
     <Content />

@@ -36,16 +36,6 @@
   --tw-prose-td-borders: var(--color-blue);
   --tw-prose-kbd: var(--color-foreground);
 
-  code::before {
-    content: "";
-    padding-left: 0.25rem;
-  }
-
-  code::after {
-    content: "";
-    padding-right: 0.25rem;
-  }
-
   span.inline-tag {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
