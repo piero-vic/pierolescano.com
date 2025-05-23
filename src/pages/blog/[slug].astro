@@ -31,7 +31,12 @@ const { Content, remarkPluginFrontmatter } = await entry.render();
     </header>
 
     <main
-      class="prose max-w-none prose-kbd:border prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background"
+      class:list={[
+        "prose max-w-none",
+        "prose-kbd:border",
+        "prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background prose-inline-code:px-1",
+        "prose-inline-code:before:content-none prose-inline-code:after:content-none",
+      ]}
     >
       <Content />
     </main>
