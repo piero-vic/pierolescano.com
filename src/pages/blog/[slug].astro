@@ -1,6 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import CommitInfo from "@components/CommitInfo.astro";
@@ -20,9 +20,14 @@ export interface Props {
 const { entry } = Astro.props;
 const { title, description, image, imageAlt } = entry.data;
 const { Content, remarkPluginFrontmatter } = await entry.render();
+
+let ogImage = `/og/blog/${entry.slug}.png`;
+if (image !== undefined) {
+  ogImage = (await getImage({ src: image, format: "png" })).src;
+}
 ---
 
-<BaseLayout title={title} description={description} image={`/og/blog/${entry.slug}.png`} type="article">
+<BaseLayout title={title} description={description} image={ogImage} type="article">
   <article>
     <header class="mb-8">
       <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
