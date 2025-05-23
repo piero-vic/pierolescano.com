@@ -6,7 +6,7 @@ import mdx from "@astrojs/mdx";
 import alpine from "@astrojs/alpinejs";
 import icon from "astro-icon";
 
-import remarkMermaid from "remark-mermaidjs";
+import rehypeMermaid from "rehype-mermaid";
 import { remarkGitLog } from "./src/lib/remark-git-log";
 import { remarkInlineTags } from "./src/lib/remark-inline-tags";
 
@@ -39,11 +39,14 @@ export default defineConfig({
       langs: [],
       wrap: false,
     },
-    remarkPlugins: [
-      remarkGitLog,
-      remarkInlineTags,
+    syntaxHighlight: {
+      type: "shiki",
+      excludeLangs: ["mermaid", "math"],
+    },
+    remarkPlugins: [remarkGitLog, remarkInlineTags],
+    rehypePlugins: [
       [
-        remarkMermaid,
+        rehypeMermaid,
         {
           mermaidConfig: {
             theme: "dark",
