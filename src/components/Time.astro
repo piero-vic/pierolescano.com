@@ -1,0 +1,14 @@
+---
+export interface Props {
+  class?: string;
+  datetime: Date;
+  formatLocales?: Intl.LocalesArgument;
+  formatOptions?: Intl.DateTimeFormatOptions;
+}
+
+const { class: classes, datetime, formatLocales, formatOptions } = Astro.props;
+
+const dateTimeFormat = new Intl.DateTimeFormat(formatLocales || "en-US", formatOptions);
+---
+
+<time class={classes} datetime={datetime.toISOString()}>{dateTimeFormat.format(datetime)}</time>

@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
-import { SHORT_MONTH_DATE_FORMATTER } from "@lib/datetimes";
+import Time from "@components/Time.astro";
 
 export interface Props {
   post: CollectionEntry<"blog"> | CollectionEntry<"notes">;
@@ -30,7 +30,7 @@ const {
   {
     collection == "blog" && (
       <div class="mt-1 text-sm font-thin">
-        <time datetime={data.pubDate.toISOString()}>{SHORT_MONTH_DATE_FORMATTER.format(data.pubDate)}</time>
+        <Time datetime={data.pubDate} formatOptions={{ year: "numeric", month: "short", day: "numeric" }} />
       </div>
     )
   }
