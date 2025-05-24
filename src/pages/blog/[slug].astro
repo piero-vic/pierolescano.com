@@ -1,9 +1,9 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
-import { Image, getImage } from "astro:assets";
+import { getImage } from "astro:assets";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
-import CommitInfo from "@components/CommitInfo.astro";
+import PostHeader from "@components/PostHeader.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -18,8 +18,8 @@ export interface Props {
 }
 
 const { entry } = Astro.props;
-const { title, description, image, imageAlt } = entry.data;
-const { Content, remarkPluginFrontmatter } = await entry.render();
+const { title, description, image } = entry.data;
+const { Content } = await entry.render();
 
 let ogImage = `/og/blog/${entry.slug}.png`;
 if (image !== undefined) {
@@ -36,11 +36,7 @@ if (image !== undefined) {
       "prose-inline-code:before:content-none prose-inline-code:after:content-none",
     ]}
   >
-    <header class="not-prose mb-8">
-      <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
-      <CommitInfo commits={remarkPluginFrontmatter.commits} />
-      {image && <Image src={image} alt={imageAlt!} loading="eager" class="my-8" />}
-    </header>
+    <PostHeader entry={entry} />
     <Content />
   </article>
 
