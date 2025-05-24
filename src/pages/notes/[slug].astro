@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
+import PostHeader from "@components/PostHeader.astro";
 
 export async function getStaticPaths() {
   const notes = await getCollection("notes");
@@ -29,7 +30,7 @@ const { Content } = await entry.render();
       "prose-inline-code:before:content-none prose-inline-code:after:content-none",
     ]}
   >
-    <h1>{title}</h1>
+    <PostHeader entry={entry} />
     <Content />
   </article>
 </BaseLayout>
