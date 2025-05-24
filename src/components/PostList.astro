@@ -6,7 +6,6 @@ import PostCard from "@components/PostCard.astro";
 export interface Props {
   heading: string;
   posts: CollectionEntry<"blog">[];
-  dateFormat: string;
 }
 
 const { heading, posts } = Astro.props;

@@ -31,6 +31,6 @@ const projects = await getCollection("projects", ({ data }) => data.favorite);
     </div>
   </section>
 
-  <PostList heading="Latest posts" posts={posts.slice(0, 3)} dateFormat="MMM D, YYYY" />
+  <PostList heading="Latest posts" posts={posts.slice(0, 3)} />
   <ProjectList heading="Projects" projects={projects} />
 </BaseLayout>
