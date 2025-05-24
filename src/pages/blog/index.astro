@@ -24,11 +24,7 @@ const years = posts.reduce((years, posts) => {
 
   {
     Array.from(years).map(year => (
-      <PostList
-        heading={year.toString()}
-        posts={posts.filter(post => post.data.pubDate.getFullYear() == year)}
-        dateFormat="MMM D"
-      />
+      <PostList heading={year.toString()} posts={posts.filter(post => post.data.pubDate.getFullYear() == year)} />
     ))
   }
 </BaseLayout>
