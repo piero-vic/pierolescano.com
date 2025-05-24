@@ -28,23 +28,20 @@ if (image !== undefined) {
 ---
 
 <BaseLayout title={title} description={description} image={ogImage} type="article">
-  <article>
-    <header class="mb-8">
+  <article
+    class:list={[
+      "prose max-w-none",
+      "prose-kbd:border",
+      "prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background prose-inline-code:px-1",
+      "prose-inline-code:before:content-none prose-inline-code:after:content-none",
+    ]}
+  >
+    <header class="not-prose mb-8">
       <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
       <CommitInfo commits={remarkPluginFrontmatter.commits} />
       {image && <Image src={image} alt={imageAlt!} loading="eager" class="my-8" />}
     </header>
-
-    <main
-      class:list={[
-        "prose max-w-none",
-        "prose-kbd:border",
-        "prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background prose-inline-code:px-1",
-        "prose-inline-code:before:content-none prose-inline-code:after:content-none",
-      ]}
-    >
-      <Content />
-    </main>
+    <Content />
   </article>
 
   <hr class="my-12 border-blue noscript:hidden" />
