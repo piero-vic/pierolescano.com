@@ -15,7 +15,7 @@ const notes = await getCollection("notes");
   <section class="mb-6">
     <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
     <p class="mb-3">{description}</p>
-    <ul class="mt-6 gap-8 space-y-4 md:columns-2 xl:columns-3">
+    <ul class="mt-6 gap-8 space-y-4 md:columns-2 xl:columns-3 [&>li]:break-inside-avoid">
       {notes.map(note => <PostCard post={note} />)}
     </ul>
   </section>

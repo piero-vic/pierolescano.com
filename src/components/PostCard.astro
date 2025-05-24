@@ -20,7 +20,7 @@ const {
   </a>
   {
     data.tags.length > 0 && (
-      <ul class="mt-1 space-x-2 text-xs font-thin">
+      <ul class="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-xs font-thin">
         {data.tags.map(tag => (
           <li class="inline rounded border bg-background px-1">#{tag}</li>
         ))}
