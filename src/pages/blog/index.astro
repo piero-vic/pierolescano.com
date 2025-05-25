@@ -6,7 +6,7 @@ import PostList from "@components/PostList.astro";
 
 const title = "Blog";
 const description =
-  "A collection of writings on the things I'm learning and status updates on the proyects I'm working on.";
+  "A collection of writings on the things I'm interedted on and status updates on some of the projects I'm working on.";
 
 const posts = await getCollection("blog", ({ data }) => !data.archived);
 posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
@@ -19,7 +19,12 @@ const years = posts.reduce((years, posts) => {
 <BaseLayout title={title} description={description}>
   <section class="mb-6">
     <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
-    <p class="mb-3">{description}</p>
+    <div class="prose max-w-none">
+      <p>
+        A collection of writings on the things I'm interested on and status updates on some of the projects I'm working
+        on.
+      </p>
+    </div>
   </section>
 
   {
