@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PostCard from "@components/PostCard.astro";
+
+export async function getStaticPaths() {
+  const tags = new Set<string>();
+
+  const posts = await getCollection("blog");
+  posts.forEach(post => {
+    post.data.tags.forEach(tag => {
+      tags.add(tag);
+    });
+  });
+
+  return Array.from(tags).map(tag => ({
+    params: { tag },
+  }));
+}
+
+const { tag } = Astro.params;
+
+const posts = await getCollection("blog", post => post.data.tags.includes(tag));
+---
+
+<BaseLayout title={tag}>
+  <section class="mb-6">
+    <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">
+      <span class="inline rounded border bg-background px-3">#{tag}</span>
+    </h1>
+    <ul class="mt-6 space-y-4">
+      {posts.map(post => <PostCard post={post} />)}
+    </ul>
+  </section>
+</BaseLayout>
