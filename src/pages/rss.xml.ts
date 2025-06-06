@@ -3,7 +3,8 @@ import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
-const parser = new MarkdownIt();
+
+const parser = new MarkdownIt({ html: true });
 
 export async function GET(context: APIContext) {
   const posts = await getCollection("blog", ({ data }) => !data.archived);
