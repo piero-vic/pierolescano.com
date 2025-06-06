@@ -4,7 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import Time from "@components/Time.astro";
 
 export interface Props {
-  post: CollectionEntry<"blog"> | CollectionEntry<"notes">;
+  post: CollectionEntry<"blog" | "notes">;
 }
 
 const {
