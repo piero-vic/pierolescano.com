@@ -15,23 +15,26 @@ const {
 <li
   class="relative border-l border-blue py-1 pl-3 transition-shadow focus-within:shadow-[-3px_0] focus-within:shadow-blue hover:shadow-[-3px_0] hover:shadow-blue"
 >
-  <a href={`/${collection}/${slug}`} class="text-lg font-bold text-blue after:absolute after:inset-0">
+  <a href={`/${collection}/${slug}`} class="text-lg font-bold text-blue after:absolute after:inset-0 hover:underline">
     {data.title}
   </a>
   {
-    data.tags.length > 0 && (
-      <ul class="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-xs font-thin">
-        {data.tags.map(tag => (
-          <li class="inline rounded border bg-background px-1">#{tag}</li>
-        ))}
-      </ul>
+    collection == "blog" && (
+      <div class="mt-1 text-sm font-thin">
+        <Time datetime={data.pubDate} formatOptions={{ year: "numeric", month: "short", day: "numeric" }} /> ·
+        <span>{data.description}</span>
+      </div>
     )
   }
   {
-    collection == "blog" && (
-      <div class="mt-1 text-sm font-thin">
-        <Time datetime={data.pubDate} formatOptions={{ year: "numeric", month: "short", day: "numeric" }} />
-      </div>
+    data.tags.length > 0 && (
+      <ul class="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-xs font-thin">
+        {data.tags.map(tag => (
+          <li class="relative inline rounded border bg-background px-1 hover:text-blue">
+            <a href={`/tags/${tag}`}>#{tag}</a>
+          </li>
+        ))}
+      </ul>
     )
   }
 </li>
