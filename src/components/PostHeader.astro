@@ -20,7 +20,9 @@ const { remarkPluginFrontmatter } = await entry.render();
     tags.length > 0 && (
       <ul class="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-xs font-thin">
         {tags.map(tag => (
-          <li class="inline rounded border bg-background px-1">#{tag}</li>
+          <li class="inline rounded border bg-background px-1 hover:text-blue">
+            <a href={`/tags/${tag}`}>#{tag}</a>
+          </li>
         ))}
       </ul>
     )
