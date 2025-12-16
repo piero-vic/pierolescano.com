@@ -2,6 +2,12 @@ import { z, defineCollection } from "astro:content";
 import { file } from "astro/loaders";
 
 export const collections = {
+  pages: defineCollection({
+    schema: z.object({
+      title: z.string(),
+      description: z.string(),
+    }),
+  }),
   blog: defineCollection({
     schema: ({ image }) =>
       z

@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import CommitInfo from "@components/CommitInfo.astro";
 
 export interface Props {
-  entry: CollectionEntry<"blog"> | CollectionEntry<"notes">;
+  entry: CollectionEntry<"blog" | "notes" | "pages">;
 }
 
 const { entry } = Astro.props;
@@ -14,10 +14,10 @@ const { remarkPluginFrontmatter } = await entry.render();
 ---
 
 <header class="not-prose mb-6 border-b border-blue pb-6">
-  <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
+  <h1 class="mb-3 text-4xl font-bold text-blue last:mb-0 md:mb-6 md:text-5xl">{title}</h1>
   <CommitInfo commits={remarkPluginFrontmatter.commits} />
   {
-    tags.length > 0 && (
+    tags?.length > 0 && (
       <ul class="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-xs font-thin">
         {tags.map(tag => (
           <li class="inline rounded border bg-background px-1 hover:text-blue">

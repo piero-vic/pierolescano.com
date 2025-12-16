@@ -22,7 +22,6 @@
     "astro": "^5.8.0",
     "astro-icon": "^1.1.5",
     "giscus": "^1.6.0",
-    "markdown-it": "^14.1.0",
     "mdast-util-find-and-replace": "^3.0.2",
     "node-fetch": "^3.3.2",
     "playwright": "^1.51.1",
@@ -43,6 +42,7 @@
     "@types/node": "^22.14.1",
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",
+    "@types/sanitize-html": "^2.16.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11"

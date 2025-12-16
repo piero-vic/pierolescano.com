@@ -1,0 +1,36 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PostHeader from "@components/PostHeader.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("pages");
+  return pages.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+export interface Props {
+  entry: CollectionEntry<"pages">;
+}
+
+const { entry } = Astro.props;
+const { title, description } = entry.data;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={title} description={description} type="article">
+  <article
+    class:list={[
+      "prose max-w-none",
+      "prose-kbd:border",
+      "prose-inline-code:rounded prose-inline-code:border prose-inline-code:bg-background prose-inline-code:px-1",
+      "prose-inline-code:before:content-none prose-inline-code:after:content-none",
+    ]}
+  >
+    <PostHeader entry={entry} />
+    <Content />
+  </article>
+</BaseLayout>
