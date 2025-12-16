@@ -4,9 +4,10 @@ tags:
   - networking
 ---
 
-> Transport Control Protocol
+> Transmission Control Protocol
 
-Is a transport-layer protocol exposes a reliable communication channel between two processes on top of IP.
+Is a transport-layer protocol exposes a reliable communication channel between two processes on top of
+[IP](internet-protocol).
 
 - TCP creates segments that are sequentially numbered.
 - The segments are sequentially numbered, which allows the receiver to detect holes and duplicates. The receiver needs
