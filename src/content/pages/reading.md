@@ -1,12 +1,11 @@
 ---
-title: Books
-description: What I'm reading and would like to read.
-tags: []
+title: Reading
+description: A list of the books I've read and what I'm currently reading.
 ---
 
 ## Currently Reading
 
-- [Mistborn: The Final Empire](https://www.goodreads.com/book/show/68428.Mistborn) by Brandon Sanderson
+- [The Well of Ascension](https://www.goodreads.com/book/show/68429.The_Well_of_Ascension) by Brandon Sanderson
 
 ## Finished Reading
 
@@ -14,6 +13,8 @@ tags: []
 
 | Title                                                                                                                                 | Author                 | Read       |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ---------- |
+| [Yumi and the Nightmare Painter](https://www.goodreads.com/book/show/60531416-yumi-and-the-nightmare-painter)                         | Brandon Sanderson      | 2025-12-10 |
+| [Mistborn: The Final Empire](https://www.goodreads.com/book/show/68428.Mistborn)                                                      | Brandon Sanderson      | 2025-12-08 |
 | [The Sunlit Man](https://www.goodreads.com/book/show/60531420-the-sunlit-man)                                                         | Brandon Sanderson      | 2025-11-13 |
 | [Stolen Focus: Why You Can't Pay Attention— and How to Think Deeply Again](https://www.goodreads.com/book/show/57933306-stolen-focus) | Johann Hari            | 2025-10-04 |
 | [Mood Machine: The Rise of Spotify and the Costs of the Perfect Playlist](https://www.goodreads.com/book/show/214151728-mood-machine) | Liz Pelly              | 2025-09-30 |
