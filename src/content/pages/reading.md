@@ -3,16 +3,14 @@ title: Reading
 description: A list of the books I've read and what I'm currently reading.
 ---
 
-## Currently Reading
-
-- [The Well of Ascension](https://www.goodreads.com/book/show/68429.The_Well_of_Ascension) by Brandon Sanderson
-
 ## Finished Reading
 
 ### 2025
 
 | Title                                                                                                                                 | Author                 | Read       |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ---------- |
+| [The Hero of Ages](https://www.goodreads.com/book/show/2767793-the-hero-of-ages)                                                      | Brandon Sanderson      | 2025-12-30 |
+| [The Well of Ascension](https://www.goodreads.com/book/show/68429.The_Well_of_Ascension)                                              | Brandon Sanderson      | 2025-12-19 |
 | [Yumi and the Nightmare Painter](https://www.goodreads.com/book/show/60531416-yumi-and-the-nightmare-painter)                         | Brandon Sanderson      | 2025-12-10 |
 | [Mistborn: The Final Empire](https://www.goodreads.com/book/show/68428.Mistborn)                                                      | Brandon Sanderson      | 2025-12-08 |
 | [The Sunlit Man](https://www.goodreads.com/book/show/60531420-the-sunlit-man)                                                         | Brandon Sanderson      | 2025-11-13 |
