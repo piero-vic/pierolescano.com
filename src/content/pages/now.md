@@ -8,8 +8,8 @@ life.
 
 - Working as a software developer at [Rhinolabs](https://rhinolabs.agency/).
 - Practicing touch typing from time to time. I'm aiming for 100 wpm.
-- Working out. Mainly by doing calisthenics and using kettlebells.
-- Reading the first [Misborn](https://www.goodreads.com/series/40910-the-mistborn-saga) trilogy.
+- Working out. Mainly by running, doing calisthenics and using kettlebells.
 - Trying to get through
   [Structure and Interpretation of Computer Porgrams](https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs).
 - Exploring [Hypermedia-Driven Applications](https://htmx.org/essays/hypermedia-driven-applications/).
+- Studying for the <abbr title="AWS Certified Solutions Architect - Associate">SAA-C03</abbr> certification.
