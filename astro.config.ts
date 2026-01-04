@@ -25,8 +25,6 @@ export default defineConfig({
       include: {
         prime: ["*"],
         ph: ["*"],
-        bi: ["*"],
-        feather: ["*"],
       },
     }),
   ],
