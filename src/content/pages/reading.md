@@ -3,6 +3,10 @@ title: Reading
 description: A list of the books I've read and what I'm currently reading.
 ---
 
+## Currently Reading
+
+[Warbreaker](https://www.goodreads.com/book/show/1268479.Warbreaker) by Brandon Sanderson
+
 ## Finished Reading
 
 ### 2025
