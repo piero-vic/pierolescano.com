@@ -1,7 +1,6 @@
 import type { APIContext } from "astro";
 import rss, { type RSSFeedItem } from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import type { Commit } from "@lib/remark-git-log";
 import sanitizeHtml from "sanitize-html";
 
 export async function GET(context: APIContext) {
@@ -10,13 +9,12 @@ export async function GET(context: APIContext) {
   const pages = await getCollection("pages");
   for (const page of pages) {
     const { remarkPluginFrontmatter } = await page.render();
-    const commits = remarkPluginFrontmatter.commits as Commit[];
-    const firstCommit = commits.length > 0 ? commits[commits.length - 1] : null;
+    const { createdAt } = remarkPluginFrontmatter;
 
     entries.push({
       title: page.data.title,
       description: page.data.description,
-      pubDate: firstCommit?.date ? new Date(firstCommit?.date) : undefined,
+      pubDate: createdAt ? new Date(createdAt) : undefined,
       link: `/${page.slug}`,
       content: page.rendered?.html && sanitizeHtml(page.rendered?.html),
     });
@@ -25,13 +23,12 @@ export async function GET(context: APIContext) {
   const posts = await getCollection("blog", ({ data }) => !data.archived);
   for (const post of posts) {
     const { remarkPluginFrontmatter } = await post.render();
-    const commits = remarkPluginFrontmatter.commits as Commit[];
-    const firstCommit = commits.length > 0 ? commits[commits.length - 1] : null;
+    const { createdAt } = remarkPluginFrontmatter;
 
     entries.push({
       title: post.data.title,
       description: post.data.description,
-      pubDate: firstCommit?.date ? new Date(firstCommit?.date) : undefined,
+      pubDate: createdAt ? new Date(createdAt) : undefined,
       link: `/blog/${post.slug}`,
       content: post.rendered?.html && sanitizeHtml(post.rendered?.html),
     });

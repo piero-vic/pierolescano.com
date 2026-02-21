@@ -7,9 +7,11 @@ export interface Props {
   post: CollectionEntry<"blog" | "notes">;
 }
 
-const {
-  post: { collection, data, slug },
-} = Astro.props;
+const { post } = Astro.props;
+const { collection, data, slug } = post;
+
+const { remarkPluginFrontmatter } = await post.render();
+const { createdAt } = remarkPluginFrontmatter;
 ---
 
 <li
@@ -21,7 +23,7 @@ const {
   {
     collection == "blog" && (
       <div class="mt-1 text-sm font-thin">
-        <Time datetime={data.pubDate} formatOptions={{ year: "numeric", month: "short", day: "numeric" }} /> ·
+        <Time datetime={new Date(createdAt)} formatOptions={{ year: "numeric", month: "short", day: "numeric" }} /> ·
         <span>{data.description}</span>
       </div>
     )

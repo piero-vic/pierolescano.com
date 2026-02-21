@@ -2,20 +2,56 @@
 import { type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 
-import CommitInfo from "@components/CommitInfo.astro";
+import Time from "@components/Time.astro";
 
 export interface Props {
   entry: CollectionEntry<"blog" | "notes" | "pages">;
 }
 
+const OWNER = "piero-vic";
+const REPO = "pierolescano.com";
+
 const { entry } = Astro.props;
 const { title, tags } = entry.data;
 const { remarkPluginFrontmatter } = await entry.render();
+
+const { createdAt, createdHash, updatedAt, updatedHash } = remarkPluginFrontmatter;
 ---
 
 <header class="not-prose mb-6 border-b border-blue pb-6">
   <h1 class="mb-3 text-4xl font-bold text-blue last:mb-0 md:mb-6 md:text-5xl">{title}</h1>
-  <CommitInfo commits={remarkPluginFrontmatter.commits} />
+  {
+    createdAt && createdHash && (
+      <p class="text-sm">
+        Published:
+        <Time
+          class="italic"
+          datetime={new Date(createdAt)}
+          formatOptions={{ year: "numeric", month: "long", day: "numeric" }}
+        />
+        in
+        <a class="text-blue underline" href={`https://github.com/${OWNER}/${REPO}/commit/${createdHash}`}>
+          {createdHash.substring(0, 7)}
+        </a>
+      </p>
+    )
+  }
+  {
+    updatedAt && updatedHash && (
+      <p class="text-sm">
+        Updated:
+        <Time
+          class="italic"
+          datetime={new Date(updatedAt)}
+          formatOptions={{ year: "numeric", month: "long", day: "numeric" }}
+        />
+        in
+        <a class="text-blue underline" href={`https://github.com/${OWNER}/${REPO}/commit/${updatedHash}`}>
+          {updatedHash.substring(0, 7)}
+        </a>
+      </p>
+    )
+  }
   {
     tags?.length > 0 && (
       <ul class="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-xs font-thin">
