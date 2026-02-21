@@ -7,7 +7,7 @@ import alpine from "@astrojs/alpinejs";
 import icon from "astro-icon";
 
 import rehypeMermaid from "rehype-mermaid";
-import { remarkGitLog } from "./src/lib/remark-git-log";
+import { remarkGitMetadata } from "./src/lib/remark-git-metadata";
 import { remarkInlineTags } from "./src/lib/remark-inline-tags";
 
 // https://astro.build/config
@@ -41,7 +41,7 @@ export default defineConfig({
       type: "shiki",
       excludeLangs: ["mermaid", "math"],
     },
-    remarkPlugins: [remarkGitLog, remarkInlineTags],
+    remarkPlugins: [remarkGitMetadata, remarkInlineTags],
     rehypePlugins: [
       [
         rehypeMermaid,
