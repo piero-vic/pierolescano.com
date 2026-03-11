@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry } from "astro:content";
+import { type CollectionEntry, render } from "astro:content";
 import { Image } from "astro:assets";
 
 import Time from "@components/Time.astro";
@@ -13,7 +13,7 @@ const REPO = "pierolescano.com";
 
 const { entry } = Astro.props;
 const { title, tags } = entry.data;
-const { remarkPluginFrontmatter } = await entry.render();
+const { remarkPluginFrontmatter } = await render(entry);
 
 const { createdAt, createdHash, updatedAt, updatedHash } = remarkPluginFrontmatter;
 ---

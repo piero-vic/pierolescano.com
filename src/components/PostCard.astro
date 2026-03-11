@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { type CollectionEntry, render } from "astro:content";
 
 import Time from "@components/Time.astro";
 
@@ -8,16 +8,16 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-const { collection, data, slug } = post;
+const { collection, data, id } = post;
 
-const { remarkPluginFrontmatter } = await post.render();
+const { remarkPluginFrontmatter } = await render(post);
 const { createdAt } = remarkPluginFrontmatter;
 ---
 
 <li
   class="relative border-l border-blue py-1 pl-3 transition-shadow focus-within:shadow-[-3px_0] focus-within:shadow-blue hover:shadow-[-3px_0] hover:shadow-blue"
 >
-  <a href={`/${collection}/${slug}`} class="text-lg font-bold text-blue after:absolute after:inset-0 hover:underline">
+  <a href={`/${collection}/${id}`} class="text-lg font-bold text-blue after:absolute after:inset-0 hover:underline">
     {data.title}
   </a>
   {

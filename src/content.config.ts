@@ -1,14 +1,17 @@
-import { z, defineCollection } from "astro:content";
-import { file } from "astro/loaders";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { file, glob } from "astro/loaders";
 
 export const collections = {
   pages: defineCollection({
+    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/pages" }),
     schema: z.object({
       title: z.string(),
       description: z.string(),
     }),
   }),
   blog: defineCollection({
+    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/blog" }),
     schema: ({ image }) =>
       z
         .object({
@@ -20,7 +23,7 @@ export const collections = {
           tags: z.array(z.string()),
           archived: z.boolean().default(false),
         })
-        .refine(schema => {
+        .refine((schema) => {
           if (schema.image !== undefined && schema.imageAlt === undefined) {
             return false;
           }
@@ -51,6 +54,7 @@ export const collections = {
       }),
   }),
   notes: defineCollection({
+    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/notes" }),
     schema: z.object({
       title: z.string(),
       description: z.string().optional(),

@@ -4,8 +4,8 @@ import { generateOgImage } from "@lib/open-graph";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const blogEntries = await getCollection("blog");
-  return blogEntries.map(entry => ({
-    params: { slug: `blog/${entry.slug}` },
+  return blogEntries.map((entry) => ({
+    params: { slug: `blog/${entry.id}` },
     props: {
       title: entry.data.title,
       date: entry.data.pubDate,
