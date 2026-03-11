@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
@@ -17,6 +17,13 @@ export default defineConfig({
   build: {
     format: "file",
   },
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "JetBrains Mono",
+      cssVariable: "--font-jetbrains-mono",
+    },
+  ],
   integrations: [
     react(),
     mdx(),

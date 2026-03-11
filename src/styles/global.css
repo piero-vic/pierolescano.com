@@ -15,7 +15,7 @@
   --color-background: #181616;
   --color-foreground: #c5c9c5;
 
-  --font-mono: "JetBrains Mono", monospace;
+  --font-mono: var(--font-jetbrains-mono), monospace;
 }
 
 @utility prose {

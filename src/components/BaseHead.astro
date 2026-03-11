@@ -34,4 +34,5 @@ const imageURL = new URL(image, Astro.site);
   <meta name="og:title" content={title} />
   {description ? <meta name="og:description" content={description} /> : null}
   {image ? <meta name="og:image" content={imageURL} /> : null}
+  <slot />
 </head>
