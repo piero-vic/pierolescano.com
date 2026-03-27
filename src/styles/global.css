@@ -3,17 +3,51 @@
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 
-@theme {
-  --color-black: #0d0c0c;
+:root {
+  --color-black: #fafafa;
+  --color-white: #1a1a1a;
+  --color-background: #fafafa;
+  --color-foreground: #1a1a1a;
   --color-red: #c4746e;
   --color-green: #8a9a7b;
   --color-yellow: #c4b28a;
-  --color-blue: #8ba4b0;
-  --color-magenta: #a292a3;
-  --color-cyan: #8ea4a2;
-  --color-white: #c8c093;
-  --color-background: #181616;
-  --color-foreground: #c5c9c5;
+  --color-blue: #5c7a8a;
+  --color-magenta: #9a7b9a;
+  --color-cyan: #7a9a9a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-black: #0d0c0c;
+    --color-white: #c8c093;
+    --color-background: #181616;
+    --color-foreground: #c5c9c5;
+    --color-red: #c4746e;
+    --color-green: #8a9a7b;
+    --color-yellow: #c4b28a;
+    --color-blue: #8ba4b0;
+    --color-magenta: #a292a3;
+    --color-cyan: #8ea4a2;
+  }
+
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+  }
+}
+
+@theme {
+  --color-black: var(--color-black);
+  --color-red: var(--color-red);
+  --color-green: var(--color-green);
+  --color-yellow: var(--color-yellow);
+  --color-blue: var(--color-blue);
+  --color-magenta: var(--color-magenta);
+  --color-cyan: var(--color-cyan);
+  --color-white: var(--color-white);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
 
   --font-mono: var(--font-jetbrains-mono), monospace;
 }

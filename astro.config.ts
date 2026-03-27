@@ -40,7 +40,10 @@ export default defineConfig({
   },
   markdown: {
     shikiConfig: {
-      theme: "tokyo-night",
+      themes: {
+        light: "github-light",
+        dark: "github-dark",
+      },
       langs: [],
       wrap: false,
     },
@@ -54,7 +57,7 @@ export default defineConfig({
         rehypeMermaid,
         {
           mermaidConfig: {
-            theme: "dark",
+            theme: "neutral",
             fontFamily: '"JetBrains Mono", monospace',
           },
         },
