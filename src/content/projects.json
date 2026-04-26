@@ -43,14 +43,14 @@
     "favorite": false
   },
   {
-    "id": "cmp-ledger",
-    "name": "cmp-ledger",
-    "description": "A nvim-cmp source for ledger accounts.",
+    "id": "blink-cmp-ledger",
+    "name": "blink-cmp-ledger",
+    "description": "A blink.cmp source for ledger accounts.",
     "primaryLanguage": {
       "name": "Lua",
       "color": "#000080"
     },
-    "repoLink": "https://github.com/piero-vic/cmp-ledger",
+    "repoLink": "https://github.com/piero-vic/blink-cmp-ledger",
     "favorite": false
   },
   {
