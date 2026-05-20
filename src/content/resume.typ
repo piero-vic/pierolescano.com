@@ -61,7 +61,7 @@
 == Experience
 #chiline()
 
-*Rhinolabs Agency* #h(1fr) August 2025 · Present \
+*Rhinolabs Agency* #h(1fr) August 2025 · April 2026 \
 _Software Engineer Level 2_ #h(1fr) _Lima, Peru (Remote)_
 
 - Developed and maintained backend applications using Node.js and MongoDB, ensuring high performance and reliability.
