@@ -6,6 +6,7 @@ import mdx from "@astrojs/mdx";
 import alpine from "@astrojs/alpinejs";
 import icon from "astro-icon";
 
+import { unified } from "@astrojs/markdown-remark";
 import rehypeMermaid from "rehype-mermaid";
 import { remarkGitMetadata } from "./src/lib/remark-git-metadata";
 import { remarkInlineTags } from "./src/lib/remark-inline-tags";
@@ -51,17 +52,19 @@ export default defineConfig({
       type: "shiki",
       excludeLangs: ["mermaid", "math"],
     },
-    remarkPlugins: [remarkGitMetadata, remarkInlineTags],
-    rehypePlugins: [
-      [
-        rehypeMermaid,
-        {
-          mermaidConfig: {
-            theme: "neutral",
-            fontFamily: '"JetBrains Mono", monospace',
+    processor: unified({
+      remarkPlugins: [remarkGitMetadata, remarkInlineTags],
+      rehypePlugins: [
+        [
+          rehypeMermaid,
+          {
+            mermaidConfig: {
+              theme: "neutral",
+              fontFamily: '"JetBrains Mono", monospace',
+            },
           },
-        },
+        ],
       ],
-    ],
+    }),
   },
 });
