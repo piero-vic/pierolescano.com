@@ -1,7 +1,6 @@
 ---
 title: Status update, January 2024
 description: Updates from the previous month.
-pubDate: 2024-01-31
 tags: []
 ---
 

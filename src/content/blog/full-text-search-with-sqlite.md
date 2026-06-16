@@ -1,7 +1,6 @@
 ---
 title: Full-text search with SQLite.
 description: A short introduction to full-text search with SQLite.
-pubDate: 2025-04-15
 tags:
   - sqlite
 ---

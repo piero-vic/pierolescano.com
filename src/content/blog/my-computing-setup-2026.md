@@ -3,7 +3,6 @@ title: My computing setup for 2026
 description: A deep dive of my computing setup for 2026.
 image: ../../assets/images/desktop-2026.png
 imageAlt: Desktop screenshot
-pubDate: 2026-01-18
 tags:
   - linux
 ---
@@ -25,9 +24,9 @@ distribution for the time being.
 ## Window manager
 
 Instead of using a full desktop environment like GNOME or KDE Plasma, I use [Sway](https://swaywm.org/), a
-[tiling window manager](https://en.wikipedia.org/wiki/Tiling_window_manager) and Wayland compositor. It has been
-my window manager of choice since I switched from GNOME. I've tried other compositors like Hyperland, but Sway works
-well, so I haven't had the need to switch.
+[tiling window manager](https://en.wikipedia.org/wiki/Tiling_window_manager) and Wayland compositor. It has been my
+window manager of choice since I switched from GNOME. I've tried other compositors like Hyperland, but Sway works well,
+so I haven't had the need to switch.
 
 I don't do much [ricing](https://www.reddit.com/r/unixporn/) but when I stated using Sway I did tinker with a bunch of
 configurations until I settle on what I have now. Likewise, I try to stick to the default keybindings most of the time.
@@ -50,10 +49,10 @@ case I want to try another launcher since most of them have a mode compatible wi
 I use [networkmanager-dmenu](https://github.com/firecat53/networkmanager-dmenu) and
 [dmenu-bluetooth](https://github.com/Layerex/dmenu-bluetooth) for easy access to Wi-Fi and Bluetooth configurations.
 
-So far, I haven't had the need to switch launchers. However, [Vicinae](https://github.com/vicinaehq/vicinae) looks
-like something I would like to try. 
+So far, I haven't had the need to switch launchers. However, [Vicinae](https://github.com/vicinaehq/vicinae) looks like
+something I would like to try.
 
-## Audio 
+## Audio
 
 I've been using PipeWire and WirePlumber since I started using Linux. Volume levels for both audio inputs and outputs
 are controlled by keybindings configured in Sway. I have also built
@@ -96,8 +95,8 @@ I use [zsh](https://www.zsh.org/). I don't use any framework like [Oh My Zsh](ht
 ## Text editor
 
 My text editor of choice is [Neovim](https://github.com/neovim/neovim). I use it for everything that involves editing
-files. That includes writing code, taking notes, doing some [plain text accounting](/notes/plain-text-accounting),
-among other things.
+files. That includes writing code, taking notes, doing some [plain text accounting](/notes/plain-text-accounting), among
+other things.
 
 I use a moderate amount of plugins, my setup is pretty stable, and I can do productive work in many programming
 languages. One thing I haven't added is any AI integration. That's something I might try in the following months.

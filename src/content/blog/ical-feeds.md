@@ -1,7 +1,6 @@
 ---
 title: iCal feeds
 description: Some thoughts on the use of iCal feeds.
-pubDate: 2025-04-27
 tags: []
 ---
 

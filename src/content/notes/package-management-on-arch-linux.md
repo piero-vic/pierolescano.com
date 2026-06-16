@@ -52,8 +52,8 @@ pacman -Ss package
 ### Installing packages
 
 ```bash
-pacman -A package   # Install a package from the AUR
-pacman -Ayu         # Upgrade packages from the AUR
+aura -A package   # Install a package from the AUR
+aura -Ayu         # Upgrade packages from the AUR
 ```
 
 ### Inspecting `PKGBUILD` scripts

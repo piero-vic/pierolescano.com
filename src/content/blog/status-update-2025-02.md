@@ -1,7 +1,6 @@
 ---
 title: Status update, February 2025
 description: Updates from the previous month.
-pubDate: 2025-03-06
 tags: []
 ---
 

@@ -14,6 +14,7 @@ export const remarkGitMetadata: RemarkPlugin = () => {
     const result = execSync(`git log --follow --pretty=format:'{"hash":"%H","timestamp":"%cI"}' "${filepath}"`)
       .toString()
       .split("\n")
+      .filter(s => s !== "")
       .map(data => resultSchema.parse(JSON.parse(data)));
 
     if (result.length === 0) {

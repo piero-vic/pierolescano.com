@@ -84,7 +84,7 @@
       "color": "#00ADD8"
     },
     "repoLink": "https://github.com/piero-vic/go-linkding",
-    "favorite": true
+    "favorite": false
   },
   {
     "id": "metronome",
@@ -117,6 +117,17 @@
       "color": "#00ADD8"
     },
     "repoLink": "https://github.com/piero-vic/battery-notify",
+    "favorite": true
+  },
+  {
+    "id": "vocalize",
+    "name": "vocalize",
+    "description": "HTTP API for running local speech recognition and text-to-speech models using sherpa-onnx.",
+    "primaryLanguage": {
+      "name": "Go",
+      "color": "#00ADD8"
+    },
+    "repoLink": "https://github.com/piero-vic/vocalize",
     "favorite": true
   }
 ]

@@ -19,11 +19,10 @@ export const collections = {
           description: z.string(),
           image: image().optional(),
           imageAlt: z.string().optional(),
-          pubDate: z.date(),
           tags: z.array(z.string()),
           archived: z.boolean().default(false),
         })
-        .refine((schema) => {
+        .refine(schema => {
           if (schema.image !== undefined && schema.imageAlt === undefined) {
             return false;
           }

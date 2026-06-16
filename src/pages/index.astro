@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import PostList from "@components/PostList.astro";
@@ -8,8 +8,17 @@ import ProjectList from "@components/ProjectList.astro";
 const title = "Piero Lescano";
 const description = "Software developer focused on building CLI tools and web applications.";
 
-const posts = await getCollection("blog", ({ data }) => !data.archived);
-posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const blogPosts = await getCollection("blog", ({ data }) => !data.archived);
+const postsWithDates = await Promise.all(
+  blogPosts.map(async post => {
+    const { remarkPluginFrontmatter } = await render(post);
+    const { createdAt } = remarkPluginFrontmatter;
+    return { post, createdAt };
+  }),
+);
+const posts = postsWithDates
+  .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+  .map(({ post }) => post);
 
 const projects = await getCollection("projects", ({ data }) => data.favorite);
 ---

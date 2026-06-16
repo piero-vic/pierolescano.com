@@ -1,19 +1,34 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import PostList from "@components/PostList.astro";
+import type { CollectionEntry } from "astro:content";
 
 const title = "Blog";
 const description =
   "A collection of writings on the things I'm interedted on and status updates on some of the projects I'm working on.";
 
-const posts = await getCollection("blog", ({ data }) => !data.archived);
-posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const blogPosts = await getCollection("blog", ({ data }) => !data.archived);
+const postsWithDates = await Promise.all(
+  blogPosts.map(async post => {
+    const { remarkPluginFrontmatter } = await render(post);
+    const { createdAt } = remarkPluginFrontmatter;
+    return { post, createdAt };
+  }),
+);
+const posts = postsWithDates.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
-const years = posts.reduce((years, posts) => {
-  return years.add(posts.data.pubDate.getFullYear());
-}, new Set<number>());
+const postsByYear = posts.reduce((acc, { post, createdAt }) => {
+  const year = new Date(createdAt).getFullYear();
+
+  if (!acc.has(year)) {
+    acc.set(year, []);
+  }
+
+  acc.set(year, [...acc.get(year)!, post]);
+  return acc;
+}, new Map<number, CollectionEntry<"blog">[]>());
 ---
 
 <BaseLayout title={title} description={description}>
@@ -27,9 +42,5 @@ const years = posts.reduce((years, posts) => {
     </div>
   </section>
 
-  {
-    Array.from(years).map(year => (
-      <PostList heading={year.toString()} posts={posts.filter(post => post.data.pubDate.getFullYear() == year)} />
-    ))
-  }
+  {postsByYear.keys().map(year => <PostList heading={year.toString()} posts={postsByYear.get(year)!} />)}
 </BaseLayout>

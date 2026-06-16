@@ -1,7 +1,6 @@
 ---
 title: A picker for bullet journal style checkboxes in Neovim
 description: A walkthrough of a simple checkbox picker for Neovim.
-pubDate: 2025-02-14
 tags:
   - neovim
 ---

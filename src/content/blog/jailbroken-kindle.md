@@ -1,7 +1,6 @@
 ---
 title: Jailbroken Kindle
 description: Some toughts on jailbreaking a Kindle.
-pubDate: 2025-08-09
 tags:
   - books
 ---

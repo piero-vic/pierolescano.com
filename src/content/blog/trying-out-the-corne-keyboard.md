@@ -3,7 +3,6 @@ title: Trying out the Corne Keyboard
 description: Some thoughts on my first time using a split keyboard.
 image: ../../assets/images/corne.jpg
 imageAlt: Corne Keyboard
-pubDate: 2025-06-02
 tags:
   - keyboards
 ---
