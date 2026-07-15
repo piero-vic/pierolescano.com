@@ -23,13 +23,13 @@ const { createdAt, createdHash, updatedAt, updatedHash } = remarkPluginFrontmatt
   {
     createdAt && createdHash && (
       <p class="text-sm">
-        Published:
+        Published:{" "}
         <Time
           class="italic"
           datetime={new Date(createdAt)}
           formatOptions={{ year: "numeric", month: "long", day: "numeric" }}
-        />
-        in
+        />{" "}
+        in{" "}
         <a class="text-blue underline" href={`https://github.com/${OWNER}/${REPO}/commit/${createdHash}`}>
           {createdHash.substring(0, 7)}
         </a>
@@ -39,13 +39,13 @@ const { createdAt, createdHash, updatedAt, updatedHash } = remarkPluginFrontmatt
   {
     updatedAt && updatedHash && (
       <p class="text-sm">
-        Updated:
+        Updated:{" "}
         <Time
           class="italic"
           datetime={new Date(updatedAt)}
           formatOptions={{ year: "numeric", month: "long", day: "numeric" }}
-        />
-        in
+        />{" "}
+        in{" "}
         <a class="text-blue underline" href={`https://github.com/${OWNER}/${REPO}/commit/${updatedHash}`}>
           {updatedHash.substring(0, 7)}
         </a>
