@@ -9,6 +9,7 @@ description: A list of the books I've read and what I'm currently reading.
 
 | Title                                                                    | Author            | Read       |
 | ------------------------------------------------------------------------ | ----------------- | ---------- |
+| [Golden Son](https://www.goodreads.com/book/show/18966819-golden-son)    | Pierce Brown      | 2026-07-20 |
 | [Red Rising](https://www.goodreads.com/en/book/show/15839976-red-rising) | Pierce Brown      | 2026-07-15 |
 | [Elantris](https://www.goodreads.com/book/show/68427.Elantris)           | Brandon Sanderson | 2026-05-19 |
 | [Warbreaker](https://www.goodreads.com/book/show/1268479.Warbreaker)     | Brandon Sanderson | 2026-03-10 |
