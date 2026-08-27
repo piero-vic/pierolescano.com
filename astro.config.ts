@@ -18,6 +18,9 @@ export default defineConfig({
   build: {
     format: "file",
   },
+  image: {
+    remotePatterns: [{ protocol: "https", hostname: "assets.hardcover.app" }],
+  },
   fonts: [
     {
       provider: fontProviders.fontsource(),

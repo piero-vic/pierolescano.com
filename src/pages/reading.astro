@@ -1,0 +1,37 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import BookList from "@components/BookList.astro";
+import { getHardcoverBooks, type BookData } from "@lib/hardcover";
+
+const title = "Reading";
+const description = "A list of the books I've read and what I'm currently reading.";
+
+const books = await getHardcoverBooks();
+
+const reading = books.filter(book => book.status === "reading");
+const finished = books.filter(book => book.status === "finished");
+const dated = finished.filter(book => book.readDate !== undefined);
+const undated = finished.filter(book => book.readDate === undefined);
+
+const byYear = new Map<number, BookData[]>();
+for (const book of dated) {
+  const year = book.readDate!.date.getUTCFullYear();
+  const list = byYear.get(year) ?? [];
+  list.push(book);
+  byYear.set(year, list);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="mb-6">
+    <h1 class="mb-3 text-4xl font-bold text-blue md:mb-6 md:text-5xl">{title}</h1>
+    <div class="prose max-w-none">
+      <p>{description}</p>
+    </div>
+  </section>
+
+  {reading.length > 0 && <BookList heading="Currently Reading" books={reading} />}
+  {years.map(year => <BookList heading={year.toString()} books={byYear.get(year)!} />)}
+  {undated.length > 0 && <BookList heading="Undated" books={undated} />}
+</BaseLayout>

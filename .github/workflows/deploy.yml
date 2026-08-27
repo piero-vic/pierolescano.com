@@ -33,6 +33,8 @@ jobs:
 
       - name: Build website
         run: pnpm run build
+        env:
+          HARDCOVER_API_KEY: ${{ secrets.HARDCOVER_API_KEY }}
 
       - name: Deploy website
         uses: cloudflare/wrangler-action@v3

@@ -1,0 +1,19 @@
+---
+import type { BookData } from "@lib/hardcover";
+
+import BookCard from "@components/BookCard.astro";
+
+export interface Props {
+  heading: string;
+  books: BookData[];
+}
+
+const { heading, books } = Astro.props;
+---
+
+<section class="my-6 first:mt-0 last:mb-0">
+  <h2 class="my-3 border-b border-b-blue pb-3 text-2xl font-bold text-blue">{heading}</h2>
+  <ul class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+    {books.map(book => <BookCard headingTag="h3" book={book} />)}
+  </ul>
+</section>

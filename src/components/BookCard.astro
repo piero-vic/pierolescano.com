@@ -1,0 +1,47 @@
+---
+import type { HTMLTag } from "astro/types";
+import { Image } from "astro:assets";
+import { formatReadDate, type BookData } from "@lib/hardcover";
+
+export interface Props {
+  headingTag: Extract<HTMLTag, "h2" | "h3">;
+  book: BookData;
+}
+
+const { book, headingTag: Heading = "h3" } = Astro.props;
+const { title, author, readDate, coverUrl, hardcoverUrl } = book;
+const dateLabel = readDate ? formatReadDate(readDate) : "";
+---
+
+<li
+  class="relative flex break-inside-avoid flex-col overflow-hidden border border-blue bg-black transition-shadow ease-in-out focus-within:shadow-[4px_4px] focus-within:shadow-blue hover:shadow-[4px_4px] hover:shadow-blue"
+>
+  {
+    coverUrl ? (
+      <Image
+        src={coverUrl}
+        alt={title}
+        width={400}
+        height={600}
+        fit="cover"
+        format="webp"
+        loading="lazy"
+        class="aspect-2/3 w-full object-cover"
+      />
+    ) : (
+      <div class="flex aspect-2/3 w-full items-center justify-center bg-blue/10" />
+    )
+  }
+
+  <div class="flex grow flex-col gap-1 p-3 text-xs">
+    <Heading class="line-clamp-2 text-sm font-bold text-blue">
+      <a href={hardcoverUrl} class="after:absolute after:inset-0">
+        {title}
+      </a>
+    </Heading>
+
+    <p class="line-clamp-2">{author}</p>
+
+    {dateLabel && <p class="mt-auto text-[10px] italic">{dateLabel}</p>}
+  </div>
+</li>
