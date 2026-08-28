@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 import { file, glob } from "astro/loaders";
+import { hardcoverLoader } from "@lib/hardcover";
 
 export const collections = {
   pages: defineCollection({
@@ -59,5 +60,8 @@ export const collections = {
       description: z.string().optional(),
       tags: z.array(z.string()),
     }),
+  }),
+  books: defineCollection({
+    loader: hardcoverLoader,
   }),
 };

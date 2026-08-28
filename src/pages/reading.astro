@@ -1,14 +1,24 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "@layouts/BaseLayout.astro";
 import BookList from "@components/BookList.astro";
-import { getHardcoverBooks, type BookData } from "@lib/hardcover";
+import type { BookData } from "@lib/hardcover";
 
 const title = "Reading";
 const description = "A list of the books I've read and what I'm currently reading.";
 
-const books = await getHardcoverBooks();
+const entries = await getCollection("books");
+const books: BookData[] = entries
+  .sort((a, b) => {
+    const aTime = a.data.readDate?.date.getTime() ?? 0;
+    const bTime = b.data.readDate?.date.getTime() ?? 0;
+    return bTime - aTime;
+  })
+  .map(entry => entry.data);
 
 const reading = books.filter(book => book.status === "reading");
+const planned = books.filter(book => book.status === "planned");
 const finished = books.filter(book => book.status === "finished");
 const dated = finished.filter(book => book.readDate !== undefined);
 const undated = finished.filter(book => book.readDate === undefined);
@@ -32,6 +42,7 @@ const years = [...byYear.keys()].sort((a, b) => b - a);
   </section>
 
   {reading.length > 0 && <BookList heading="Currently Reading" books={reading} />}
+  {planned.length > 0 && <BookList heading="Want to Read" books={planned} />}
   {years.map(year => <BookList heading={year.toString()} books={byYear.get(year)!} />)}
   {undated.length > 0 && <BookList heading="Undated" books={undated} />}
 </BaseLayout>

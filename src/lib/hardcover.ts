@@ -1,18 +1,28 @@
-export type DatePrecision = "day" | "month" | "year" | "undated";
+import type { Loader } from "astro/loaders";
+import { z } from "astro/zod";
 
-export interface BookDate {
-  date: Date;
-  precision: DatePrecision;
-}
+const ENDPOINT = "https://api.hardcover.app/v1/graphql";
 
-export interface BookData {
-  title: string;
-  author: string;
-  status: "reading" | "finished" | "abandoned";
-  readDate?: BookDate;
-  coverUrl?: string;
-  hardcoverUrl?: string;
-}
+const precisionSchema = z.enum(["day", "month", "year", "undated"]);
+export type DatePrecision = z.infer<typeof precisionSchema>;
+
+const readDateSchema = z.object({
+  date: z.date(),
+  precision: precisionSchema,
+});
+export type BookDate = z.infer<typeof readDateSchema>;
+
+const booksSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  author: z.string(),
+  status: z.enum(["reading", "finished", "planned"]),
+  readDate: readDateSchema.optional(),
+  coverUrl: z.url().optional(),
+  hardcoverUrl: z.url().optional(),
+});
+
+export type BookData = z.infer<typeof booksSchema>;
 
 export function formatReadDate(readDate: BookDate): string {
   const iso = readDate.date.toISOString();
@@ -27,8 +37,6 @@ export function formatReadDate(readDate: BookDate): string {
       return "";
   }
 }
-
-const ENDPOINT = "https://api.hardcover.app/v1/graphql";
 
 interface HardcoverAuthor {
   name: string;
@@ -53,7 +61,7 @@ interface HardcoverUserBookRead {
 }
 
 interface HardcoverUserBook {
-  user_book_status: { status: string };
+  status_id: number;
   book: HardcoverBook;
   user_book_reads: HardcoverUserBookRead[];
 }
@@ -67,11 +75,10 @@ interface HardcoverResponse {
   errors?: { message: string }[];
 }
 
-const STATUS_MAP: Record<string, BookData["status"]> = {
-  Read: "finished",
-  Reading: "reading",
-  "Did Not Finish": "abandoned",
-  Abandoned: "abandoned",
+const STATUS_MAP: Record<number, BookData["status"]> = {
+  1: "planned",
+  2: "reading",
+  3: "finished",
 };
 
 function precisionFromValue(value: number | null): DatePrecision {
@@ -94,11 +101,7 @@ function authorsFromContributions(contributions: HardcoverContribution[]): strin
   return [...new Set(names)].join(", ");
 }
 
-/**
- * Fetches the authenticated user's books from the Hardcover GraphQL API at build
- * time and maps them to the `BookData` shape used by the reading page.
- */
-export async function getHardcoverBooks(): Promise<BookData[]> {
+async function getHardcoverBooks(): Promise<BookData[]> {
   const apiKey = import.meta.env.HARDCOVER_API_KEY;
   if (!apiKey) {
     throw new Error("HARDCOVER_API_KEY is not set in the environment.");
@@ -107,7 +110,7 @@ export async function getHardcoverBooks(): Promise<BookData[]> {
   const query = `{
     me {
       user_books {
-        user_book_status { status }
+        status_id
         book {
           id
           title
@@ -144,12 +147,14 @@ export async function getHardcoverBooks(): Promise<BookData[]> {
 
   const userBooks = json.data?.me?.[0]?.user_books ?? [];
   return userBooks
+    .filter(entry => entry.status_id in STATUS_MAP)
     .map((entry): BookData => {
       const read = entry.user_book_reads.find(r => r.finished_at !== null);
       return {
+        id: String(entry.book.id),
         title: entry.book.title,
         author: authorsFromContributions(entry.book.contributions),
-        status: STATUS_MAP[entry.user_book_status.status] ?? "finished",
+        status: STATUS_MAP[entry.status_id],
         readDate:
           read?.finished_at != null
             ? {
@@ -160,10 +165,21 @@ export async function getHardcoverBooks(): Promise<BookData[]> {
         coverUrl: entry.book.image?.url,
         hardcoverUrl: `https://hardcover.app/books/${entry.book.slug}`,
       };
-    })
-    .sort((a, b) => {
-      const aTime = a.readDate?.date.getTime() ?? 0;
-      const bTime = b.readDate?.date.getTime() ?? 0;
-      return bTime - aTime;
     });
 }
+
+export const hardcoverLoader: Loader = {
+  name: "hardcover",
+  schema: booksSchema,
+  load: async ({ store, parseData, logger }) => {
+    const books = await getHardcoverBooks();
+
+    store.clear();
+    for (const book of books) {
+      const data = await parseData({ id: book.id, data: book });
+      store.set({ id: book.id, data });
+    }
+
+    logger.debug(`Loaded ${books.length} books from Hardcover.`);
+  },
+};
