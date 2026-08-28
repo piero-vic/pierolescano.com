@@ -25,13 +25,13 @@ The first node in the list is called the **head**.
 
 | Operation                | Time complexity |
 | ------------------------ | --------------- |
-| Inserting a element      | O(1)            |
-| Deleting a element       | O(1)            |
+| Inserting an element     | O(1)            |
+| Deleting an element      | O(1)            |
 | Traversing a linked list | O(n)            |
 | Accessing an element     | O(n)            |
 
-Deleting and inserting element at the middle of a liked list requires two operations, the traversal and the deletion or
-insertion itself. The running time will be O(n).
+Deleting and inserting an element at the middle of a linked list requires two operations, the traversal and the deletion
+or insertion itself. The running time will be O(n).
 
 ## Types of linked lists
 

@@ -27,7 +27,7 @@ tags:
 
 ## Templates
 
-- A group of organism forms a template.
+- A group of organisms forms a template.
 - The design comes together in this stage.
 
 ## Pages

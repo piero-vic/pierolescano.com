@@ -68,7 +68,7 @@ flowchart TD
 
 - Root at the end.
 - Recurse left, recurse right, **visit node**.
-- 5, 4 23, 18, 21, 3, **7**
+- 5, 4, 23, 18, 21, 3, **7**
 
 ### Breadth-first
 
@@ -92,7 +92,7 @@ No special handling required. Simply delete the node.
 
 ### 2. Node with one child
 
-The node parent must now point to the child.
+The node's parent must now point to the child.
 
 **Initial tree**
 

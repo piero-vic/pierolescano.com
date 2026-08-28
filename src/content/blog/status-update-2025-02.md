@@ -6,13 +6,13 @@ tags: []
 
 ## Personal
 
-There's not much to share when it comes to personal stuff. One thing worth mentioning is the fact that I build my own
+There's not much to share when it comes to personal stuff. One thing worth mentioning is the fact that I built my own
 desk. I don't really do woodworking, but I took a course last year and I thought it would be nice to make something on
 my own instead of buying it.
 
 ## Writing
 
-I definitely need to write a more. Last month I wrote
+I definitely need to write more. Last month I wrote
 [one blog post](/blog/a-picker-for-bullet-journal-style-checkboxes-for-neovim) talking about a picker I wrote for
 Neovim.
 
@@ -23,7 +23,7 @@ other obligations. That's why I think I'm feeling a bit pressured to finish it a
 doesn't mean I'm not enjoying it. It's a fantastic book.
 
 [The Art of PostgreSQL](https://theartofpostgresql.com/) is another book I've been checking out this month. I like to
-always have a technical books I can reach to. They provide a bunch of new ideas or patters I can try out. Some of the
+always have technical books I can reach for. They provide a bunch of new ideas or patterns I can try out. Some of the
 things that have caught my interest are:
 
 - The use of materialized views for caching.
@@ -43,10 +43,10 @@ a [hypermedia-driven](https://htmx.org/essays/hypermedia-driven-applications/) a
 current tech stack is as follows.
 
 - [Go](https://go.dev/) and [PostgreSQL](https://www.postgresql.org/) in the backend.
-- [temple](https://templ.guide/) to render HTML.
+- [templ](https://templ.guide/) to render HTML.
 - [Alpine.js](https://alpinejs.dev/) to add client-side interactivity.
 - [HTMX](https://htmx.org/) for client-server communication.
 
-I've come across a few difficulties, but I think they are just due my lack of familiarity with the tech stack. I still
-have a lot of work to do but once the application reaches a usable state (i.e. I can use it myself at the gym without
-any issues), I'll be open sourcing it.
+I've come across a few difficulties, but I think they are just due to my lack of familiarity with the tech stack. I
+still have a lot of work to do but once the application reaches a usable state (i.e. I can use it myself at the gym
+without any issues), I'll be open sourcing it.

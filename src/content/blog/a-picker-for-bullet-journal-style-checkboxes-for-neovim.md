@@ -5,7 +5,7 @@ tags:
   - neovim
 ---
 
-Ever since I discovered [Obsidian](https://obsidian.md/) a few years ago, I've been using with the
+Ever since I discovered [Obsidian](https://obsidian.md/) a few years ago, I've been using it with the
 [Minimal theme](https://minimal.guide/). The only reason being that this theme supports
 [alternate checkboxes](https://minimal.guide/checklists#Alternate+checkboxes) which provide a bunch of icons similar to
 the ones you would have in a bullet journal.
@@ -15,9 +15,8 @@ discovering [render-markdown.nvim](https://github.com/MeanderingProgrammer/rende
 also renders alternate checkboxes, I decided to move my note-taking workflow to Neovim. And since I already commit to
 only use Neovim, why not write some Lua to make it easier to work with checkboxes?
 
-I wanted to create a simple automation to easily change between checkboxes. First, I created a table containing the all
-the custom checkboxes I use. For my use case, I'm sticking with a few similar to the ones that come with the minimal
-theme.
+I wanted to create a simple automation to easily change between checkboxes. First, I created a table containing all the
+custom checkboxes I use. For my use case, I'm sticking with a few similar to the ones that come with the minimal theme.
 
 ```lua
 -- This is using nerd fonts, so you might not be able to see the icons.
@@ -34,7 +33,7 @@ local checkboxes = {
 }
 ```
 
-Then I wrote a function. The logic is pretty simply. First, I'm running a couple of checks to make sure I'm in a
+Then I wrote a function. The logic is pretty simple. First, I'm running a couple of checks to make sure I'm in a
 markdown file and that the current line contains a checkbox. Then, I'm using
 [`vim.ui.select`](<https://neovim.io/doc/user/lua.html#vim.ui.select()>) with the table of checkboxes as the options.
 Finally, if there is a selection, I'm changing the checkbox in the current line using

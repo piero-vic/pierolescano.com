@@ -2,11 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-My personal corner of the internet, build with [Astro][astro] and
-[Tailwind][tailwind]. It's meant to be a exploration enviroment for front-end
-web development and also a place to share ideas. I'm planning to post at least
-once a month, so please feel free to browse and leave a comment. Comments are
-powered by [giscus][giscus].
+My personal corner of the internet, built with [Astro][astro] and [Tailwind][tailwind]. It's meant to be an exploration
+environment for front-end web development and also a place to share ideas. I'm planning to post at least once a month,
+so please feel free to browse and leave a comment. Comments are powered by [giscus][giscus].
 
 ## License
 

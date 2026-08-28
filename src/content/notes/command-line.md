@@ -55,7 +55,7 @@ qrencode -o - string | imv -    # Without creating a file using imv
 qrencode -t ansiutf8 string     # Terminal output
 ```
 
-### Count elements in an JSON array with `jq`
+### Count elements in a JSON array with `jq`
 
 ```bash
 jq '. | length' file.json

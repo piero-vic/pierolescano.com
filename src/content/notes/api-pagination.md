@@ -33,7 +33,7 @@ SELECT * from items LIMIT 10 OFFSET 20;
 ```
 
 Offset can cause performance issues when the data grows larger. This is because the database needs to scan all the rows
-until the offset value.[^1]
+up to the offset value.[^1]
 
 [^1]: [OFFSET is bad for skipping previous rows](https://use-the-index-luke.com/sql/partial-results/fetch-next-page)
 
@@ -46,7 +46,7 @@ until the offset value.[^1]
 
 ### Keyset based pagination
 
-It uses and index key like a primary key.
+It uses an index key like a primary key.
 
 ```sql
 SELECT * from items WHERE id <= 1234 LIMIT 20;

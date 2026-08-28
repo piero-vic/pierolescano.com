@@ -31,7 +31,7 @@ getting into it since then.
 ## Gaming
 
 I started playing [Valheim](https://www.valheimgame.com/) after realizing that it isn't that hard to play games on Linux
-anymore. I've running Steam though Flatpak on Arch Linux and haven't had any issues so far.
+anymore. I've been running Steam through Flatpak on Arch Linux and haven't had any issues so far.
 
 ## Coding
 

@@ -11,8 +11,8 @@ containing all the things I thought I would need. However, I ended up taking wit
 wear.
 
 My brother gave me an analog camera, and I was planning to take it with me on the trip. However, I decided not to due to
-lens caps being missing. I didn't want to take the risk to scratch the lens. I found some 3D models on Thingiverse that
-would work for the lens, but I still need to fix an old 3d printer I have at home to print the
+lens caps being missing. I didn't want to take the risk of scratching the lens. I found some 3D models on Thingiverse
+that would work for the lens, but I still need to fix an old 3D printer I have at home to print the
 [front](https://www.thingiverse.com/thing:6115527) and [rear](https://www.thingiverse.com/thing:6061109) caps for the
 lens.
 
@@ -31,7 +31,7 @@ I watched two movies this month.
 ## Coding
 
 I haven't been coding much lately, but I wrote [volume-notify](https://github.com/piero-vic/volume-notify), a small
-program show notifications on volume changes using PulseAudio. The idea came from a
+program to show notifications on volume changes using PulseAudio. The idea came from a
 [shell script by Hugo Osvaldo Barrera](https://git.sr.ht/~whynothugo/dotfiles/tree/72e90546fda70e700b963528a2e0afd15bfb4e84/item/home/.local/lib/volctld)
 that does basically the same thing. I decided to build my own version using Go and later came across a similar project
 called [pa-notify](https://github.com/ikrivosheev/pa-notify) which is written in C.

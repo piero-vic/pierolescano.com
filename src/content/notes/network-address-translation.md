@@ -15,9 +15,9 @@ tags:
 
 ## Dynamic NAT
 
-- There is a share pool of public IP addresses. Many private addresses are mapped to the first available public address
+- There is a shared pool of public IP addresses. Many private addresses are mapped to the first available public address
   in this pool.
-- The mapping of addresses is temporal.
+- The mapping of addresses is temporary.
 - Multiple devices can have the same public IP as long as they use the IP at different times.
 - Useful when there are many private IP addresses and a lower number of public IP addresses.
 

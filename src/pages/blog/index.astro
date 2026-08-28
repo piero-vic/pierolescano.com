@@ -7,7 +7,7 @@ import type { CollectionEntry } from "astro:content";
 
 const title = "Blog";
 const description =
-  "A collection of writings on the things I'm interedted on and status updates on some of the projects I'm working on.";
+  "A collection of writings on the things I'm interested in and status updates on some of the projects I'm working on.";
 
 const blogPosts = await getCollection("blog", ({ data }) => !data.archived);
 const postsWithDates = await Promise.all(

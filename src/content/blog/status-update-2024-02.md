@@ -13,7 +13,7 @@ for the Pi, so it is running underpowered.
 
 I also considered using the Pi to host some of the applications I'm currently running on a VPS. The services are
 intended for personal use and only accessible via [Tailscale](https://tailscale.com/), so it will be cheaper to host
-them myself. However, I decided to postpone the migration until I get a proper power supply for the Pi
+them myself. However, I decided to postpone the migration until I get a proper power supply for the Pi.
 
 Instead, I decided to set up a [Directus](https://directus.io/) instance on the RaspberryPi. Directus describes itself
 as an open source backend to build anything or everything. I've been using it at my job as a headless
@@ -25,7 +25,7 @@ to explore its potential as a Backend-as-a-Service, so I'll be using it for prot
 ## Professional
 
 I've been working with Angular for the last few months, and it hasn't been the best experience. However, there are a
-couple of new project coming in that will be using other frameworks. I cannot wait to start working on them.
+couple of new projects coming in that will be using other frameworks. I cannot wait to start working on them.
 
 One of the new projects has many requirements and few complex features. I've been having meetings to give some feedback
 on the UI design and to discuss some of the implementation details to ensure that all necessary features are accounted

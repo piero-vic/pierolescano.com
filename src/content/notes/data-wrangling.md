@@ -11,7 +11,7 @@ Useful tools for data wrangling:
 
 - [sed](https://en.wikipedia.org/wiki/Sed) is useful for searching and replacing text.
 - [awk](https://en.wikipedia.org/wiki/AWK) is great for processing columnar data.
-- [xargs](https://en.wikipedia.org/wiki/Xargs) take lines of input and turns them into arguments for other command.
+- [xargs](https://en.wikipedia.org/wiki/Xargs) takes lines of input and turns them into arguments for other commands.
 - [jq](https://stedolan.github.io/jq/) is used to parse JSON.
 - [pup](https://github.com/EricChiang/pup) is used to parse HTML.
 - [miller](https://github.com/johnkerl/miller)

@@ -25,11 +25,11 @@ distribution for the time being.
 
 Instead of using a full desktop environment like GNOME or KDE Plasma, I use [Sway](https://swaywm.org/), a
 [tiling window manager](https://en.wikipedia.org/wiki/Tiling_window_manager) and Wayland compositor. It has been my
-window manager of choice since I switched from GNOME. I've tried other compositors like Hyperland, but Sway works well,
+window manager of choice since I switched from GNOME. I've tried other compositors like Hyprland, but Sway works well,
 so I haven't had the need to switch.
 
-I don't do much [ricing](https://www.reddit.com/r/unixporn/) but when I stated using Sway I did tinker with a bunch of
-configurations until I settle on what I have now. Likewise, I try to stick to the default keybindings most of the time.
+I don't do much [ricing](https://www.reddit.com/r/unixporn/) but when I started using Sway I did tinker with a bunch of
+configurations until I settled on what I have now. Likewise, I try to stick to the default keybindings most of the time.
 I might change this in the future in order to make the setup easier to use with my
 [Corne keyboard](/blog/trying-out-the-corne-keyboard).
 
@@ -102,8 +102,8 @@ I use a moderate amount of plugins, my setup is pretty stable, and I can do prod
 languages. One thing I haven't added is any AI integration. That's something I might try in the following months.
 
 When it comes to other options, I've tried Emacs. However, it never stuck with me. I would like to give it a try again
-but the effort to configure and learn a new editor is not something I'll like to spend my time on at the moment. Maybe
-in a few months I can get some free time to try Emacs again. I do like [orgmode](https://orgmode.org/) though. I'm
+but the effort to configure and learn a new editor is not something I'd like to spend my time on at the moment. Maybe in
+a few months I can get some free time to try Emacs again. I do like [orgmode](https://orgmode.org/) though. I'm
 currently trying out a [port](https://github.com/nvim-orgmode/orgmode) for Neovim.
 
 ## Screen ergonomics
@@ -117,5 +117,5 @@ depending on the time of the day, and it's almost always on when I'm using dark 
 ## Everything else
 
 I'll try to do some more writing for specific parts of my setup and how they relate to my work as a developer. If you
-find any of this interesting feel free to browse my [dotfiles](github.com/piero-vic/dotfiles) repo. Everything I didn't
-mention here can probably be found there.
+find any of this interesting feel free to browse my [dotfiles](https://github.com/piero-vic/dotfiles) repo. Everything I
+didn't mention here can probably be found there.

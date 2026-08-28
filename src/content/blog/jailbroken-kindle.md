@@ -1,6 +1,6 @@
 ---
 title: Jailbroken Kindle
-description: Some toughts on jailbreaking a Kindle.
+description: Some thoughts on jailbreaking a Kindle.
 tags:
   - books
 ---
@@ -19,9 +19,9 @@ second hand Kindle Paperwhite and bought it right away.
 
 So I can read the digital books I already have without hassle and not have to worry about
 [Amazon deleting books](https://gizmodo.com/amazon-secretly-removes-1984-from-the-kindle-5317703), banning my account or
-spam me with "special offers" ads I don't want to see.
+spamming me with "special offers" ads I don't want to see.
 
-I also like giving old devices a new life. The Kindle I got for this experiment is from 2015. I guess is similar to
+I also like giving old devices a new life. The Kindle I got for this experiment is from 2015. I guess it is similar to
 installing Linux on old ThinkPads. It is just a cool small project to try.
 
 ## Breaking the jail
@@ -31,18 +31,18 @@ are somewhat computer-literate.
 
 The guide recommends filling almost all the storage in the device to
 [prevent automatic updates](https://kindlemodding.org/jailbreaking/prevent-auto-update.html). I had success running the
-jailbreak without the need to fill the storage, but your millage might vary. I would suggest following the instructions
+jailbreak without the need to fill the storage, but your mileage might vary. I would suggest following the instructions
 to fill the storage just in case.
 
 After following the instructions you will probably want to install [KOReader](https://koreader.rocks/). The whole
 jailbreaking process seems like foreplay for this.
 
 KOReader is amazing. You can tweak lots of options for how to display your books, connect to Calibre, use Wikipedia, add
-custom screensaver or even make add plugins to interact with [LLMs](https://github.com/omer-faruq/assistant.koplugin) or
+custom screensaver or even add plugins to interact with [LLMs](https://github.com/omer-faruq/assistant.koplugin) or
 [Zotero](https://github.com/stelzch/zotero.koplugin).
 
 ## Wrapping up
 
 I like the idea of single purpose devices. I've been reading more without distractions, enjoying the experience of the
-e-ink screen and actually looking forward for the next book. The device I got is a bit old, but it serves me well. I
-hope I can use if for many years to come.
+e-ink screen and actually looking forward to the next book. The device I got is a bit old, but it serves me well. I hope
+I can use it for many years to come.

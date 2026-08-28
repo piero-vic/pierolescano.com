@@ -3,7 +3,7 @@ title: Functional Core, Imperative Shell
 tags: []
 ---
 
-- As the name suggest the **core** domain logic of the software should be **functional**. It must rely on immutable
+- As the name suggests the **core** domain logic of the software should be **functional**. It must rely on immutable
   values and pure functions.
 - The **shell** can be programmed in an **imperative** style. It will take care of all the side effects like making and
   responding to network requests.

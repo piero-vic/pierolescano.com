@@ -17,7 +17,7 @@ tags:
 - Rules that tell domain name servers how to handle traffic to your domains and subdomains.
 - Common records: A, CNAME, MX, TXT, NS.
 
-## Toools
+## Tools
 
 Utilities to perform DNS lookups:
 

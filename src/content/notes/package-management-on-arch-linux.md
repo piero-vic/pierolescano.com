@@ -1,6 +1,6 @@
 ---
 title: Package management on Arch Linux
-description: A collection snippets used to manage packages in Arch Linux.
+description: A collection of snippets used to manage packages in Arch Linux.
 tags:
   - command-line
   - linux
@@ -20,8 +20,8 @@ pacman -Syu         # Upgrade packages
 
 ```bash
 pacman -Q           # all packages
-pacman -Qe          # explicited installed
-pacman -Qm          # extra packages. e.g. packages installed from the aur
+pacman -Qe          # explicitly installed
+pacman -Qm          # extra packages. e.g. packages installed from the AUR
 pacman -Qdt         # orphans
 pacman -Qk          # number of files per package
 pacman -Qo file     # packages that own a file

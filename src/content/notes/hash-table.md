@@ -8,7 +8,7 @@ tags:
 
 - Mainly used for the key-value lookup.
 - Also known as map, dictionary, hash map, or associative array.
-- Most languages already have a hast table implementation built-in.
+- Most languages already have a hash table implementation built-in.
 
 ## Concepts
 
@@ -23,5 +23,5 @@ tags:
 
 ## Constraints
 
-- **One-Directional Lookups**: We can have constant time lookups only when we use the key to find its value, no the
+- **One-Directional Lookups**: We can have constant time lookups only when we use the key to find its value, not the
   other way around.

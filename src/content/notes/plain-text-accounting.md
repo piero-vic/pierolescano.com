@@ -12,7 +12,7 @@ Neovim and edit the entries.
 
 ## Snippets
 
-A list of some of the commands I usually run to generate reports with ledger-cli or [heldger](https://hledger.org/). If
+A list of some of the commands I usually run to generate reports with ledger-cli or [hledger](https://hledger.org/). If
 I have a particular question about my finances, there's probably a command I can use to generate the report I need.
 
 ### How much have I spent this month?
@@ -45,7 +45,7 @@ ledger reg --period "this month" --sort "-date" Assets:Bank
 
 ### What are my incomes in USD?
 
-Income account are normally displayed with negative numbers, so I use `--invert` to get a nicer output.
+Income accounts are normally displayed with negative numbers, so I use `--invert` to get a nicer output.
 
 ```bash
 hledger balance --monthly --invert cur:USD Income

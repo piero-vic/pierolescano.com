@@ -10,7 +10,7 @@ isn't meant to be a complete list, but a highlight of the tools I use the most.
 
 <!-- TODO: Insert a good photo of my thinkpad -->
 
-My main workstation is a [Lenovo Thinkpad T480s](https://wiki.archlinux.org/title/Lenovo_ThinkPad_T480s) running Arch
+My main workstation is a [Lenovo ThinkPad T480s](https://wiki.archlinux.org/title/Lenovo_ThinkPad_T480s) running Arch
 Linux. I use this laptop for all my software development work.
 
 | Component | Details                |
@@ -37,7 +37,7 @@ Linux. I use this laptop for all my software development work.
 - [aura](https://github.com/fosskers/aura) - Package manager
 - [zsh](https://www.zsh.org/) - Shell
 - [neovim](https://github.com/neovim/neovim) - Text editor
-- [lf](https://github.com/gokcehan/lf) - Terminal file manater
+- [lf](https://github.com/gokcehan/lf) - Terminal file manager
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer
 
 ### GUI

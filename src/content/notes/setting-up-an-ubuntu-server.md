@@ -29,7 +29,7 @@ sudo apt update && sudo apt upgrade
 
 ## Tailscale
 
-Download Tailscale following [Download Tailcale](https://tailscale.com/download).
+Download Tailscale following [Download Tailscale](https://tailscale.com/download).
 
 ```bash
 # Authenticate and connect the machine

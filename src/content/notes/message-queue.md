@@ -4,7 +4,7 @@ tags:
   - distributed-systems
 ---
 
-> Asynchronous services-to-service communication method.
+> Asynchronous service-to-service communication method.
 
 ## Benefits
 

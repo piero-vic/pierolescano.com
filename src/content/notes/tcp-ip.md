@@ -11,8 +11,8 @@ tags:
 
 ## Internet Layer
 
-- The Internet Protocol (IP) is the most important protocols in this layer.
-- Provides packet delivery on which networks are built. All data in TCP/IP goes throw IP.
+- The Internet Protocol (IP) is the most important protocol in this layer.
+- Provides packet delivery on which networks are built. All data in TCP/IP goes through IP.
 
 ## Transport Layer
 

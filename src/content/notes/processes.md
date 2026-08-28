@@ -17,7 +17,7 @@ Here is a list of commands for managing processes from the command line.
 | `fg`    | resumes a process in the foreground |
 | `nohup` | run a command immune to hangups     |
 
-There are also a lot of TUI tools for managing process.
+There are also a lot of TUI tools for managing processes.
 
 - `top`
 - `htop`

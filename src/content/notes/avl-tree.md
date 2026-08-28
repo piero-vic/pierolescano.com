@@ -10,7 +10,7 @@ A BST that rotates the tree every time there is a violation of the order.
 
 - Balance factor: -1, 0, 1
   - right node height - left node height
-  - You cannot have a balance factor greater than 1 or lesser than -1
+  - You cannot have a balance factor greater than 1 or less than -1
 
 ## Rotations
 

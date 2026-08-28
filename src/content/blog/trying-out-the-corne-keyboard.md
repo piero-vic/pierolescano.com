@@ -7,7 +7,7 @@ tags:
   - keyboards
 ---
 
-I've been wanting to give ergonomic keyboards a try for while now. Last month I came across a good offer for a second
+I've been wanting to give ergonomic keyboards a try for a while now. Last month I came across a good offer for a second
 hand [Corne](https://github.com/foostan/crkbd), so I didn't hesitate to buy it. The experience with a split keyboard has
 been interesting. It felt similar to learning vim for the first time. Strange, uncomfortable, but rewarding nonetheless.
 
@@ -21,7 +21,7 @@ The keyboard I bought came with labelless keycaps. I don't mind labelless keycap
 those little bumps in the <kbd>F</kbd> and <kbd>J</kbd> keys which cause me to unintentionally shift the position of my
 hands. I ended up swapping the keycaps for ones from a spare keyboard.
 
-Other thing that bothered me a bit was the small number of keys this keyboard had compared to a regular one. To be able
+Another thing that bothered me a bit was the small number of keys this keyboard had compared to a regular one. To be able
 to type numbers or symbols you need to use layers. Layers are similar to how the <kbd>Fn</kbd> is used to access media
 controls in some keyboards. A layer is activated by holding one or more designated keys configured by the user. It seems
 like layers are one of the things that scare people the most when it comes to trying an ergonomic keyboard.
@@ -38,7 +38,8 @@ thing that bothered me was having the <kbd>Esc</kbd> on the right side, so I dec
 
 I also tried [VIAL](https://github.com/vial-kb/vial-qmk), a fork of QMK that comes with a GUI to configure the keyboard
 in real time. It allowed me to configure the keyboard without having to flash it every time I wanted to change
-something. I used it for couple days, but I had problems when trying to configure media keys, so I switch back to QMK.
+something. I used it for a couple of days, but I had problems when trying to configure media keys, so I switched back to
+QMK.
 
 <figure>
     <img alt="A keyboard layout" src="/images/keyboard-layout.png" />
@@ -50,12 +51,12 @@ something. I used it for couple days, but I had problems when trying to configur
 
 ## What's next?
 
-I'll be exploring other layouts from time to time. I'm happy with my current setup, but I think I make improve my use of
+I'll be exploring other layouts from time to time. I'm happy with my current setup, but I think I can improve my use of
 layers. [KeymapDB](https://keymapdb.com/) seems like a good website to see how other people configure their QMK
 keyboards.
 
 I also want to learn how to configure the OLED displays. There are a lot of configuration examples on the internet. I
-might take some inspiration and see what can I do. It might also be a good opportunity to learn a bit of C.
+might take some inspiration and see what I can do. It might also be a good opportunity to learn a bit of C.
 
 Building my own keyboard is definitely in the backlog. It's not unusual to see people in the custom keyboard space
-crafting their own keyboards. I think that I miss the special part of the process by buying it.
+crafting their own keyboards. I think that I missed the special part of the process by buying it.

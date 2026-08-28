@@ -1,7 +1,7 @@
 import type { RemarkPlugin } from "@astrojs/markdown-remark";
 import { findAndReplace } from "mdast-util-find-and-replace";
 
-// (?:^| )                    -> non-capturing group, tag should start be separated by a space or be the start of the line
+// (?:^| )                    -> non-capturing group, tag should be separated by a space or be the start of the line
 // #(...)                     -> capturing group, tag itself must start with #
 // (?:[-_\p{L}\d\p{Z}])+      -> non-capturing group, non-empty string of (Unicode-aware) alpha-numeric characters and symbols, hyphens and/or underscores
 // (?:\/[-_\p{L}\d\p{Z}]+)*)  -> non-capturing group, matches an arbitrary number of tag strings separated by "/"

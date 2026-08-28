@@ -62,7 +62,7 @@ WHERE
 ```
 
 I'm doing a `JOIN` operation, so I can also get the other columns in the `food` table. The `MATCH` keyword is the thing
-what that does the magic. This allows me to use the `foods_fts` table to search the records.
+that does the magic. This allows me to use the `food_fts` table to search the records.
 
 ## Further reading
 

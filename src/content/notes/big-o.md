@@ -4,10 +4,10 @@ tags:
   - algorithms
 ---
 
-A standardize way to measure how an algorithm's performance changes as the amount of data it receives increases.
+A standardized way to measure how an algorithm's performance changes as the amount of data it receives increases.
 
-1. It measures **growth** with respect to the **input**. If algorithm receives N elements as input, how many steps will
-   it take to finish?
+1. It measures **growth** with respect to the **input**. If an algorithm receives N elements as input, how many steps
+   will it take to finish?
 2. **Constants are dropped** because they are not concerned with the size of the input.
 3. It generally refers to the **worst-case scenario**.
 

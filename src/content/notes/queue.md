@@ -4,7 +4,7 @@ tags:
   - data-structures
 ---
 
-> Linear collection of elements where elements are removed following the FIFO (Fist In First Out) principle.
+> Linear collection of elements where elements are removed following the FIFO (First In First Out) principle.
 
 Can be implemented on top of a [linked list](linked-list).
 

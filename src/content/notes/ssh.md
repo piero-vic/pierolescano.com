@@ -41,7 +41,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub user@ip_address
   man-in-the-middle attack.
 - `~/.ssh/authorized_keys` - Stores the public keys of the identities that can connect to the server.
 
-`chmod` these file with 600 permission.
+`chmod` these files with 600 permissions.
 
 ### Examples
 

@@ -6,14 +6,14 @@ tags: []
 
 I've been wanting to establish a writing habit for quite some time now. So this year I'm committed to publishing at
 least once a month. Inspired by the likes of [Tom MacWright](https://macwright.com/) and
-[マリウス](https://xn--gckvb8fzb.com/), I'll be sharing monthly updates on some of my professional and personal project.
-I'll also be sharing things that caught my eye during this period.
+[マリウス](https://xn--gckvb8fzb.com/), I'll be sharing monthly updates on some of my professional and personal
+projects. I'll also be sharing things that caught my eye during this period.
 
 ---
 
 ## Personal
 
-Let's start with some of the changes I'm making to my setup. I got a new laptop, a second hand Thinkpad T480S. It will
+Let's start with some of the changes I'm making to my setup. I got a new laptop, a second hand ThinkPad T480s. It will
 be replacing my old 2012 MacBook as my main workstation. I broke the MacBook last year and now the lid cannot be closed,
 making it unportable. Everything else still works, so I'll see if I can get it fixed and keep it as a backup machine.
 
@@ -23,7 +23,7 @@ Compose. Here's a list of the things I'm currently running:
 - [Baikal](https://sabre.io/baikal/), a CalDAV and CardDAV server.
 - [Linkding](https://github.com/sissbruecker/linkding/), a bookmark manager.
 - [Miniflux](https://miniflux.app/), a feed reader.
-- [Nginx Proxy Manager](https://nginxproxymanager.com/), a tool for easily expose the services with SSL certificates.
+- [Nginx Proxy Manager](https://nginxproxymanager.com/), a tool for easily exposing the services with SSL certificates.
 
 The current setup is still experimental, so there's room for improvements. I want to add [restic](https://restic.net/)
 to handle backups, and maybe deploy a few more services. I think I'll be able to get everything done within the next few

@@ -22,12 +22,12 @@ What's happening underneath the hood?
 
 - **It is just a simple contiguous memory space.**
 - **Its items have the same type.**
-  - To read the values in an array we need to skip certain amount of memory. If elements were of different types, this
+  - To read the values in an array we need to skip a certain amount of memory. If elements were of different types, this
     wouldn't be consistent.
 - **It has a fixed size.**
-  - Items are stored consecutively. If we try to add elements to the array the next block might not available.
+  - Items are stored consecutively. If we try to add elements to the array the next block might not be available.
   - Inserting an element implies that you're overwriting something.
-- **How we access an element in an array?**
+- **How do we access an element in an array?**
   - We use the index as an offset, multiply it by the length of the type to get the position we want, go to that
     position and read the value.
 - **Deletion**
