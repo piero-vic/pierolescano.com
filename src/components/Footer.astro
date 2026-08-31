@@ -1,11 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-
-const contactLinks = [
-  { name: "GitHub", icon: "prime:github", link: "https://github.com/piero-vic" },
-  { name: "LinkedIn", icon: "prime:linkedin", link: "https://www.linkedin.com/in/piero-lescano" },
-  { name: "Email", icon: "ph:envelope-simple-fill", link: "mailto:me@pierolescano.com" },
-];
+import { SOCIAL_ITEMS } from "@data/constants";
 
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
@@ -15,7 +10,7 @@ const currentYear = currentDate.getFullYear();
   <div class="mx-auto flex flex-col items-center justify-between gap-2 xl:flex-row">
     <ul class="flex gap-2">
       {
-        contactLinks.map(item => (
+        SOCIAL_ITEMS.map(item => (
           <li class="transition hover:text-blue">
             <a href={item.link}>
               <Icon name={item.icon} aria-hidden="true" focusable="false" class="h-6 w-6 xl:h-7 xl:w-7" />
