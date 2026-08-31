@@ -34,5 +34,8 @@ const imageURL = new URL(image, Astro.site);
   <meta name="og:title" content={title} />
   {description ? <meta name="og:description" content={description} /> : null}
   {image ? <meta name="og:image" content={imageURL} /> : null}
+
+  <!-- Sifa ID -->
+  <link rel="me" href="https://sifa.id/p/pierolescano.com" />
   <slot />
 </head>
