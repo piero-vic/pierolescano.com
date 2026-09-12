@@ -30,10 +30,10 @@ const imageURL = new URL(image, Astro.site);
 
   <!-- Open Graph Tags -->
   <meta property="og:type" content={type} />
-  <link rel="og:url" href={canonicalURL} />
-  <meta name="og:title" content={title} />
-  {description ? <meta name="og:description" content={description} /> : null}
-  {image ? <meta name="og:image" content={imageURL} /> : null}
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  {description ? <meta property="og:description" content={description} /> : null}
+  {image ? <meta property="og:image" content={imageURL} /> : null}
 
   <!-- Sifa ID -->
   <link rel="me" href="https://sifa.id/p/pierolescano.com" />
