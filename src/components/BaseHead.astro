@@ -36,6 +36,8 @@ const imageURL = new URL(image, Astro.site);
   <meta property="og:type" content={type} />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:title" content={title} />
+  <meta property="og:site_name" content="Piero Lescano" />
+  <meta property="og:locale" content="en_US" />
   {description ? <meta property="og:description" content={description} /> : null}
   {image ? <meta property="og:image" content={imageURL} /> : null}
 
