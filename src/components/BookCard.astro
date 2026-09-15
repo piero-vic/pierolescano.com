@@ -9,8 +9,9 @@ export interface Props {
 }
 
 const { book, headingTag: Heading = "h3" } = Astro.props;
-const { title, author, readDate, coverUrl, hardcoverUrl } = book;
+const { title, author, readDate, progress, coverUrl, hardcoverUrl } = book;
 const dateLabel = readDate ? formatReadDate(readDate) : "";
+const showProgress = progress !== undefined;
 ---
 
 <li
@@ -44,4 +45,18 @@ const dateLabel = readDate ? formatReadDate(readDate) : "";
 
     {dateLabel && <p class="mt-auto text-[10px] italic">{dateLabel}</p>}
   </div>
+
+  {
+    showProgress && (
+      <div class="flex items-center gap-2 px-3 pb-2 text-[10px] text-blue">
+        <progress
+          class="h-1.5 grow appearance-none border-none [&::-webkit-progress-bar]:bg-blue/20 [&::-webkit-progress-value]:bg-blue [&::-moz-progress-bar]:bg-blue"
+          value={progress}
+          max="100"
+          aria-label={`${title} reading progress`}
+        />
+        <span class="shrink-0 font-bold tabular-nums">{progress}%</span>
+      </div>
+    )
+  }
 </li>

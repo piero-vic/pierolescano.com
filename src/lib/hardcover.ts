@@ -18,6 +18,7 @@ const booksSchema = z.object({
   author: z.string(),
   status: z.enum(["reading", "finished", "planned"]),
   readDate: readDateSchema.optional(),
+  progress: z.number().min(0).max(100).optional(),
   coverUrl: z.url().optional(),
   hardcoverUrl: z.url().optional(),
 });
@@ -51,6 +52,7 @@ interface HardcoverBook {
   id: number;
   title: string;
   slug: string;
+  pages: number | null;
   image: { url: string } | null;
   contributions: HardcoverContribution[];
 }
@@ -58,6 +60,7 @@ interface HardcoverBook {
 interface HardcoverUserBookRead {
   finished_at: string | null;
   finished_at_precision: number | null;
+  progress_pages: number | null;
 }
 
 interface HardcoverUserBook {
@@ -115,12 +118,14 @@ async function getHardcoverBooks(): Promise<BookData[]> {
           id
           title
           slug
+          pages
           image { url }
           contributions { contribution author { name } }
         }
         user_book_reads {
           finished_at
           finished_at_precision
+          progress_pages
         }
       }
     }
@@ -150,6 +155,15 @@ async function getHardcoverBooks(): Promise<BookData[]> {
     .filter(entry => entry.status_id in STATUS_MAP)
     .map((entry): BookData => {
       const read = entry.user_book_reads.find(r => r.finished_at !== null);
+      const progressRead =
+        entry.user_book_reads.find(r => r.progress_pages != null) ??
+        entry.user_book_reads[entry.user_book_reads.length - 1];
+      const progressPages = progressRead?.progress_pages;
+      const pages = entry.book.pages;
+      const progress =
+        progressPages != null && pages && pages > 0
+          ? Math.min(100, Math.max(0, Math.round((progressPages / pages) * 100)))
+          : undefined;
       return {
         id: String(entry.book.id),
         title: entry.book.title,
@@ -162,6 +176,7 @@ async function getHardcoverBooks(): Promise<BookData[]> {
                 precision: precisionFromValue(read.finished_at_precision),
               }
             : undefined,
+        progress: entry.status_id === 2 ? progress : undefined,
         coverUrl: entry.book.image?.url,
         hardcoverUrl: `https://hardcover.app/books/${entry.book.slug}`,
       };
