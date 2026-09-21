@@ -7,7 +7,8 @@
     "start": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier -w ./src"
+    "format": "prettier -w ./src",
+    "standard-site:publish": "tsx ./scripts/standard-site.mts"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^1.0.0",
@@ -16,6 +17,7 @@
     "@astrojs/react": "^6.0.5",
     "@astrojs/rss": "4.0.19",
     "@fontsource/jetbrains-mono": "^5.3.0",
+    "@mastrojs/atproto": "jsr:^0.2.5",
     "@myriaddreamin/typst-ts-node-compiler": "^0.7.0",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.20",
@@ -42,8 +44,10 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@types/sanitize-html": "^2.16.1",
+    "gray-matter": "^4.0.3",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^1.0.0",
-    "prettier-plugin-tailwindcss": "^0.8.1"
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tsx": "^4.20.6"
   }
 }

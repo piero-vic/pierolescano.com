@@ -1,6 +1,9 @@
 ---
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import { getImage } from "astro:assets";
+import { rkeyFromUrl } from "@mastrojs/atproto";
+
+import { OWNER_DID } from "@data/constants";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import PostHeader from "@components/PostHeader.astro";
@@ -25,9 +28,23 @@ let ogImage = `/og/blog/${entry.id}.png`;
 if (image !== undefined) {
   ogImage = (await getImage({ src: image, format: "png" })).src;
 }
+
+const canonicalURL = new URL(
+  // https://docs.astro.build/en/reference/configuration-reference/#effect-on-astrourl
+  Astro.url.pathname.replace(/(?:^|\/)index\.html$/, "/").replace(/\.html$/, ""),
+  Astro.site,
+);
 ---
 
 <BaseLayout title={title} description={description} image={ogImage} type="article">
+  {!entry.data.archived && (
+    <Fragment slot="head">
+      <link
+        rel="site.standard.document"
+        href={`at://${OWNER_DID}/site.standard.document/${rkeyFromUrl(canonicalURL)}`}
+      />
+    </Fragment>
+  )}
   <article
     class:list={[
       "prose max-w-none",
@@ -56,7 +73,8 @@ if (image !== undefined) {
       inputposition="bottom"
       theme="preferred_color_scheme"
       lang="en"
-      loading="eager"></giscus-widget>
+      loading="eager"
+    ></giscus-widget>
   </section>
 </BaseLayout>
 

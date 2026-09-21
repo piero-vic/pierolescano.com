@@ -36,6 +36,11 @@ jobs:
         env:
           HARDCOVER_API_KEY: ${{ secrets.HARDCOVER_API_KEY }}
 
+      - name: Publish to ATProto
+        run: pnpm run standard-site:publish
+        env:
+          ATP_APP_PASSWORD: ${{ secrets.ATP_APP_PASSWORD }}
+
       - name: Deploy website
         uses: cloudflare/wrangler-action@v3
         with:
