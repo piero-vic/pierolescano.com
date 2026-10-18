@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@jsr/mastrojs__atproto@0.2.5': 9f3bba8d0e2e356e9310178449a0a3c8ff93c72c94a088b76c50a8faecbcaa26
+
 importers:
 
   .:
@@ -28,7 +31,7 @@ importers:
         version: 5.3.0
       '@mastrojs/atproto':
         specifier: jsr:^0.2.5
-        version: '@jsr/mastrojs__atproto@0.2.5'
+        version: '@jsr/mastrojs__atproto@0.2.5(patch_hash=9f3bba8d0e2e356e9310178449a0a3c8ff93c72c94a088b76c50a8faecbcaa26)'
       '@myriaddreamin/typst-ts-node-compiler':
         specifier: ^0.7.0
         version: 0.7.0
@@ -3807,7 +3810,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  '@jsr/mastrojs__atproto@0.2.5':
+  '@jsr/mastrojs__atproto@0.2.5(patch_hash=9f3bba8d0e2e356e9310178449a0a3c8ff93c72c94a088b76c50a8faecbcaa26)':
     dependencies:
       '@atproto/api': 0.20.44
 

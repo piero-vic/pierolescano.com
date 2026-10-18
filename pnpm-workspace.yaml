@@ -4,3 +4,5 @@ allowBuilds:
   esbuild: true
   sharp: true
   workerd: true
+patchedDependencies:
+  '@jsr/mastrojs__atproto@0.2.5': patches/@jsr__mastrojs__atproto@0.2.5.patch

@@ -1,0 +1,51 @@
+diff --git a/src/document.js b/src/document.js
+index 49ddb10570ad651707f4a7217b062883057503b0..73e452b4978888d895085c830b15364d2d1bfa75 100644
+--- a/src/document.js
++++ b/src/document.js
+@@ -13,7 +13,7 @@ export const validateAndAddRkey = (docs, publicationUrl, strategy)=>{
+     if (!doc.title) throw Error(`doc.title not found for doc "${doc.url}"`);
+     if (!doc.publishedAt) throw Error(`doc.publishedAt not found for doc "${doc.url}"`);
+     const { pathname } = doc.url;
+-    const path = pathname.slice(pubPath.length);
++    const path = "/" + pathname.slice(pubPath.length).replace(/^\/+/, "");
+     doc.path = path;
+     if (!doc.rkey) {
+       if (!pathname.startsWith(pubPath)) {
+@@ -43,7 +43,7 @@ export const createOrUpdateDocuments = async (agent, docs, publicationAtUri, pub
+   }
+ };
+ // TODO: export this function and test it in `document.test.ts`
+-const docChanged = (oldDoc, newDoc)=>documentStringFields.some((field)=>oldDoc[field] !== newDoc[field] || oldDoc.publishedAt !== newDoc.publishedAt.toISOString());
++const docChanged = (oldDoc, newDoc)=>documentStringFields.some((field)=>oldDoc[field] !== newDoc[field] || oldDoc.publishedAt !== newDoc.publishedAt.toISOString()) || oldDoc.path !== newDoc.path;
+ const fetchDocuments = async (agent, publicationUri)=>{
+   const docs = await agent.com.atproto.repo.listRecords({
+     repo: agent.did,
+diff --git a/src/document.ts b/src/document.ts
+index 8618ca450e601401d52fc091f8326ec88101548e..3a10210001210d44ed23e02787bf8cd5c285109c 100644
+--- a/src/document.ts
++++ b/src/document.ts
+@@ -46,7 +46,10 @@ export const validateAndAddRkey = (
+     if (!doc.publishedAt) throw Error(`doc.publishedAt not found for doc "${doc.url}"`);
+ 
+     const { pathname } = doc.url;
+-    const path = pathname.slice(pubPath.length);
++    // The site.standard.document spec expects `path` to begin with a leading slash.
++    // Strip the publication pathname prefix (including any trailing slash) and
++    // re-attach a leading slash so the remainder always starts with `/`.
++    const path = "/" + pathname.slice(pubPath.length).replace(/^\/+/, "");
+     (doc as DocumentValidated).path = path;
+ 
+     if (!doc.rkey) {
+@@ -86,10 +89,10 @@ export const createOrUpdateDocuments = async (
+ };
+ 
+ // TODO: export this function and test it in `document.test.ts`
+-const docChanged = (oldDoc: Record<string, string>, newDoc: Document) =>
++const docChanged = (oldDoc: Record<string, string>, newDoc: DocumentValidated) =>
+   documentStringFields.some((field) =>
+     oldDoc[field] !== newDoc[field] || oldDoc.publishedAt !== newDoc.publishedAt.toISOString()
+-  );
++  ) || oldDoc.path !== newDoc.path;
+ 
+ const fetchDocuments = async (agent: Agent, publicationUri: string) => {
+   const docs = await agent.com.atproto.repo.listRecords({
